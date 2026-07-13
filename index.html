@@ -3,412 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f5f7fb">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Daily Brief">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="apple-touch-icon.png">
-<title>Daily Brief</title>
+<title>Daily Brief — 12 Jul 2026</title>
 <style>
   :root{
-    --bg:#f5f7fb; --ink:#0f172a; --sub:#64748b; --card:#ffffff; --line:#e6eaf2;
-    --up:#059669; --down:#dc2626;
-    --amber:#f59e0b; --red:#e11d48; --blue:#2563eb; --crimson:#be123c;
-    --teal:#0d9488; --emerald:#059669; --purple:#7c3aed; --orange:#ea580c; --slate:#475569;
-    --gold:#b7891f;
+    --bg:#f5f7fb; --card:#fff; --ink:#141a26; --muted:#5c6a80; --line:#e6ebf3;
+    --shadow:0 2px 10px rgba(20,30,50,.06); --up:#12b76a; --down:#f0433a;
+    --amber:#f79009; --blue:#2e7dff; --red:#ff5a5f; --crim:#e11d63; --teal:#0bb5b0; --purple:#7a5cff; --orange:#f7931a; --uae:#1f9d55;
+    --maxw:680px;
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;padding:0}
-  body{
-    background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; line-height:1.45;
-    padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
-    max-width:680px; margin:0 auto;
-  }
-  a{color:inherit; text-decoration:none}
-  .kicker{font-size:14px; color:var(--sub); font-weight:600; margin:4px 0 2px}
-  h1{font-size:30px; line-height:1.1; margin:0 0 4px; letter-spacing:-.5px}
-  .date{font-size:14px; color:var(--sub); margin:0 0 10px}
-  .pill{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600;
-    background:#eef2fb; color:#334155; border:1px solid var(--line); border-radius:999px; padding:5px 11px}
-  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--up)}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:calc(env(safe-area-inset-bottom) + 16px);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 15px;}
 
-  .sec-title{font-size:13px; font-weight:700; color:var(--sub); text-transform:uppercase; letter-spacing:.6px; margin:22px 4px 10px}
+  header{padding:calc(env(safe-area-inset-top) + 18px) 0 4px;}
+  .hi{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:800;}
+  .title{font-size:28px;font-weight:850;letter-spacing:-.6px;margin:3px 0 2px;}
+  .date{color:var(--muted);font-size:14px;font-weight:600;}
+  .read{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--muted);background:#eef2f9;border-radius:999px;padding:4px 11px;}
 
-  .three{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
-  .tcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px 11px; box-shadow:0 1px 2px rgba(15,23,42,.04)}
-  .tcard .ic{width:26px;height:26px;margin-bottom:7px}
-  .tcard .txt{font-size:12.5px; font-weight:600; line-height:1.3}
-  .tcard .tag{font-size:10.5px; color:var(--sub); font-weight:700; text-transform:uppercase; letter-spacing:.4px; margin-bottom:5px}
+  .glance{margin:16px 0 2px;}
+  .glance-h{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin:0 0 8px;padding-left:2px;}
+  .g3{display:flex;gap:8px;}
+  .g3 .gcard{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 8px;text-align:center;}
+  .g3 svg{display:block;width:100%;height:auto;}
+  .g3 .lab{font-size:11.5px;font-weight:750;line-height:1.3;margin-top:6px;}
 
-  .snap{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:8px}
-  .tile{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:10px 9px; box-shadow:0 1px 2px rgba(15,23,42,.04)}
-  .tile .nm{font-size:10.5px; color:var(--sub); font-weight:700; letter-spacing:.2px}
-  .tile .lv{font-size:14.5px; font-weight:700; margin-top:3px; letter-spacing:-.2px}
-  .tile .mv{font-size:11.5px; font-weight:700; margin-top:1px}
-  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--slate)}
-  .snapnote{font-size:11px; color:var(--sub); margin:7px 4px 0}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 4px;}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 10px;box-shadow:var(--shadow);}
+  .tile .k{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;}
+  .tile .v{font-size:16px;font-weight:850;letter-spacing:-.4px;margin-top:3px;}
+  .tile .d{font-size:11px;font-weight:800;margin-top:1px;}
+  .up{color:var(--up);}.down{color:var(--down);}
+  .snapnote{font-size:11.5px;color:var(--muted);margin:8px 2px 12px;}
 
-  .chips{display:flex; gap:8px; overflow-x:auto; padding:4px 2px 6px; -webkit-overflow-scrolling:touch; scrollbar-width:none}
-  .chips::-webkit-scrollbar{display:none}
-  .chip{flex:0 0 auto; font-size:12.5px; font-weight:700; color:#fff; border-radius:999px; padding:7px 13px; white-space:nowrap}
+  .navbar{position:sticky;top:0;z-index:20;background:rgba(245,247,251,.94);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top);}
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 15px 8px;scrollbar-width:none;max-width:var(--maxw);margin:0 auto;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{flex:0 0 auto;font-size:13px;font-weight:800;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;transition:.15s;}
+  .tab.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .tab.t-amber{color:#c47a0c;border-color:#f6d9a6;} .tab.t-amber.on{background:var(--amber);color:#fff;border-color:var(--amber);}
+  .tab.t-red{color:#d6474b;border-color:#f6c3c5;} .tab.t-red.on{background:var(--red);color:#fff;border-color:var(--red);}
+  .tab.t-blue{color:var(--blue);border-color:#bcd6f7;} .tab.t-blue.on{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .tab.t-crim{color:var(--crim);border-color:#f3b9cf;} .tab.t-crim.on{background:var(--crim);color:#fff;border-color:var(--crim);}
+  .tab.t-teal{color:#0a8f88;border-color:#a7e3dd;} .tab.t-teal.on{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .tab.t-uae{color:var(--uae);border-color:#a9dcc0;} .tab.t-uae.on{background:var(--uae);color:#fff;border-color:var(--uae);}
+  .tab.t-purple{color:var(--purple);border-color:#cfc6f7;} .tab.t-purple.on{background:var(--purple);color:#fff;border-color:var(--purple);}
+  .tab.t-orange{color:#d97b0a;border-color:#f7d3a6;} .tab.t-orange.on{background:var(--orange);color:#fff;border-color:var(--orange);}
+  .fil{display:flex;gap:6px;overflow-x:auto;padding:0 15px 10px;scrollbar-width:none;max-width:var(--maxw);margin:0 auto;}
+  .fil::-webkit-scrollbar{display:none;}
+  .f{flex:0 0 auto;font-size:11px;font-weight:800;color:var(--muted);background:#eef2f9;border-radius:999px;padding:5px 11px;cursor:pointer;}
+  .f.on{background:#e3edff;color:#185fa5;}
 
-  details.card{background:var(--card); border:1px solid var(--line); border-radius:18px; margin:11px 0; box-shadow:0 1px 3px rgba(15,23,42,.05); overflow:hidden}
-  details.card>summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:11px; padding:14px 15px}
-  details.card>summary::-webkit-details-marker{display:none}
-  .badge{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex:0 0 auto}
-  .sm-title{font-size:16px; font-weight:700; flex:1; letter-spacing:-.2px}
-  .cnt{font-size:11.5px; font-weight:700; color:var(--sub); background:#f1f5f9; border-radius:999px; padding:3px 9px}
-  .chev{width:16px;height:16px;color:var(--sub); transition:transform .2s}
-  details[open]>summary .chev{transform:rotate(180deg)}
-  .body{padding:2px 15px 6px}
+  .pulse{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:14px 0 10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;box-shadow:var(--shadow);font-size:13px;line-height:1.5;color:#3a4763;}
+  .pulse .m{font-size:11px;font-weight:850;letter-spacing:.3px;white-space:nowrap;padding:2px 9px;border-radius:999px;}
+  .m.up{color:#0f7a48;background:rgba(18,183,106,.14);}
+  .m.dn{color:#a3282a;background:rgba(240,67,58,.12);}
+  .m.mid{color:#7a5a0e;background:rgba(247,144,9,.16);}
 
-  .story{padding:13px 0; border-top:1px solid var(--line)}
-  .story:first-child{border-top:none}
-  .story h3{font-size:15.5px; line-height:1.32; margin:0 0 5px; font-weight:700}
-  .story h3 a{text-decoration:none}
-  .story p{font-size:13.5px; color:#334155; margin:0 0 9px}
-  .why{background:#f8fafc; border:1px solid var(--line); border-left:3px solid var(--amber); border-radius:10px; padding:9px 11px}
-  .why .wl{font-size:10.5px; font-weight:800; color:var(--sub); letter-spacing:.6px; text-transform:uppercase; margin-bottom:5px}
-  .why ul{margin:0; padding-left:16px}
-  .why li{font-size:12.5px; color:#334155; margin:2px 0}
-  .src{display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:11px; font-weight:700; color:var(--slate); background:#f1f5f9; border:1px solid var(--line); border-radius:999px; padding:3px 9px}
-  .src.bb{background:#faf3e0; color:var(--gold); border-color:#eaddb8}
+  .list{padding:0 0 6px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:13px 14px;margin:0 0 9px;cursor:pointer;}
+  .ct{display:flex;align-items:center;gap:9px;}
+  .tagd{font-size:9px;font-weight:900;color:#fff;border-radius:6px;padding:2px 7px;flex:0 0 auto;letter-spacing:.3px;}
+  .h{font-size:15.5px;font-weight:750;line-height:1.3;letter-spacing:-.2px;}
+  .arw{margin-left:auto;color:#c3ccda;font-size:19px;transition:transform .2s;flex:0 0 auto;}
+  .card.open .arw{transform:rotate(90deg);}
+  .det{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+  .card.open .det{max-height:340px;}
+  .din{padding-top:10px;}
+  .sm{font-size:13.5px;color:#3a4763;line-height:1.55;margin:0;}
+  .why{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .why::before{content:"Why it matters";flex-basis:100%;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:2px;}
+  .wt{font-size:11.5px;font-weight:600;color:#185fa5;background:#e7f0ff;border:1px solid #d3e4ff;border-radius:8px;padding:4px 9px;}
+  .srcline{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:10px;border-top:1px solid var(--line);}
+  .srcline::before{content:"Source";font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+  .src{font-size:11px;font-weight:800;color:var(--ink);background:#eef2f9;border-radius:999px;padding:3px 10px;}
+  .src.bb{color:#7a5a00;background:#fff2d6;}
+  .rd{margin-left:auto;font-size:12px;font-weight:800;color:var(--blue);}
+  .empty{display:none;text-align:center;color:var(--muted);font-size:13.5px;padding:26px 10px;}
 
-  footer{margin-top:26px; padding-top:14px; border-top:1px solid var(--line); font-size:11.5px; color:var(--sub)}
-  footer b{color:#334155}
+  footer{color:var(--muted);font-size:12px;text-align:center;padding:14px 0 22px;line-height:1.6;}
 </style>
 </head>
 <body>
 
-  <div class="kicker">Good morning ☕️</div>
-  <h1>Your Daily Brief</h1>
-  <p class="date">Monday, 13 July 2026</p>
-  <span class="pill"><span class="dot"></span>≈ 6-min read · 18 stories · fresh (last 48h · since Fri close)</span>
+<div class="wrap">
+<header>
+  <div class="hi">Good morning ☕️</div>
+  <div class="title">Your Daily Brief</div>
+  <div class="date">Sunday, 12 July 2026</div>
+  <span class="read">≈ 6-min read · 20 stories · fresh (7–10 Jul)</span>
 
-  <div class="sec-title">3 things to know today</div>
-  <div class="three">
-    <a class="tcard" href="#top">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8"><path d="M4 20V9M10 20V4M16 20v-7M20 20V11" stroke-linecap="round"/><path d="M3 20h18" stroke-linecap="round"/></svg>
-      <div class="tag">Wall St</div>
-      <div class="txt">Earnings season + June CPI open with Iran war in the frame.</div>
-    </a>
-    <a class="tcard" href="#top">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 8.5h4.2M9.5 12h4.2M11 8.5V16M9.5 14h4.2" stroke-linecap="round"/></svg>
-      <div class="tag">China</div>
-      <div class="txt">PBOC extends record gold buying — 20-month streak.</div>
-    </a>
-    <a class="tcard" href="#top">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke-linecap="round"/></svg>
-      <div class="tag">Tech</div>
-      <div class="txt">AI chip demand called “almost unlimited” despite volatility.</div>
-    </a>
+  <div class="glance">
+    <div class="glance-h">3 things to know today</div>
+    <div class="g3">
+      <a class="gcard" href="#" data-jump="top">
+        <svg viewBox="0 0 90 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="45" cy="34" r="26" fill="#e3edff"/><g fill="#2e7dff"><rect x="32" y="36" width="7" height="14"/><rect x="42" y="28" width="7" height="22"/><rect x="52" y="20" width="7" height="30"/></g><polyline points="32,40 42,32 52,24 60,18" fill="none" stroke="#12b76a" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="lab">Wall St ends the week at records</div>
+      </a>
+      <a class="gcard" href="#" data-jump="top">
+        <svg viewBox="0 0 90 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="45" cy="34" r="26" fill="#fff2d6"/><text x="45" y="44" font-size="28" font-weight="800" text-anchor="middle" fill="#e0a91f">¥</text><polygon points="66,20 60,26 60,14" fill="#12b76a"/></svg>
+        <div class="lab">Yuan hits a two-year high</div>
+      </a>
+      <a class="gcard" href="#" data-jump="top">
+        <svg viewBox="0 0 90 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="45" cy="34" r="26" fill="#ffe9d2"/><path d="M45 14 l18 6 v12 c0 12 -9 19 -18 22 c-9 -3 -18 -10 -18 -22 v-12 z" fill="#f7931a"/><text x="45" y="42" font-size="18" font-weight="800" text-anchor="middle" fill="#fff">₿</text></svg>
+        <div class="lab">Circle wins US bank charter</div>
+      </a>
+    </div>
   </div>
 
-  <div class="sec-title">Market snapshot</div>
-  <div class="snap">
-    <div class="tile"><div class="nm">S&amp;P 500</div><div class="lv">7,575.39</div><div class="mv up">▲ 0.42%</div></div>
-    <div class="tile"><div class="nm">NASDAQ</div><div class="lv">26,281.61</div><div class="mv up">▲ 0.29%</div></div>
-    <div class="tile"><div class="nm">DOW</div><div class="lv">52,637.01</div><div class="mv up">▲ 0.29%</div></div>
-    <div class="tile"><div class="nm">HANG SENG</div><div class="lv">—</div><div class="mv down">▼ 0.70%</div></div>
-    <div class="tile"><div class="nm">USD/CNY</div><div class="lv">&lt; 6.80</div><div class="mv up">▲ CNY firmer</div></div>
-    <div class="tile"><div class="nm">BITCOIN</div><div class="lv">$63,854</div><div class="mv up">▲ 1.8%</div></div>
-    <div class="tile"><div class="nm">DUBAI DFM</div><div class="lv">—</div><div class="mv up">▲ 11% Q2</div></div>
-    <div class="tile"><div class="nm">US 10-YR</div><div class="lv">Higher</div><div class="mv down">▲ hike fears</div></div>
+  <div class="tiles" aria-label="Markets at Friday close">
+    <div class="tile"><div class="k">S&amp;P 500</div><div class="v">7,575</div><div class="d up">▲ 0.4%</div></div>
+    <div class="tile"><div class="k">Nasdaq</div><div class="v">26,282</div><div class="d up">▲ 0.3%</div></div>
+    <div class="tile"><div class="k">Dow</div><div class="v">52,637</div><div class="d up">▲ 0.3%</div></div>
+    <div class="tile"><div class="k">Hang Seng</div><div class="v">24,476</div><div class="d up">▲ 1.9%</div></div>
+    <div class="tile"><div class="k">USD/CNY</div><div class="v">6.799</div><div class="d up">▲ 2yr hi</div></div>
+    <div class="tile"><div class="k">Bitcoin</div><div class="v">$64k</div><div class="d down">▼ off hi</div></div>
+    <div class="tile"><div class="k">Dubai DFM</div><div class="v">+11%</div><div class="d up">▲ Q2</div></div>
+    <div class="tile"><div class="k">US 10-Yr</div><div class="v">4.60%</div><div class="d down">▲ high</div></div>
   </div>
-  <div class="snapnote">Snapshot at last close (Fri 10 Jul). Hang Seng &amp; DFM show most recent verified move; USD/CNY per PBOC fixing below 6.80.</div>
+  <div class="snapnote">At Friday's close, 10 Jul · green = up, red = down</div>
+</header>
+</div>
 
-  <div class="chips">
-    <a class="chip" style="background:var(--amber)" href="#top">★ Top</a>
-    <a class="chip" style="background:var(--red)" href="#hk">Hong Kong</a>
-    <a class="chip" style="background:var(--blue)" href="#us">US</a>
-    <a class="chip" style="background:var(--crimson)" href="#cn">China</a>
-    <a class="chip" style="background:var(--teal)" href="#global">Global Markets</a>
-    <a class="chip" style="background:var(--emerald)" href="#uae">UAE</a>
-    <a class="chip" style="background:var(--purple)" href="#tech">Tech/AI</a>
-    <a class="chip" style="background:var(--orange)" href="#crypto">Crypto</a>
+<div class="navbar">
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-t="all">All</button>
+    <button class="tab t-amber" data-t="top">★ Top</button>
+    <button class="tab t-red" data-t="hk">Hong Kong</button>
+    <button class="tab t-blue" data-t="us">US</button>
+    <button class="tab t-crim" data-t="cn">China</button>
+    <button class="tab t-teal" data-t="gm">Global</button>
+    <button class="tab t-uae" data-t="uae">UAE</button>
+    <button class="tab t-purple" data-t="tech">Tech / AI</button>
+    <button class="tab t-orange" data-t="crypto">Crypto</button>
   </div>
+  <div class="fil" id="fil">
+    <button class="f on" data-f="all">All topics</button>
+    <button class="f" data-f="markets">Markets</button>
+    <button class="f" data-f="banking">Banking</button>
+    <button class="f" data-f="policy">Policy</button>
+    <button class="f" data-f="tech">Tech</button>
+    <button class="f" data-f="crypto">Crypto</button>
+    <button class="f" data-f="energy">Energy</button>
+  </div>
+</div>
 
-  <!-- TOP -->
-  <details class="card" id="top" open>
-    <summary>
-      <span class="badge" style="background:var(--amber)">★</span>
-      <span class="sm-title">Top Stories</span>
-      <span class="cnt">3</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">Wall Street opens earnings season alongside June CPI — with Iran war back in view</a></h3>
-        <p>Investors head into a pivotal week: big-bank results Wednesday and June inflation data land just as the US–Iran ceasefire wobbles and oil stays jumpy.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Bank earnings set the tone for credit &amp; trading revenue</li>
-          <li>Hot CPI revives H2 Fed rate-hike risk</li>
-          <li>Oil spikes feed inflation and margin worries</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">CNBC</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-07/china-s-pboc-buys-most-gold-since-2023-as-bullion-swings">China's PBOC buys most gold since 2023, stretching streak to 20 months</a></h3>
-        <p>Reserves rose 480,000 troy ounces to 75.44m in June — the biggest monthly purchase since Oct 2023 — as Beijing keeps diversifying away from the dollar despite volatile bullion.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Reserve diversification pressures the dollar long-term</li>
-          <li>Sustained official demand underpins gold</li>
-          <li>Signals caution on US-asset exposure</li>
-        </ul></div>
-        <a class="src bb" href="https://www.bloomberg.com/news/articles/2026-07-07/china-s-pboc-buys-most-gold-since-2023-as-bullion-swings">Bloomberg</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/12/ai-demand-chips-data-centers-stock-volatility.html">AI executives call demand ‘almost unlimited’ even as chip stocks swing</a></h3>
-        <p>Industry leaders say orders for chips and data-center capacity keep outrunning supply, with some optical suppliers sold out for years — despite sharp equity volatility.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Capex boom supports semis &amp; power names</li>
-          <li>Concentration risk if AI spend stalls</li>
-          <li>Feeds the inflation-vs-rates debate</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/12/ai-demand-chips-data-centers-stock-volatility.html">CNBC</a>
-      </div>
+<main class="wrap">
+  <div class="pulse" id="pulse"><span class="m up" id="pmood">● Good</span><span id="ptext">Markets are mostly up — shares near highs and Asia climbing — but a divided Fed and reliance on a few tech names keep investors watchful.</span></div>
+
+  <div class="list" id="list">
+
+    <div class="card" data-t="top" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#f79009;">TOP</span><span class="h">Wall Street ends the week at records ahead of earnings</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">US stocks capped a winning week Friday, the S&amp;P 500 up 0.42% to 7,575 and the Nasdaq at a record 26,282. Nvidia rose ~4% and Meta jumped 6% — its best week since 2024.</p><div class="why"><span class="wt">Breadth stays tech-narrow</span><span class="wt">Leans on a few AI names</span><span class="wt">Bank earnings are next test</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- HONG KONG -->
-  <details class="card" id="hk">
-    <summary>
-      <span class="badge" style="background:var(--red)">HK</span>
-      <span class="sm-title">Hong Kong</span>
-      <span class="cnt">4</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-8/">HKMA, SFC &amp; PBOC back CFETS–HKEX fixed-income &amp; currency trading platform</a></h3>
-        <p>Regulators welcomed a new electronic FIC trading platform in Hong Kong — a key plank of last year's FIC Markets Roadmap — deepening mainland-HK financial links.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Boosts HK as offshore RMB &amp; bond hub</li>
-          <li>New rails for cross-border fixed-income flow</li>
-          <li>Regulatory momentum behind FIC market build-out</li>
-        </ul></div>
-        <a class="src" href="https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-8/">HKMA</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://apps.sfc.hk/edistributionWeb/gateway/EN/news-and-announcements/news/doc?refNo=25PR123">SFC and HKMA issue joint statement on stablecoins</a></h3>
-        <p>The two regulators set out coordinated expectations for stablecoin activity, reinforcing HK's push to regulate digital-asset issuance within a clear framework.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Clarifies rules for banks eyeing stablecoins</li>
-          <li>Positions HK as a compliant digital-asset base</li>
-          <li>Guardrails for investor protection</li>
-        </ul></div>
-        <a class="src" href="https://apps.sfc.hk/edistributionWeb/gateway/EN/news-and-announcements/news/doc?refNo=25PR123">SFC</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-07/pboc-unveils-new-measures-to-cement-hong-kong-s-yuan-hub-status">PBOC doubles HK RMB Business Facility to 500bn yuan</a></h3>
-        <p>The facility — run through the HKMA — more than doubles to 500bn yuan ($74bn), giving Hong Kong banks far greater access to yuan liquidity.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Deeper yuan funding for HK lenders</li>
-          <li>Advances RMB internationalisation</li>
-          <li>Cements HK's offshore-yuan role</li>
-        </ul></div>
-        <a class="src bb" href="https://www.bloomberg.com/news/articles/2026-07-07/pboc-unveils-new-measures-to-cement-hong-kong-s-yuan-hub-status">Bloomberg</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.scmp.com/topics/hong-kong-stock-market">Hang Seng slips as HK equities stay under pressure</a></h3>
-        <p>The benchmark eased around 0.7%, tracking a softer mainland tape as tech and industrial names weighed on regional sentiment.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Signals cautious risk appetite in Asia</li>
-          <li>Tech drag mirrors global chip wobble</li>
-          <li>Watch southbound flow for support</li>
-        </ul></div>
-        <a class="src" href="https://www.scmp.com/topics/hong-kong-stock-market">SCMP</a>
-      </div>
+    <div class="card" data-t="top" data-f="policy">
+      <div class="ct"><span class="tagd" style="background:#f79009;">TOP</span><span class="h">Yuan hits two-year high as PBOC loosens its grip</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">China set its daily reference rate at 6.7989 per dollar — stronger than 6.80 for the first time since 2023 — signalling comfort with a firmer currency as the dollar eased.</p><div class="why"><span class="wt">Eases capital-outflow pressure</span><span class="wt">More room to cut later</span><span class="wt">Supports bank margins &amp; FX</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-10/pboc-sets-fixing-below-6-8-per-dollar-for-first-time-since-2023-mre95kva" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- US -->
-  <details class="card" id="us">
-    <summary>
-      <span class="badge" style="background:var(--blue)">US</span>
-      <span class="sm-title">United States</span>
-      <span class="cnt">3</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">Big banks kick off Q2 earnings on Wednesday</a></h3>
-        <p>JPMorgan, Goldman Sachs, Citigroup and Wells Fargo report mid-week, with Netflix, J&amp;J and UnitedHealth following — the first read on corporate health this season.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Bank margins gauge rate &amp; credit trends</li>
-          <li>Trading desks may benefit from volatility</li>
-          <li>Guidance sets Q3 market direction</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">CNBC</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">S&amp;P 500 closes higher, notching a winning week on tech gains</a></h3>
-        <p>The index ended near record territory as chip strength offset softer oil, leaving Wall Street firm heading into a heavy data-and-earnings stretch.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Momentum into earnings season</li>
-          <li>Tech leadership keeps breadth narrow</li>
-          <li>Records raise the bar for surprises</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">CNBC</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">Equities may be underpricing a second-half Fed rate hike</a></h3>
-        <p>Strategists warn sticky inflation and heavy AI-driven investment could force the Fed to tighten again in H2 — a risk markets seem reluctant to price.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Higher-for-longer pressures valuations</li>
-          <li>Rate risk lifts the dollar &amp; yields</li>
-          <li>Rewards quality over long-duration bets</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html">CNBC</a>
-      </div>
+    <div class="card" data-t="top" data-f="crypto">
+      <div class="ct"><span class="tagd" style="background:#f79009;">TOP</span><span class="h">Circle wins US bank charter; shares surge 14%</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Stablecoin issuer Circle won OCC approval to operate as a trust bank, letting it directly manage the reserves behind its $73bn USDC token. Shares jumped ~14%.</p><div class="why"><span class="wt">Stablecoins enter regulated banking</span><span class="wt">Issuers rival banks on payments</span><span class="wt">Blurs crypto–finance line</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/10/circle-gets-an-occ-bank-charter-as-stablecoin-competition-heats-up-shares-surge-14percent.html" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- CHINA -->
-  <details class="card" id="cn">
-    <summary>
-      <span class="badge" style="background:var(--crimson)">CN</span>
-      <span class="sm-title">China</span>
-      <span class="cnt">3</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-10/pboc-sets-fixing-below-6-8-per-dollar-for-first-time-since-2023-mre95kva">Yuan advances as PBOC sets fixing below 6.80 for first time since 2023</a></h3>
-        <p>The central bank signalled comfort with a stronger currency, guiding the daily reference rate under 6.80 per dollar and lifting the yuan.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Stronger yuan eases import-cost pressure</li>
-          <li>Signals confidence in capital stability</li>
-          <li>Supports offshore-RMB expansion</li>
-        </ul></div>
-        <a class="src bb" href="https://www.bloomberg.com/news/articles/2026-07-10/pboc-sets-fixing-below-6-8-per-dollar-for-first-time-since-2023-mre95kva">Bloomberg</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.scmp.com/economy/china-economy/article/3359942/chinas-central-bank-vows-flexible-approach-it-acknowledges-uneven-economic-picture">China's recovery grows uneven as consumption lags AI and exports</a></h3>
-        <p>Hi-tech manufacturing, AI-linked sectors and exports outperform, while domestic demand and private investment stay soft — the PBOC vows a flexible policy stance.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Two-speed economy complicates stimulus</li>
-          <li>Weak demand keeps deflation risk alive</li>
-          <li>Keeps door open to targeted easing</li>
-        </ul></div>
-        <a class="src" href="https://www.scmp.com/economy/china-economy/article/3359942/chinas-central-bank-vows-flexible-approach-it-acknowledges-uneven-economic-picture">SCMP</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">CSI 300 slides ~2% as tech and industrials drag</a></h3>
-        <p>Mainland blue chips fell nearly 2%, underperforming a broadly firmer Asia as chip-linked names retreated with the global sector.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Tech weakness caps mainland upside</li>
-          <li>Diverges from stronger Korea/Japan</li>
-          <li>Tests appetite for China risk</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">CNBC</a>
-      </div>
+    <div class="card" data-t="hk" data-f="banking">
+      <div class="ct"><span class="tagd" style="background:#ff5a5f;">HK</span><span class="h">Hong Kong's ¥500bn offshore-yuan quota takes effect</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Hong Kong's offshore RMB business funding quota doubled to ¥500bn on 10 July, with new 9-month, 2- and 3-year tenors — part of a PBoC–HKMA–SFC package to deepen the yuan market.</p><div class="why"><span class="wt">Bigger RMB loan books &amp; fees</span><span class="wt">Cements HK's yuan dominance</span><span class="wt">Advances yuan internationalisation</span></div><div class="srcline"><span class="src">HKMA</span><a class="rd" href="https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-3/" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- GLOBAL -->
-  <details class="card" id="global">
-    <summary>
-      <span class="badge" style="background:var(--teal)">◑</span>
-      <span class="sm-title">Global Markets</span>
-      <span class="cnt">2</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">SK Hynix jumps ~13% in Nasdaq debut</a></h3>
-        <p>The South Korean chipmaker's US listing opened at $170 (ADRs priced at $149) and closed sharply higher, as Korea's Kospi led Asia with a 2.5% gain.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Signals hot appetite for AI-memory names</li>
-          <li>Deepens US access to Korean chip supply</li>
-          <li>Reinforces the semis rally narrative</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html">CNBC</a>
-      </div>
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/world-markets/">Global oil demand set to fall for first time since 2020</a></h3>
-        <p>Analysts see world demand dropping ~1m barrels/day in 2026 as the Iran war and Strait of Hormuz disruption hit Middle East production and exports.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Supply shocks blur the price outlook</li>
-          <li>Energy earnings face demand headwinds</li>
-          <li>Adds to global inflation uncertainty</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/world-markets/">CNBC</a>
-      </div>
+    <div class="card" data-t="hk" data-f="policy">
+      <div class="ct"><span class="tagd" style="background:#ff5a5f;">HK</span><span class="h">PBoC, HKMA &amp; SFC to build a HK bond-and-FX platform</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Regulators welcomed a CFETS–HKEX tie-up to build an electronic fixed-income and currency trading platform in Hong Kong, making mainland bonds and yuan products easier to trade for global investors.</p><div class="why"><span class="wt">Easier access to mainland bonds</span><span class="wt">New revenue for HKEX</span><span class="wt">Strengthens HK's yuan plumbing</span></div><div class="srcline"><span class="src">HKMA</span><a class="rd" href="https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-8/" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- UAE -->
-  <details class="card" id="uae">
-    <summary>
-      <span class="badge" style="background:var(--emerald)">AE</span>
-      <span class="sm-title">UAE</span>
-      <span class="cnt">1</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-06-29/dubai-stocks-set-for-best-quarter-in-a-year-as-war-premium-ebbs">Dubai stocks post best quarter in a year as war premium fades</a></h3>
-        <p>The DFM General Index gained about 11% in Q2, nearly erasing 2026 losses, as a Middle East truce coaxed investors back to a market they'd fled during Iran's missile attacks.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Stability premium returning to Gulf assets</li>
-          <li>Rebound lifts regional risk sentiment</li>
-          <li>Geopolitics still the swing factor</li>
-        </ul></div>
-        <a class="src bb" href="https://www.bloomberg.com/news/articles/2026-06-29/dubai-stocks-set-for-best-quarter-in-a-year-as-war-premium-ebbs">Bloomberg</a>
-      </div>
+    <div class="card" data-t="hk" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#ff5a5f;">HK</span><span class="h">Shein moves ahead with a Hong Kong IPO</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Fast-fashion giant Shein is advancing a Hong Kong IPO that could raise over US$1bn, after earlier US and London attempts stalled — a marquee win for HK's booming listing market.</p><div class="why"><span class="wt">Boosts HK underwriting fees</span><span class="wt">HK winning global mega-deals</span><span class="wt">Adds to a record listing year</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-10/shein-is-said-to-move-ahead-with-preparations-for-hong-kong-ipo" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- TECH -->
-  <details class="card" id="tech">
-    <summary>
-      <span class="badge" style="background:var(--purple)">AI</span>
-      <span class="sm-title">Technology / AI</span>
-      <span class="cnt">1</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/09/meta-to-put-ai-chip-into-production-in-september-report.html">Meta to start producing its ‘Iris’ AI chip in September</a></h3>
-        <p>Meta plans to manufacture an in-house data-center chip from September as part of a push to lift computing power to 14 gigawatts next year, extending its MTIA silicon program.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Big Tech curbs reliance on Nvidia</li>
-          <li>Custom silicon reshapes chip demand</li>
-          <li>Signals massive AI capex ahead</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/09/meta-to-put-ai-chip-into-production-in-september-report.html">CNBC</a>
-      </div>
+    <div class="card" data-t="hk" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#ff5a5f;">HK</span><span class="h">Hong Kong stocks rally as lock-up worries ease</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">The Hang Seng jumped several hundred points on 10 July, led by an 8.8% surge in Lenovo, as IPO lock-up fears eased. Debuts were mixed — Nexchip +11.5%, Befar −21.3%.</p><div class="why"><span class="wt">Tech leadership lifts the index</span><span class="wt">IPO debuts stay volatile</span><span class="wt">Eases lock-up jitters</span></div><div class="srcline"><span class="src">SCMP</span><a class="rd" href="https://www.scmp.com/business/markets/article/3359806/hong-kong-stocks-rebound-concerns-ease-over-lock-expiries" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <!-- CRYPTO -->
-  <details class="card" id="crypto">
-    <summary>
-      <span class="badge" style="background:var(--orange)">₿</span>
-      <span class="sm-title">Crypto</span>
-      <span class="cnt">1</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </summary>
-    <div class="body">
-      <div class="story">
-        <h3><a href="https://www.cnbc.com/2026/07/06/bitcoin-rebounds-after-trump-says-hes-become-a-big-crypto-guy.html">Bitcoin rebounds after Trump touts crypto — but 21-month low still fresh</a></h3>
-        <p>Bitcoin recovered toward $63,900 after Trump called himself “a big crypto guy,” days after slumping near $57,700 on rate-hike fears and Strategy's surprise coin sales.</p>
-        <div class="why"><div class="wl">Why it matters</div><ul>
-          <li>Policy signals still swing crypto sharply</li>
-          <li>Corporate treasuries add selling risk</li>
-          <li>Rate path drives risk-asset flows</li>
-        </ul></div>
-        <a class="src" href="https://www.cnbc.com/2026/07/06/bitcoin-rebounds-after-trump-says-hes-become-a-big-crypto-guy.html">CNBC</a>
-      </div>
+    <div class="card" data-t="hk" data-f="banking">
+      <div class="ct"><span class="tagd" style="background:#ff5a5f;">HK</span><span class="h">More collateral pain ahead for HK banks, S&amp;P warns</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">S&amp;P expects collateral values on HK banks' commercial-property loans to keep falling in 2026, extending a downturn since 2019. Smaller property-heavy banks face the most strain.</p><div class="why"><span class="wt">Collateral values still falling</span><span class="wt">May force higher provisions</span><span class="wt">Small banks most exposed</span></div><div class="srcline"><span class="src">SCMP</span><a class="rd" href="https://www.scmp.com/business/banking-finance/article/3344761/hong-kong-banks-collateral-asset-valuations-continue-declining-2026-sp" target="_blank" rel="noopener">Read →</a></div></div></div>
     </div>
-  </details>
 
-  <footer>
-    <b>Last updated:</b> Monday, 13 July 2026 · <b>Window:</b> last 48h (since Fri 10 Jul close).<br>
-    <b>Sources:</b> Bloomberg, CNBC, SCMP, HKMA, SFC. Market levels at last close; some regional moves show most recent verified value.
-  </footer>
+    <div class="card" data-t="us" data-f="policy">
+      <div class="ct"><span class="tagd" style="background:#2e7dff;">US</span><span class="h">Fed minutes reveal a 'family fight' over rates</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Warsh's first meeting as chair split the committee — a few saw a case to hike, others expected cuts. Inflation risks were judged tilted up, citing tariffs and energy.</p><div class="why"><span class="wt">Committee split: hikes vs cuts</span><span class="wt">Inflation risks tilted up</span><span class="wt">Keeps 10Y ~4.6%</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
 
+    <div class="card" data-t="us" data-f="policy">
+      <div class="ct"><span class="tagd" style="background:#2e7dff;">US</span><span class="h">Traders see ~54% odds of a 2026 Fed rate hike</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Kalshi traders now price ~54% odds that the Fed's next move is a hike, not a cut, as officials stay split — a sharp reversal from the rate-cut consensus months ago.</p><div class="why"><span class="wt">Markets no longer assume cuts</span><span class="wt">Higher-for-longer hits valuations</span><span class="wt">Raises bank funding costs</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/09/kalshi-traders-see-roughly-50percent-odds-of-a-rate-hike-in-2026-as-fed-is-split-on-policy.html" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="us" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#2e7dff;">US</span><span class="h">'Magnificent 7' loses its swagger as the AI trade broadens</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">The seven megacap tech leaders have shed trillions this month as investors scrutinise their vast AI spending, rotating instead into chipmakers and cheaper corners of the market.</p><div class="why"><span class="wt">AI-capex scrutiny hits megacaps</span><span class="wt">Money rotates to chips &amp; value</span><span class="wt">Concentration risk in index funds</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-07/mag-7-loses-market-swagger-as-ai-trade-spreads-beyond-behemoths" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="cn" data-f="policy">
+      <div class="ct"><span class="tagd" style="background:#e11d63;">CN</span><span class="h">PBOC vows flexibility as recovery stays uneven</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">The PBOC kept an accommodative stance while stressing flexibility, noting AI, hi-tech and exports outperform while consumption lags. It stopped short of promising cuts.</p><div class="why"><span class="wt">Accommodative, no cut promise</span><span class="wt">Shapes Asia borrowing costs</span><span class="wt">Easing would lift bank lending</span></div><div class="srcline"><span class="src">SCMP</span><a class="rd" href="https://www.scmp.com/economy/china-economy/article/3359942/chinas-central-bank-vows-flexible-approach-it-acknowledges-uneven-economic-picture" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="cn" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#e11d63;">CN</span><span class="h">China's central bank buys the most gold since 2023</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">The PBOC added more gold in June — its biggest buy since October 2023 and a 20-month streak — even with bullion near records, reflecting a drive to diversify from the dollar.</p><div class="why"><span class="wt">Dollar-diversification signal</span><span class="wt">Underpins gold's record run</span><span class="wt">Part of de-dollarisation</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-07/china-s-pboc-buys-most-gold-since-2023-as-bullion-swings" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="cn" data-f="tech">
+      <div class="ct"><span class="tagd" style="background:#e11d63;">CN</span><span class="h">DeepSeek moves to build its own AI chip</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Chinese AI startup DeepSeek is developing its own inference chip, running on domestic silicon; its V4 model was post-trained on Huawei Ascend chips — a self-reliance milestone.</p><div class="why"><span class="wt">Cuts reliance on US chips</span><span class="wt">Could redraw supply chains</span><span class="wt">Risk to Nvidia's China sales</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="gm" data-f="markets">
+      <div class="ct"><span class="tagd" style="background:#0bb5b0;">GLBL</span><span class="h">Asia rallies as Japan and Korea chip stocks jump</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">On 10 July Japan's Nikkei rose 1.2% and Korea's Kospi surged 2.5% — enough to trigger a buy-side sidecar. Samsung gained 2%+ and SK Hynix firmed ahead of its US debut.</p><div class="why"><span class="wt">Chip demand lifts Asian indices</span><span class="wt">Sentiment swings fast</span><span class="wt">Risk appetite broadening</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="uae" data-f="energy">
+      <div class="ct"><span class="tagd" style="background:#1f9d55;">UAE</span><span class="h">UAE oil output hits a record high in June</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">The UAE pumped a record 4.1m barrels a day in June, the IEA said — the boldest Gulf response to Iran-conflict disruption. Oil revenue feeds its vast sovereign wealth funds.</p><div class="why"><span class="wt">Record output flexes spare capacity</span><span class="wt">Boosts sovereign-fund firepower</span><span class="wt">Fuels Abu Dhabi dealmaking</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-10/uae-s-oil-output-hit-record-high-in-june-iea-says" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="tech" data-f="tech">
+      <div class="ct"><span class="tagd" style="background:#7a5cff;">TECH</span><span class="h">SK Hynix soars 13% in blockbuster Nasdaq debut</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">SK Hynix, the top maker of high-bandwidth AI memory, surged ~13% above its offer price on its Nasdaq debut Friday. Runaway HBM demand has triggered a global memory shortage.</p><div class="why"><span class="wt">Memory is a key AI bottleneck</span><span class="wt">Investors still paying up</span><span class="wt">Fresh US proxy for the AI cycle</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-09/stock-market-today-dow-s-p-live-updates" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="tech" data-f="tech">
+      <div class="ct"><span class="tagd" style="background:#7a5cff;">TECH</span><span class="h">Chip stocks rebound as traders bet on a Nvidia rally</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Semis bounced this week, the iShares Semiconductor ETF up 5%+ on 9 July on strong hyperscaler AI demand. ASML, Besi and STMicro all gained after a wobbly quarter start.</p><div class="why"><span class="wt">Chips are the momentum engine</span><span class="wt">Volatility cuts both ways</span><span class="wt">Hyperscaler demand underpins AI</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/07/as-chip-sector-takes-it-on-the-chin-traders-bet-on-a-big-nvidia-rally-.html" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="tech" data-f="tech">
+      <div class="ct"><span class="tagd" style="background:#7a5cff;">TECH</span><span class="h">Micron to invest up to $3bn in US chip supply chain</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Micron will invest up to $3bn to strengthen the US semiconductor supply chain, sending shares up 7%+. The move fits a reshoring push amid tariff and security pressures.</p><div class="why"><span class="wt">Reshoring reshapes supply chains</span><span class="wt">Rewards memory makers</span><span class="wt">Fits "make at home" trend</span></div><div class="srcline"><span class="src">CNBC</span><a class="rd" href="https://www.cnbc.com/2026/07/08/stock-market-today-live-updates.html" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="card" data-t="crypto" data-f="crypto">
+      <div class="ct"><span class="tagd" style="background:#f7931a;">₿</span><span class="h">Bitcoin slides to a 21-month low on selling and rate fears</span><span class="arw">›</span></div>
+      <div class="det"><div class="din"><p class="sm">Bitcoin fell to a 21-month low, off 45%+ from October's peak, on rate-hike fears and selling by Strategy (Saylor). An Eric Trump-linked bet reportedly lost ~$600m; ether and XRP fell harder.</p><div class="why"><span class="wt">Deep drawdown = volatility</span><span class="wt">Rate fears hit risk assets</span><span class="wt">Matters for funds holding crypto</span></div><div class="srcline"><span class="src bb">Bloomberg</span><a class="rd" href="https://www.bloomberg.com/news/articles/2026-07-01/bitcoin-falls-to-21-month-low-on-strategy-rate-hike-fears" target="_blank" rel="noopener">Read →</a></div></div></div>
+    </div>
+
+    <div class="empty" id="empty">No stories match — try another filter.</div>
+  </div>
+</main>
+
+<footer class="wrap">
+  Sources: Bloomberg · CNBC · SCMP · The Standard · HKMA<br>
+  Last updated <strong>12 Jul 2026</strong> · Tap a story to expand, or the headline link to open the source.
+</footer>
+
+<script>
+(function(){
+  var tab="all", fil="all";
+  var pulses={
+    all:["up","● Good","Markets are mostly up — shares near highs and Asia climbing — but a divided Fed and reliance on a few tech names keep investors watchful."],
+    top:["up","● Good","The day's biggest moves: record highs on Wall Street, a stronger Chinese yuan, and a landmark approval bringing crypto into banking."],
+    hk:["up","● Good","A good day — stocks steady as worries over new share supply ease and fresh yuan measures land, though weak office property still drags on banks."],
+    us:["mid","● Steady","A tug-of-war — shares sit near record highs, but a split Fed and stubborn inflation have traders bracing for possible rate rises."],
+    cn:["mid","● Steady","A mixed picture — officials stay supportive without cutting rates, keep buying gold to rely less on the dollar, and back home-made chips."],
+    gm:["up","● Good","Gains are spreading — Asian and European shares strengthen — even as oil prices stay jumpy on Middle East news."],
+    uae:["up","● Good","A strong day — record oil output and big state-fund moves show Gulf money making waves in global markets."],
+    tech:["up","● Good","Bouncing back — chip and AI stocks recover on solid demand, with fresh US investment and hot new listings in focus."],
+    crypto:["dn","● Weak","A rough patch — bitcoin is weak on worries about interest rates and heavy selling, with a longer-term tech threat adding to the nerves."]
+  };
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var pmood=document.getElementById('pmood'), ptext=document.getElementById('ptext');
+  function apply(){
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=(tab==="all"||c.dataset.t===tab)&&(fil==="all"||c.dataset.f===fil);
+      c.style.display=ok?"block":"none"; if(ok)shown++;
+    });
+    document.getElementById('empty').style.display=shown?"none":"block";
+    var p=pulses[tab]||pulses.all;
+    pmood.className="m "+p[0]; pmood.textContent=p[1]; ptext.textContent=p[2];
+  }
+  document.getElementById('tabs').addEventListener('click',function(e){
+    var b=e.target.closest('.tab'); if(!b)return;
+    tab=b.dataset.t;
+    document.querySelectorAll('#tabs .tab').forEach(function(x){x.classList.toggle('on',x===b);});
+    apply();
+  });
+  document.getElementById('fil').addEventListener('click',function(e){
+    var b=e.target.closest('.f'); if(!b)return;
+    fil=b.dataset.f;
+    document.querySelectorAll('#fil .f').forEach(function(x){x.classList.toggle('on',x===b);});
+    apply();
+  });
+  cards.forEach(function(c){
+    c.addEventListener('click',function(e){
+      if(e.target.closest('.rd'))return;
+      c.classList.toggle('open');
+    });
+  });
+  document.querySelectorAll('[data-jump]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var t=a.getAttribute('data-jump');
+      var btn=document.querySelector('#tabs .tab[data-t="'+t+'"]');
+      if(btn){btn.click(); document.querySelector('.navbar').scrollIntoView({behavior:'smooth'});}
+    });
+  });
+})();
+</script>
 </body>
 </html>
