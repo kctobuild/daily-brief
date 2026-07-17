@@ -153,7 +153,7 @@
     <p class="kicker">Good morning ☕️</p>
     <h1 class="title">Your Daily Brief</h1>
     <p class="date-line" id="dateLine">Friday 17 July 2026</p>
-    <span class="readpill" id="readPill">≈ 6-min read · 20 stories · fresh (last 24–48h)</span>
+    <span class="readpill" id="readPill">≈ 6-min read · 20 stories · fresh (last 24–96h)</span>
   </header>
 
   <div class="section-label">3 things to know today</div>
@@ -173,7 +173,7 @@
   <div class="empty" id="emptyState" style="display:none;">No stories match this filter combination.</div>
 
   <footer>
-    Sources: Bloomberg, CNBC, HKMA (Hong Kong Monetary Authority).<br>
+    Sources: Bloomberg, CNBC, SCMP, HKMA (Hong Kong Monetary Authority).<br>
     Last updated: Friday 17 July 2026, Hong Kong time.
   </footer>
 </div>
@@ -256,26 +256,26 @@ const STORIES = [
     link:"https://www.bloomberg.com/news/articles/2026-07-15/stock-market-today-dow-s-p-live-updates"
   },
   {
-    id:4, cat:"hk", topic:"banking", source:"HKMA",
-    headline:"HKMA, PBOC and SFC back new Hong Kong fixed-income trading platform",
-    summary:"The HKMA, PBOC and SFC jointly welcomed plans for HKEX and the mainland's CFETS to build a new electronic fixed-income and currency trading platform in Hong Kong. The platform aims to deepen cross-border bond and currency trading links. It builds on Hong Kong's role as the main offshore yuan hub.",
+    id:4, cat:"hk", topic:"policy", source:"HKMA",
+    headline:"HKMA sets July 22 tender for 3-, 7- and 20-year government bonds",
+    summary:"The HKMA announced tenders for 3-year, 7-year and 20-year HKD HKSAR Institutional Government Bonds, to be held through re-openings on Wednesday, July 22. The bonds are part of Hong Kong's ongoing programme to build out its local-currency debt market. Institutional investors will be able to bid across all three maturities.",
     why:[
-      "Banking: A new FIC platform expands trading infrastructure for HK-based banks handling offshore RMB flows.",
-      "Finance: Deeper bond-market connectivity could draw more international capital into mainland debt via Hong Kong.",
-      "Hong Kong: Reinforces the city's positioning as the bridge between mainland and global capital markets."
+      "Banking: Regular bond tenders give local banks a reliable pipeline of HKD-denominated assets for liquidity management.",
+      "Finance: A deeper government bond curve supports pricing benchmarks for corporate and institutional debt issuance.",
+      "Hong Kong: Reinforces Hong Kong's ambition to build a robust local-currency bond market alongside its offshore RMB business."
     ],
-    link:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-8/"
+    link:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260716-7/"
   },
   {
-    id:5, cat:"hk", topic:"banking", source:"HKMA",
-    headline:"HKMA expands RMB facility by 150% to RMB500 billion",
-    summary:"The HKMA lifted its RMB Business Facility quota from RMB200 billion to RMB500 billion, effective July 10. New 9-month, 2-year and 3-year tenors were added to the facility. The move responds to rising demand for offshore yuan liquidity among banks.",
+    id:5, cat:"hk", topic:"markets", source:"SCMP",
+    headline:"Goldman Sachs backs HKEX with a 'buy' rating on Beijing's policy support",
+    summary:"Goldman Sachs reaffirmed a buy rating on Hong Kong Exchanges and Clearing, citing tailwinds from Beijing's policy support and strong northbound trading. Analysts pointed to foreign interest in China's AI stocks as a key driver. The call comes even though HKEX shares are down about 5% this year, roughly in line with the Hang Seng Index.",
     why:[
-      "Banking: Larger facility gives HK banks more room to manage offshore RMB liquidity and funding costs.",
-      "Finance: Longer tenors support banks writing longer-duration yuan-denominated products.",
-      "Hong Kong: Cements Hong Kong's role as the largest offshore renminbi liquidity pool outside the mainland."
+      "Finance: A bullish call on HKEX signals confidence in Hong Kong's trading-volume and revenue outlook for the second half.",
+      "Banking: Higher turnover expectations benefit brokerages, custodians and clearing members active on the exchange.",
+      "Hong Kong: Positions Hong Kong as a prime beneficiary of global investor appetite for mainland AI-related equities."
     ],
-    link:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-3/"
+    link:"https://www.scmp.com/business/markets/article/3360753/goldman-sachs-backs-hkex-buy-rating-citing-beijings-policy-support-ai-stock-boost"
   },
   {
     id:6, cat:"hk", topic:"banking", source:"HKMA",
@@ -289,15 +289,15 @@ const STORIES = [
     link:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260714-5/"
   },
   {
-    id:7, cat:"hk", topic:"policy", source:"HKMA",
-    headline:"HKMA chief responds to PBoC's new cross-border measures",
-    summary:"HKMA's Chief Executive commented on new measures announced by PBoC Governor Pan Gongsheng to deepen financial cooperation between the mainland and Hong Kong. The remarks followed a raft of announcements on bond, currency and trading-platform initiatives. Officials framed the steps as reinforcing Hong Kong's role as a superconnector.",
+    id:7, cat:"hk", topic:"banking", source:"Bloomberg",
+    headline:"DBS targets $775 billion in wealth and retail assets with new hires",
+    summary:"DBS is aiming to grow its wealth and retail assets to roughly $775 billion as money flows into Asia's private banking hubs, including Hong Kong. The bank is adding senior hires to build out the business. The push reflects intensifying competition among regional lenders for affluent client assets.",
     why:[
-      "Hong Kong: Signals continued mainland policy support for Hong Kong's international financial centre status.",
-      "Banking: More cross-border channels typically translate into new product and clearing opportunities for local banks.",
-      "Finance: Coordinated mainland-HK policy reduces regulatory friction for cross-border capital flows."
+      "Banking: Signals aggressive competition among regional banks, including in Hong Kong, for private wealth clients.",
+      "Finance: A large asset target underscores how much capital is flowing into Asian wealth management right now.",
+      "Hong Kong: Hong Kong remains a key battleground for wealth hires as banks chase Greater Bay Area and mainland money."
     ],
-    link:"https://www.hkma.gov.hk/eng/news-and-media/speeches/2026/07/20260707-1/"
+    link:"https://www.bloomberg.com/news/articles/2026-07-15/dbs-targets-773-billion-in-wealth-assets-as-money-flows-surge"
   },
   {
     id:8, cat:"hk", topic:"markets", source:"CNBC",
