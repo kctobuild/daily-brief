@@ -14,484 +14,609 @@
     --ink:#141a26;
     --sub:#6b7280;
     --card:#ffffff;
-    --border:#eceff4;
-    --shadow:0 1px 2px rgba(20,26,38,0.04),0 4px 14px rgba(20,26,38,0.06);
-    --blue-light:#eaf2ff;
-    --blue-border:#3b82f6;
-    --c-top:#f59e0b;
-    --c-hk:#ef4444;
-    --c-us:#3b82f6;
-    --c-china:#be123c;
-    --c-global:#0d9488;
-    --c-uae:#059669;
-    --c-tech:#8b5cf6;
-    --c-crypto:#f97316;
+    --shadow:0 1px 2px rgba(20,26,38,0.04), 0 4px 14px rgba(20,26,38,0.06);
+    --shadow-sm:0 1px 3px rgba(20,26,38,0.06);
+    --top:#f59e0b;
+    --hk:#ef4444;
+    --us:#3b82f6;
+    --china:#b91c1c;
+    --global:#14b8a6;
+    --uae:#10b981;
+    --tech:#8b5cf6;
+    --crypto:#f97316;
     --good:#16a34a;
     --steady:#d97706;
     --weak:#dc2626;
+    --bloomberg-bg:#fdf3d8;
+    --bloomberg-ink:#92720b;
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,sans-serif;
+    padding-top:env(safe-area-inset-top);
+    padding-bottom:env(safe-area-inset-bottom);
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
     -webkit-font-smoothing:antialiased;
-    padding-bottom:calc(28px + env(safe-area-inset-bottom));
   }
-  .wrap{max-width:520px;margin:0 auto;padding:0 16px;}
-  header.hero{
-    padding-top:calc(20px + env(safe-area-inset-top));
-    padding-bottom:4px;
-  }
+  a{color:inherit;}
+  .wrap{max-width:520px;margin:0 auto;padding:0 16px 40px;}
+
+  /* Header */
+  header.hero{padding:18px 0 12px;}
   .kicker{font-size:14px;color:var(--sub);font-weight:600;margin:0 0 2px;}
-  h1.title{font-size:26px;line-height:1.15;margin:0 0 6px;font-weight:800;letter-spacing:-0.02em;}
-  .datestr{font-size:14px;color:var(--sub);margin:0 0 10px;font-weight:500;}
-  .readpill{
+  h1.title{font-size:26px;font-weight:800;margin:0 0 4px;letter-spacing:-0.02em;}
+  .date-line{font-size:14px;color:var(--sub);margin:0 0 12px;}
+  .readtime-pill{
     display:inline-flex;align-items:center;gap:6px;
-    background:#fff;border:1px solid var(--border);
-    padding:6px 12px;border-radius:999px;font-size:12.5px;color:var(--sub);
-    font-weight:600;box-shadow:var(--shadow);margin-bottom:18px;
+    background:#fff;border:1px solid #e8ebf1;border-radius:999px;
+    padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--sub);
+    box-shadow:var(--shadow-sm);
   }
 
-  .section-label{
-    font-size:12px;text-transform:uppercase;letter-spacing:0.06em;
-    color:var(--sub);font-weight:700;margin:18px 2px 8px;
-  }
-
-  .know-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px;}
+  /* 3 things to know */
+  .section-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--sub);margin:22px 0 10px;}
+  .know-list{display:flex;flex-direction:column;gap:8px;}
   .know-card{
-    background:var(--card);border-radius:14px;padding:10px 8px;
-    box-shadow:var(--shadow);text-align:left;border:1px solid var(--border);
-    cursor:pointer;-webkit-user-select:none;user-select:none;
+    display:flex;align-items:center;gap:12px;
+    background:var(--card);border-radius:14px;padding:12px 14px;
+    box-shadow:var(--shadow-sm);cursor:pointer;border:1px solid #eef0f5;
   }
-  .know-card svg{width:20px;height:20px;margin-bottom:6px;display:block;}
-  .know-card p{font-size:11.5px;line-height:1.35;margin:0;font-weight:600;color:var(--ink);}
+  .know-card:active{transform:scale(0.98);}
+  .know-icon{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:#fff7e8;display:flex;align-items:center;justify-content:center;
+  }
+  .know-icon svg{width:18px;height:18px;}
+  .know-text{font-size:14.5px;font-weight:600;line-height:1.35;}
 
-  .snap-wrap{margin-top:16px;}
-  .snap-label{font-size:11px;color:var(--sub);font-weight:600;margin:0 2px 8px;}
+  /* Snapshot */
+  .snapshot-head{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 10px;}
+  .snapshot-note{font-size:11.5px;color:var(--sub);font-weight:600;}
   .snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
   .snap-tile{
-    background:var(--card);border-radius:12px;padding:9px 6px;
-    box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;
+    background:var(--card);border-radius:12px;padding:9px 6px;text-align:center;
+    box-shadow:var(--shadow-sm);border:1px solid #eef0f5;
   }
-  .snap-tile .lbl{font-size:9.5px;color:var(--sub);font-weight:700;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:3px;}
-  .snap-tile .val{font-size:14px;font-weight:800;color:var(--ink);}
-  .snap-tile .chg{font-size:10.5px;font-weight:700;margin-top:2px;}
-  .chg.up{color:var(--good);}
-  .chg.down{color:var(--weak);}
+  .snap-label{font-size:10px;color:var(--sub);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:3px;}
+  .snap-value{font-size:14px;font-weight:800;line-height:1.15;}
+  .snap-change{font-size:10.5px;font-weight:700;margin-top:2px;}
+  .up{color:var(--good);}
+  .down{color:var(--weak);}
+  .flat{color:var(--steady);}
 
-  .navsticky{
+  /* Sticky nav */
+  .sticky-nav{
     position:sticky;top:0;z-index:20;background:var(--bg);
-    padding-top:14px;margin-top:16px;
-    border-bottom:1px solid transparent;
+    padding-top:10px;margin:0 -16px;padding-left:16px;padding-right:16px;
+    border-bottom:1px solid #e8ebf1;
   }
-  .navsticky.scrolled{background:rgba(245,247,251,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
-  .tabs{
-    display:flex;gap:6px;overflow-x:auto;padding:2px 2px 10px;
-    scrollbar-width:none;-ms-overflow-style:none;
+  .tab-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
+  .tab-row::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;border:1.5px solid transparent;background:#fff;
+    border-radius:999px;padding:7px 13px;font-size:13px;font-weight:700;
+    white-space:nowrap;cursor:pointer;box-shadow:var(--shadow-sm);
   }
-  .tabs::-webkit-scrollbar{display:none;}
-  .tab{
-    flex:0 0 auto;font-size:13px;font-weight:700;padding:7px 13px;
-    border-radius:999px;background:transparent;border:1.5px solid transparent;
-    white-space:nowrap;cursor:pointer;-webkit-user-select:none;user-select:none;
-  }
-  .tab[data-tab="all"]{color:var(--ink);border-color:#dfe3ea;}
-  .tab[data-tab="all"].active{background:var(--ink);color:#fff;border-color:var(--ink);}
-
-  .filters{
-    display:flex;gap:6px;overflow-x:auto;padding:0 2px 12px;
-    scrollbar-width:none;-ms-overflow-style:none;
-  }
-  .filters::-webkit-scrollbar{display:none;}
+  .tab-btn.active{color:#fff !important;border-color:transparent;}
+  .filter-row{display:flex;gap:6px;overflow-x:auto;padding:0 0 10px;scrollbar-width:none;}
+  .filter-row::-webkit-scrollbar{display:none;}
   .chip{
-    flex:0 0 auto;font-size:12px;font-weight:600;padding:6px 11px;
-    border-radius:999px;background:#fff;border:1px solid var(--border);
-    color:var(--sub);cursor:pointer;-webkit-user-select:none;user-select:none;
+    flex:0 0 auto;border:1px solid #e2e5ec;background:#fff;color:var(--sub);
+    border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;
   }
   .chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 
+  /* Pulse banner */
   .pulse{
-    display:flex;align-items:center;gap:8px;background:#fff;
-    border:1px solid var(--border);border-radius:12px;padding:10px 12px;
-    margin:0 0 14px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:8px;margin:12px 0 4px;
+    background:#fff;border-radius:12px;padding:10px 14px;box-shadow:var(--shadow-sm);
+    border:1px solid #eef0f5;
   }
-  .pulse .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
-  .pulse .moodword{font-size:13px;font-weight:800;flex:0 0 auto;}
-  .pulse .pulsetext{font-size:12.5px;color:var(--sub);font-weight:500;}
+  .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+  .dot.good{background:var(--good);}
+  .dot.steady{background:var(--steady);}
+  .dot.weak{background:var(--weak);}
+  .pulse-word{font-weight:800;font-size:13.5px;}
+  .pulse-text{font-size:13px;color:var(--sub);}
 
-  .cards{display:flex;flex-direction:column;gap:10px;}
+  /* Cards */
+  .cards{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
   .card{
     background:var(--card);border-radius:16px;padding:14px 14px 12px;
-    box-shadow:var(--shadow);border:1px solid var(--border);cursor:pointer;
+    box-shadow:var(--shadow);border:1px solid #eef0f5;cursor:pointer;
   }
+  .card-top{display:flex;flex-direction:column;gap:6px;}
   .cat-tag{
-    display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;
-    letter-spacing:0.04em;padding:3px 9px;border-radius:999px;margin-bottom:8px;
+    display:inline-flex;align-self:flex-start;font-size:10.5px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.04em;padding:3px 8px;border-radius:6px;
   }
-  .headline{font-size:16px;line-height:1.32;font-weight:750;margin:0 0 8px;color:var(--ink);letter-spacing:-0.01em;}
+  .headline{font-size:16px;font-weight:750;line-height:1.32;margin:2px 0 2px;}
   .source-pill{
-    display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;
-    padding:3px 10px;border-radius:999px;background:#f0f2f6;color:#4b5563;
-    margin-bottom:2px;
+    display:inline-flex;align-self:flex-start;align-items:center;gap:5px;
+    font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;
+    background:#f1f3f8;color:#4b5568;margin-bottom:2px;
   }
-  .source-pill.bloomberg{background:#fdf3d9;color:#8a6d1a;}
-
+  .source-pill.bloomberg{background:var(--bloomberg-bg);color:var(--bloomberg-ink);}
   .detail{
     max-height:0;overflow:hidden;transition:max-height 0.28s ease;
   }
-  .card.open .detail{max-height:900px;}
-  .detail-inner{padding-top:10px;}
-  .summary{font-size:13.5px;line-height:1.55;color:#333a48;margin:0 0 10px;}
+  .card.expanded .detail{max-height:600px;}
+  .detail-inner{padding-top:8px;}
+  .summary{font-size:13.8px;line-height:1.55;color:#2b3242;margin:0 0 10px;}
   .why{
-    background:var(--blue-light);border-left:3px solid var(--blue-border);
-    border-radius:8px;padding:10px 12px;margin-bottom:10px;
+    background:#eaf3fd;border-left:3px solid #3b82f6;border-radius:8px;
+    padding:10px 12px;margin-bottom:10px;
   }
-  .why-label{
-    font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;
-    color:#2f5fb0;margin:0 0 6px;
-  }
+  .why-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:#2563a8;margin-bottom:6px;}
   .why ul{margin:0;padding-left:16px;}
-  .why li{font-size:12.5px;line-height:1.5;color:#2c3550;margin-bottom:5px;}
+  .why li{font-size:13px;line-height:1.5;color:#1e3a5f;margin-bottom:5px;}
   .why li:last-child{margin-bottom:0;}
-  .readmore{
-    display:inline-block;font-size:13px;font-weight:700;color:#1d4ed8;
-    text-decoration:none;
+  .read-link{
+    display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;
+    color:#2563eb;text-decoration:none;
   }
-  .expand-hint{font-size:11px;color:var(--sub);font-weight:600;margin-top:2px;}
+  .chevron{margin-left:auto;font-size:12px;color:#c3c8d3;transition:transform 0.2s ease;}
+  .card.expanded .chevron{transform:rotate(180deg);}
+  .card-head-row{display:flex;align-items:flex-start;}
+  .card-head-row .headline{flex:1;}
 
-  .empty-note{
-    text-align:center;color:var(--sub);font-size:13px;padding:30px 10px;
-    background:#fff;border-radius:14px;border:1px dashed var(--border);
+  .empty-state{
+    text-align:center;padding:36px 16px;color:var(--sub);font-size:14px;
+    background:#fff;border-radius:14px;border:1px dashed #dbe0ea;
   }
 
-  footer{margin-top:26px;padding:16px 2px 6px;border-top:1px solid var(--border);}
-  footer p{font-size:11.5px;color:var(--sub);line-height:1.6;margin:0 0 4px;}
-  footer .updated{font-weight:700;color:#4b5563;}
+  footer{margin-top:28px;padding-top:16px;border-top:1px solid #e8ebf1;}
+  .footer-sources{font-size:12px;color:var(--sub);line-height:1.6;margin:0 0 6px;}
+  .footer-updated{font-size:11.5px;color:#9aa1af;margin:0;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="hero">
-    <p class="kicker">Good morning &#9749;&#65039;</p>
+    <p class="kicker">Good morning ☕️</p>
     <h1 class="title">Your Daily Brief</h1>
-    <p class="datestr" id="headerDate">Saturday, 18 July 2026</p>
-    <div class="readpill" id="readPill">&#8776; 9-min read &middot; 20 stories &middot; fresh (24&ndash;48h)</div>
+    <p class="date-line" id="headerDate">Monday 20 July 2026</p>
+    <span class="readtime-pill" id="readtimePill">≈ 7-min read · 20 stories · fresh (last 24h)</span>
   </header>
 
-  <div class="section-label">3 things to know today</div>
-  <div class="know-grid" id="knowGrid"></div>
+  <p class="section-label">3 things to know today</p>
+  <div class="know-list" id="knowList"></div>
 
-  <div class="snap-wrap">
-    <p class="snap-label">Snapshot at last close</p>
-    <div class="snap-grid" id="snapGrid"></div>
+  <div class="snapshot-head">
+    <p class="section-label" style="margin:0;">Market snapshot</p>
+    <span class="snapshot-note">Snapshot at last close</span>
+  </div>
+  <div class="snap-grid" id="snapGrid"></div>
+
+  <div class="sticky-nav">
+    <div class="tab-row" id="tabRow"></div>
+    <div class="filter-row" id="filterRow"></div>
   </div>
 
-  <div class="navsticky" id="navSticky">
-    <div class="tabs" id="tabsRow"></div>
-    <div class="filters" id="filtersRow"></div>
-    <div class="pulse" id="pulseBanner">
-      <span class="dot" id="pulseDot"></span>
-      <span class="moodword" id="pulseWord"></span>
-      <span class="pulsetext" id="pulseText"></span>
-    </div>
+  <div class="pulse" id="pulseBanner">
+    <span class="dot" id="pulseDot"></span>
+    <span class="pulse-word" id="pulseWord"></span>
+    <span class="pulse-text" id="pulseText"></span>
   </div>
 
-  <div class="cards" id="cardsList"></div>
-  <div class="empty-note" id="emptyNote" style="display:none;">No stories match this filter right now. Try a different topic or tab.</div>
+  <div class="cards" id="cardsContainer"></div>
 
   <footer>
-    <p class="updated">Last updated: 18 July 2026, Hong Kong time</p>
-    <p>Sources: Bloomberg &middot; CNBC &middot; South China Morning Post &middot; The Standard &middot; HKMA &middot; official government releases</p>
+    <p class="footer-sources">Sources: Bloomberg, CNBC, SCMP, The Standard, HKMA and other official Hong Kong / US / China sources.</p>
+    <p class="footer-updated">Last updated: Monday 20 July 2026 (Hong Kong time)</p>
   </footer>
 
 </div>
 
 <script>
-/* ---------- DATA ---------- */
 const CATS = {
-  top:   {label:"Top",       tabLabel:"&#9733; Top", color:"var(--c-top)"},
-  hk:    {label:"Hong Kong", tabLabel:"Hong Kong",    color:"var(--c-hk)"},
-  us:    {label:"US",        tabLabel:"US",           color:"var(--c-us)"},
-  china: {label:"China",     tabLabel:"China",        color:"var(--c-china)"},
-  global:{label:"Global",    tabLabel:"Global",       color:"var(--c-global)"},
-  uae:   {label:"UAE",       tabLabel:"UAE",          color:"var(--c-uae)"},
-  tech:  {label:"Tech/AI",   tabLabel:"Tech/AI",      color:"var(--c-tech)"},
-  crypto:{label:"Crypto",    tabLabel:"Crypto",       color:"var(--c-crypto)"}
+  all:    {label:"All",        color:"#141a26"},
+  top:    {label:"★ Top",      color:"#f59e0b"},
+  hk:     {label:"Hong Kong",  color:"#ef4444"},
+  us:     {label:"US",         color:"#3b82f6"},
+  china:  {label:"China",      color:"#b91c1c"},
+  global: {label:"Global",     color:"#14b8a6"},
+  uae:    {label:"UAE",        color:"#10b981"},
+  tech:   {label:"Tech/AI",    color:"#8b5cf6"},
+  crypto: {label:"Crypto",     color:"#f97316"}
 };
-const TOPICS = ["markets","banking","policy","tech","crypto","energy"];
 
-const PULSES = {
-  all:    {mood:"weak",   text:"Markets sold off broadly as chip-stock jitters and rising oil prices weighed on sentiment."},
-  top:    {mood:"weak",   text:"The day's biggest stories centered on a chip-driven global market rout."},
-  hk:     {mood:"weak",   text:"Hong Kong shares slipped alongside the region-wide tech pullback."},
-  us:     {mood:"weak",   text:"Wall Street closed out its roughest week since spring."},
-  china:  {mood:"steady", text:"Sentiment stayed mixed between strong IPO demand and trade friction."},
-  global: {mood:"weak",   text:"Rising oil prices and Gulf tensions kept risk appetite in check."},
-  uae:    {mood:"steady", text:"Abu Dhabi's markets stayed calm even as trading infrastructure expanded."},
-  tech:   {mood:"steady", text:"AI leaders kept investing even as one high-profile model launch slipped."},
-  crypto: {mood:"weak",   text:"Bitcoin drifted lower in step with the broader risk-off mood."}
+const TOPICS = ["all","markets","banking","policy","tech","crypto","energy"];
+
+const PULSE = {
+  all:    {mood:"steady", text:"Mixed day — Hong Kong and China firm, US and tech jittery on chip and geopolitical risk."},
+  top:    {mood:"steady", text:"Big swings across the board — Asia strength offset by AI-driven tech jitters and Gulf tension."},
+  hk:     {mood:"good",   text:"Stocks, listings and home sales all trending up across the city today."},
+  us:     {mood:"steady", text:"Cooler inflation offset by rate-hawk talk and geopolitical strain."},
+  china:  {mood:"good",   text:"State support and fresh liquidity are steadying sentiment after last week's rout."},
+  global: {mood:"steady", text:"Choppy trading as chip-sector jitters ripple from Wall Street into Europe."},
+  uae:    {mood:"good",   text:"Deepening ties with China and a strong quarter keep the mood upbeat."},
+  tech:   {mood:"steady", text:"Rapid-fire AI model releases are exciting investors and rattling chip stocks in the same breath."},
+  crypto: {mood:"weak",   text:"Prices remain under pressure with sentiment still fragile after months of declines."}
 };
 
 const STORIES = [
-  {id:"t1",cat:"top",topic:"markets",headline:"Chip stocks sink into bear market as blistering AI rally fizzles",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/chips-stocks-tumble-into-bear-market-as-105-ai-rally-fizzles",
-   summary:"The Philadelphia Semiconductor Index has now fallen more than 20% from its late-June record, meeting the technical definition of a bear market. Chipmakers had surged 105% between March and June on AI optimism before the reversal. Nvidia, Micron and Arm led the retreat as investors questioned whether AI infrastructure spending can keep generating returns.",
-   why:["Banking: Trading desks and margin books tied to leveraged chip-stock positions face fresh volatility and potential forced unwinds.","Finance: Pension funds and index trackers heavily weighted toward top AI names are absorbing outsized portfolio losses.","AI: A sustained pullback could slow the capital available for next-generation data-center buildouts across the industry."]},
-  {id:"t2",cat:"top",topic:"tech",headline:"Moonshot AI's Kimi K3 stuns markets, becomes trigger for global tech-stock rout",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/what-is-moonshot-ai-why-china-s-new-model-is-roiling-markets",
-   summary:"Beijing-based Moonshot AI released Kimi K3, a 2.8-trillion-parameter model that rivals top offerings from OpenAI and Anthropic at roughly half the cost. The surprise breakthrough echoed last year's 'DeepSeek moment' and rattled investors betting on US AI dominance. Nasdaq 100 futures and the Bloomberg Asia Semiconductor Index both dropped sharply on the news.",
-   why:["AI: A credible low-cost Chinese rival narrows the gap with US frontier labs and pressures pricing across the industry.","Finance: Investors are re-pricing the assumption that heavy US AI capex will translate into durable competitive moats.","Banking: Analysts are cutting price targets on AI infrastructure names most exposed to a spending slowdown."]},
-  {id:"t3",cat:"top",topic:"policy",headline:"Xi Jinping pitches China as global AI leader, unveils new international cooperation body",source:"CNBC",url:"https://www.cnbc.com/2026/07/17/x-china-ai-summit-risks-security.html",
-   summary:"President Xi Jinping used China's flagship AI summit to position Beijing as a partner for the developing world, pledging 5,000 AI training opportunities over five years. A new intergovernmental body, the World AI Cooperation Organisation, formally launched with 29 founding members including Brazil, Indonesia and Russia. Xi called for AI development to be 'a symphony of international cooperation,' not a single-country solo performance.",
-   why:["Policy: A China-led AI governance bloc could split global standards away from US- and EU-aligned frameworks.","Hong Kong: The city's position as a China-facing financial and tech hub gains relevance as Beijing expands AI diplomacy.","AI: Broader international buy-in could accelerate AI adoption across Global South markets outside Silicon Valley's orbit."]},
-
-  {id:"h1",cat:"hk",topic:"markets",headline:"Hong Kong stocks' discount to mainland peers widens to widest in over 10 months",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/hong-kong-stocks-discount-to-china-widens-on-liquidity-pressure",
-   summary:"The valuation gap between Hong Kong-listed shares and their mainland-listed counterparts has hit its widest point in more than 10 months. Liquidity strains and Beijing's crackdown on capital outflows are driving the divergence, even after the Hang Seng gained about 7.5% this month. Traders say the split reflects tighter cross-border money flows rather than weaker fundamentals.",
-   why:["Hong Kong: A wider valuation discount could dent the city's appeal as a bridge for mainland capital raising.","Markets: Foreign investors may find Hong Kong-listed shares cheap relative to Shanghai and Shenzhen peers.","Banking: Liquidity-constrained trading desks face thinner volumes and wider bid-ask spreads on dual-listed names."]},
-  {id:"h2",cat:"hk",topic:"markets",headline:"Michael Burry says now is a good time to bargain-hunt in Hong Kong stocks",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/michael-burry-says-good-time-to-chase-hong-kong-stock-bargains",
-   summary:"Investor Michael Burry, known for calling the 2008 housing crash, is recommending bargain hunting in Hong Kong equities. He argues the market lagged this year's global AI rally and now looks cheap relative to Korea, Japan and semiconductor peers. Burry's comments add a high-profile voice to a growing chorus eyeing Hong Kong as undervalued.",
-   why:["Finance: A prominent contrarian call could draw fresh institutional interest back to Hong Kong-listed equities.","Hong Kong: Renewed investor attention may help narrow the city's valuation gap with mainland and regional markets.","Markets: Bargain-hunting narratives often shift sentiment faster than fundamentals, adding to near-term volatility."]},
-  {id:"h3",cat:"hk",topic:"policy",headline:"US lets Hong Kong emergency declaration expire but keeps trade restrictions in place",source:"SCMP",url:"https://www.scmp.com/news/us/diplomacy/article/3361011/hong-kong-welcomes-us-move-let-national-emergency-declaration-expire",
-   summary:"Washington allowed a national emergency declaration tied to Hong Kong to lapse, a move Beijing framed as a step toward improving bilateral ties. The State Department clarified that Executive Order 13936 remains in effect, meaning Hong Kong is still treated as insufficiently autonomous for differential trade treatment. Hong Kong's government welcomed the symbolic gesture while acknowledging the underlying restrictions persist.",
-   why:["Hong Kong: The city's special trading status with the US remains constrained despite the diplomatic thaw.","Policy: Mixed signals from Washington complicate business planning for firms operating across the US-Hong Kong corridor.","Finance: Continued restrictions keep pressure on Hong Kong's role as a neutral offshore financial gateway."]},
-  {id:"h4",cat:"hk",topic:"markets",headline:"Cathay Pacific delays Middle East flights as Iran crisis resurfaces",source:"SCMP",url:"https://www.scmp.com/news/hong-kong/transport/article/3360976/cathay-pacific-delays-middle-east-flights-us-iran-tensions-resurface",
-   summary:"Cathay Pacific has postponed the resumption of direct flights to Dubai and Riyadh until late October as fighting escalates in the Gulf. The airline had planned to restart Middle East routes this year after an earlier pause. Renewed US-Iran tensions and Strait of Hormuz disruptions are forcing carriers across the region to reassess schedules.",
-   why:["Hong Kong: Delayed route recovery weighs on Cathay's earnings rebound and the city's air-cargo connectivity to the Gulf.","Markets: Airlines globally are recalibrating capacity as Middle East conflict risk stays elevated.","Banking: Insurers and lenders financing aircraft leases face longer exposure to route-suspension risk."]},
-  {id:"h5",cat:"hk",topic:"markets",headline:"Hang Seng sinks 1.8% as chip-stock rout spreads across Asia",source:"CNBC",url:"https://www.cnbc.com/2026/07/16/stock-market-today-live-updates.html",
-   summary:"Hong Kong's benchmark fell 446 points to 24,562, its steepest drop in weeks, as the Hang Seng Tech Index tumbled more than 4%. The decline tracked overnight losses on Wall Street tied to semiconductor weakness and AI-spending doubts. The Hang Seng China Enterprises Index also fell more than 2% in sympathy.",
-   why:["Hong Kong: Tech-heavy listings bore the brunt of the selloff, dragging the broader index lower.","Markets: The synchronized Asia-wide decline shows how tightly Hong Kong trading now tracks the US chip cycle.","Finance: Fund managers with concentrated tech exposure face renewed pressure to rebalance regional portfolios."]},
-
-  {id:"u1",cat:"us",topic:"markets",headline:"Netflix shares sink 11% despite topping profit estimates",source:"CNBC",url:"https://www.cnbc.com/2026/07/17/netflix-gets-price-target-cuts-from-analysts-amid-growth-concerns.html",
-   summary:"Netflix beat second-quarter earnings estimates with $0.80 per share but gave a soft forward outlook, sending shares down as much as 12%. The company also said it will cut back on the frequency of its viewership transparency reports. Analysts trimmed price targets, citing a second straight quarter of slowing subscription revenue growth.",
-   why:["Finance: The reaction shows investors are punishing growth deceleration even when headline earnings beat forecasts.","Markets: Netflix's slide adds to broader mega-cap tech weakness dragging down major indexes.","Banking: Analyst downgrades signal tightening credit and valuation scrutiny across streaming and media names."]},
-  {id:"u2",cat:"us",topic:"markets",headline:"Wall Street posts worst week since April as tech selloff deepens",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-16/stock-market-today-dow-s-p-live-updates",
-   summary:"The S&P 500 fell 1.6% and the Nasdaq slid 2.9% for the week, marking the sharpest weekly declines since April. A semiconductor-led rout combined with disappointing Netflix earnings and rising oil prices to sour sentiment. The Dow held up relatively better, down just 0.9% on the week.",
-   why:["Finance: A broad-based weekly loss signals cooling risk appetite after months of AI-driven gains.","Markets: Cross-asset stress, from chips to oil, suggests investors are reassessing multiple risks simultaneously.","Banking: Volatility spikes typically widen trading margins for banks' equity desks even as client losses mount."]},
-  {id:"u3",cat:"us",topic:"policy",headline:"US retail sales rise modestly as consumers pull back on gas spending",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-16/us-retail-sales-rise-modestly-as-consumers-spend-less-on-gas",
-   summary:"Retail sales rose 0.2% in June, undershooting forecasts of a 0.3% gain, as falling gas-station receipts masked stronger spending elsewhere. Sales excluding gasoline rose 0.7%, with e-commerce posting the biggest monthly gain among major categories. Separately, pending home sales fell 5.4% in June, pointing to a cooling housing market.",
-   why:["Finance: Resilient core spending gives the Federal Reserve room to hold rates steady near-term.","Banking: Weak pending home sales could soften mortgage origination volumes into the second half.","Markets: Mixed consumer data adds to uncertainty over the durability of US economic growth."]},
-
-  {id:"c1",cat:"china",topic:"markets",headline:"CXMT's blockbuster $9.8 billion IPO stokes fears of a China stock liquidity drain",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-16/cxmt-s-blockbuster-ipo-212-times-covered-for-retail-investors",
-   summary:"Memory chipmaker CXMT's Shanghai IPO was oversubscribed 212 times by retail investors, raising the offering to $9.8 billion. The mega-listing, set for July 27, has intensified worries that a wave of upcoming IPOs could siphon liquidity from an already pressured A-share market. Some analysts counter that strong AI-driven chip demand will offset any drain.",
-   why:["Markets: Mega-IPOs competing for capital could pressure existing A-share valuations in the near term.","Finance: Overwhelming retail demand shows Chinese investors remain eager for AI-chip exposure despite broader market jitters.","Banking: Underwriters and brokers stand to earn substantial fees from the wave of upcoming Shanghai listings."]},
-  {id:"c2",cat:"china",topic:"policy",headline:"China's AI ascendance hands Xi a stage &mdash; and a security dilemma",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-16/china-s-ai-ascendance-gives-xi-a-stage-and-a-security-dilemma",
-   summary:"China's rapid AI progress, highlighted by Moonshot's Kimi K3, is giving Beijing new diplomatic leverage even as it stirs security concerns in both Washington and China itself. The rise of homegrown models is reshaping the geopolitics of the technology race. Officials are balancing showcasing AI strength with managing the risks of a faster, less-controlled AI rollout.",
-   why:["Policy: Rising Chinese AI capability adds urgency to US export-control and chip-curb debates.","AI: Faster domestic AI development could accelerate China's push for self-sufficiency in critical technology.","Finance: Geopolitical AI competition is becoming a persistent driver of cross-border investment risk."]},
-  {id:"c3",cat:"china",topic:"policy",headline:"Germany and France to draw up roadmap on China trade imbalances",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/germany-and-france-to-draw-up-roadmap-on-china-trade-imbalances",
-   summary:"German Chancellor Friedrich Merz and French President Emmanuel Macron agreed to develop a joint roadmap addressing widening trade imbalances with China. Macron warned Europe faces an increasingly 'aggressive' trade posture from Beijing. The move follows record Chinese export growth in June, powered by chips, autos and AI-related hardware.",
-   why:["Policy: A coordinated European response could lead to new tariffs or trade barriers targeting Chinese goods.","Finance: Escalating trade friction between China and Europe adds another layer of macro uncertainty for investors.","Markets: Exporters caught between US, European and Chinese trade tensions face growing compliance complexity."]},
-
-  {id:"a1",cat:"tech",topic:"tech",headline:"TSMC posts record profit, adds $100 billion Arizona bet as AI chip demand surges",source:"CNBC",url:"https://www.cnbc.com/2026/07/16/tsmc-second-quarter-profit-.html",
-   summary:"TSMC's second-quarter profit jumped 77% to a record as AI accelerator demand pushed high-performance computing to 66% of wafer revenue. The chipmaker raised its full-year revenue growth outlook to above 40% and announced an additional $100 billion investment in Arizona. CEO C.C. Wei said advanced-node demand from AI customers remains exceptionally strong.",
-   why:["AI: Record TSMC results signal that underlying AI chip demand remains robust despite stock-market jitters.","Finance: The expanded Arizona investment deepens US-Taiwan supply-chain ties amid ongoing chip-geopolitics tension.","Markets: Strong fundamentals from the world's top foundry could help stabilize sentiment after the semiconductor selloff."]},
-  {id:"a2",cat:"tech",topic:"tech",headline:"Alphabet shares fall as Gemini 3.5 Pro delay report surfaces",source:"CNBC",url:"https://www.cnbc.com/2026/07/16/alphabet-stock-gemini-3-5-pro-ai.html",
-   summary:"Google is months behind schedule on its flagship Gemini 3.5 Pro model after engineers found structural flaws in coding and tool-calling performance. Reports indicate DeepMind scrapped a near-finished model and restarted pretraining from scratch. The setback raises concern inside Google that rivals Anthropic and OpenAI are pulling ahead on frontier capability.",
-   why:["AI: A prolonged delay could cost Google ground in the race for enterprise and developer AI adoption.","Markets: Investors are pricing execution risk into Alphabet shares as competitors close the capability gap.","Finance: Repeated pretraining restarts underscore the ballooning cost of staying competitive in frontier AI."]},
-  {id:"a3",cat:"tech",topic:"tech",headline:"Anthropic in early talks with Meta to lease AI compute power",source:"CNBC",url:"https://www.cnbc.com/2026/07/17/anthropic-meta-ai-compute.html",
-   summary:"Anthropic is in preliminary discussions to lease computing capacity from Meta in a deal reportedly worth about $10 billion. The talks come as Anthropic, now valued above $900 billion, prepares for a possible IPO as soon as October. Meta shares climbed off session lows following the report.",
-   why:["AI: Cross-company compute deals highlight how scarce GPU capacity has become the industry's key bottleneck.","Finance: A potential Anthropic IPO would be one of the largest AI listings, testing investor appetite after the recent selloff.","Banking: Multibillion-dollar compute agreements are reshaping financing structures across the AI infrastructure sector."]},
-
-  {id:"g1",cat:"global",topic:"energy",headline:"Oil surges as Iran strikes Kuwait desalination and power plant",source:"CNBC",url:"https://www.cnbc.com/2026/07/17/oil-price-today-brent-wti.html",
-   summary:"Brent crude jumped about 4.6% to $88.10 a barrel after Kuwait said Iran struck a water desalination and power facility. The attack marks a sharp escalation in the Gulf conflict, threatening supply routes through the Strait of Hormuz. Energy stocks rallied even as broader equity markets fell on the news.",
-   why:["Markets: Sustained oil-price spikes add inflationary pressure just as central banks weigh rate paths.","Finance: Airlines, shippers and energy-intensive industries face rising input costs if the conflict persists.","Banking: Commodity-desk volatility and hedging demand typically spike alongside Gulf supply-disruption fears."]},
-
-  {id:"uae1",cat:"uae",topic:"markets",headline:"ADX deepens Bloomberg tie-up, lists new derivatives to widen access to Abu Dhabi markets",source:"Bloomberg",url:"https://www.bloomberg.com/company/press/adx-lists-six-new-single-stock-futures-deepens-bloomberg-collaboration-to-expand-global-access-to-abu-dhabi-markets/",
-   summary:"Abu Dhabi Securities Exchange listed six new single-stock futures, including contracts on Adnoc Gas and Adnoc Drilling, expanding its derivatives suite to 17 futures. The exchange's data is now fully integrated into the Bloomberg Terminal, giving global investors real-time access to Abu Dhabi pricing. ADX also plans to remove daily price limits on ETFs and futures from August 3.",
-   why:["Markets: Deeper Bloomberg integration should improve international investor access to UAE-listed assets.","Finance: Expanded derivatives offerings give institutions more tools to hedge exposure to Gulf energy and banking names.","Banking: Removing price limits on ETFs and futures could increase trading volatility but also liquidity."]},
-
-  {id:"cr1",cat:"crypto",topic:"crypto",headline:"Bitcoin slumps toward $63,000 as chip-stock rout spreads to crypto",source:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2026-07-17/bitcoin-slump-why-crypto-token-halved-in-value-since-october-btc-usd",
-   summary:"Bitcoin fell toward $63,000, down roughly 2% on the day, as the semiconductor-led risk-off mood spread into crypto markets. The token has now halved in value since its October peak amid fading risk appetite. Ether fell even harder, underscoring how closely digital assets are now tracking tech-stock sentiment.",
-   why:["Finance: Crypto's tightening correlation with tech stocks reduces its appeal as a portfolio diversifier.","Markets: Continued declines could pressure leveraged crypto positions and trigger further liquidations.","Banking: Institutions with crypto custody or lending exposure face marked-to-market losses alongside the slide."]}
+  {
+    id:1, cat:"top", topic:"policy",
+    headline:"Third US Service Member Killed as Iran Strikes Enter Eighth Night",
+    source:"CNBC", bloomberg:false,
+    summary:"A third American service member was killed in the escalating conflict with Iran, with unidentified remains found near a prior attack site. US forces carried out an eighth consecutive night of strikes on Iranian targets. The Pentagon says the campaign aims to secure safe passage through the Strait of Hormuz.",
+    why:[
+      "Sustained US-Iran conflict keeps oil-shipping risk elevated through the Strait of Hormuz, a chokepoint for global energy flows and freight insurance costs.",
+      "Prolonged military escalation adds a geopolitical risk premium to global equities and safe-haven demand for bonds and gold.",
+      "Banks and insurers with Gulf exposure face heightened compliance and sanctions-screening burdens as the conflict widens."
+    ],
+    url:"https://www.cnbc.com/2026/07/19/us-says-it-targeted-iran-forces-after-deaths-of-two-american-troops.html"
+  },
+  {
+    id:2, cat:"top", topic:"tech",
+    headline:"China's Moonshot AI Unveils Kimi K3, Triggering Global Tech Stock Rout",
+    source:"CNBC", bloomberg:false,
+    summary:"Beijing-based Moonshot AI unveiled Kimi K3, a 2.8-trillion-parameter open model it says rivals OpenAI and Anthropic on key benchmarks. The surprise breakthrough sent AI and semiconductor stocks sharply lower on Friday as investors drew parallels to last year's DeepSeek moment. Kimi K3 still trails top closed models overall but beat rivals on coding and agent tasks.",
+    why:[
+      "A credible, cheaper open-source Chinese model challenges the pricing power of leading US AI labs and their chip suppliers.",
+      "Renewed \"DeepSeek moment\" fears could pressure valuations across the AI and semiconductor supply chain, including Hong Kong-listed chipmakers.",
+      "Faster Chinese AI progress raises the stakes for export-control policy debates shaping bank and fund exposure to tech equities."
+    ],
+    url:"https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html"
+  },
+  {
+    id:3, cat:"top", topic:"markets",
+    headline:"Hang Seng Jumps 1.57% to 23,026 as Tech and Healthcare Shares Rally",
+    source:"The Standard", bloomberg:false,
+    summary:"Hong Kong's benchmark Hang Seng Index rose 354 points to 23,026, with full-day turnover of HK$315.3 billion. The Hang Seng Tech Index jumped 3.23% to 4,393 points, led by NetEase, SMIC and Baidu. Healthcare names CSPC Pharmaceutical, WuXi Biologics and Innovent Biologics each surged more than 6%.",
+    why:[
+      "Broad-based gains across tech and healthcare signal renewed investor confidence in Hong Kong as a listing and trading venue.",
+      "Higher turnover benefits HKEX transaction revenue and supports fee income for local brokerages and banks.",
+      "A stronger Hang Seng improves collateral values for margin lending books held by Hong Kong banks and brokers."
+    ],
+    url:"https://www.thestandard.com.hk/finance/article/335879/Hong-Kong-stocks-close-higher-led-by-tech-and-healthcare-shares"
+  },
+  {
+    id:4, cat:"hk", topic:"markets",
+    headline:"Zhongji Innolight Jumps 8% After $8 Billion Hong Kong Listing Approval",
+    source:"CNBC", bloomberg:false,
+    summary:"Shares of Chinese optical-components maker Zhongji Innolight surged as much as 8% on Monday. The move followed Friday's approval for a major Hong Kong share sale that could raise up to $8 billion. It would rank among the city's largest listings in years.",
+    why:[
+      "A mega-listing of this size would boost HKEX's IPO pipeline and reinforce Hong Kong's position as Asia's top listing venue.",
+      "Large underwriting mandates generate meaningful fee income for banks running Hong Kong equity capital markets desks.",
+      "Strong demand for optical-networking suppliers signals continued capital flowing into AI-infrastructure-linked stocks."
+    ],
+    url:"https://www.cnbc.com/2026/07/19/stock-market-today-live-updates.html"
+  },
+  {
+    id:5, cat:"hk", topic:"banking",
+    headline:"Sun Hung Kai Sells Out First Batch of Garden Regency Flats",
+    source:"SCMP", bloomberg:false,
+    summary:"Sun Hung Kai Properties sold out the first batch of 138 units at its Garden Regency project in the New Territories over the weekend. The three-tower, 566-unit development marks SHKP's return to the market two months after its Lime Spark launch. Strong demand adds to signs of a residential recovery.",
+    why:[
+      "Quick sell-outs support mortgage origination volumes for Hong Kong banks and improve collateral quality on property loan books.",
+      "Developer confidence returning to the New Territories could ease pressure on stretched balance sheets across the property sector.",
+      "A steadier housing market reduces credit risk tied to Hong Kong's large mortgage and construction-loan exposure."
+    ],
+    url:"https://www.scmp.com/business/article/3361052/hong-kong-homebuyers-snap-138-garden-regency-flats-new-territories-project"
+  },
+  {
+    id:6, cat:"hk", topic:"tech",
+    headline:"Baidu's Kunlunxin AI Chip Unit Targets $50 Billion Hong Kong IPO",
+    source:"CNBC", bloomberg:false,
+    summary:"Baidu's AI chip subsidiary Kunlunxin is targeting a valuation of roughly $50 billion for a planned Hong Kong listing. The spin-off reflects China's push for chip self-reliance amid US export controls. Baidu shares climbed as investors priced in the unit's standalone value.",
+    why:[
+      "A successful mega-IPO would deepen Hong Kong's semiconductor listings and diversify its tech-heavy exchange further into AI hardware.",
+      "Chinese chip self-reliance efforts reshape the competitive map for banks financing regional semiconductor supply chains.",
+      "Investor appetite for AI-chip spin-offs signals continued capital rotation toward hardware plays alongside software and models."
+    ],
+    url:"https://www.cnbc.com/2026/06/29/baidu-kunlunxin-hong-kong-ipo-50-billion-ai-chips.html"
+  },
+  {
+    id:7, cat:"hk", topic:"policy",
+    headline:"Hong Kong Gazettes Tax Break for Fund Managers' Bonuses",
+    source:"SCMP", bloomberg:false,
+    summary:"Hong Kong formally gazetted a bill exempting performance-linked bonuses at private equity and venture capital funds from tax. The move would give the city the lowest effective rate worldwide for such pay, undercutting Singapore. Bonuses tied to investment returns are currently taxed at up to 17%.",
+    why:[
+      "Lower bonus taxation strengthens Hong Kong's pitch to retain and attract fund management talent against Singapore and other hubs.",
+      "A larger fund management base supports demand for prime brokerage, custody and private banking services locally.",
+      "Deeper wealth management activity reinforces Hong Kong's role as Asia's largest offshore wealth centre."
+    ],
+    url:"https://www.scmp.com/business/article/3356920/hong-kong-gazettes-tax-break-fund-managers-bonuses-bolster-role-wealth-hub"
+  },
+  {
+    id:8, cat:"hk", topic:"policy",
+    headline:"Hong Kong Keeps Tight Grip on Housing Land Supply Despite Rebound",
+    source:"SCMP", bloomberg:false,
+    summary:"Hong Kong authorities are maintaining a cautious pace of residential land releases even as the property market shows signs of recovery. Just one site, in Ho Man Tin, is slated for sale this quarter. Officials say the calibrated approach aims to avoid destabilising the nascent price rebound.",
+    why:[
+      "Constrained land supply supports price stability, which underpins collateral values for banks' mortgage books.",
+      "A measured recovery reduces the risk of another sharp property downturn that could strain developer and household balance sheets.",
+      "Land sale outcomes remain a key revenue lever for government finances tied to Hong Kong's fiscal position."
+    ],
+    url:"https://www.scmp.com/business/article/3360157/hong-kong-keeps-tight-grip-housing-land-supply-despite-property-rebound"
+  },
+  {
+    id:9, cat:"us", topic:"policy",
+    headline:"Dallas Fed's Logan Calls for 'Modestly' Higher Interest Rates",
+    source:"CNBC", bloomberg:false,
+    summary:"Dallas Fed President Lorie Logan said modestly higher interest rates would better balance the Fed's inflation and employment goals. She argued policy restriction is still needed to bring inflation fully back to the 2% target. Her comments add to a debate among officials over the path for rates.",
+    why:[
+      "A hawkish Fed voice tempers market expectations for near-term rate cuts, affecting bank funding costs and loan pricing.",
+      "Higher-for-longer rate expectations support the US dollar, with knock-on effects for currencies linked to it, including the Hong Kong dollar.",
+      "Divided Fed messaging increases volatility in rate-sensitive sectors such as banking, real estate and growth-stock valuations."
+    ],
+    url:"https://www.cnbc.com/2026/07/16/dallas-fed-president-logan-calls-for-modestly-higher-interest-rates.html"
+  },
+  {
+    id:10, cat:"us", topic:"markets",
+    headline:"June Inflation Cools to 3.5%, Beating Forecasts",
+    source:"CNBC", bloomberg:false,
+    summary:"US consumer prices fell 0.4% in June, the biggest monthly drop since 2020, bringing annual inflation to 3.5%. The reading beat economist expectations and pushed the odds of a July rate hike down to 17% from 42%. Easing energy prices drove much of the improvement.",
+    why:[
+      "Cooler inflation reduces near-term pressure on the Fed to hike, supporting risk appetite across equities and credit markets.",
+      "Lower rate-hike odds can ease borrowing costs for banks and consumers, supporting loan demand and mortgage activity.",
+      "Improved price data may calm bond markets, stabilising yields that feed into global funding costs, including in Hong Kong."
+    ],
+    url:"https://www.cnbc.com/2026/07/14/consumer-price-index-inflation-report-june-2026.html"
+  },
+  {
+    id:11, cat:"us", topic:"markets",
+    headline:"Alphabet and Tesla Earnings Set to Steer Chip-Stock Direction This Week",
+    source:"CNBC", bloomberg:false,
+    summary:"Wall Street heads into the week watching Alphabet and Tesla earnings for clues on AI spending and chip demand. Recent volatility in semiconductor shares has investors on edge after last week's sell-off. Results could determine whether the tech-led rally resumes or fades further.",
+    why:[
+      "Big Tech capital-spending signals directly influence order books for chipmakers and their financing banks worldwide.",
+      "Earnings surprises this week could swing global indices, including Hong Kong and Chinese tech-heavy benchmarks.",
+      "Continued chip-sector volatility affects margin financing risk for brokers with concentrated tech exposure."
+    ],
+    url:"https://www.cnbc.com/2026/07/17/stock-market-next-week-outlook-for-july-20-24-2026.html"
+  },
+  {
+    id:12, cat:"china", topic:"markets",
+    headline:"China State Funds Step Up Stock Purchases to Stabilise Market",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Two major Chinese state funds disclosed fresh stock purchases after last week's 3.6% rout in the CSI 300. The index climbed as much as 2% in early Monday trade. Regulators are also set to meet key industry participants to shore up sentiment.",
+    why:[
+      "Direct state intervention signals policymakers' tolerance threshold for market declines, a key input for foreign investor risk models.",
+      "A stabilised mainland market supports sentiment in Hong Kong-listed Chinese stocks given close capital-flow linkages.",
+      "Coordinated fund buying underscores continued state backing for equity markets, relevant to banks managing China exposure."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-20/china-steps-up-efforts-to-stabilize-its-sagging-stock-market"
+  },
+  {
+    id:13, cat:"china", topic:"banking",
+    headline:"PBOC Injects 1.4 Trillion Yuan to Smooth Tax Season, Debt Issuance",
+    source:"Bloomberg", bloomberg:true,
+    summary:"China's central bank added 1.4 trillion yuan ($207 billion) via six-month reverse repos. The move aims to help companies and individuals manage tax payments while supporting demand for government debt issuance. It marks one of the PBOC's larger liquidity operations this year.",
+    why:[
+      "Large-scale liquidity injections keep funding costs contained for Chinese banks and corporates during a seasonal cash crunch.",
+      "Ample liquidity supports continued absorption of government bond supply, underpinning China's borrowing costs.",
+      "Easier domestic conditions can spill over into Hong Kong's banking system given close monetary linkages."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-14/pboc-boosts-liquidity-to-smooth-tax-payments-debt-issuance"
+  },
+  {
+    id:14, cat:"china", topic:"markets",
+    headline:"PBOC Signals Comfort With Yuan Levels, Expects Two-Way Moves",
+    source:"Bloomberg", bloomberg:true,
+    summary:"China's central bank indicated little appetite for engineering sharp yuan appreciation sought by some trading partners. The currency is hovering near a level seen as a multi-year median. Officials say they expect the yuan to trade in both directions going forward.",
+    why:[
+      "A stable, flexible yuan policy reduces currency-hedging costs for banks and exporters trading with China.",
+      "Signals of two-way flexibility affect positioning for Hong Kong's offshore yuan (CNH) market and related banking products.",
+      "Currency stability supports predictability for multinational treasury operations managing China-linked cash flows."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-15/pboc-signals-comfort-with-yuan-levels-expects-two-way-moves"
+  },
+  {
+    id:15, cat:"tech", topic:"tech",
+    headline:"Alibaba Shares Rise 5.4% After Unveiling Upgraded Qwen3.8 Max Model",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Alibaba launched a preview of its flagship Qwen3.8 Max model, which it describes as second only to Anthropic's leading system. The release came days after rival Moonshot AI unveiled a model that rattled markets. Shares rose as investors welcomed the response.",
+    why:[
+      "Escalating Chinese AI model releases intensify competition that could compress pricing across cloud and AI-inference services.",
+      "Strong investor reaction shows continued appetite for China's AI leaders despite broader tech-sector volatility.",
+      "Advancing domestic models reduce China's reliance on foreign AI infrastructure, a factor in tech-sector risk assessments."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model"
+  },
+  {
+    id:16, cat:"tech", topic:"tech",
+    headline:"US Official Says 'Very Few' Nvidia H200 Chips Reaching China",
+    source:"CNBC", bloomberg:false,
+    summary:"A top US trade official said only a trivial number of Nvidia's H200 AI chips have shipped to China and Hong Kong despite February's approval. About 10 Chinese firms, including Alibaba and Tencent, hold licenses to buy the chips. Shipment volumes remain far below initial expectations.",
+    why:[
+      "Slow chip shipments highlight ongoing friction in US-China tech trade that affects Nvidia's addressable market and revenue outlook.",
+      "Constrained AI-chip supply in China could slow data-centre buildouts financed by regional banks and infrastructure funds.",
+      "Export-control enforcement remains a swing factor for chip-sector equities held widely in Hong Kong and global portfolios."
+    ],
+    url:"https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html"
+  },
+  {
+    id:17, cat:"tech", topic:"tech",
+    headline:"OpenAI Leans Toward Delaying IPO Until 2027",
+    source:"CNBC", bloomberg:false,
+    summary:"OpenAI is reportedly favouring a wait until 2027 for its public listing rather than an earlier target. The company is said to be struggling to secure investor demand at a $1 trillion valuation. Recent volatility in tech IPOs, including SpaceX's debut, has fed the caution.",
+    why:[
+      "A delayed OpenAI listing pushes back a landmark test of investor appetite for AI valuations, affecting comparable private-market pricing.",
+      "Backers like SoftBank face delayed liquidity, with ripple effects across their own share prices and financing plans.",
+      "Slower AI IPO activity could dampen underwriting fee pipelines at banks positioning for the listing."
+    ],
+    url:"https://www.cnbc.com/2026/06/26/open-ai-ipo-timeline-investors.html"
+  },
+  {
+    id:18, cat:"global", topic:"markets",
+    headline:"Chip-Sector Jitters Spread as Dow, S&P, Nasdaq Close Lower",
+    source:"CNBC", bloomberg:false,
+    summary:"Wall Street's major indexes fell as semiconductor weakness spread following China's AI breakthroughs. European trading was similarly choppy, with major bourses split between modest gains and losses. Investors are weighing whether the sell-off marks a pause or a deeper repricing of AI-linked stocks.",
+    why:[
+      "Synchronised global equity weakness raises correlation risk for diversified bank and fund portfolios holding tech exposure.",
+      "Chip-sector volatility affects financing costs and risk appetite for semiconductor capital projects worldwide.",
+      "A broad repricing of AI valuations could ripple into Hong Kong and Chinese tech shares given tight market linkages."
+    ],
+    url:"https://www.cnbc.com/2026/07/15/stock-market-today-live-updates.html"
+  },
+  {
+    id:19, cat:"uae", topic:"banking",
+    headline:"China-UAE Cross-Border QR Payment Link Aims to Boost Global Yuan",
+    source:"SCMP", bloomberg:false,
+    summary:"Bank of China will act as exclusive clearing bank for Jaywan, the UAE's national debit card, handling yuan-denominated transactions. A new cross-border QR payment link between China and the UAE is also being rolled out. The moves aim to expand the yuan's role in Gulf trade and payments.",
+    why:[
+      "Deeper yuan clearing infrastructure in the UAE extends Chinese banks' footprint in Gulf financial markets.",
+      "Cross-border payment links can lower transaction costs and settlement times for China-UAE trade and remittances.",
+      "Expanding yuan usage abroad supports Beijing's push for currency internationalisation, a theme relevant to Hong Kong's offshore yuan hub role."
+    ],
+    url:"https://www.scmp.com/business/banking-finance/article/3360913/china-and-uae-cross-border-qr-payment-link-boost-global-yuan"
+  },
+  {
+    id:20, cat:"crypto", topic:"crypto",
+    headline:"Bitcoin's Slump Deepens, Down Roughly Half From October Peak",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Bitcoin has lost about half its value since peaking above $126,000 in October, trading recently near $63,000 to $64,000. The decline reflects fading investor interest rather than a single shock event, analysts say. The token is on pace for its fourth consecutive negative week.",
+    why:[
+      "A prolonged crypto downturn tests risk appetite for banks and funds with digital-asset trading desks or custody services.",
+      "Weak sentiment could slow institutional crypto product launches, including those planned by Hong Kong-licensed exchanges.",
+      "Sustained declines reinforce debate over bitcoin's role as a store of value versus a high-volatility risk asset."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-17/bitcoin-slump-why-crypto-token-halved-in-value-since-october-btc-usd"
+  }
 ];
 
 const SNAPSHOT = [
-  {lbl:"S&P 500",val:"7,457.69",chg:"-1.01%",dir:"down"},
-  {lbl:"Nasdaq",val:"25,520.24",chg:"-1.40%",dir:"down"},
-  {lbl:"Dow",val:"52,146.42",chg:"-0.77%",dir:"down"},
-  {lbl:"Hang Seng",val:"24,562.24",chg:"-1.78%",dir:"down"},
-  {lbl:"USD/CNY",val:"6.7774",chg:"+0.06%",dir:"up"},
-  {lbl:"Bitcoin",val:"$63,300",chg:"-2.0%",dir:"down"},
-  {lbl:"UAE (ADX)",val:"9,904",chg:"-0.33%",dir:"down"},
-  {lbl:"US 10-Yr",val:"4.55%",chg:"-0.01pp",dir:"down"}
+  {label:"S&P 500", value:"7,457.69", change:"−1.01%", dir:"down"},
+  {label:"Nasdaq", value:"25,520.24", change:"−1.40%", dir:"down"},
+  {label:"Dow", value:"52,146.42", change:"−0.77%", dir:"down"},
+  {label:"Hang Seng", value:"23,026", change:"+1.57%", dir:"up"},
+  {label:"USD/CNY", value:"6.80", change:"flat", dir:"flat"},
+  {label:"Bitcoin", value:"$63,400", change:"−1.8%", dir:"down"},
+  {label:"DFM (Dubai)", value:"Best qtr in a yr", change:"+", dir:"up"},
+  {label:"US 10-Yr", value:"4.55%", change:"−0.02", dir:"down"}
 ];
 
-/* ---------- ICONS (flat inline SVG) ---------- */
-const ICONS = [
-  '<svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
-  '<svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
-  '<svg viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg>'
+const KNOW = [
+  {icon:"alert", text:"Iran conflict deepens — 3rd US service member killed in 8th night of strikes.", tab:"top"},
+  {icon:"chip", text:"China's Moonshot AI stuns markets with Kimi K3, rattling global tech stocks.", tab:"top"},
+  {icon:"trend", text:"Hang Seng jumps 1.57% to 23,026 as tech and healthcare shares rally.", tab:"top"}
 ];
 
-/* ---------- STATE ---------- */
+const ICONS = {
+  alert:'<svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>',
+  chip:'<svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>',
+  trend:'<svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>'
+};
+
 let activeTab = "all";
 let activeTopic = "all";
+let expandedIds = new Set();
 
-/* ---------- RENDER: 3 things to know ---------- */
 function renderKnow(){
-  const top3 = STORIES.filter(s=>s.cat==="top");
-  const grid = document.getElementById("knowGrid");
-  grid.innerHTML = top3.map((s,i)=>`
-    <div class="know-card" data-tab="top" onclick="selectTab('top')">
-      ${ICONS[i]}
-      <p>${s.headline.length>62 ? s.headline.slice(0,60)+"&hellip;" : s.headline}</p>
+  const el = document.getElementById("knowList");
+  el.innerHTML = KNOW.map(k => `
+    <div class="know-card" onclick="selectTab('${k.tab}')">
+      <div class="know-icon">${ICONS[k.icon]}</div>
+      <div class="know-text">${k.text}</div>
     </div>
   `).join("");
 }
 
-/* ---------- RENDER: snapshot ---------- */
 function renderSnapshot(){
-  const grid = document.getElementById("snapGrid");
-  grid.innerHTML = SNAPSHOT.map(t=>`
+  const el = document.getElementById("snapGrid");
+  el.innerHTML = SNAPSHOT.map(s => `
     <div class="snap-tile">
-      <div class="lbl">${t.lbl}</div>
-      <div class="val">${t.val}</div>
-      <div class="chg ${t.dir}">${t.dir==="up"?"&#9650;":"&#9660;"} ${t.chg}</div>
+      <div class="snap-label">${s.label}</div>
+      <div class="snap-value">${s.value}</div>
+      <div class="snap-change ${s.dir}">${s.change}</div>
     </div>
   `).join("");
 }
 
-/* ---------- RENDER: tabs ---------- */
 function renderTabs(){
-  const row = document.getElementById("tabsRow");
-  let html = `<div class="tab" data-tab="all" onclick="selectTab('all')">All</div>`;
-  Object.keys(CATS).forEach(key=>{
-    html += `<div class="tab" data-tab="${key}" onclick="selectTab('${key}')">${CATS[key].tabLabel}</div>`;
-  });
-  row.innerHTML = html;
-  updateTabStyles();
-}
-
-function updateTabStyles(){
-  document.querySelectorAll(".tab").forEach(el=>{
-    const key = el.getAttribute("data-tab");
-    el.classList.remove("active");
-    if(key==="all"){
-      if(activeTab==="all") el.classList.add("active");
-      return;
-    }
-    const color = CATS[key].color;
-    if(activeTab===key){
-      el.style.background = color;
-      el.style.color = "#fff";
-      el.style.borderColor = color;
-    } else {
-      el.style.background = "transparent";
-      el.style.color = color;
-      el.style.borderColor = color+"33";
-      el.style.border = "1.5px solid "+color+"55";
-    }
-  });
-}
-
-/* ---------- RENDER: filter chips ---------- */
-function renderFilters(){
-  const row = document.getElementById("filtersRow");
-  let html = `<div class="chip active" data-topic="all" onclick="selectTopic('all')">All topics</div>`;
-  TOPICS.forEach(t=>{
-    html += `<div class="chip" data-topic="${t}" onclick="selectTopic('${t}')">${t.charAt(0).toUpperCase()+t.slice(1)}</div>`;
-  });
-  row.innerHTML = html;
-}
-
-function updateFilterStyles(){
-  document.querySelectorAll(".chip").forEach(el=>{
-    el.classList.toggle("active", el.getAttribute("data-topic")===activeTopic);
-  });
-}
-
-/* ---------- RENDER: pulse ---------- */
-function renderPulse(){
-  const p = PULSES[activeTab] || PULSES.all;
-  const dot = document.getElementById("pulseDot");
-  const word = document.getElementById("pulseWord");
-  const text = document.getElementById("pulseText");
-  const moodMap = {good:{c:"var(--good)",w:"Good"},steady:{c:"var(--steady)",w:"Steady"},weak:{c:"var(--weak)",w:"Weak"}};
-  const m = moodMap[p.mood];
-  dot.style.background = m.c;
-  word.style.color = m.c;
-  word.textContent = m.w;
-  text.textContent = p.text;
-}
-
-/* ---------- RENDER: cards ---------- */
-function renderCards(){
-  const list = document.getElementById("cardsList");
-  const empty = document.getElementById("emptyNote");
-  const filtered = STORIES.filter(s=>{
-    const tabOk = activeTab==="all" || s.cat===activeTab;
-    const topicOk = activeTopic==="all" || s.topic===activeTopic;
-    return tabOk && topicOk;
-  });
-
-  if(filtered.length===0){
-    list.innerHTML = "";
-    empty.style.display = "block";
-    return;
-  }
-  empty.style.display = "none";
-
-  list.innerHTML = filtered.map(s=>{
-    const cat = CATS[s.cat];
-    const isBloomberg = s.source==="Bloomberg";
-    return `
-    <div class="card" id="card-${s.id}" onclick="toggleCard('${s.id}')">
-      <span class="cat-tag" style="background:${cat.color}22;color:${cat.color};">${cat.label}</span>
-      <p class="headline">${s.headline}</p>
-      <span class="source-pill ${isBloomberg?'bloomberg':''}">${s.source}</span>
-      <div class="expand-hint">Tap to ${'expand'}</div>
-      <div class="detail">
-        <div class="detail-inner">
-          <p class="summary">${s.summary}</p>
-          <div class="why">
-            <p class="why-label">Why it matters</p>
-            <ul>
-              ${s.why.map(w=>`<li>${w}</li>`).join("")}
-            </ul>
-          </div>
-          <a class="readmore" href="${s.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story &rarr;</a>
-        </div>
-      </div>
-    </div>`;
+  const el = document.getElementById("tabRow");
+  el.innerHTML = Object.keys(CATS).map(key => {
+    const c = CATS[key];
+    const isActive = activeTab === key;
+    const style = isActive
+      ? `background:${c.color};color:#fff;`
+      : `color:${key==='all' ? '#141a26' : c.color};`;
+    return `<button class="tab-btn ${isActive?'active':''}" style="${style}" onclick="selectTab('${key}')">${c.label}</button>`;
   }).join("");
 }
 
-function toggleCard(id){
-  const el = document.getElementById("card-"+id);
-  if(!el) return;
-  el.classList.toggle("open");
-  const hint = el.querySelector(".expand-hint");
-  if(hint) hint.textContent = el.classList.contains("open") ? "Tap to collapse" : "Tap to expand";
+function renderFilters(){
+  const el = document.getElementById("filterRow");
+  const labels = {all:"All topics", markets:"Markets", banking:"Banking", policy:"Policy", tech:"Tech", crypto:"Crypto", energy:"Energy"};
+  el.innerHTML = TOPICS.map(t => `
+    <button class="chip ${activeTopic===t?'active':''}" onclick="selectTopic('${t}')">${labels[t]}</button>
+  `).join("");
 }
 
-/* ---------- ACTIONS ---------- */
-function selectTab(key){
-  activeTab = key;
-  updateTabStyles();
+function renderPulse(){
+  const p = PULSE[activeTab] || PULSE.all;
+  const word = p.mood === "good" ? "Good" : p.mood === "weak" ? "Weak" : "Steady";
+  document.getElementById("pulseDot").className = "dot " + p.mood;
+  document.getElementById("pulseWord").textContent = "● " + word;
+  document.getElementById("pulseWord").style.color = p.mood === "good" ? "var(--good)" : p.mood === "weak" ? "var(--weak)" : "var(--steady)";
+  document.getElementById("pulseText").textContent = p.text;
+}
+
+function renderCards(){
+  const el = document.getElementById("cardsContainer");
+  const filtered = STORIES.filter(s => (activeTab === "all" || s.cat === activeTab) && (activeTopic === "all" || s.topic === activeTopic));
+  if(filtered.length === 0){
+    el.innerHTML = `<div class="empty-state">No stories match this filter right now. Try a different tab or topic.</div>`;
+    return;
+  }
+  el.innerHTML = filtered.map(s => {
+    const c = CATS[s.cat];
+    const expanded = expandedIds.has(s.id);
+    return `
+      <div class="card ${expanded?'expanded':''}" onclick="toggleCard(event, ${s.id})">
+        <div class="card-top">
+          <span class="cat-tag" style="background:${c.color}1a; color:${c.color};">${c.label.replace('★ ','')}</span>
+          <div class="card-head-row">
+            <div class="headline">${s.headline}</div>
+            <span class="chevron">▾</span>
+          </div>
+          <span class="source-pill ${s.bloomberg?'bloomberg':''}">${s.source}</span>
+        </div>
+        <div class="detail">
+          <div class="detail-inner">
+            <p class="summary">${s.summary}</p>
+            <div class="why">
+              <div class="why-label">Why it matters</div>
+              <ul>${s.why.map(w => `<li>${w}</li>`).join("")}</ul>
+            </div>
+            <a class="read-link" href="${s.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function selectTab(tab){
+  activeTab = tab;
+  renderTabs();
   renderPulse();
   renderCards();
-  document.getElementById("navSticky").scrollIntoView({behavior:"smooth",block:"start"});
 }
-function selectTopic(t){
-  activeTopic = t;
-  updateFilterStyles();
+
+function selectTopic(topic){
+  activeTopic = topic;
+  renderFilters();
   renderCards();
 }
 
-/* ---------- HEADER META ---------- */
-function renderHeaderDate(){
-  document.getElementById("headerDate").textContent = "Saturday, 18 July 2026";
+function toggleCard(evt, id){
+  if(expandedIds.has(id)){
+    expandedIds.delete(id);
+  } else {
+    expandedIds.add(id);
+  }
+  renderCards();
 }
 
-/* ---------- SCROLL SHADOW ---------- */
-window.addEventListener("scroll", ()=>{
-  const nav = document.getElementById("navSticky");
-  if(window.scrollY > 260) nav.classList.add("scrolled");
-  else nav.classList.remove("scrolled");
-});
-
-/* ---------- INIT ---------- */
-renderHeaderDate();
 renderKnow();
 renderSnapshot();
 renderTabs();
