@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Daily Brief">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -10,397 +10,579 @@
 <title>Daily Brief</title>
 <style>
   :root{
-    --bg:#f5f7fb; --ink:#141a26; --sub:#6b7280; --card:#ffffff; --border:#eef0f4;
-    --shadow:0 1px 2px rgba(20,26,38,.04), 0 4px 16px rgba(20,26,38,.06);
-    --top:#f59e0b; --hk:#ef4444; --us:#3b82f6; --china:#dc2626; --global:#14b8a6;
-    --uae:#10b981; --tech:#8b5cf6; --crypto:#f97316; --neutral:#141a26;
-    --good:#16a34a; --steady:#d97706; --weak:#dc2626;
+    --bg:#f5f7fb;
+    --ink:#141a26;
+    --sub:#5b6472;
+    --card:#ffffff;
+    --shadow:0 1px 2px rgba(20,26,38,0.04), 0 4px 16px rgba(20,26,38,0.06);
+    --top:#c47f0a;
+    --hk:#e0304a;
+    --us:#2563eb;
+    --china:#be123c;
+    --global:#0d9488;
+    --uae:#059669;
+    --tech:#7c3aed;
+    --crypto:#ea580c;
+    --good:#0d9f5f;
+    --steady:#c47f0a;
+    --weak:#e0304a;
+    --blue-callout-bg:#eaf3ff;
+    --blue-callout-border:#2563eb;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,sans-serif;}
-  body{padding-bottom:env(safe-area-inset-bottom);}
-  .wrap{max-width:520px;margin:0 auto;padding:0 16px;}
-  header.hero{padding:calc(env(safe-area-inset-top) + 20px) 16px 8px;max-width:520px;margin:0 auto;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding-bottom:env(safe-area-inset-bottom);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px;}
+  header.hero{
+    padding-top:calc(20px + env(safe-area-inset-top));
+    padding-bottom:14px;
+  }
   .kicker{font-size:14px;color:var(--sub);font-weight:600;margin:0 0 2px;}
-  h1.title{font-size:26px;margin:0 0 4px;font-weight:800;letter-spacing:-.02em;}
+  h1.title{font-size:26px;line-height:1.15;margin:0 0 6px;font-weight:800;letter-spacing:-0.02em;}
   .datestr{font-size:14px;color:var(--sub);margin:0 0 10px;}
-  .readpill{display:inline-block;background:#fff;border:1px solid var(--border);color:var(--ink);
-    font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;box-shadow:var(--shadow);}
-  .things{display:flex;flex-direction:column;gap:8px;margin:16px 0;}
-  .thing-card{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:14px;
-    padding:12px 14px;box-shadow:var(--shadow);border:1px solid var(--border);cursor:pointer;}
-  .thing-card svg{flex:0 0 auto;}
-  .thing-card .t{font-size:13.5px;line-height:1.35;font-weight:600;}
-  .snap-label{font-size:11.5px;color:var(--sub);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:18px 0 8px;}
-  .snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px;}
-  .tile{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:9px 6px;text-align:center;box-shadow:var(--shadow);}
-  .tile .n{font-size:14px;font-weight:800;letter-spacing:-.02em;}
-  .tile .lbl{font-size:9.5px;color:var(--sub);font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-top:2px;}
-  .tile .mv{font-size:10.5px;font-weight:700;margin-top:1px;}
-  .up{color:var(--good);} .down{color:var(--weak);}
-  .snap-note{font-size:11px;color:var(--sub);margin:2px 0 4px;}
-  nav.sticky{position:sticky;top:0;z-index:20;background:var(--bg);padding-top:8px;
-    padding-top:calc(env(safe-area-inset-top) * 0 + 8px);}
-  .tabs{display:flex;gap:6px;overflow-x:auto;padding:6px 16px 8px;scrollbar-width:none;-ms-overflow-style:none;}
+  .readpill{
+    display:inline-block;font-size:12.5px;font-weight:600;color:var(--ink);
+    background:#eef1f7;border-radius:999px;padding:5px 12px;
+  }
+
+  .know-grid{display:flex;flex-direction:column;gap:8px;margin:16px 0 18px;}
+  .know-card{
+    background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+    padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;
+    border:1px solid rgba(20,26,38,0.03);
+  }
+  .know-card svg{flex:0 0 auto;}
+  .know-card .txt{font-size:13.5px;line-height:1.35;font-weight:500;color:var(--ink);}
+
+  .snap-label{font-size:12px;color:var(--sub);font-weight:600;margin:4px 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+  .snap-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;
+  }
+  .snap-tile{
+    background:var(--card);border-radius:14px;box-shadow:var(--shadow);
+    padding:9px 6px;text-align:center;
+  }
+  .snap-tile .nm{font-size:10px;color:var(--sub);font-weight:600;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .snap-tile .val{font-size:14px;font-weight:700;margin-bottom:2px;}
+  .snap-tile .chg{font-size:10.5px;font-weight:700;}
+  .up{color:var(--good);}
+  .down{color:var(--weak);}
+
+  nav.sticky{
+    position:sticky;top:0;z-index:20;background:var(--bg);
+    padding-top:8px;margin:0 -16px;padding-left:16px;padding-right:16px;
+    border-bottom:1px solid rgba(20,26,38,0.06);
+  }
+  .tabs{
+    display:flex;gap:6px;overflow-x:auto;padding-bottom:9px;
+    scrollbar-width:none;
+  }
   .tabs::-webkit-scrollbar{display:none;}
-  .tab{flex:0 0 auto;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;
-    border:1.5px solid transparent;background:#fff;white-space:nowrap;cursor:pointer;box-shadow:var(--shadow);}
-  .chips{display:flex;gap:6px;overflow-x:auto;padding:0 16px 8px;scrollbar-width:none;}
-  .chips::-webkit-scrollbar{display:none;}
-  .chip{flex:0 0 auto;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;
-    background:#fff;border:1px solid var(--border);color:var(--sub);white-space:nowrap;cursor:pointer;}
-  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
-  .pulse{margin:0 16px 10px;background:#fff;border:1px solid var(--border);border-radius:12px;
-    padding:9px 13px;font-size:12.5px;font-weight:600;box-shadow:var(--shadow);display:flex;align-items:center;gap:7px;}
-  .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
-  .list{display:flex;flex-direction:column;gap:10px;padding:2px 16px 28px;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow);}
-  .tag{display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;
-    padding:3px 8px;border-radius:6px;margin-bottom:7px;}
-  .headline{font-size:15.5px;font-weight:700;line-height:1.35;margin:0 0 8px;cursor:pointer;}
-  .srcpill{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:3px 9px;
-    border-radius:999px;background:#f1f3f8;color:#4b5563;margin-bottom:2px;}
-  .srcpill.gold{background:#fdf3d8;color:#92700c;}
-  .detail{max-height:0;overflow:hidden;transition:max-height .28s ease;}
-  .detail.open{max-height:600px;}
-  .detail-inner{padding-top:10px;}
-  .summary{font-size:13.5px;line-height:1.55;color:#2a3140;margin:0 0 10px;}
-  .why{background:#eaf3ff;border-left:3px solid #3b82f6;border-radius:8px;padding:9px 11px;margin-bottom:10px;}
-  .why-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#2563eb;margin-bottom:5px;}
+  .tab{
+    flex:0 0 auto;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;
+    background:transparent;border:1.5px solid transparent;white-space:nowrap;cursor:pointer;
+  }
+  .tab[data-cat="all"]{color:var(--ink);border-color:#d7dbe4;}
+  .tab[data-cat="all"].active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .tab[data-cat="top"]{color:var(--top);border-color:var(--top);}
+  .tab[data-cat="top"].active{background:var(--top);color:#fff;}
+  .tab[data-cat="hk"]{color:var(--hk);border-color:var(--hk);}
+  .tab[data-cat="hk"].active{background:var(--hk);color:#fff;}
+  .tab[data-cat="us"]{color:var(--us);border-color:var(--us);}
+  .tab[data-cat="us"].active{background:var(--us);color:#fff;}
+  .tab[data-cat="china"]{color:var(--china);border-color:var(--china);}
+  .tab[data-cat="china"].active{background:var(--china);color:#fff;}
+  .tab[data-cat="global"]{color:var(--global);border-color:var(--global);}
+  .tab[data-cat="global"].active{background:var(--global);color:#fff;}
+  .tab[data-cat="uae"]{color:var(--uae);border-color:var(--uae);}
+  .tab[data-cat="uae"].active{background:var(--uae);color:#fff;}
+  .tab[data-cat="tech"]{color:var(--tech);border-color:var(--tech);}
+  .tab[data-cat="tech"].active{background:var(--tech);color:#fff;}
+  .tab[data-cat="crypto"]{color:var(--crypto);border-color:var(--crypto);}
+  .tab[data-cat="crypto"].active{background:var(--crypto);color:#fff;}
+
+  .topics{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
+  .topics::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:0 0 auto;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;
+    background:#eef1f7;color:var(--sub);cursor:pointer;
+  }
+  .chip.active{background:var(--ink);color:#fff;}
+
+  .pulse{
+    margin:12px 0;display:flex;align-items:center;gap:8px;
+    background:var(--card);border-radius:14px;box-shadow:var(--shadow);
+    padding:11px 14px;font-size:13px;font-weight:600;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .dot.good{background:var(--good);}
+  .dot.steady{background:var(--steady);}
+  .dot.weak{background:var(--weak);}
+  .pulse .word{font-weight:800;}
+  .pulse .line{color:var(--sub);font-weight:500;}
+
+  .list{display:flex;flex-direction:column;gap:10px;margin:6px 0 22px;}
+  .card{
+    background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+    padding:14px 15px;cursor:pointer;border:1px solid rgba(20,26,38,0.03);
+  }
+  .cat-tag{
+    display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;
+    letter-spacing:.04em;padding:3px 8px;border-radius:6px;margin-bottom:7px;color:#fff;
+  }
+  .cat-tag.top{background:var(--top);}
+  .cat-tag.hk{background:var(--hk);}
+  .cat-tag.us{background:var(--us);}
+  .cat-tag.china{background:var(--china);}
+  .cat-tag.global{background:var(--global);}
+  .cat-tag.uae{background:var(--uae);}
+  .cat-tag.tech{background:var(--tech);}
+  .cat-tag.crypto{background:var(--crypto);}
+
+  .headline{font-size:15.5px;font-weight:700;line-height:1.32;margin:0 0 8px;color:var(--ink);}
+  .source-pill{
+    display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;
+    padding:3px 9px;border-radius:999px;background:#eef1f7;color:var(--sub);margin-bottom:2px;
+  }
+  .source-pill.bloomberg{background:#fdf1d8;color:#93650a;}
+
+  .detail{
+    max-height:0;overflow:hidden;transition:max-height .25s ease;
+  }
+  .card.open .detail{max-height:600px;}
+  .detail-inner{padding-top:11px;}
+  .summary{font-size:13.5px;line-height:1.5;color:#2b3342;margin:0 0 10px;}
+  .why{
+    background:var(--blue-callout-bg);border-left:3px solid var(--blue-callout-border);
+    border-radius:8px;padding:9px 11px;margin-bottom:11px;
+  }
+  .why .lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue-callout-border);margin-bottom:5px;}
   .why ul{margin:0;padding-left:16px;}
-  .why li{font-size:12.5px;line-height:1.5;color:#1e3a5f;margin-bottom:4px;}
+  .why li{font-size:12.5px;line-height:1.45;color:#243047;margin-bottom:4px;}
   .why li:last-child{margin-bottom:0;}
-  .readmore{display:inline-block;font-size:13px;font-weight:700;text-decoration:none;}
-  .tapctl{font-size:11px;color:var(--sub);font-weight:600;margin-top:2px;}
-  .empty{text-align:center;color:var(--sub);font-size:13px;padding:30px 16px;}
-  footer{padding:10px 16px calc(env(safe-area-inset-bottom) + 24px);text-align:center;}
-  footer .src{font-size:11px;color:var(--sub);line-height:1.6;}
-  footer .upd{font-size:11px;color:var(--sub);margin-top:6px;font-weight:600;}
+  .readlink{font-size:13px;font-weight:700;color:var(--us);text-decoration:none;}
+  .caret{float:right;font-size:12px;color:var(--sub);transition:transform .2s ease;}
+  .card.open .caret{transform:rotate(180deg);}
+
+  .empty{text-align:center;color:var(--sub);font-size:13.5px;padding:30px 10px;}
+
+  footer{
+    padding:18px 0 30px;font-size:11.5px;color:var(--sub);line-height:1.6;
+    border-top:1px solid rgba(20,26,38,0.06);margin-top:6px;
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<header class="hero">
-  <p class="kicker">Good morning ☕️</p>
-  <h1 class="title">Your Daily Brief</h1>
-  <p class="datestr" id="headerDate">Tuesday 21 July 2026</p>
-  <span class="readpill" id="readPill">≈ 9-min read · 20 stories · fresh (24h)</span>
+  <header class="hero">
+    <p class="kicker">Good morning ☕️</p>
+    <h1 class="title">Your Daily Brief</h1>
+    <p class="datestr">Wednesday 22 July 2026</p>
+    <span class="readpill">≈ 6-min read · 20 stories · fresh (last 24h)</span>
+  </header>
 
-  <div class="things" id="thingsList"></div>
+  <div class="know-grid">
+    <div class="know-card" data-jump="top">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="10" rx="2" stroke="#7c3aed" stroke-width="1.8"/><path d="M8 9V6a4 4 0 0 1 8 0v3" stroke="#7c3aed" stroke-width="1.8"/><circle cx="12" cy="14" r="1.6" fill="#7c3aed"/></svg>
+      <div class="txt">TSMC's blowout profit and extra $100B Arizona bet cement the AI chip supercycle.</div>
+    </div>
+    <div class="know-card" data-jump="top">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ea580c" stroke-width="1.8"/><path d="M9.5 8h3.2a2 2 0 0 1 0 4H9.5m0 0h3.6a2 2 0 0 1 0 4H9.5M9.5 8V6.5M9.5 16v1.5M11.5 8V6.5M11.5 16v1.5" stroke="#ea580c" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div class="txt">Bitcoin jumps toward $67K as Washington nears crypto regulatory clarity.</div>
+    </div>
+    <div class="know-card" data-jump="top">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 3 6-8" stroke="#c47f0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 6h4v4" stroke="#c47f0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="txt">Chipmakers power a broad Wall Street rally even as Middle East tensions simmer.</div>
+    </div>
+  </div>
 
   <p class="snap-label">Snapshot at last close</p>
-  <div class="snap-grid" id="snapGrid"></div>
-  <p class="snap-note">Levels approximate, most recent session.</p>
-</header>
+  <div class="snap-grid">
+    <div class="snap-tile"><div class="nm">S&P 500</div><div class="val">7,509</div><div class="chg up">▲0.89%</div></div>
+    <div class="snap-tile"><div class="nm">Nasdaq</div><div class="val">25,837</div><div class="chg up">▲1.29%</div></div>
+    <div class="snap-tile"><div class="nm">Dow</div><div class="val">52,225</div><div class="chg up">▲0.74%</div></div>
+    <div class="snap-tile"><div class="nm">Hang Seng</div><div class="val">23,900</div><div class="chg up">▲2.1%</div></div>
+    <div class="snap-tile"><div class="nm">USD/CNY</div><div class="val">6.77</div><div class="chg down">▼0.17%</div></div>
+    <div class="snap-tile"><div class="nm">Bitcoin</div><div class="val">$67.0K</div><div class="chg up">▲2.3%</div></div>
+    <div class="snap-tile"><div class="nm">DFM (UAE)</div><div class="val">5,180</div><div class="chg up">▲0.4%</div></div>
+    <div class="snap-tile"><div class="nm">US 10-Yr</div><div class="val">4.59%</div><div class="chg up">▲5bp</div></div>
+  </div>
 
-<nav class="sticky">
-  <div class="tabs" id="tabsRow"></div>
-  <div class="chips" id="chipsRow"></div>
-  <div class="pulse" id="pulseBanner"></div>
-</nav>
+  <nav class="sticky">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="all">All</button>
+      <button class="tab" data-cat="top">★ Top</button>
+      <button class="tab" data-cat="hk">Hong Kong</button>
+      <button class="tab" data-cat="us">US</button>
+      <button class="tab" data-cat="china">China</button>
+      <button class="tab" data-cat="global">Global</button>
+      <button class="tab" data-cat="uae">UAE</button>
+      <button class="tab" data-cat="tech">Tech/AI</button>
+      <button class="tab" data-cat="crypto">Crypto</button>
+    </div>
+    <div class="topics" id="topics">
+      <button class="chip active" data-topic="all">All topics</button>
+      <button class="chip" data-topic="markets">Markets</button>
+      <button class="chip" data-topic="banking">Banking</button>
+      <button class="chip" data-topic="policy">Policy</button>
+      <button class="chip" data-topic="tech">Tech</button>
+      <button class="chip" data-topic="crypto">Crypto</button>
+      <button class="chip" data-topic="energy">Energy</button>
+    </div>
+  </nav>
 
-<main class="wrap">
-  <div class="list" id="storyList"></div>
-</main>
+  <div class="pulse" id="pulse">
+    <span class="dot good" id="pulseDot"></span>
+    <span class="word" id="pulseWord">Good</span>
+    <span class="line" id="pulseLine">Chip strength is lifting the mood across most markets today.</span>
+  </div>
 
-<footer>
-  <p class="src">Sources: Bloomberg · CNBC · SCMP · The Standard · HKMA</p>
-  <p class="upd">Last updated: 21 July 2026, Hong Kong time</p>
-</footer>
+  <div class="list" id="list"></div>
+  <div class="empty" id="empty" style="display:none;">No stories match this filter yet — try another tab or topic.</div>
+
+  <footer>
+    Sources: Bloomberg, CNBC, SCMP, The Standard, HKMA, official HK/US/China government releases.<br>
+    Last updated: Wednesday 22 July 2026, Hong Kong time.
+  </footer>
+</div>
 
 <script>
-const CATS = {
-  all:    {label:"All",        color:"var(--neutral)"},
-  top:    {label:"★ Top",      color:"var(--top)"},
-  hk:     {label:"Hong Kong",  color:"var(--hk)"},
-  us:     {label:"US",         color:"var(--us)"},
-  china:  {label:"China",      color:"var(--china)"},
-  global: {label:"Global",     color:"var(--global)"},
-  uae:    {label:"UAE",        color:"var(--uae)"},
-  tech:   {label:"Tech/AI",    color:"var(--tech)"},
-  crypto: {label:"Crypto",     color:"var(--crypto)"}
-};
-const TOPICS = ["all","markets","banking","policy","tech","crypto","energy"];
-const TOPIC_LABELS = {all:"All topics",markets:"Markets",banking:"Banking",policy:"Policy",tech:"Tech",crypto:"Crypto",energy:"Energy"};
+const STORIES = [
+  {
+    cat:'top', topic:'tech', tag:'Top', source:'Bloomberg',
+    headline:"TSMC's blowout profit and extra $100B Arizona bet cement the AI chip supercycle",
+    summary:"TSMC's second-quarter profit jumped 77% year on year, beating lofty estimates. The chipmaker will invest an additional $100 billion in Arizona, bringing its total US commitment to $265 billion. Management cited sustained AI demand as the driver of the raised outlook.",
+    why:[
+      "Confirms AI infrastructure spending is still accelerating, not slowing, into late 2026.",
+      "Signals deeper US-Asia supply chain ties that Hong Kong-listed suppliers and ETFs track closely.",
+      "Sets a bullish tone for chip-linked financing and equity issuance across Asian markets."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-16/tsmc-beats-lofty-estimates-in-latest-sign-of-sustained-ai-demand"
+  },
+  {
+    cat:'top', topic:'crypto', tag:'Top', source:'Bloomberg',
+    headline:"Bitcoin jumps toward $67K as Washington nears crypto regulatory clarity",
+    summary:"Bitcoin rallied more than 2% toward $67,000. Treasury Secretary Scott Bessent said the Clarity Act, which would set federal crypto market rules, is at the '1-yard line' in Congress. Coinbase shares climbed as much as 12.6% on the news.",
+    why:[
+      "A finalized federal framework would let more banks and funds custody digital assets directly.",
+      "Regulatory clarity is the single biggest catalyst crypto markets have been waiting on this year.",
+      "A sustained bounce would ease pressure on crypto lenders and exchanges after months of declines."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-21/bitcoin-rallies-after-bessent-says-clarity-act-at-1-yard-line"
+  },
+  {
+    cat:'top', topic:'markets', tag:'Top', source:'CNBC',
+    headline:"Chipmakers power a broad Wall Street rally even as Middle East tensions simmer",
+    summary:"The Dow rose 385 points, or 0.74%, to 52,224.64 on Tuesday. The S&P 500 advanced 0.89% and the Nasdaq added 1.29%, both led by semiconductor stocks. Investors largely looked past ongoing Iran-related risk to focus on strong corporate earnings.",
+    why:[
+      "Shows investors are prioritizing earnings strength over geopolitical headline risk for now.",
+      "A broad, chip-led rally tends to lift Asian tech-heavy indices like the Hang Seng the next session.",
+      "Continued gains support risk appetite for bank trading desks and wealth managers in Hong Kong."
+    ],
+    url:"https://www.cnbc.com/2026/07/21/stock-market-today-live-updates.html"
+  },
+
+  {
+    cat:'hk', topic:'markets', tag:'Hong Kong', source:'SCMP',
+    headline:"Hong Kong developers rush new home launches as secondary market cools after a five-year-high first half",
+    summary:"Secondary home transactions hit a five-year high in the first half, per Centaline data, with 26,813 deals worth HK$212.24 billion. Developers are now accelerating fresh new-project launches to capture demand. Agents expect the secondary market to soften as new supply competes for buyers.",
+    why:[
+      "A cooling secondary market could pressure banks' mortgage volumes into the third quarter.",
+      "Developer discounting to move new units affects collateral values used in property lending.",
+      "Sustained transaction strength still supports stamp duty revenue for the Hong Kong government."
+    ],
+    url:"https://www.scmp.com/property/hong-kong-china/article/3360966/hong-kongs-secondary-property-market-braces-shift-after-strong-first-half"
+  },
+  {
+    cat:'hk', topic:'markets', tag:'Hong Kong', source:'The Standard',
+    headline:"SHKP's Garden Regency sells out first batch, rolls out third price list on strong demand",
+    summary:"Sun Hung Kai Properties sold all 138 units in Garden Regency's first sale round over the weekend. It has now released a third price list of 114 units, priced from HK$3.99 million to HK$5.53 million after discounts. The Kam Tin North project is one of the most closely watched launches of the year.",
+    why:[
+      "Fast sellouts signal healthier buyer confidence, a positive read for mortgage origination.",
+      "Pricing tiers set benchmarks that other developers and valuers will reference this quarter.",
+      "Strong new-launch absorption helps offset softer secondary-market sentiment citywide."
+    ],
+    url:"https://www.thestandard.com.hk/property/article/337605/SHKPs-Garden-Regency-releases-third-price-list-offering-114-units"
+  },
+  {
+    cat:'hk', topic:'policy', tag:'Hong Kong', source:'SCMP',
+    headline:"Hong Kong keeps tight grip on housing land supply despite property rebound",
+    summary:"Authorities are maintaining a cautious approach to releasing new housing land even as the property market shows signs of recovery. Officials say they want to avoid oversupply that could derail the fragile rebound. The stance affects developers' land-bank strategies heading into 2027.",
+    why:[
+      "Constrained land supply supports price stability, which underpins bank mortgage collateral.",
+      "Developers may need to rely more on secondary land deals, affecting financing structures.",
+      "A measured land policy signals the government is prioritizing market stability over volume."
+    ],
+    url:"https://www.scmp.com/business/article/3360157/hong-kong-keeps-tight-grip-housing-land-supply-despite-property-rebound"
+  },
+  {
+    cat:'hk', topic:'banking', tag:'Hong Kong', source:'SCMP',
+    headline:"Hong Kong interbank rates seen falling as Fed leans toward deeper cuts",
+    summary:"Analysts expect Hong Kong interbank rates to drop as the US Federal Reserve is projected to cut rates by up to 75 basis points in 2026. Lower HIBOR would ease borrowing costs for mortgage holders linked to interbank rates. Banks' prime lending rates, however, are expected to stay near historic lows.",
+    why:[
+      "Falling HIBOR directly lowers monthly payments for HIBOR-linked mortgage borrowers.",
+      "Banks' net interest margins could compress further if the rate-cut cycle deepens.",
+      "Cheaper funding costs could reignite property demand that's currently cooling."
+    ],
+    url:"https://www.scmp.com/business/banking-finance/article/3337042/hong-kong-interbank-rates-forecast-drop-expected-us-monetary-easing-2026"
+  },
+  {
+    cat:'hk', topic:'markets', tag:'Hong Kong', source:'SCMP',
+    headline:"Wheelock's Park Silicon to add 781 flats to the Northern Metropolis pipeline",
+    summary:"Wheelock Properties is preparing to launch the first batch of units at Park Silicon in Kwu Tung North. The project totals 781 flats across two phases, part of the government's Northern Metropolis development push. It adds meaningfully to the medium-term new-supply pipeline.",
+    why:[
+      "A large new-supply project tests whether the Northern Metropolis can absorb buyer demand.",
+      "Financing for such large phased projects is a key revenue source for local project-finance banks.",
+      "Supply additions here could temper price growth in the wider New Territories market."
+    ],
+    url:"https://www.scmp.com/business/article/3360152/hong-kong-developers-ready-new-home-launches-amid-forecasts-muted-price-increases"
+  },
+
+  {
+    cat:'us', topic:'markets', tag:'US', source:'CNBC',
+    headline:"Treasury yields climb as Middle East tensions rattle bond markets ahead of Fed decision",
+    summary:"The 10-year Treasury yield rose more than 5 basis points to around 4.59% as investors weighed geopolitical risk. Rising yields reflect growing uncertainty over the Fed's rate path under new Chairman Kevin Warsh. Bond traders are also watching inflation data closely.",
+    why:[
+      "Higher long-end yields raise borrowing costs for corporations and mortgage-linked products globally.",
+      "A less predictable Fed path adds volatility risk for banks' trading and hedging desks.",
+      "Rising US yields typically pull capital away from emerging and Asian fixed-income markets."
+    ],
+    url:"https://www.cnbc.com/2026/07/21/treasury-yields-bonds-iran-us-politics.html"
+  },
+  {
+    cat:'us', topic:'tech', tag:'US', source:'CNBC',
+    headline:"Wall Street braces for a mega earnings day as Tesla, Alphabet, IBM and AT&T report",
+    summary:"A wave of major US earnings lands Wednesday, including ServiceNow, IBM, Tesla, Texas Instruments, Alphabet and AT&T. Investors are watching closely for signals on AI spending, cloud demand and corporate technology budgets. Results could set the tone for the rest of earnings season.",
+    why:[
+      "AI capital-expenditure guidance from these names will shape chip and cloud investment flows.",
+      "Weak guidance from any megacap could trigger broad tech-sector repricing worldwide.",
+      "Corporate tech-budget commentary is a leading indicator for enterprise software and bank IT lending."
+    ],
+    url:"https://www.cnbc.com/2026/07/21/stock-market-today-live-updates.html"
+  },
+  {
+    cat:'us', topic:'tech', tag:'US', source:'CNBC',
+    headline:"Super Micro surges 15% on new order and margin disclosure after SpaceX tie-up",
+    summary:"Super Micro shares jumped 15% after disclosing a new order and improved margins following a SpaceX-related announcement. The company said its backlog hit record levels at the end of fiscal 2026, with over $60 billion in new orders in the latest quarter. Guidance for the current quarter came in strong.",
+    why:[
+      "Record AI-server backlogs point to continued strong capital spending by cloud and space customers.",
+      "Improving margins suggest AI hardware suppliers are gaining pricing power, not just volume.",
+      "Strength here feeds through to component suppliers across the Asian tech manufacturing chain."
+    ],
+    url:"https://www.cnbc.com/2026/07/21/super-micro-stock-spacex-announcement.html"
+  },
+
+  {
+    cat:'china', topic:'policy', tag:'China', source:'Bloomberg',
+    headline:"PBOC signals comfort with yuan levels, expects continued two-way currency moves",
+    summary:"A PBOC deputy governor said the yuan can move in either direction depending on market conditions. The central bank reiterated it will let market forces play a bigger role in setting the exchange rate. Officials are also expanding tools to make yuan assets more attractive to foreign investors.",
+    why:[
+      "A stable, market-driven yuan reduces hedging costs for Hong Kong banks handling cross-border flows.",
+      "Greater foreign yuan-asset demand could boost Hong Kong's role as an offshore RMB hub.",
+      "Currency stability supports confidence in China-linked trade financing and letters of credit."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-15/pboc-signals-comfort-with-yuan-levels-expects-two-way-moves"
+  },
+  {
+    cat:'china', topic:'tech', tag:'China', source:'Bloomberg',
+    headline:"Chinese AI stocks' 1,000%-plus profit gains fail to spark a rally",
+    summary:"Some Chinese AI-linked companies posted profit gains exceeding 1,000% year on year. Despite the blowout numbers, share prices have largely failed to rally, reflecting investor skepticism about sustainability. Analysts point to stretched valuations and policy uncertainty as the main drags.",
+    why:[
+      "A disconnect between earnings and share prices suggests investors doubt the AI boom's durability.",
+      "Muted rallies despite strong profits could dampen new listing activity on mainland and HK exchanges.",
+      "Valuation caution here may spill over into how global funds price other China tech names."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-17/china-ai-stocks-1000-plus-profit-gain-may-fail-to-revive-rally"
+  },
+  {
+    cat:'china', topic:'policy', tag:'China', source:'The Standard',
+    headline:"China vows countermeasures in response to EU's Russia-related sanctions",
+    summary:"Beijing said it would take necessary measures after the European Union imposed new sanctions tied to Russia that affected Chinese entities. The foreign ministry called the move unjustified and warned of retaliation. The dispute adds a fresh layer of friction to China-EU trade relations.",
+    why:[
+      "Escalating China-EU friction adds risk premium to trade-finance and supply-chain hedging.",
+      "Retaliatory tariffs or curbs could hit banks financing China-Europe trade corridors.",
+      "Heightened geopolitical friction typically weighs on regional risk sentiment, including in Hong Kong."
+    ],
+    url:"https://www.thestandard.com.hk/finance/article/314997/China-vows-measures-in-response-to-EUs-Russia-related-sanctions"
+  },
+
+  {
+    cat:'tech', topic:'tech', tag:'Tech/AI', source:'CNBC',
+    headline:"ASML raises full-year outlook again as AI chip demand keeps surging",
+    summary:"ASML lifted its full-year sales guidance for the second time this year. The Dutch chip-equipment maker posted stronger-than-expected quarterly results as customers keep ramping up AI chip production. Shares initially fell on cautious commentary before recovering.",
+    why:[
+      "Repeated upgrades from a bellwether supplier confirm AI chip demand is broad and durable.",
+      "Strong equipment orders today translate into chip supply and pricing trends months ahead.",
+      "Sustained capex here supports order books for Asian equipment and materials suppliers."
+    ],
+    url:"https://www.cnbc.com/2026/07/15/asml-2q-earnings-ai-chips-orders.html"
+  },
+  {
+    cat:'tech', topic:'tech', tag:'Tech/AI', source:'CNBC',
+    headline:"Alphabet pops on report it's developing its own more efficient AI chip",
+    summary:"Alphabet shares rose over 1.5% after reports it is building an internal server chip, dubbed 'Frozen v2', to run Gemini models more efficiently. The chip reportedly embeds parts of Gemini's architecture directly into the silicon. The move could reduce Alphabet's reliance on external chip suppliers.",
+    why:[
+      "In-house AI chips could lower Alphabet's compute costs and pressure merchant chipmakers' pricing.",
+      "Signals megacaps are vertically integrating AI infrastructure, a trend banks' tech analysts track closely.",
+      "Custom silicon strategies could reshape capital flows into the broader AI hardware supply chain."
+    ],
+    url:"https://www.cnbc.com/2026/07/20/alphabet-googl-stock-ai-chip-report.html"
+  },
+  {
+    cat:'tech', topic:'tech', tag:'Tech/AI', source:'Bloomberg',
+    headline:"TSMC hikes sales and spending outlook to catch the AI 'megatrend'",
+    summary:"TSMC raised its sales and capital expenditure outlook, citing sustained AI-driven demand as a defining 'megatrend'. The world's largest contract chipmaker beat lofty analyst estimates for the quarter. Management said customer demand visibility extends well into next year.",
+    why:[
+      "Extended demand visibility gives banks and investors more confidence in multi-year AI capex plans.",
+      "Higher spending guidance signals more equipment orders flowing through the global supply chain.",
+      "TSMC's outlook is a key input for how Asian markets price AI-linked equities this quarter."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-16/tsmc-beats-lofty-estimates-in-latest-sign-of-sustained-ai-demand"
+  },
+
+  {
+    cat:'global', topic:'markets', tag:'Global', source:'CNBC',
+    headline:"Global stocks climb as chipmakers power broad-based gains across Asia and Europe",
+    summary:"Asian markets advanced Tuesday, with Japan's Nikkei 225 up 0.8% and the Topix rising 0.86%. Europe's benchmark index has recently touched a 52-week high. Chip-sector strength and easing near-term Iran-war concerns supported the broad rally.",
+    why:[
+      "A synchronized global rally lifts risk appetite for cross-border bank trading books.",
+      "Strength in Europe and Asia together suggests the chip rally is a genuinely global phenomenon.",
+      "Broad gains support inflows into diversified Asia-Pacific and European equity funds."
+    ],
+    url:"https://www.cnbc.com/2026/07/03/stock-market-today-live-updates.html"
+  },
+
+  {
+    cat:'uae', topic:'markets', tag:'UAE', source:'Bloomberg',
+    headline:"Abu Dhabi's ADX scraps daily price limits on ETFs and futures to deepen markets",
+    summary:"ADX will remove daily price limits on its exchange-traded funds and futures contracts from 3 August. New single-stock futures span energy, AI, logistics and financial services. The move is part of Abu Dhabi's push to widen access to its markets and diversify beyond oil.",
+    why:[
+      "Removing price limits can increase trading volume but also short-term volatility for investors.",
+      "New AI and logistics-linked futures give funds more precise tools to bet on Gulf diversification.",
+      "Deeper derivatives markets make Abu Dhabi more competitive as a regional financial hub."
+    ],
+    url:"https://www.bloomberg.com/company/press/adx-lists-six-new-single-stock-futures-deepens-bloomberg-collaboration-to-expand-global-access-to-abu-dhabi-markets/"
+  },
+
+  {
+    cat:'crypto', topic:'crypto', tag:'Crypto', source:'CNBC',
+    headline:"Bitcoin's rough 2026: token has halved in value since its October peak",
+    summary:"Bitcoin has lost roughly half its value since peaking above $126,000 in October, even as it bounces this week toward $67,000. The pullback has been driven by broader risk-off sentiment and crypto-specific selling pressure. Some Wall Street desks are nonetheless building out new crypto product offerings.",
+    why:[
+      "A halving from peak highlights how volatile crypto remains as a portfolio allocation.",
+      "Wall Street's continued product build-out shows institutional interest persists despite the drawdown.",
+      "Price swings of this size affect exchange revenues and custody-related bank fee income."
+    ],
+    url:"https://www.cnbc.com/2026/07/17/bitcoin-slump-why-crypto-token-halved-in-value-since-october-btc-usd"
+  }
+];
 
 const PULSE = {
-  all:    {mood:"steady", text:"Markets are cautious, torn between tariff jitters and China's stabilizing hand."},
-  top:    {mood:"steady", text:"Big global swings today — trade tension, market rescue and Middle East politics all in play."},
-  hk:     {mood:"steady", text:"Hong Kong is cautious as property strain persists, but market-structure moves look encouraging."},
-  us:     {mood:"weak",   text:"Wall Street eased back, weighed down by megacap softness and oil-driven inflation nerves."},
-  china:  {mood:"good",   text:"Mainland sentiment is firming as authorities lean in hard to support shares and exports stay strong."},
-  global: {mood:"steady", text:"Asia-Pacific trading was mixed as regional investors balance resilience against geopolitical risk."},
-  uae:    {mood:"good",   text:"Gulf finance keeps humming, with capital and talent continuing to flow into the region."},
-  tech:   {mood:"good",   text:"AI infrastructure momentum stays strong as competition among chipmakers heats up."},
-  crypto: {mood:"good",   text:"Crypto sentiment is turning a corner as investors cautiously step back in."}
+  all:    {mood:'good',   line:"Chip strength is lifting the mood across most markets today."},
+  top:    {mood:'good',   line:"The day's biggest stories all lean positive, led by AI chip demand."},
+  hk:     {mood:'steady', line:"Property picking up while rate and land policy stay cautious."},
+  us:     {mood:'steady', line:"Stocks firm into earnings, but rising yields keep sentiment mixed."},
+  china:  {mood:'steady', line:"Currency calm, but AI profit gains aren't translating into a rally."},
+  global: {mood:'good',   line:"Gains are broad-based across Asia and Europe alike."},
+  uae:    {mood:'steady', line:"Market reforms progressing without major swings."},
+  tech:   {mood:'good',   line:"AI demand keeps beating expectations across the chip supply chain."},
+  crypto: {mood:'steady', line:"A bounce this week, but the bigger trend remains choppy."}
 };
-const MOOD_COLOR = {good:"var(--good)", steady:"var(--steady)", weak:"var(--weak)"};
-const MOOD_WORD = {good:"Good", steady:"Steady", weak:"Weak"};
 
-const SNAPSHOT = [
-  {lbl:"S&P 500",  n:"7,443.28",  mv:"-0.19%", dir:"down"},
-  {lbl:"Nasdaq",   n:"25,508.07", mv:"-0.05%", dir:"down"},
-  {lbl:"Dow",      n:"51,839.26", mv:"-0.59%", dir:"down"},
-  {lbl:"Hang Seng",n:"25,078",    mv:"+2.1%",  dir:"up"},
-  {lbl:"USD/CNY",  n:"7.15",      mv:"-0.1%",  dir:"down"},
-  {lbl:"Bitcoin",  n:"$65,583",   mv:"+higher",dir:"up"},
-  {lbl:"UAE (ADX)",n:"Near record",mv:"steady",dir:"up"},
-  {lbl:"US 10-Yr", n:"4.585%",    mv:"+1bp",   dir:"up"}
-];
+const CAT_LABELS = {top:'Top', hk:'Hong Kong', us:'US', china:'China', global:'Global', uae:'UAE', tech:'Tech/AI', crypto:'Crypto'};
 
-const STORIES = [
-{cat:"top", topic:"policy", headline:"Trump imposes 50% tariffs on Canadian goods",
- source:"SCMP", gold:false,
- summary:"Washington has slapped a 50% tariff on a range of Canadian imports, citing unresolved disputes over autos, alcohol and dairy products. The move sharply escalates trade tension between the two neighbours just as cross-border supply chains were stabilising. Ottawa is weighing retaliation and vowing to protect domestic industries.",
- why:["Higher tariffs raise input costs for North American manufacturers, squeezing margins for banks financing cross-border trade.","A prolonged dispute could reignite inflation pressure just as the Fed debates its next rate move.","Asian exporters are watching closely for signs the same tariff logic could extend to their own trade lanes."],
- url:"https://www.scmp.com/news/world/united-states-canada/article/3361268/trump-imposes-50-tariffs-canadian-goods-citing-disputes-over-cars-alcohol-and-cheese"},
+let activeCat = 'all';
+let activeTopic = 'all';
 
-{cat:"top", topic:"markets", headline:"Beijing deploys record state buying to halt stock slide",
- source:"Bloomberg", gold:true,
- summary:"Two state-backed conglomerates spent roughly $8.9 billion buying mainland shares after an AI-trade unwind triggered a sharp sell-off. China's securities regulator pledged coordinated action to stabilise the $15 trillion market. Listed companies also announced buybacks as Beijing signalled it won't tolerate a disorderly decline.",
- why:["Direct state intervention shows how seriously Beijing treats market stability ahead of key economic targets.","A calmer mainland market reduces spillover risk into Hong Kong-listed shares and Southbound Connect flows.","Continued AI-sector volatility could reshape how banks price risk on China tech exposure."],
- url:"https://www.bloomberg.com/news/articles/2026-07-20/china-steps-up-efforts-to-stabilize-its-sagging-stock-market"},
-
-{cat:"top", topic:"policy", headline:"Hamas' lead ceasefire negotiator elected as group's new chief",
- source:"SCMP", gold:false,
- summary:"Khalil al-Hayya, who led ceasefire negotiations, has been elected Hamas' new leader following the death of his predecessor. The leadership change comes amid fragile talks to end fighting in the region. Markets are watching for signs of whether the transition speeds or stalls a durable truce.",
- why:["A negotiator-turned-leader could smooth ceasefire progress, easing the geopolitical risk premium built into oil prices.","Renewed escalation would keep energy costs elevated, adding to global inflation concerns.","Persistent Middle East uncertainty keeps safe-haven flows into bonds and gold elevated."],
- url:"https://www.scmp.com/news/world/middle-east/article/3361240/hamas-lead-negotiator-ceasefire-talks-elected-groups-new-chief"},
-
-{cat:"hk", topic:"banking", headline:"Hong Kong banks force sales of distressed commercial property",
- source:"SCMP", gold:false,
- summary:"Lenders are taking a tougher stance on Hong Kong's prolonged commercial property slump, pushing owners toward asset sales, debt restructuring or ceding control. Collateral valuations behind hundreds of billions of dollars in property loans keep sliding. Some banks are prioritising loss containment over extending further credit.",
- why:["Rising non-performing loan ratios at major banks signal the property downturn is now hitting core balance sheets.","Forced sales could deepen the price slide, creating a feedback loop for the wider lending market.","Smaller developers face growing default risk as banks pull back on credit extensions."],
- url:"https://www.scmp.com/business/article/3357811/hong-kongs-commercial-property-slump-enters-new-phase-lenders-take-tougher-stance"},
-
-{cat:"hk", topic:"markets", headline:"HKEX weighs longer trading hours, may scrap lunch break",
- source:"The Standard", gold:false,
- summary:"Hong Kong's exchange operator is exploring extended equity trading hours, including cutting the midday lunch break and adding a post-market session to catch early US trading. The plan is at an early, exploratory stage and would need broker and Connect-programme coordination. It aims to sharpen the city's edge against global rivals.",
- why:["Longer hours could deepen liquidity and attract more international capital into Hong Kong's markets.","Aligning trading time with US sessions strengthens HK's role as a bridge between Asian and Western finance.","Brokers and banks would need to adjust staffing and systems, raising near-term operating costs."],
- url:"https://www.thestandard.com.hk/finance/article/337681/HKEX-considers-extending-trading-hours-canceling-lunch-break-Bloomberg-reports"},
-
-{cat:"hk", topic:"markets", headline:"Central office vacancy falls to 43-month low",
- source:"SCMP", gold:false,
- summary:"Prime office vacancy in Central dropped to 8.8%, the lowest level in 43 months, according to JLL. The tightening follows a wave of relocations and spillover demand from the district. Analysts still expect citywide vacancy to plateau near 14% this year as new supply arrives.",
- why:["A tightening Central market signals gradually improving sentiment among corporate tenants and landlords.","Rising prime rents could lift income for banks and funds holding Hong Kong office collateral.","New supply due later this year may cap the recovery, keeping landlords cautious."],
- url:"https://www.scmp.com/business/article/3359675/hong-kong-office-vacancy-rates-plateau-central-hits-43-month-low"},
-
-{cat:"hk", topic:"markets", headline:"KKR, AEW eye deep discounts in China commercial property exit",
- source:"The Standard", gold:false,
- summary:"Global investors KKR and AEW are reportedly seeking steep discounts as they look to exit commercial property positions tied to mainland China. The moves reflect continued stress in China's real estate sector spilling into cross-border capital. Hong Kong, as a regional deal hub, is watching closely for read-through to local pricing.",
- why:["Distressed-price exits by major funds could reset valuation benchmarks across the region's commercial property market.","Hong Kong banks with China property exposure may face pressure to mark down related collateral.","Bargain-hunting by global capital could eventually help mark a floor for battered valuations."],
- url:"https://www.thestandard.com.hk/finance/article/337677/KKR-AEW-eye-deep-discounts-in-China-commercial-property-exit-Bloomberg-reports"},
-
-{cat:"hk", topic:"policy", headline:"Government identifies five regulatory weaknesses after Wang Fuk Court fire",
- source:"The Standard", gold:false,
- summary:"Officials have acknowledged five regulatory gaps that contributed to Hong Kong's deadliest fire in decades at Wang Fuk Court. The findings follow weeks of public inquiry testimony on substandard scaffolding materials and lax inspection oversight. Authorities face pressure to tighten building-safety enforcement citywide.",
- why:["Stricter safety rules could raise compliance costs for property managers and construction financiers.","Public confidence in regulatory oversight is a factor in how investors price Hong Kong real estate risk.","Insurers and banks may reassess underwriting standards for aging residential estates undergoing maintenance."],
- url:"https://www.thestandard.com.hk/news/article/337447/Govt-identifies-five-regulatory-weaknesses-after-Wang-Fuk-Court-fire"},
-
-{cat:"us", topic:"markets", headline:"US judge suspends Paramount's acquisition of Warner Bros",
- source:"SCMP", gold:false,
- summary:"A California judge issued a temporary restraining order halting Paramount's roughly $110 billion deal for Warner Bros for 14 days. The pause gives regulators and objectors more time to scrutinise the merger's competitive impact. Both companies' shares moved on the uncertainty.",
- why:["A blocked megadeal signals tougher antitrust scrutiny for future media and tech consolidation.","Banks advising on the transaction face delayed fee realisation and renegotiation risk.","Investors in both companies must reprice deal-completion odds heading into the next hearing."],
- url:"https://www.scmp.com/news/world/united-states-canada/article/3361266/us-judge-suspends-paramounts-acquisition-warner-bros"},
-
-{cat:"us", topic:"policy", headline:"Fed rate-hike odds climb ahead of July policy meeting",
- source:"CNBC", gold:false,
- summary:"Traders now see roughly even odds of a quarter-point Fed rate hike this month as officials debate persistent inflation. Governor Waller warned against fighting \"the last war\" while other officials flagged tariff- and energy-driven price pressure. The split leaves markets bracing for a volatile meeting.",
- why:["A surprise hike would tighten financial conditions just as global growth already looks fragile.","Banks' net interest margins and mortgage pricing hinge directly on the meeting's outcome.","Higher-for-longer rates would keep pressure on emerging-market currencies and borrowing costs."],
- url:"https://www.cnbc.com/2026/07/13/-a-july-rate-hike-from-the-fed-the-odds-are-rising.html"},
-
-{cat:"us", topic:"markets", headline:"Dow drops 307 points as Apple slides, oil weighs on stocks",
- source:"Bloomberg", gold:true,
- summary:"The Dow fell 0.59% and the S&P 500 slipped 0.19% as a 2% drop in Apple shares dragged on sentiment. Oil held near its highest close since mid-June, reviving inflation worries tied to Middle East tension. The Nasdaq eked out a smaller loss as chip stocks traded mixed.",
- why:["Persistent oil-driven inflation risk complicates the Fed's path on interest rates.","Apple's decline highlights how a handful of megacap stocks can sway the broader index.","Continued volatility keeps risk premiums elevated for banks pricing corporate lending."],
- url:"https://www.bloomberg.com/news/articles/2026-07-20/stock-market-today-dow-s-p-live-updates"},
-
-{cat:"china", topic:"policy", headline:"China's June exports surge 27% on AI-hardware boom",
- source:"CNBC", gold:false,
- summary:"China's exports jumped 27% year-on-year in June, the fastest pace since 2021, beating estimates by a wide margin. Booming global demand for AI hardware and a rush to beat anticipated US tariff hikes turbocharged shipments. Semiconductors, rare earths, autos and ships led the fastest-growing categories.",
- why:["Strong export momentum gives Beijing more room to manage its currency and support growth targets.","Front-loaded shipments ahead of tariff deadlines could mean a payback slowdown later this year.","Robust AI-hardware demand reinforces China's growing role in global tech supply chains."],
- url:"https://www.cnbc.com/2026/07/14/china-june-trade-data-exports-imports.html"},
-
-{cat:"china", topic:"policy", headline:"China's new investment law asserts control over offshore tech transfers",
- source:"SCMP", gold:false,
- summary:"Beijing has introduced a landmark law giving authorities greater oversight of outbound investment and offshore technology transfers. The rules require Chinese investors to cooperate with regulators during overseas reviews. The move formalises a tighter grip on how sensitive technology moves beyond mainland borders.",
- why:["Tighter outbound-investment rules could slow some cross-border tech deals involving Chinese capital.","Foreign partners and banks will need extra compliance steps when structuring China-linked tech transactions.","The law signals Beijing's growing focus on protecting strategic technology as a national-security priority."],
- url:"https://www.scmp.com/economy/global-economy/article/3358972/chinas-new-investment-law-asserts-control-over-offshore-tech-transfers-landmark-move"},
-
-{cat:"china", topic:"banking", headline:"PBOC expands RMB facility to widen offshore currency use",
- source:"HKMA", gold:false,
- summary:"The PBOC, HKMA and SFC jointly unveiled measures to deepen Hong Kong's role as an offshore renminbi hub, including doubling the RMB Business Facility to RMB500 billion. New funding tenors of 9-month, 2-year and 3-year were added. The push aims to widen access to yuan liquidity outside mainland China.",
- why:["A bigger RMB facility gives Hong Kong banks deeper access to yuan funding, supporting cross-border lending.","Broader offshore yuan tools accelerate China's long-term push toward renminbi internationalisation.","Deeper mainland-HK financial integration strengthens Hong Kong's position as Asia's offshore RMB centre."],
- url:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/07/20260707-3/"},
-
-{cat:"tech", topic:"tech", headline:"AMD launches Helios AI system, signs Microsoft, challenges Nvidia",
- source:"CNBC", gold:false,
- summary:"AMD unveiled Helios, its first AI rack system, and landed Microsoft as a customer alongside Meta, OpenAI and Oracle. It's the first serious rival to Nvidia's dominant Grace Blackwell and Vera Rubin systems, with shipments due later this year. AMD says its edge will come from software optimisation as much as silicon.",
- why:["Real competition for Nvidia could ease AI-infrastructure costs for banks and cloud providers over time.","A credible second supplier reduces concentration risk in the fast-growing AI hardware market.","AMD's push signals data-centre AI spending is broadening beyond a single dominant vendor."],
- url:"https://www.cnbc.com/2026/07/20/amd-helios-microsoft-ai-nvidia.html"},
-
-{cat:"tech", topic:"tech", headline:"US official: 'very few' Nvidia H200 chips have reached China",
- source:"CNBC", gold:false,
- summary:"A US trade official said only a small number of approved Nvidia H200 AI chips have actually shipped to China despite export clearance. The comments highlight how licensing friction continues to slow the flow of advanced chips. Washington is keeping close watch on the pace of shipments.",
- why:["Slow chip flows limit how quickly Chinese AI firms can scale advanced model training.","Continued export friction keeps geopolitical risk embedded in global semiconductor supply chains.","Banks financing chip and data-centre projects must factor in ongoing regulatory uncertainty."],
- url:"https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html"},
-
-{cat:"tech", topic:"tech", headline:"Cyberport launches AI hub to fuel Hong Kong AI entrepreneurship",
- source:"The Standard", gold:false,
- summary:"Hong Kong's Cyberport unveiled an OPC Hub alongside a new Web4.0 and Agentic AI Security Alliance to support local AI startups. The initiative aims to strengthen safety standards for emerging agentic AI tools while nurturing the city's tech ecosystem. It builds on Hong Kong's push to become a regional AI hub.",
- why:["A dedicated AI security alliance helps Hong Kong startups meet rising global standards for safe deployment.","Stronger local AI infrastructure could attract more venture capital into the city's tech sector.","Positioning Hong Kong as an agentic-AI hub adds a new growth angle beyond traditional finance."],
- url:"https://www.thestandard.com.hk/spotlight-news/article/337524/Fueling-AI-entrepreneurship-Cyberport-unveils-OPC-Hub-and-Web40-Agentic-AI-Security-Alliance"},
-
-{cat:"global", topic:"markets", headline:"Asia-Pacific markets mixed as Middle East tension weighs",
- source:"CNBC", gold:false,
- summary:"Asia-Pacific shares traded in mixed fashion, with Japan's Nikkei 225 up 0.8% and the Topix gaining nearly as much. South Korea's Kospi edged higher while the Kosdaq fell, and Australia's ASX 200 slipped 0.58%. Oil holding near multi-month highs kept a lid on broader risk appetite.",
- why:["A mixed regional session shows investors weighing Middle East risk against still-resilient earnings.","Currency and rate moves in Japan and Korea ripple into Hong Kong's own funding costs.","Elevated oil prices continue feeding into inflation expectations priced by global bond markets."],
- url:"https://www.cnbc.com/2026/07/20/stock-market-today-live-updates.html"},
-
-{cat:"uae", topic:"markets", headline:"Dubai lures another hedge fund as Gulf rivals chase startups",
- source:"Bloomberg", gold:true,
- summary:"Dubai has attracted another hedge fund relocation as the emirate deepens its push to become a global asset-management hub. Abu Dhabi, Doha and Riyadh are simultaneously competing hard to lure startups and capital. The rivalry underscores the Gulf's growing weight in global finance.",
- why:["Gulf hedge-fund growth diversifies global capital flows away from traditional US and European hubs.","Competing Gulf financial centres could pull talent and mandates away from established Asian hubs.","Deeper Gulf capital markets create new banking and advisory revenue pools for global firms."],
- url:"https://www.bloomberg.com/news/newsletters/2026-07-20/dubai-draws-another-hedge-fund-abu-dhabi-doha-riyadh-woo-startups"},
-
-{cat:"crypto", topic:"crypto", headline:"Bitcoin ETFs post second straight week of inflows",
- source:"Bloomberg", gold:true,
- summary:"US spot Bitcoin ETFs pulled in $75.7 million last week, a second consecutive week of inflows after nearly two months of outflows. The turnaround follows a sharp slide that had cut Bitcoin's value roughly in half since October. Traders see the inflows as an early sign the market may be finding a floor.",
- why:["Renewed ETF demand signals institutional investors are cautiously re-entering after a punishing sell-off.","A stabilising Bitcoin price reduces near-term risk for banks and funds with crypto-linked exposure.","Continued inflows would support broader risk appetite across digital-asset markets."],
- url:"https://www.bloomberg.com/news/articles/2026-07-20/bitcoin-etfs-log-second-week-of-inflows-breaking-two-month-rout"}
-];
-
-let activeTab = "all";
-let activeTopic = "all";
-
-function iconFor(i){
-  const icons = [
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#dc2626" stroke-width="2.2"/><path d="M12 7v5l3 3" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/></svg>',
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M12 20V4M20 20v-7" stroke="#8b5cf6" stroke-width="2.2" stroke-linecap="round"/></svg>'
-  ];
-  return icons[i];
-}
-
-function buildThings(){
-  const el = document.getElementById("thingsList");
-  const top3 = STORIES.filter(s=>s.cat==="top").slice(0,3);
-  el.innerHTML = top3.map((s,i)=>`
-    <div class="thing-card" data-cat="${s.cat}">
-      ${iconFor(i)}
-      <div class="t">${s.headline}</div>
-    </div>`).join("");
-  [...el.children].forEach(c=>{
-    c.addEventListener("click", ()=>{ setTab(c.dataset.cat); window.scrollTo({top:0,behavior:"smooth"}); });
+function renderList(){
+  const list = document.getElementById('list');
+  const empty = document.getElementById('empty');
+  const filtered = STORIES.filter(s=>{
+    const catOk = activeCat==='all' || s.cat===activeCat;
+    const topicOk = activeTopic==='all' || s.topic===activeTopic;
+    return catOk && topicOk;
   });
-}
-
-function buildSnapshot(){
-  const el = document.getElementById("snapGrid");
-  el.innerHTML = SNAPSHOT.map(t=>`
-    <div class="tile">
-      <div class="n">${t.n}</div>
-      <div class="lbl">${t.lbl}</div>
-      <div class="mv ${t.dir}">${t.dir==="up"?"▲":"▼"} ${t.mv}</div>
-    </div>`).join("");
-}
-
-function buildTabs(){
-  const el = document.getElementById("tabsRow");
-  el.innerHTML = Object.keys(CATS).map(k=>`<div class="tab" data-tab="${k}" id="tab-${k}">${CATS[k].label}</div>`).join("");
-  [...el.children].forEach(c=>c.addEventListener("click", ()=>setTab(c.dataset.tab)));
-}
-
-function buildChips(){
-  const el = document.getElementById("chipsRow");
-  el.innerHTML = TOPICS.map(t=>`<div class="chip" data-topic="${t}" id="chip-${t}">${TOPIC_LABELS[t]}</div>`).join("");
-  [...el.children].forEach(c=>c.addEventListener("click", ()=>setTopic(c.dataset.topic)));
-}
-
-function styleTabs(){
-  Object.keys(CATS).forEach(k=>{
-    const el = document.getElementById("tab-"+k);
-    if(k===activeTab){
-      el.style.background = CATS[k].color;
-      el.style.color = "#fff";
-      el.style.borderColor = CATS[k].color;
-    } else {
-      el.style.background = "#fff";
-      el.style.color = CATS[k].color;
-      el.style.borderColor = "transparent";
-    }
-  });
-}
-
-function styleChips(){
-  TOPICS.forEach(t=>{
-    const el = document.getElementById("chip-"+t);
-    el.classList.toggle("active", t===activeTopic);
+  list.innerHTML='';
+  if(filtered.length===0){
+    empty.style.display='block';
+    return;
+  }
+  empty.style.display='none';
+  filtered.forEach((s,i)=>{
+    const card = document.createElement('div');
+    card.className='card';
+    const sourceClass = s.source==='Bloomberg' ? 'source-pill bloomberg' : 'source-pill';
+    const whyLis = s.why.map(w=>`<li>${w}</li>`).join('');
+    card.innerHTML = `
+      <span class="cat-tag ${s.cat}">${s.tag}</span>
+      <span class="caret">▾</span>
+      <div class="headline">${s.headline}</div>
+      <span class="${sourceClass}">${s.source}</span>
+      <div class="detail"><div class="detail-inner">
+        <p class="summary">${s.summary}</p>
+        <div class="why">
+          <div class="lbl">Why it matters</div>
+          <ul>${whyLis}</ul>
+        </div>
+        <a class="readlink" href="${s.url}" target="_blank" rel="noopener">Read the full story →</a>
+      </div></div>
+    `;
+    card.addEventListener('click', (e)=>{
+      if(e.target.closest('.readlink')) return;
+      card.classList.toggle('open');
+    });
+    const link = card.querySelector('.readlink');
+    link.addEventListener('click', (e)=>{ e.stopPropagation(); });
+    list.appendChild(card);
   });
 }
 
 function updatePulse(){
-  const p = PULSE[activeTab];
-  const el = document.getElementById("pulseBanner");
-  el.innerHTML = `<span class="dot" style="background:${MOOD_COLOR[p.mood]}"></span><span>● ${MOOD_WORD[p.mood]} — ${p.text}</span>`;
+  const p = PULSE[activeCat];
+  const dot = document.getElementById('pulseDot');
+  const word = document.getElementById('pulseWord');
+  const line = document.getElementById('pulseLine');
+  dot.className = 'dot ' + p.mood;
+  word.textContent = p.mood==='good' ? 'Good' : (p.mood==='steady' ? 'Steady' : 'Weak');
+  line.textContent = p.line;
 }
 
-function setTab(t){ activeTab = t; styleTabs(); updatePulse(); renderList(); }
-function setTopic(t){ activeTopic = t; styleChips(); renderList(); }
+document.getElementById('tabs').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.tab');
+  if(!btn) return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  activeCat = btn.dataset.cat;
+  updatePulse();
+  renderList();
+});
 
-function renderList(){
-  const el = document.getElementById("storyList");
-  const filtered = STORIES.filter(s=>{
-    const tabOk = activeTab==="all" || s.cat===activeTab;
-    const topicOk = activeTopic==="all" || s.topic===activeTopic;
-    return tabOk && topicOk;
+document.getElementById('topics').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.chip');
+  if(!btn) return;
+  document.querySelectorAll('.chip').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  activeTopic = btn.dataset.topic;
+  renderList();
+});
+
+document.querySelectorAll('.know-card').forEach(k=>{
+  k.addEventListener('click', ()=>{
+    const cat = k.dataset.jump;
+    const tabBtn = document.querySelector(`.tab[data-cat="${cat}"]`);
+    if(tabBtn){ tabBtn.click(); window.scrollTo({top:0, behavior:'smooth'}); }
   });
-  if(filtered.length===0){
-    el.innerHTML = `<div class="empty">No stories match this filter right now.</div>`;
-    return;
-  }
-  el.innerHTML = filtered.map((s,idx)=>{
-    const c = CATS[s.cat];
-    const uid = "card"+idx+"_"+s.cat;
-    return `
-    <div class="card">
-      <span class="tag" style="background:${c.color};color:#fff;">${c.label.replace("★ ","")}</span>
-      <p class="headline" data-target="${uid}">${s.headline}</p>
-      <span class="srcpill ${s.gold?'gold':''}">${s.source}</span>
-      <div class="tapctl" data-target2="${uid}">Tap to expand ▾</div>
-      <div class="detail" id="${uid}">
-        <div class="detail-inner">
-          <p class="summary">${s.summary}</p>
-          <div class="why">
-            <div class="why-lbl">Why it matters</div>
-            <ul>${s.why.map(w=>`<li>${w}</li>`).join("")}</ul>
-          </div>
-          <a class="readmore" href="${s.url}" target="_blank" rel="noopener" style="color:${c.color}" onclick="event.stopPropagation()">Read the full story →</a>
-        </div>
-      </div>
-    </div>`;
-  }).join("");
+});
 
-  [...el.querySelectorAll(".headline, .tapctl")].forEach(node=>{
-    node.addEventListener("click", ()=>{
-      const id = node.dataset.target || node.dataset.target2;
-      const d = document.getElementById(id);
-      const ctl = d.previousElementSibling;
-      d.classList.toggle("open");
-      ctl.textContent = d.classList.contains("open") ? "Tap to collapse ▴" : "Tap to expand ▾";
-    });
-  });
-}
-
-buildThings();
-buildSnapshot();
-buildTabs();
-buildChips();
-styleTabs();
-styleChips();
-updatePulse();
 renderList();
+updatePulse();
 </script>
 </body>
 </html>
