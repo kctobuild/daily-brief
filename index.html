@@ -158,22 +158,22 @@
     <p class="kicker">Good morning ☕️</p>
     <h1 class="title">Your Daily Brief</h1>
     <p class="date" id="dateLine">Sunday 26 July 2026</p>
-    <span class="readpill" id="readPill">≈ 6-min read · 20 stories · fresh (last 24–48h)</span>
+    <span class="readpill" id="readPill">≈ 7-min read · 20 stories · fresh (last 24–48h)</span>
   </header>
 
   <section class="things">
     <h2>3 things to know today</h2>
     <div class="thing-card" data-jump="top">
-      <div class="thing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#93670c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="4" height="8"/><rect x="10" y="4" width="4" height="14"/><rect x="16" y="7" width="4" height="11"/></svg></div>
-      <div class="thing-text">Samsung locks in a $200bn chip-supply deal with Broadcom, doubling down on the AI build-out.</div>
+      <div class="thing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#93670c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7 6 11a6 6 0 1 1-12 0c0-4 3-7 6-11z"/></svg></div>
+      <div class="thing-text">Brent crude tops $100 a barrel after Houthi attacks on Red Sea tankers, jolting bonds and stocks.</div>
     </div>
     <div class="thing-card" data-jump="top">
-      <div class="thing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#93670c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7 6 11a6 6 0 1 1-12 0c0-4 3-7 6-11z"/></svg></div>
-      <div class="thing-text">Oil surges toward $110 as the Iran and Ukraine conflicts squeeze supply, pushing yields and inflation fears higher.</div>
+      <div class="thing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#93670c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 6l4 14M4 6l4-3M20 6l-4 14M20 6l-4-3M8 20h8"/></svg></div>
+      <div class="thing-text">Washington accuses Moonshot AI of copying Anthropic's Fable model, opening a new US-China AI flashpoint.</div>
     </div>
     <div class="thing-card" data-jump="top">
       <div class="thing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#93670c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 6h6v6"/></svg></div>
-      <div class="thing-text">Wall Street stays cautious as a chip-stock rout and Middle East tensions offset a strong earnings season.</div>
+      <div class="thing-text">Treasury yields swing between 15-month highs and a relief rally as oil and AI borrowing needs collide.</div>
     </div>
   </section>
 
@@ -183,11 +183,11 @@
       <div class="tile"><div class="tile-name">S&amp;P 500</div><div class="tile-val">7,412</div><div class="tile-chg up">▲ 0.05%</div></div>
       <div class="tile"><div class="tile-name">Nasdaq</div><div class="tile-val">24,976</div><div class="tile-chg down">▼ 0.64%</div></div>
       <div class="tile"><div class="tile-name">Dow</div><div class="tile-val">51,947</div><div class="tile-chg up">▲ 0.46%</div></div>
-      <div class="tile"><div class="tile-name">Hang Seng</div><div class="tile-val">24,963</div><div class="tile-chg down">▼ 0.98%</div></div>
-      <div class="tile"><div class="tile-name">USD/CNY</div><div class="tile-val">6.80</div><div class="tile-chg up">▲ yuan</div></div>
-      <div class="tile"><div class="tile-name">Bitcoin</div><div class="tile-val">$67.4k</div><div class="tile-chg up">▲ 1.2%</div></div>
-      <div class="tile"><div class="tile-name">DFM (UAE)</div><div class="tile-val">+11%</div><div class="tile-chg up">▲ best qtr</div></div>
-      <div class="tile"><div class="tile-name">US 10-Yr</div><div class="tile-val">4.68%</div><div class="tile-chg down">▼ 2bps</div></div>
+      <div class="tile"><div class="tile-name">Hang Seng</div><div class="tile-val">25,100</div><div class="tile-chg up">▲ 0.83%</div></div>
+      <div class="tile"><div class="tile-name">USD/CNY</div><div class="tile-val">6.77</div><div class="tile-chg" style="color:var(--sub);">two-way</div></div>
+      <div class="tile"><div class="tile-name">Bitcoin</div><div class="tile-val">$66.0k</div><div class="tile-chg down">▼ off highs</div></div>
+      <div class="tile"><div class="tile-name">DFM (UAE)</div><div class="tile-val">Best qtr</div><div class="tile-chg up">▲ in a year</div></div>
+      <div class="tile"><div class="tile-name">US 10-Yr</div><div class="tile-val">4.69%</div><div class="tile-chg down">▼ off high</div></div>
     </div>
   </section>
 
@@ -214,7 +214,7 @@
     </div>
     <div class="pulse" id="pulse">
       <span class="dot steady" id="pulseDot"></span>
-      <span><span class="pulse-mood steady" id="pulseMood">Steady</span> <span id="pulseText">— tech caution and rising oil offset a resilient earnings season.</span></span>
+      <span><span class="pulse-mood steady" id="pulseMood">Steady</span> <span id="pulseText">— oil's Red Sea shock and AI funding jitters are testing markets, but earnings and reform news keep sentiment from turning sour.</span></span>
     </div>
   </nav>
 
@@ -234,264 +234,264 @@
 <script>
 const STORIES = [
   {
-    cat:"top", topic:"tech", tag:"Top Story",
-    headline:"Samsung Locks In $200 Billion Chip-Supply Deal With Broadcom",
-    source:"Bloomberg", bloomberg:true,
-    summary:"Samsung Electronics won a five-year contract worth more than $200 billion to make chips for Broadcom. The deal runs through 2030 and centers on Samsung's 2-nanometer and below process technology. It follows Nvidia locking down memory supply from SK Hynix in a separate $500 billion AI arrangement.",
-    why:[
-      "Deepens Samsung's role as a second source alongside TSMC, easing AI chip supply-chain concentration risk.",
-      "Signals multi-year capital commitments that will flow through Korean and US semiconductor financing and equity markets.",
-      "Reinforces the AI infrastructure buildout that is driving record capex and credit demand across the tech sector."
-    ],
-    url:"https://www.bloomberg.com/news/articles/2026-07-25/samsung-inks-200-billion-chip-supply-with-broadcom"
-  },
-  {
     cat:"top", topic:"energy", tag:"Top Story",
-    headline:"Oil Prices Surge Toward $110 as Iran and Ukraine Conflicts Hit Supply",
-    source:"The Standard",
-    summary:"Physical oil prices jumped, with some grades nearing $110 a barrel. Iran's conflict with Israel and the US, alongside the Ukraine war, is disrupting supply routes and tanker traffic. Refiners are scrambling to secure alternative crude as risk premiums build across markets.",
+    headline:"Brent Crude Tops $100 a Barrel After Houthi Attacks on Red Sea Tankers",
+    source:"CNBC",
+    summary:"Brent crude jumped past $100 a barrel for the first time since May, gaining roughly 7% after Houthi attacks on tankers in the Red Sea disrupted shipping routes. The spike rippled through equities, with chip stocks leading a broader pullback. Traders are watching whether the disruption proves lasting or short-lived.",
     why:[
-      "Higher oil raises inflation expectations, pushing up Treasury yields and complicating central bank policy paths.",
-      "Hong Kong and Asian banks with energy and shipping exposure face higher funding and hedging costs.",
-      "Sustained triple-digit oil pressures airlines, exporters and consumer spending across major economies."
+      "Sustained triple-digit oil raises inflation expectations, complicating the path for interest-rate cuts that banks and borrowers are counting on.",
+      "Hong Kong and Asian lenders with shipping and energy financing exposure face higher hedging and funding costs if the disruption drags on.",
+      "A prolonged Red Sea disruption would squeeze global trade routes, adding fresh risk on top of an already jittery AI-driven market."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338194/Physical-oil-prices-jump-with-some-nearing-US110-as-Iran-Ukraine-wars-hit-supply"
+    url:"https://www.cnbc.com/2026/07/23/stock-market-today-live-updates.html"
   },
   {
     cat:"top", topic:"markets", tag:"Top Story",
-    headline:"Wall Street Opens Subdued as Tech Rout, Mideast Tensions Weigh",
-    source:"The Standard",
-    summary:"US stocks opened cautiously as chip shares extended losses and Middle East risk stayed elevated. Intel fell sharply despite beating earnings estimates, dragging peers like Broadcom and AMD lower. Traders are also watching new tariff moves and their fallout with trade partners.",
+    headline:"Treasury Yields Swing as Oil Shock Meets AI Borrowing Boom",
+    source:"CNBC",
+    summary:"The 10-year Treasury yield touched its highest level since January 2025 as oil-driven inflation fears combined with heavy borrowing tied to the AI infrastructure boom. Yields eased on Friday as oil pulled back on hopes for renewed US-Iran peace talks. Bond markets remain unusually sensitive to Middle East headlines.",
     why:[
-      "A broad chip-sector pullback signals investors are repricing AI-related valuations after a long rally.",
-      "Tariff disputes add a policy risk layer on top of geopolitical tension, clouding the earnings outlook.",
-      "Volatility here typically spills into Asian trading hours, affecting Hong Kong and mainland sentiment."
+      "Rate-sensitive Hong Kong and US mortgage and lending markets are exposed to any renewed climb in long-term borrowing costs.",
+      "Heavy credit demand from AI data-center buildouts is now a structural force pushing on yields alongside oil and Fed policy.",
+      "A durable yield pullback would ease pressure on banks and property developers carrying floating-rate debt."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338189/Wall-St-opens-subdued-after-tech-rout-Mideast-tariffs-in-focus"
+    url:"https://www.cnbc.com/2026/07/24/treasury-yields-bonds-us-debt.html"
+  },
+  {
+    cat:"top", topic:"policy", tag:"Top Story",
+    headline:"White House Flags AI 'Distillation' Fight After Moonshot AI Copies Anthropic Model",
+    source:"CNBC",
+    summary:"A White House advisor said Moonshot AI distilled Anthropic's Fable model to help build its own K3 system, switching access methods to avoid detection. Distillation lets developers train new models cheaply off a rival's outputs. The revelation has made distillation the hottest debate from Silicon Valley to Washington this week.",
+    why:[
+      "Raises the stakes for US AI labs protecting model outputs, a core asset underpinning their valuations and licensing revenue.",
+      "Could accelerate US export-control and access restrictions on frontier models, reshaping how Chinese AI firms train competitive systems.",
+      "Adds a new compliance and IP-protection burden for banks and enterprises building products on top of licensed AI models."
+    ],
+    url:"https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html"
   },
 
   {
-    cat:"hk", topic:"banking", tag:"Hong Kong",
-    headline:"HKEX Eases Listing Thresholds to Draw More IPOs",
-    source:"The Standard",
-    summary:"HKEX published conclusions to its listing-framework consultation, adopting all proposals with modifications. It halved the market-cap threshold for dual-class share companies to HK$20 billion and cut the bar for non-WVR overseas firms to HK$6 billion. The exchange also widened access to confidential IPO filings.",
-    why:[
-      "Lower thresholds should draw more overseas and dual-class listings, reinforcing Hong Kong's IPO pipeline.",
-      "Confidential filing access reduces execution risk for issuers, encouraging larger international deals.",
-      "Follows a first half with 87 new listings and HK$210 billion raised, up 92% year-on-year."
-    ],
-    url:"https://www.thestandard.com.hk/finance/article/338180/HKEX-eases-listing-thresholds-to-draw-more-IPOs"
-  },
-  {
-    cat:"hk", topic:"banking", tag:"Hong Kong",
-    headline:"SFC Tightens Daily Disclosure Rules for Leveraged Products",
-    source:"The Standard",
-    summary:"Hong Kong's securities regulator moved to smooth volatility in leveraged and inverse (L&I) products. Issuers now get more flexibility to adjust leverage factors within existing 2x caps during turbulent trading. Providers must publish the next day's targeted leverage after each market close.",
-    why:[
-      "Aims to curb tracking-error blowups in single-stock leveraged ETFs tied to volatile chip names.",
-      "Clearer daily disclosure helps retail investors understand these products are not meant to be held overnight.",
-      "Comes as single-stock L&I products on names like SK Hynix have seen booming, volatile trading volumes."
-    ],
-    url:"https://www.thestandard.com.hk/finance/article/338176/SFC-adjusts-regulatory-framework-for-leveraged-and-inverse-products-to-ensure-orderly-market-trading"
-  },
-  {
     cat:"hk", topic:"markets", tag:"Hong Kong",
-    headline:"Hang Seng Slips Below 25,000 as Alibaba, Tencent Drag",
+    headline:"Hang Seng Index Closes Above 25,000 Points as Banks Rally",
     source:"The Standard",
-    summary:"The Hang Seng Index fell 247 points, or 0.98%, to 24,963 on Friday as rising oil prices weighed on sentiment. Alibaba dropped 4% and Tencent fell 2.3%, while gold-linked stocks slid with bullion prices. BOC Hong Kong bucked the trend, jumping nearly 6% on rate-hike expectations.",
+    summary:"Hong Kong's Hang Seng Index closed back above the 25,000 mark, lifted by gains in banking and insurance names. HSBC and mainland lenders including China Construction Bank and ICBC posted solid gains. The move offers relief after a choppy stretch driven by global chip-stock jitters.",
     why:[
-      "Tech-heavy losses show Hong Kong markets are exposed to the same AI valuation jitters hitting Wall Street.",
-      "A rate-hike-driven rally in bank shares suggests investors are rotating toward income names.",
-      "Mainland markets fell in tandem, with Shanghai and Shenzhen both down more than 1.6%."
+      "A bank-led rally signals investors are rotating toward income names as global tech valuations wobble.",
+      "Reinforces confidence in Hong Kong-listed lenders just as the city's IPO and listing reform pipeline gathers pace.",
+      "A firmer Hang Seng supports margin and collateral positions across Hong Kong's brokerage and wealth-management sector."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338160/HSI-closes-below-25000-points-Alibaba-down-4pc"
+    url:"https://www.thestandard.com.hk/finance/article/338041/Hang-Seng-Index-closes-above-25000-points"
   },
   {
-    cat:"hk", topic:"markets", tag:"Hong Kong",
-    headline:"Bulk Homebuyers Hit Record as Hong Kong Rental Market Stays Red-Hot",
+    cat:"hk", topic:"banking", tag:"Hong Kong",
+    headline:"HSBC Shares Eyed for Turnover Boost From HKEX Board-Lot Reform",
     source:"SCMP",
-    summary:"A record 654 buyers purchased two or more new flats in the first half of 2026, acquiring 1,794 units worth HK$17.4 billion. That figure more than doubled from a year earlier. Investors are chasing rental yields as demand from mainland students and imported workers pushes rents to record highs.",
+    summary:"Hong Kong's board-lot reform, which took effect this month, requires HKEX's roughly 2,700 listed firms to consolidate lot sizes into eight standard units within six months. Analysts say HSBC, one of the priciest board lots on the exchange, could see a meaningful turnover bump. The reform aims to widen retail access to blue chips.",
     why:[
-      "Signals investors, not just homeowners, are underpinning primary-market demand since cooling measures were scrapped.",
-      "Strong rental yields support mortgage books at Hong Kong banks exposed to the property sector.",
-      "A tight rental market near universities and transport hubs points to durable, structural housing demand."
+      "Lower minimum trade sizes could deepen retail liquidity in HSBC and other high-priced blue chips on the Hong Kong exchange.",
+      "A smoother, standardized lot structure supports HKEX's push to stay competitive as a global listing and trading venue.",
+      "Broader retail participation in bank shares strengthens price discovery for Hong Kong's most systemically important lenders."
     ],
-    url:"https://www.scmp.com/business/markets/article/3361485/investors-bulk-buying-flats-remains-key-hong-kong-amid-red-hot-rental-market"
+    url:"https://www.scmp.com/business/banking-finance/article/3360270/are-hsbc-shares-set-turnover-bump-owing-hong-kongs-board-lot-reform"
   },
   {
-    cat:"hk", topic:"banking", tag:"Hong Kong",
-    headline:"JPMorgan Shifts Over 30 China Quant Researchers to Hong Kong, Singapore",
-    source:"Bloomberg", bloomberg:true,
-    summary:"JPMorgan moved more than 30 quantitative staff out of mainland China in recent months. About 25 to 30 were relocated from Beijing and Shanghai to Singapore, with roughly six China quant traders and researchers moved to Hong Kong. The bank is consolidating teams closer to regional trading hubs.",
+    cat:"hk", topic:"markets", tag:"Hong Kong",
+    headline:"China Resources' The Sterling Nears Pre-Sale Approval in Kowloon",
+    source:"The Standard",
+    summary:"China Resources Land's The Sterling project in South West Kowloon is expected to secure pre-sale consent as early as late July. Price lists are expected to follow shortly after approval is granted. The launch adds to a wave of new project rollouts as developers respond to improving buyer sentiment.",
     why:[
-      "Reflects global banks continuing to shift China-facing talent and risk management toward Hong Kong and Singapore.",
-      "Reinforces Hong Kong's role as a regional base for quantitative trading and research functions.",
-      "Comes against a backdrop of mainland funds trimming direct Hong Kong equity exposure this quarter."
+      "A fresh Kowloon launch tests how much pricing power developers have regained as Hong Kong's property rebound continues.",
+      "Mortgage lending volumes at Hong Kong banks stand to benefit from a steady drumbeat of new project pre-sales.",
+      "Strong absorption would reinforce confidence that the residential recovery is broadening beyond a handful of hot projects."
     ],
-    url:"https://www.bloomberg.com/news/articles/2026-07-24/jpmorgan-moves-over-30-china-quant-researchers-to-singapore-hk"
+    url:"https://www.thestandard.com.hk/property/article/337800/The-Sterling-to-secure-pre-sale-approval-as-early-as-late-July"
+  },
+  {
+    cat:"hk", topic:"markets", tag:"Hong Kong",
+    headline:"SHKP, Wheelock Press Ahead With New Launches as Housing Rebounds",
+    source:"SCMP",
+    summary:"Sun Hung Kai Properties released a price list for 120 units at its Garden Regency project in Kam Tin North, while Wheelock Properties prepares the first phase of its 781-flat Park Silicon project in Kwu Tung North. Developers are ramping up supply even as forecasts point to only muted price gains ahead.",
+    why:[
+      "A wave of new-home supply from major developers signals confidence that Hong Kong's housing recovery has staying power.",
+      "Mortgage origination at Hong Kong banks tends to track new-launch volume closely, making this a read on near-term lending demand.",
+      "Muted price-gain forecasts suggest developers are prioritizing sales volume over margin, a shift worth watching for the broader market."
+    ],
+    url:"https://www.scmp.com/business/article/3360152/hong-kong-developers-ready-new-home-launches-amid-forecasts-muted-price-increases"
+  },
+  {
+    cat:"hk", topic:"policy", tag:"Hong Kong",
+    headline:"Hong Kong Keeps Tight Grip on Land Supply Despite Property Rebound",
+    source:"SCMP",
+    summary:"Hong Kong's government will offer just one residential site, in Ho Man Tin, for tender this quarter, providing about 250 flats. Officials are maintaining a cautious land-supply stance even as home prices and sentiment recover. The approach keeps a lid on new-build volume over the medium term.",
+    why:[
+      "A constrained land pipeline supports pricing for developers' existing landbanks, a key input for property-linked bank collateral values.",
+      "Slower land supply could keep upward pressure on prices over time, a factor Hong Kong banks weigh in mortgage risk models.",
+      "The cautious stance signals officials are prioritizing price stability over rapidly expanding housing supply."
+    ],
+    url:"https://www.scmp.com/business/article/3360157/hong-kong-keeps-tight-grip-housing-land-supply-despite-property-rebound"
   },
 
   {
     cat:"us", topic:"markets", tag:"United States",
-    headline:"US Business Activity Perks Up in July, Helped by World Cup",
-    source:"The Standard",
-    summary:"S&P Global's flash PMI data showed US business activity picking up in July, partly lifted by World Cup-related spending. Economists cautioned the boost looks temporary rather than a durable acceleration. Underlying demand signals remain mixed heading into the back half of the year.",
+    headline:"Wall Street Heads Into Fed Meeting, Heavy Earnings Week on Edge",
+    source:"CNBC",
+    summary:"US stocks enter the week of July 27-31 with a Fed meeting and a dense slate of corporate earnings on deck. Markets are coming off back-to-back weekly losses led by the Nasdaq, as chip-stock weakness and Middle East risk weighed on sentiment. Traders expect volatility to stay elevated.",
     why:[
-      "A temporary activity boost complicates the Fed's read on underlying inflation and demand momentum.",
-      "One-off consumption events like the World Cup can mask softer trend growth in services and retail.",
-      "Sets a cautious backdrop ahead of next week's Fed meeting and a heavy corporate earnings slate."
+      "A crowded Fed-and-earnings calendar raises the odds of sharp cross-asset swings that ripple into Asian trading hours.",
+      "Fed commentary on rates will directly shape borrowing costs for banks and leveraged companies worldwide.",
+      "Continued chip-stock weakness would test whether AI-driven valuations can hold up under a heavier news week."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338190/US-business-activity-perks-up-in-July-helped-by-World-Cup-but-trend-may-not-last-SP-Global-says"
+    url:"https://www.cnbc.com/2026/07/24/stock-market-next-week-outlook-for-july-27-31-2026.html"
   },
   {
     cat:"us", topic:"policy", tag:"United States",
-    headline:"A Coalition of AI Skeptics Grows in Trump's Own Blind Spot",
+    headline:"A Coalition of AI Skeptics Grows in Trump's Own Political Blind Spot",
     source:"CNBC",
-    summary:"A new, unusual coalition of AI skeptics is coalescing within circles close to the Trump administration. Concerns center on data-center buildouts, energy costs and local community impacts. The pushback complicates the White House's otherwise pro-acceleration stance on AI infrastructure.",
+    summary:"An unusual coalition of religious leaders, labor unions and local activists is mobilizing against the AI data-center boom. A June poll found 53% of conservative Republicans oppose building data centers in their own communities. The pushback complicates the White House's otherwise pro-acceleration stance on AI infrastructure.",
     why:[
-      "Political friction over data centers could slow permitting and power deals underpinning the AI buildout.",
-      "Energy-cost backlash may ripple into utility financing and regional bank lending tied to data-center projects.",
-      "Signals policy risk for AI infrastructure investors betting on unimpeded US buildout timelines."
+      "Political friction over data centers could slow permitting and power deals underpinning the broader AI infrastructure buildout.",
+      "Utility financing and regional bank lending tied to data-center projects face added political and regulatory risk.",
+      "Signals a genuine policy risk for AI infrastructure investors betting on unimpeded US buildout timelines."
     ],
     url:"https://www.cnbc.com/2026/07/25/trump-ai-data-center-backlash.html"
   },
   {
     cat:"us", topic:"markets", tag:"United States",
-    headline:"Treasury Yields Retreat as Oil Falls on Hopes for Iran Peace Talks",
+    headline:"Treasury Yields Hit 15-Month High as Oil Surge Rekindles Inflation Fears",
     source:"CNBC",
-    summary:"The 10-year Treasury yield slipped more than 2 basis points to 4.681% on Friday as oil prices eased. That followed a report that Pakistan is exploring ways to restart US-Iran peace talks. Yields had touched their highest level since January 2025 just a day earlier.",
+    summary:"The 10-year Treasury yield climbed to its highest level since January 2025 as surging oil prices stoked fresh inflation concerns. The move came alongside the latest weekly jobless-claims data, which traders parsed for signs of labor-market cooling. Rising yields added pressure to already-jittery equity markets.",
     why:[
-      "Lower yields ease some pressure on mortgage rates and corporate borrowing costs, if the pullback holds.",
-      "Shows how tightly bond markets are now tracking Middle East headlines rather than just Fed signals.",
-      "A reversal in oil-driven inflation fears would be a relief for rate-sensitive banking and property stocks."
+      "Higher long-term yields raise financing costs for US banks, homebuyers and companies carrying floating-rate debt.",
+      "Jobless-claims data remains a key input the Fed watches when weighing the timing of any further rate cuts.",
+      "Persistent inflation fears tied to oil complicate the outlook for both US and Hong Kong-linked interest rates given the currency peg."
     ],
-    url:"https://www.cnbc.com/2026/07/24/treasury-yields-bonds-us-debt.html"
+    url:"https://www.cnbc.com/2026/07/23/treasury-yields-oil-prices-jobless-claims.html"
   },
 
   {
     cat:"china", topic:"policy", tag:"China",
-    headline:"China Places Former Deputy Securities Regulator Chief Under Probe",
-    source:"The Standard",
-    summary:"Fang Xinghai, a former deputy chairman of the China Securities Regulatory Commission, has been placed under investigation. He was a prominent figure in shaping mainland capital-market reforms over the past decade. Details of the specific allegations have not yet been disclosed.",
+    headline:"PBOC Injects Most Liquidity in Five Months to Shore Up Growth",
+    source:"Bloomberg", bloomberg:true,
+    summary:"China's central bank pumped 500 billion yuan into the banking system via a one-year lending facility, its largest such injection in five months. The net addition, after accounting for maturing loans, totaled 100 billion yuan. The move underscores Beijing's focus on supporting liquidity as growth momentum cools.",
     why:[
-      "A senior securities regulator being probed adds to uncertainty around Beijing's capital-market policy direction.",
-      "Anti-corruption action in financial regulation can unsettle sentiment among foreign institutional investors.",
-      "Comes as China leans on capital-market reform to help offset a slowing broader economy."
+      "Ample liquidity support helps keep funding costs low for mainland banks and corporates navigating a slowing economy.",
+      "Signals the PBOC is prioritizing growth support over currency tightening, a stance Hong Kong's dollar-peg framework must track closely.",
+      "Sustained liquidity injections could feed through to credit growth that benefits Hong Kong banks with mainland lending exposure."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338186/China-places-former-deputy-chief-of-securities-regulator-under-probe"
+    url:"https://www.bloomberg.com/news/articles/2026-07-24/pboc-adds-most-liquidity-to-economy-in-five-months-to-aid-growth"
   },
   {
-    cat:"china", topic:"energy", tag:"China",
-    headline:"CATL Tops Quarterly Profit Forecasts on Energy Storage Boom",
-    source:"The Standard",
-    summary:"Chinese battery giant CATL beat quarterly profit estimates, driven by robust demand for its energy-storage systems. Growth in grid-scale storage is offsetting slower gains in core EV battery sales. The results underline resilient demand in China's clean-energy supply chain.",
+    cat:"china", topic:"markets", tag:"China",
+    headline:"Big Asia Stock Funds Rotate to Laggards to Cut Risk From AI Swings",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Major Asian equity funds are shifting money into overlooked, lower-valuation stocks to reduce exposure to volatile AI-linked names. The move follows sharp swings in chip and AI shares that have rattled regional portfolios. Fund managers say the rotation reflects growing caution after a long AI-driven rally.",
     why:[
-      "Highlights a bright spot in Chinese industry even as broader investment and property data disappoint.",
-      "Strong storage demand supports financing and equity valuations across China's battery and renewables sector.",
-      "Reinforces China's dominant position in global battery supply chains feeding grid and EV markets."
+      "A rotation away from AI darlings could cool valuations across Hong Kong and mainland tech-heavy indices.",
+      "Reduced concentration risk in institutional portfolios may lower systemic exposure to a sharp AI-sector correction.",
+      "Renewed interest in laggard names could broaden gains beyond a narrow group of AI winners across Asian markets."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338185/Chinas-CATL-tops-quarterly-profit-forecasts-on-robust-energy-storage-business"
+    url:"https://www.bloomberg.com/news/articles/2026-07-25/big-asia-stock-funds-turn-to-laggards-to-cut-risk-from-ai-swings"
   },
   {
     cat:"china", topic:"policy", tag:"China",
-    headline:"China to Tax Offshore Trusts as Beijing Targets Overseas Wealth",
-    source:"The Standard",
-    summary:"Beijing is moving to tax assets held in offshore trusts as part of a broader push to capture overseas wealth. The measure targets wealthy mainland residents who have used offshore structures to shield assets. It follows years of tightening rules on cross-border capital flows.",
+    headline:"China's Cabinet Vows to Hit Growth Target After Economy Weakens",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Premier Li Qiang's cabinet pledged to meet China's full-year growth goal after second-quarter GDP expanded 4.3%, its weakest pace in more than three years. A State Council meeting called for more efficient use of fiscal funds. The pledge follows weaker investment data even as retail sales showed signs of stabilizing.",
     why:[
-      "Wealthy mainland clients may accelerate restructuring of trusts booked through Hong Kong and offshore centers.",
-      "Private banks and trust administrators in Hong Kong face rising compliance and advisory demand.",
-      "Signals Beijing's continued drive to widen its tax base amid slower domestic growth."
+      "A firm growth-target commitment signals more fiscal stimulus is likely, a potential tailwind for mainland and Hong Kong-linked banks.",
+      "Persistent investment weakness keeps pressure on China's property and infrastructure sectors, a key risk for regional lenders' loan books.",
+      "Stabilizing retail sales offer a modest bright spot that could support consumer-facing businesses across the region."
     ],
-    url:"https://www.thestandard.com.hk/finance/article/338167/China-to-tax-offshore-trusts-as-Beijing-targets-overseas-wealth"
+    url:"https://www.bloomberg.com/news/articles/2026-07-21/china-vows-to-achieve-annual-growth-target-after-economy-weakens"
   },
 
   {
     cat:"tech", topic:"tech", tag:"Tech/AI",
+    headline:"Nvidia to Invest $1 Billion in Naver, Expanding SK Group AI Accord",
+    source:"Bloomberg", bloomberg:true,
+    summary:"Nvidia will invest $1 billion in South Korea's Naver Corp to help finance an AI data center under construction. The funding lets Naver more than triple the facility's planned size. The deal deepens Nvidia's broader partnership with SK Group on AI infrastructure in South Korea.",
+    why:[
+      "Expands Nvidia's direct equity stake in AI infrastructure customers, tightening the link between chipmaker and buildout financing.",
+      "A larger Naver data center adds to regional demand for high-end memory and compute, a tailwind for Korean chip suppliers.",
+      "Deepening South Korea-Nvidia ties reinforces Asia's role as a major node in the global AI infrastructure race."
+    ],
+    url:"https://www.bloomberg.com/news/articles/2026-07-24/nvidia-to-invest-1-billion-in-naver-and-expand-sk-group-accord"
+  },
+  {
+    cat:"tech", topic:"tech", tag:"Tech/AI",
     headline:"Anthropic Asks SK Hynix for Chip Supplies to Build Its Own Silicon",
     source:"Bloomberg", bloomberg:true,
-    summary:"SK Hynix's chairman said Anthropic has approached the memory maker for supplies to develop its own chips. It's a sign leading AI labs want more control over custom silicon rather than relying solely on merchant GPUs. The request adds to already stretched high-end memory demand.",
+    summary:"SK Hynix's chairman said Anthropic has approached the memory maker for supplies to develop its own custom chips. It signals leading AI labs increasingly want direct control over silicon rather than relying solely on merchant GPUs. The request adds to already stretched demand for high-end memory.",
     why:[
       "AI labs designing custom chips could reshape demand patterns across the memory and foundry supply chain.",
-      "Tighter memory supply raises costs for every player building AI infrastructure, from hyperscalers to challengers.",
-      "Underscores how compute strategy, not just model research, is becoming central to AI competitive advantage."
+      "Tighter memory supply raises costs for every player building AI infrastructure, from hyperscalers to smaller challengers.",
+      "Underscores how compute strategy, not just model research, is becoming central to AI labs' competitive positioning."
     ],
     url:"https://www.bloomberg.com/news/articles/2026-07-25/sk-chair-says-anthropic-asked-for-supplies-to-make-its-own-chips"
   },
   {
     cat:"tech", topic:"tech", tag:"Tech/AI",
-    headline:"DeepSeek Suspends Fundraising After Viral AI Rivalry Comments",
+    headline:"DeepSeek Suspends Fundraising After Viral US-China AI Rivalry Comments",
     source:"Bloomberg", bloomberg:true,
-    summary:"DeepSeek has told prospective backers it is pausing its second fundraising round. The move follows viral comments widely attributed to founder Liang Wenfeng on US-China AI competition. The pause raises questions about the round's valuation and timing.",
+    summary:"DeepSeek told prospective backers it is pausing its second fundraising round. The move follows viral comments widely attributed to founder Liang Wenfeng about US-China AI competition. The pause raises questions over the round's valuation and timing.",
     why:[
       "A stalled raise could slow DeepSeek's compute buildout just as rivals accelerate custom-chip and model spending.",
-      "Highlights how geopolitical rhetoric is now directly affecting Chinese AI firms' access to capital.",
-      "Investors will watch whether the pause reflects valuation disagreements or deeper strategic reassessment."
+      "Highlights how geopolitical rhetoric is now directly affecting Chinese AI firms' access to international capital.",
+      "Investors will watch whether the pause reflects valuation disagreements or a deeper strategic reassessment at the firm."
     ],
     url:"https://www.bloomberg.com/news/articles/2026-07-25/deepseek-said-to-tell-backers-of-funding-pause-after-viral-posts"
-  },
-  {
-    cat:"tech", topic:"tech", tag:"Tech/AI",
-    headline:"Humanoid Robot Maker AgiBot Starts Hong Kong IPO Process",
-    source:"The Standard",
-    summary:"Chinese humanoid robot maker AgiBot has kicked off its Hong Kong listing process, state media reported. The Shanghai-based firm has engaged CITIC Securities as sponsor and expects about 4 billion yuan in revenue this year. Backers include Tencent and Sequoia Capital.",
-    why:[
-      "Adds a high-profile AI hardware name to Hong Kong's already strong 2026 IPO pipeline.",
-      "A successful listing would test investor appetite for embodied-AI and robotics valuations outside the US.",
-      "Reinforces Hong Kong's positioning as the preferred listing venue for mainland AI and hard-tech firms."
-    ],
-    url:"https://www.thestandard.com.hk/finance/article/338188/Chinese-robot-maker-AgiBot-starts-Hong-Kong-IPO-process-Securities-Times-reports"
   },
 
   {
     cat:"global", topic:"markets", tag:"Global Markets",
-    headline:"Megacap Earnings, Fed Meeting Loom Over a Market on Edge",
-    source:"CNBC",
-    summary:"As many as 87 S&P 500 companies report this week, with a Fed meeting also on deck. Of 95 companies that have already reported, 88% beat earnings estimates by a median of 7%. Even so, both the S&P 500 and Nasdaq booked back-to-back weekly losses on chip and geopolitical worries.",
+    headline:"Europe's Stock Rally Becomes Its Most Concentrated in Years",
+    source:"Bloomberg", bloomberg:true,
+    summary:"The Stoxx Europe 600 has been boosted by a narrow group of semiconductor names including ASML, Infineon and STMicroelectronics, as AI enthusiasm spreads to the region. The concentration marks a sharp shift for a market traditionally driven by banks and industrials. Analysts warn the narrow leadership raises risk if AI sentiment turns.",
     why:[
-      "A dense earnings and Fed calendar raises the odds of sharp cross-asset volatility in the week ahead.",
-      "Strong beat rates suggest fundamentals remain solid even as headline indices wobble on macro noise.",
-      "Fed commentary on rates will shape borrowing costs for banks and leveraged companies worldwide."
+      "A narrow, AI-driven rally leaves European indices more exposed to a sudden reversal in chip-sector sentiment.",
+      "Reinforces how thoroughly AI enthusiasm has spread beyond the US into global equity leadership.",
+      "European banks financing this semiconductor buildout carry growing exposure to a single, fast-moving sector theme."
     ],
-    url:"https://www.cnbc.com/2026/07/23/stock-market-today-live-updates.html"
+    url:"https://www.bloomberg.com/news/articles/2026-07-25/europe-s-stock-market-rally-is-the-most-concentrated-in-years"
   },
 
   {
-    cat:"uae", topic:"markets", tag:"UAE",
-    headline:"ADX to Scrap Daily Price Limits on ETFs and Futures From August",
+    cat:"uae", topic:"banking", tag:"UAE",
+    headline:"UAE's Top Bank to Offer $1.5 Billion FX Program for India Expats",
     source:"Bloomberg", bloomberg:true,
-    summary:"Abu Dhabi's ADX will remove daily price limits on its ETFs and futures contracts effective August 3. The exchange also listed six new single-stock futures spanning energy, AI, logistics and financial services. Its derivatives data is now fully integrated into the Bloomberg Terminal.",
+    summary:"First Abu Dhabi Bank will offer up to $1.5 billion in funding for non-resident Indians investing in India's foreign-currency deposit program. The offering targets Middle East-based customers and involves talks with banks in India. It builds on the UAE's deepening financial ties with South Asia.",
     why:[
-      "Removing price limits should improve liquidity and price discovery for derivatives traders on ADX.",
-      "New AI and logistics futures widen hedging tools tied to Abu Dhabi's economic diversification push.",
-      "Deeper Bloomberg integration raises ADX's visibility to global institutional investors and market makers."
+      "Expands Gulf banks' role as a funding conduit between Middle East wealth and emerging-market deposit programs.",
+      "Deeper UAE-India financial links reinforce Abu Dhabi's ambitions as a regional wealth and remittance hub.",
+      "A large FX program of this size adds meaningful cross-border deposit flow that Gulf regulators will be watching closely."
     ],
-    url:"https://www.bloomberg.com/company/press/adx-lists-six-new-single-stock-futures-deepens-bloomberg-collaboration-to-expand-global-access-to-abu-dhabi-markets/"
+    url:"https://www.bloomberg.com/news/articles/2026-07-24/uae-s-top-bank-to-offer-1-5-billion-for-india-expats-fx-program"
   },
 
   {
     cat:"crypto", topic:"crypto", tag:"Crypto",
-    headline:"Bitcoin Rallies Toward $67,000 as Clarity Act Nears Passage",
+    headline:"Bitcoin's Price Plunge Crushes Companies That Stockpiled Tokens",
     source:"Bloomberg", bloomberg:true,
-    summary:"Bitcoin rose as much as 2.5%, approaching $67,000, after Treasury Secretary Scott Bessent said the Clarity Act was at the '1-yard line' in Congress. Coinbase shares jumped as much as 13% on the news. Ether and smaller tokens rallied alongside bitcoin on the regulatory optimism.",
+    summary:"Bitcoin's slide from its October peak has hit hard the wave of companies that built corporate treasuries around the token. Several token-holding firms are now sitting on steep unrealized losses. The pain highlights the risk of the 'bitcoin treasury' strategy many companies adopted during the rally.",
     why:[
-      "Clearer digital-asset rules could unlock more institutional allocation into crypto markets if the bill passes.",
-      "Exchange and custody stocks like Coinbase are highly sensitive to US regulatory milestones like this one.",
-      "Bitcoin remains well below its October peak, so the rally is a bounce rather than a full recovery."
+      "Highlights concentrated balance-sheet risk at companies that leveraged up to buy bitcoin as a treasury asset.",
+      "A wave of distressed token-holding firms could trigger forced selling, adding further pressure on crypto prices.",
+      "Serves as a cautionary signal for banks and lenders extending credit against crypto-holding corporate balance sheets."
     ],
-    url:"https://www.bloomberg.com/news/articles/2026-07-21/bitcoin-rallies-after-bessent-says-clarity-act-at-1-yard-line"
+    url:"https://www.bloomberg.com/news/articles/2026-07-22/bitcoin-s-price-plunge-crushes-companies-that-stockpiled-tokens"
   }
 ];
 
 const PULSE = {
-  all:    {mood:"steady", text:"— tech caution and rising oil offset a resilient earnings season."},
-  top:    {mood:"steady", text:"— chip-stock jitters and Mideast risk are testing an otherwise strong earnings season."},
-  hk:     {mood:"steady", text:"— Hang Seng dipped on tech and gold weakness, but listing reforms and IPO activity stay upbeat."},
-  us:     {mood:"steady", text:"— Wall Street stayed cautious as chip stocks wobbled and yields eased on Mideast hopes."},
-  china:  {mood:"steady", text:"— growth concerns persist, but earnings beats and reform pledges offer some support."},
-  global: {mood:"steady", text:"— strong earnings beats are colliding with rate and geopolitical jitters worldwide."},
-  uae:    {mood:"good",   text:"— Dubai shares are heading for their best quarter in a year as exchange activity expands."},
-  tech:   {mood:"steady", text:"— mega chip deals keep flowing even as funding pauses and distillation disputes cloud the mood."},
-  crypto: {mood:"steady", text:"— bitcoin is firming on regulatory clarity hopes, though still well off its October highs."}
+  all:    {mood:"steady", text:"— oil's Red Sea shock and AI funding jitters are testing markets, but earnings and reform news keep sentiment from turning sour."},
+  top:    {mood:"steady", text:"— surging oil and a new AI distillation fight are the stories moving everything else this week."},
+  hk:     {mood:"good",   text:"— Hong Kong stocks pushed back above a key level as banks led gains and developers pressed ahead with new launches."},
+  us:     {mood:"steady", text:"— Wall Street closed a choppy week mixed, with chip weakness offsetting steadier bond yields."},
+  china:  {mood:"steady", text:"— Beijing is leaning on stimulus and liquidity support even as investors grow more selective on AI-linked shares."},
+  global: {mood:"good",   text:"— Europe's rally kept broadening on AI-linked optimism even as bond markets stayed jittery."},
+  uae:    {mood:"good",   text:"— Gulf banks kept expanding their reach, deepening financial ties across the region."},
+  tech:   {mood:"steady", text:"— chip supply deals keep multiplying even as funding pauses and distillation disputes cloud the AI mood."},
+  crypto: {mood:"weak",   text:"— bitcoin remains under pressure, well off its highs, as token-holding companies feel the squeeze."}
 };
 
 const feed = document.getElementById("feed");
