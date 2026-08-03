@@ -5,7 +5,7 @@
 #   2. Does `claude -p` run headless there at all?
 #
 # It does NOT touch index.html, does not commit, and does not push.
-name: P041 token check
+name: P041 token check   # retrigger 2
 
 on:
   workflow_dispatch:          # manual button in the Actions tab
