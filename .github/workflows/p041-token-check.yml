@@ -52,6 +52,12 @@ jobs:
           RC=$?
           set -e
 
+          # ::error:: annotations are readable via the public check-runs API without auth,
+          # unlike job logs (admin-only) and step summaries (sign-in). This is the only
+          # channel that gets the verdict out of a repo I cannot authenticate against.
+          FLAT="$(printf '%s' "$OUT" | tr '\n' ' ' | tr -s ' ' | cut -c1-400)"
+          echo "::error::rc=$RC len=${#CLAUDE_CODE_OAUTH_TOKEN} out=$FLAT"
+
           {
             echo "- Exit code: **$RC**"
             echo ""
