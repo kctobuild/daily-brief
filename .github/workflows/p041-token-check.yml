@@ -26,13 +26,43 @@ jobs:
       - name: Show CLI version
         run: claude --version
 
+      # Job logs need repo-admin auth to download, but the step summary is publicly
+      # readable on the run page — so the verdict is written there instead.
       - name: Headless authenticated call
+        if: always()
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
+          {
+            echo "## P041 token check"
+            echo ""
+            echo "- CLI version: \`$(claude --version 2>&1 | head -1)\`"
+            echo "- Secret length: **${#CLAUDE_CODE_OAUTH_TOKEN}** chars (expected 108)"
+            echo "- Secret prefix: \`$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | cut -c1-12)\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
           if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
-            echo "FAIL: secret CLAUDE_CODE_OAUTH_TOKEN is empty or not visible to this workflow"
+            echo "- **RESULT: FAIL — secret is empty or not visible to this workflow**" \
+              >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-          echo "Secret is present (${#CLAUDE_CODE_OAUTH_TOKEN} chars). Calling the API..."
-          claude -p "reply with exactly: OK" --output-format text
+
+          set +e
+          OUT="$(claude -p "reply with exactly: OK" --output-format text 2>&1)"
+          RC=$?
+          set -e
+
+          {
+            echo "- Exit code: **$RC**"
+            echo ""
+            echo "### CLI output"
+            echo '```'
+            printf '%s\n' "$OUT" | head -40
+            echo '```'
+            if [ "$RC" -eq 0 ]; then
+              echo "**RESULT: PASS — the token authenticates from a GitHub-hosted runner.**"
+            else
+              echo "**RESULT: FAIL — see output above.**"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit $RC
