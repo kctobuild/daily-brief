@@ -1,0 +1,38 @@
+# P041 verification — THROWAWAY. Delete once the result is recorded in the change log.
+#
+# Answers two questions before any migration is built on top of them:
+#   1. Does the sk-ant-oat01- subscription OAuth token authenticate from a GitHub-hosted runner?
+#   2. Does `claude -p` run headless there at all?
+#
+# It does NOT touch index.html, does not commit, and does not push.
+name: P041 token check
+
+on:
+  workflow_dispatch:          # manual button in the Actions tab
+  push:
+    paths:                    # runs only when this file itself changes
+      - '.github/workflows/p041-token-check.yml'
+
+permissions:
+  contents: read              # no write access — this job must not be able to publish
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Show CLI version
+        run: claude --version
+
+      - name: Headless authenticated call
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "FAIL: secret CLAUDE_CODE_OAUTH_TOKEN is empty or not visible to this workflow"
+            exit 1
+          fi
+          echo "Secret is present (${#CLAUDE_CODE_OAUTH_TOKEN} chars). Calling the API..."
+          claude -p "reply with exactly: OK" --output-format text
