@@ -209,7 +209,7 @@
   <header class="hero">
     <p class="kicker">Good morning ☕️</p>
     <h1 class="title">Your Daily Brief</h1>
-    <p class="datestr">Saturday 08 August 2026</p>
+    <p class="datestr">Sunday 09 August 2026</p>
     <span class="readpill">≈ 8-min read · 20 stories · fresh (24-48h)</span>
   </header>
 
@@ -219,19 +219,19 @@
       <div class="thing-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 8-10M20 5h-4M20 5v4"/></svg>
       </div>
-      <div class="thing-text">Wall Street rallies to a record close after a shock July jobs loss cools rate-hike fears</div>
+      <div class="thing-text">Big Tech leads Wall Street to fresh record highs as AI worries fade</div>
     </div>
     <div class="thing-card" onclick="selectTab('top')">
       <div class="thing-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12M4 21h16M9 21v-6h6v6"/></svg>
       </div>
-      <div class="thing-text">China's exports beat forecasts as an AI investment boom offsets extreme-weather disruption</div>
+      <div class="thing-text">China's exports beat forecasts as AI-driven demand powers trade</div>
     </div>
     <div class="thing-card" onclick="selectTab('top')">
       <div class="thing-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3M12 14v3"/></svg>
       </div>
-      <div class="thing-text">Hackers drain roughly $130 million from Bitcoin cold wallets in a days-long Coinkite breach</div>
+      <div class="thing-text">US payrolls shrink by 23,000 in July, jolting Fed rate-cut bets</div>
     </div>
   </section>
 
@@ -241,11 +241,11 @@
       <div class="snap-tile"><div class="snap-label">S&amp;P 500</div><div class="snap-value">7,757.64</div><div class="snap-move up">▲ 0.62%</div></div>
       <div class="snap-tile"><div class="snap-label">Nasdaq</div><div class="snap-value">26,690.6</div><div class="snap-move up">▲ 1.30%</div></div>
       <div class="snap-tile"><div class="snap-label">Dow</div><div class="snap-value">54,036.9</div><div class="snap-move up">▲ 0.28%</div></div>
-      <div class="snap-tile"><div class="snap-label">Hang Seng</div><div class="snap-value">25,530</div><div class="snap-move up">▲ 0.44%</div></div>
-      <div class="snap-tile"><div class="snap-label">USD/CNY</div><div class="snap-value">6.76</div><div class="snap-move down">▼ 3-yr yuan high</div></div>
-      <div class="snap-tile"><div class="snap-label">Bitcoin</div><div class="snap-value">$65.1K</div><div class="snap-move down">▼ near $65K</div></div>
-      <div class="snap-tile"><div class="snap-label">DFM Index</div><div class="snap-value">+11%</div><div class="snap-move up">▲ best qtr/yr</div></div>
-      <div class="snap-tile"><div class="snap-label">US 10-Yr</div><div class="snap-value">4.639%</div><div class="snap-move down">▼ 3bps</div></div>
+      <div class="snap-tile"><div class="snap-label">Hang Seng</div><div class="snap-value">25,668.0</div><div class="snap-move up">▲ 0.54%</div></div>
+      <div class="snap-tile"><div class="snap-label">USD/CNY</div><div class="snap-value">6.7476</div><div class="snap-move up">▲ 0.01%</div></div>
+      <div class="snap-tile"><div class="snap-label">Bitcoin</div><div class="snap-value">$64.9K</div><div class="snap-move up">▲ 1.1%</div></div>
+      <div class="snap-tile"><div class="snap-label">DFM Index</div><div class="snap-value">5,895.9</div><div class="snap-move down">▼ 0.26%</div></div>
+      <div class="snap-tile"><div class="snap-label">US 10-Yr</div><div class="snap-value">4.70%</div><div class="snap-move down">▼ 2bps</div></div>
     </div>
     <p class="snap-note">Snapshot at last close</p>
   </section>
@@ -278,33 +278,58 @@
   <div class="pulse" id="pulse">
     <span class="dot steady" id="pulseDot"></span>
     <span class="pulse-mood steady" id="pulseMood">Steady</span>
-    <span class="pulse-text" id="pulseText">Stocks are riding high into the weekend even as a shock jobs report muddies the outlook, with Hong Kong dealmaking active and crypto still shaken by a major hack.</span>
+    <span class="pulse-text" id="pulseText">Stocks are near record highs and Hong Kong's economy is looking stronger, though a weak jobs report and a shaky week for crypto keep the mood mixed.</span>
   </div>
 
   <section class="stories" id="stories">
+
+    <div class="card" data-cat="top" data-topic="tech" onclick="toggleCard(this)">
+      <div class="card-head">
+        <div class="head-row">
+          <div>
+            <span class="tag tag-top">Top</span>
+            <h3 class="headline">Big Tech-led rally sends Wall Street to fresh record highs</h3>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <span class="source-pill gold">Bloomberg</span>
+      </div>
+      <div class="detail">
+        <p class="summary">Big US technology stocks stormed back on Friday, helping the S&amp;P 500 and Nasdaq close at fresh records as anxiety over AI spending faded. Strong earnings from Microsoft and Amazon showed accelerating AI-related revenue growth, reassuring investors that heavy capital spending is paying off. The S&amp;P 500 has climbed 3.1% so far in August.</p>
+        <div class="why">
+          <div class="why-label">Why it matters</div>
+          <ul>
+            <li>Renewed AI-driven gains lift valuations across a tech sector that anchors a large share of global equity index returns banks and pension funds hold.</li>
+            <li>Accelerating cloud AI revenue at Microsoft and Amazon validates the enormous data-centre financing banks have underwritten this year.</li>
+            <li>A broad Wall Street rally lifts sentiment for Hong Kong and Asian tech names that typically trade in sympathy with US leaders.</li>
+          </ul>
+        </div>
+        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/big-tech-stocks-storm-back-as-ai-fears-fade-and-euphoria-resumes" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+      </div>
+    </div>
 
     <div class="card" data-cat="top" data-topic="markets" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-top">Top</span>
-            <h3 class="headline">Wall Street rallies to record close after shock July jobs loss</h3>
+            <h3 class="headline">China's July exports beat forecasts as AI-driven demand powers trade</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">The S&amp;P 500 closed at a record 7,757.64 on Friday, up 0.62%, after the US economy unexpectedly shed 23,000 jobs in July versus forecasts for an 83,000 gain. The Nasdaq jumped 1.3% to 26,690.62 as traders bet the shock reading keeps the Fed on hold. The Dow added 151.83 points to 54,036.93.</p>
+        <p class="summary">China's exports rose 23.9% year-on-year in July to $397.85 billion, beating forecasts of 22.9% growth despite disruptive extreme rainfall. Imports grew even faster, up 27.5% to $285.35 billion, as a global AI investment boom lifted demand for tech components at home and abroad. The trade surplus narrowed to $112.5 billion from June's $125.62 billion.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A weaker labour market reduces the odds of near-term Fed rate hikes, easing dollar funding costs banks price into loans and mortgages.</li>
-            <li>Record US equity closes support sentiment for HKEX-listed exporters and tech names that typically track a strong Wall Street lead.</li>
-            <li>Softer payrolls data adds to the case that the Fed, which the HKMA tracks closely under the currency peg, stays accommodative for longer.</li>
+            <li>Resilient export growth supports earnings at mainland banks and Hong Kong-listed exporters tied into global tech supply chains.</li>
+            <li>Faster import growth points to firmer domestic demand, a positive signal for consumer-finance and retail lenders exposed to mainland spending.</li>
+            <li>AI-driven trade strength reinforces Beijing's bet that technology investment can carry growth without fresh broad-based stimulus.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/06/stock-market-today-live-updates.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/07/china-july-trade-exports-imports-surplus-imbalance-tariffs-.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -313,48 +338,23 @@
         <div class="head-row">
           <div>
             <span class="tag tag-top">Top</span>
-            <h3 class="headline">China's July trade beats forecasts as AI investment boom offsets weather disruption</h3>
+            <h3 class="headline">US July payrolls shrink by 23,000, jolting Fed rate-cut bets</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
-        <span class="source-pill gold">Bloomberg</span>
+        <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">China's exports rose 23.9% year-on-year in July to $397.85 billion, beating forecasts despite disruptive extreme rainfall. Imports grew even faster, up 27.5% to $285.35 billion, as a global AI investment boom lifted demand for tech components at home and abroad. The trade surplus narrowed to $112.5 billion from June's $125.62 billion.</p>
+        <p class="summary">US nonfarm payrolls unexpectedly fell by 23,000 in July, far short of forecasts for an 83,000 gain, while the unemployment rate held at 4.1%. Average hourly earnings growth slowed to 3.2% year-on-year, the weakest pace since May 2021. Traders quickly repriced expectations for the Federal Reserve's September meeting.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Resilient export growth supports mainland bank earnings and the outlook for Hong Kong-listed exporters exposed to global tech supply chains.</li>
-            <li>Faster import growth signals firmer domestic demand, a positive read-through for Hong Kong's retail and consumer-finance sectors tied to mainland spending.</li>
-            <li>AI-driven trade strength reinforces Beijing's bet that technology investment, not fresh stimulus, can carry growth through a soft patch.</li>
+            <li>A weaker labour market raises the odds of Fed easing, which would lower dollar funding costs banks price into loans and mortgages.</li>
+            <li>Softer wage growth reduces inflation pressure, giving the Fed more room to cut without reigniting price concerns.</li>
+            <li>A cooling US labour market feeds into the Hong Kong dollar peg's tracking of Fed policy, shaping local HIBOR and mortgage costs.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/china-exports-imports-post-double-digit-gains-but-growth-slows" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
-      </div>
-    </div>
-
-    <div class="card" data-cat="top" data-topic="crypto" onclick="toggleCard(this)">
-      <div class="card-head">
-        <div class="head-row">
-          <div>
-            <span class="tag tag-top">Top</span>
-            <h3 class="headline">Hackers drain roughly $130 million from Bitcoin cold wallets in Coinkite breach</h3>
-          </div>
-          <span class="chevron">▾</span>
-        </div>
-        <span class="source-pill gold">Bloomberg</span>
-      </div>
-      <div class="detail">
-        <p class="summary">A software flaw in Coinkite's Coldcard hardware wallets was exploited to drain an estimated $130 million in bitcoin from offline storage. Coinkite said it is still conducting a post-mortem and could not independently confirm third-party loss estimates. The days-long theft is testing confidence in cold storage, long considered crypto's safest option.</p>
-        <div class="why">
-          <div class="why-label">Why it matters</div>
-          <ul>
-            <li>A breach of "cold" offline storage undermines the core safety pitch that has drawn institutional and bank-linked money into crypto custody.</li>
-            <li>Renewed doubts about wallet security add fresh pressure on bitcoin prices already stuck near multi-month lows.</li>
-            <li>Custody failures like this raise the bar for the compliance and insurance standards Hong Kong's licensed crypto platforms will need to meet.</li>
-          </ul>
-        </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-06/hacked-bitcoin-wallet-maker-declines-to-estimate-amount-lost" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -370,13 +370,13 @@
         <span class="source-pill">SCMP</span>
       </div>
       <div class="detail">
-        <p class="summary">The Hong Kong Securities and Futures Professionals Association has urged the government to consider greater use of the yuan and explore shifting the currency peg to a basket including gold. The proposal was submitted as part of a public consultation on the government's first five-year financial development plan. The group argues the dollar peg cedes local monetary control to the Federal Reserve.</p>
+        <p class="summary">The Hong Kong Securities and Futures Professionals Association has urged the government to study alternatives to the four-decade dollar peg, floating greater yuan use or a basket including gold. The proposal was submitted as part of a public consultation on the city's first five-year financial development plan. Analysts warn abandoning the peg carries greater risk than keeping it.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Any shift away from the dollar peg would be a seismic change for Hong Kong's banking system, which is built entirely around it.</li>
+            <li>A peg shift would be a seismic change for Hong Kong's banking system, which is built entirely around the dollar link.</li>
             <li>Greater yuan usage would deepen Hong Kong's role as an offshore renminbi hub, a strategic priority for local banks and HKMA policy.</li>
-            <li>The debate signals growing unease over ceding monetary policy to the Fed, a live issue for every HKD-denominated loan and mortgage.</li>
+            <li>The debate signals unease over ceding monetary control to the Fed, a live issue for every HKD-denominated loan and mortgage.</li>
           </ul>
         </div>
         <a class="read-link" href="https://www.scmp.com/business/banking-finance/article/3363286/hong-kongs-us-dollar-peg-faces-fresh-calls-review-change-feasible" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
@@ -388,48 +388,73 @@
         <div class="head-row">
           <div>
             <span class="tag tag-hk">Hong Kong</span>
-            <h3 class="headline">China Resources Land's Sterling I launches sales ahead of August debut</h3>
+            <h3 class="headline">Hang Seng Index climbs as China's trade data beats forecasts</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">The Standard</span>
       </div>
       <div class="detail">
-        <p class="summary">China Resources Land opened a sales office for The Sterling I, its Southwest Kowloon residential project, ahead of an August launch. The developer said inquiries have been strong, particularly from mainland buyers, company staff and brand supporters. The launch comes as developers press ahead with new projects despite forecasts that Hong Kong's price rebound will lose steam in the second half.</p>
+        <p class="summary">Hong Kong stocks rose on Friday as investors cheered stronger-than-expected July trade figures from the mainland. The benchmark Hang Seng Index climbed 137.75 points, or 0.54%, to close at 25,668.03. Gains were broad-based, with exporters and mainland-exposed names among the biggest beneficiaries of the trade optimism.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Strong mainland buyer interest in a new Kowloon launch signals continued cross-border demand that supports Hong Kong bank mortgage books.</li>
-            <li>Developers pressing ahead despite a cooling forecast shows confidence the property rebound has further, if slower, room to run.</li>
-            <li>Property sales volumes feed directly into stamp duty revenue and mortgage lending, both closely watched gauges of Hong Kong's financial health.</li>
+            <li>A trade-data-driven rally lifts the value of collateral and portfolios held across Hong Kong's banking and brokerage sector.</li>
+            <li>Strength concentrated in exporters and mainland-exposed names shows how closely Hong Kong equities track mainland economic surprises.</li>
+            <li>A firmer Hang Seng close supports market-linked fee income at banks and asset managers heading into the new week.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.thestandard.com.hk/property/article/338778/The-Sterling-Is-set-for-August-launch-amid-strong-mainland-buyer-interest" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.thestandard.com.hk/finance/article/339326/Hang-Seng-Index-rises-on-Friday-on-Chinas-strong-export-data" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
-    <div class="card" data-cat="hk" data-topic="markets" onclick="toggleCard(this)">
+    <div class="card" data-cat="hk" data-topic="policy" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-hk">Hong Kong</span>
-            <h3 class="headline">NASN Intelligent Tech begins HK IPO bookbuilding, eyes HK$644 million raise</h3>
+            <h3 class="headline">Hong Kong's 2026 GDP forecast lifted to about 4.5% as investment drive beats target</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">The Standard</span>
       </div>
       <div class="detail">
-        <p class="summary">NASN Intelligent Tech, a Zhejiang-based developer of intelligent driving motion-control technology, began bookbuilding for a Hong Kong IPO seeking to raise up to HK$643.9 million. The listing is scheduled to debut this week. It adds to a steady pipeline of mainland tech and industrial companies choosing Hong Kong for their public listings.</p>
+        <p class="summary">Major financial institutions have upgraded Hong Kong's full-year growth forecast to around 4.5%, above the government's own projection. Officials said the city's investment promotion agency attracted 1,400 enterprises against a 1,200 target, creating more than 21,000 jobs since 2023, with over HK$50 billion invested in the first half of this year alone.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A fresh IPO adds to Hong Kong's listing pipeline, a key revenue driver for HKEX and the banks underwriting these deals.</li>
-            <li>Mainland auto-tech companies choosing Hong Kong over other venues reinforces the city's role as gateway for China's industrial-tech sector.</li>
-            <li>Sustained IPO activity is a leading indicator of investor risk appetite for Hong Kong-listed growth and technology names.</li>
+            <li>An upgraded growth forecast supports loan demand and business confidence across Hong Kong's banking sector.</li>
+            <li>Investment inflows beating targets strengthen the case for Hong Kong's ongoing pitch as a gateway for overseas capital.</li>
+            <li>Stronger GDP momentum gives policymakers more room to manage the property and rates transition without derailing the recovery.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.thestandard.com.hk/finance/article/338670/NASN-Intelligent-Tech-Zhejiang-begins-its-Hong-Kong-IPO-bookbuilding-raising-6439-mln" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.thestandard.com.hk/news/article/339371/Hong-Kong-economic-forecasts-upgraded-as-global-investment-initiatives-exceed-targets" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="hk" data-topic="policy" onclick="toggleCard(this)">
+      <div class="card-head">
+        <div class="head-row">
+          <div>
+            <span class="tag tag-hk">Hong Kong</span>
+            <h3 class="headline">John Lee meets ASEAN chief, pushes RCEP accession and financial ties</h3>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <span class="source-pill">The Standard</span>
+      </div>
+      <div class="detail">
+        <p class="summary">Chief Executive John Lee met ASEAN Secretary-General Kao Kim Hourn to discuss deepening ties in financial services, logistics and technology. Lee described Hong Kong as a "super connector" for ASEAN companies, noting the bloc has been the city's second-largest trading partner since 2010. Talks also touched on support for Hong Kong's bid to join the Regional Comprehensive Economic Partnership.</p>
+        <div class="why">
+          <div class="why-label">Why it matters</div>
+          <ul>
+            <li>Closer ASEAN ties would widen the trade and financing corridors Hong Kong banks can serve beyond mainland-dependent business.</li>
+            <li>RCEP accession would give Hong Kong-based exporters and financiers preferential access to one of the world's largest free-trade blocs.</li>
+            <li>Positioning as a "super connector" reinforces Hong Kong's pitch to global firms as a neutral base for regional trade financing.</li>
+          </ul>
+        </div>
+        <a class="read-link" href="https://www.thestandard.com.hk/news/article/339357/John-Lee-meets-ASEAN-Secretary-General-to-strengthen-regional-trade-ties" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -438,152 +463,102 @@
         <div class="head-row">
           <div>
             <span class="tag tag-hk">Hong Kong</span>
-            <h3 class="headline">US hedge fund DLD Asset Management expands into Hong Kong</h3>
+            <h3 class="headline">Beijing clarifies 20% offshore insurance tax isn't new, doesn't target Hong Kong</h3>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <span class="source-pill">SCMP</span>
+      </div>
+      <div class="detail">
+        <p class="summary">China's State Taxation Administration said a 20% personal income tax on offshore insurance gains is an existing rule, not new, and isn't aimed at Hong Kong insurers. The clarification followed sharp share declines at AIA, Prudential and HSBC after reports the tax was being enforced. Officials said mainland residents have always had to report global investment income.</p>
+        <div class="why">
+          <div class="why-label">Why it matters</div>
+          <ul>
+            <li>Clarifying the tax isn't new should ease pressure on Hong Kong-listed insurers whose shares fell sharply on the initial reports.</li>
+            <li>Continued enforcement of cross-border tax reporting could still dent Hong Kong's appeal as a tax-efficient wealth hub for mainland clients.</li>
+            <li>The episode shows how sensitive Hong Kong's insurance and banking stocks remain to shifts in mainland tax enforcement.</li>
+          </ul>
+        </div>
+        <a class="read-link" href="https://www.scmp.com/business/banking-finance/article/3363348/beijing-says-20-offshore-insurance-tax-not-new-and-does-not-target-hong-kong" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="us" data-topic="markets" onclick="toggleCard(this)">
+      <div class="card-head">
+        <div class="head-row">
+          <div>
+            <span class="tag tag-us">US</span>
+            <h3 class="headline">Record options week powers S&amp;P 500 to fresh highs as VIX nears 2026 low</h3>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <span class="source-pill">CNBC</span>
+      </div>
+      <div class="detail">
+        <p class="summary">A record-breaking week of options trading helped drive the S&amp;P 500 to its strongest week since April, with the VIX volatility gauge sinking near its lowest level of 2026. Heavy call-buying activity amplified gains as dealers hedged against further upside. Big Tech earnings and a weak jobs report both fed into the risk-on mood.</p>
+        <div class="why">
+          <div class="why-label">Why it matters</div>
+          <ul>
+            <li>Record options volumes and a subdued VIX suggest investors see little near-term downside risk, supporting bank trading and brokerage revenue.</li>
+            <li>A calm volatility backdrop makes it cheaper for companies and banks to hedge positions and issue new debt.</li>
+            <li>Options-driven momentum can amplify swings in both directions, a risk trading desks are watching closely heading into autumn.</li>
+          </ul>
+        </div>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/08/record-breaking-week-for-options-powers-sp-500-surge.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="us" data-topic="markets" onclick="toggleCard(this)">
+      <div class="card-head">
+        <div class="head-row">
+          <div>
+            <span class="tag tag-us">US</span>
+            <h3 class="headline">SpaceX shares rally 23%, nearing IPO price after lockup expiration</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill gold">Bloomberg</span>
       </div>
       <div class="detail">
-        <p class="summary">US hedge fund DLD Asset Management is expanding into Hong Kong to pursue relative-value trading opportunities across Asia. The firm has hired Sohit Khurana, who co-founded Maso Capital Partners in 2012, to lead the push. The move adds to a wave of global funds building out Asia-focused desks in the city.</p>
+        <p class="summary">SpaceX shares surged 23% as a lockup expiration lifted trading volume, pushing the stock back toward its IPO price after a sharp post-listing slide. The rally added billions to the company's market value within days. Investors remain volatile on the stock as they weigh surging AI-era infrastructure and satellite spending against near-term profitability.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>New hedge fund entrants bring fresh trading volume and prime-brokerage business to Hong Kong's banks.</li>
-            <li>Senior talent moves from established Asia funds signal continued confidence in Hong Kong as a regional trading hub despite competition from Singapore.</li>
-            <li>Relative-value strategies focused on Asia often trade heavily through Hong Kong-listed instruments, supporting local market liquidity.</li>
+            <li>A newly public company's share-price volatility offers an early test of how markets price large-scale AI and satellite infrastructure capex.</li>
+            <li>Wild swings around lockup expirations highlight the liquidity risk that comes with high-profile, recently listed mega-cap stocks.</li>
+            <li>A recovering valuation supports the case for further Wall Street listings of large private tech and infrastructure companies.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/hedge-fund-dld-hires-maso-co-founder-for-hong-kong-expansion" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/spacex-nears-ipo-price-again-after-staging-327-billion-rally" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
-    <div class="card" data-cat="hk" data-topic="banking" onclick="toggleCard(this)">
-      <div class="card-head">
-        <div class="head-row">
-          <div>
-            <span class="tag tag-hk">Hong Kong</span>
-            <h3 class="headline">HKMA tenders HK$1.5b HONIA bonds, re-opens 5-year government bond</h3>
-          </div>
-          <span class="chevron">▾</span>
-        </div>
-        <span class="source-pill">HKMA</span>
-      </div>
-      <div class="detail">
-        <p class="summary">The HKMA will tender HK$1.5 billion in 1-year HONIA-indexed Floating Rate Notes under the Infrastructure Bond Programme on 12 August. A separate tender will re-open HK$1.75 billion of the outstanding 5-year HKSAR institutional government bond the same day. Both tenders settle on 13 August 2026.</p>
-        <div class="why">
-          <div class="why-label">Why it matters</div>
-          <ul>
-            <li>Regular HONIA-indexed and government bond tenders keep Hong Kong's institutional debt market liquid, supporting banks that rely on it for collateral.</li>
-            <li>Re-opening existing bond lines rather than issuing new ones helps keep the city's borrowing costs predictable for institutional investors.</li>
-            <li>A steady tender calendar signals continued commitment to deepening Hong Kong's bond market infrastructure under the Infrastructure Bond Programme.</li>
-          </ul>
-        </div>
-        <a class="read-link" href="https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/08/20260806-5/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
-      </div>
-    </div>
-
-    <div class="card" data-cat="us" data-topic="markets" onclick="toggleCard(this)">
+    <div class="card" data-cat="us" data-topic="tech" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-us">US</span>
-            <h3 class="headline">Airbnb stock soars 9% on Q2 earnings beat, strong Q3 guidance</h3>
+            <h3 class="headline">Atlassian shares surge 35% on best day since IPO after AI-fear-busting earnings</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">Airbnb shares jumped 9% after second-quarter earnings of $1.37 per share beat estimates of $1.25, on revenue of $3.61 billion. Revenue climbed 17% year-on-year, ahead of expectations. The company guided to third-quarter revenue of $4.69-4.77 billion, above the $4.61 billion analysts had projected.</p>
+        <p class="summary">Atlassian shares jumped 35% Friday, their best day since the company's 2015 listing, after fourth-quarter revenue rose 28% year-on-year to $1.77 billion. Cloud revenue grew 31% and annual recurring revenue accelerated to 23%, beating Wall Street estimates. The results eased investor worries that AI tools would erode software companies' business models.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A strong travel-sector earnings beat signals resilient US consumer spending, a factor banks weigh when pricing consumer credit risk.</li>
-            <li>Guidance that tops estimates suggests demand is holding up even as labour-market data softens, a reassuring cross-check for investors.</li>
-            <li>Airbnb's beat adds to a string of encouraging tech-platform earnings that has helped power the broader Nasdaq rally.</li>
+            <li>A blowout software earnings beat undercuts fears that AI would cannibalise the recurring-revenue business models banks have financed heavily.</li>
+            <li>Accelerating cloud and subscription growth signals enterprise technology spending remains robust even as consumer-facing data softens.</li>
+            <li>The rally adds to a broader software-sector recovery that supports Nasdaq-linked wealth and brokerage revenue.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/06/airbnb-abnb-q2-earningsreport.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
-      </div>
-    </div>
-
-    <div class="card" data-cat="us" data-topic="markets" onclick="toggleCard(this)">
-      <div class="card-head">
-        <div class="head-row">
-          <div>
-            <span class="tag tag-us">US</span>
-            <h3 class="headline">Treasury yields tumble as Fed rate-hike odds fade after shock jobs loss</h3>
-          </div>
-          <span class="chevron">▾</span>
-        </div>
-        <span class="source-pill">CNBC</span>
-      </div>
-      <div class="detail">
-        <p class="summary">The 10-year Treasury yield fell more than 3 basis points to 4.639% after July payrolls unexpectedly dropped by 23,000. The 2-year yield slid over 5 basis points to 4.193% as traders repriced Fed expectations. Odds of a September rate hike fell to about 42%, per CME's FedWatch tool.</p>
-        <div class="why">
-          <div class="why-label">Why it matters</div>
-          <ul>
-            <li>Lower Treasury yields ease borrowing costs across mortgages, corporate debt and bank funding, a direct tailwind for lending margins.</li>
-            <li>Falling rate-hike odds reduce pressure on the Hong Kong dollar peg, which tracks US monetary policy closely.</li>
-            <li>Bond-market repricing after a single data point shows how sensitive global funding costs remain to US labour data.</li>
-          </ul>
-        </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/07/treasury-yields-steady-ahead-of-key-nonfarm-payrolls-jobless-data.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
-      </div>
-    </div>
-
-    <div class="card" data-cat="us" data-topic="policy" onclick="toggleCard(this)">
-      <div class="card-head">
-        <div class="head-row">
-          <div>
-            <span class="tag tag-us">US</span>
-            <h3 class="headline">Wall Street economists call July jobs report "horrendous"</h3>
-          </div>
-          <span class="chevron">▾</span>
-        </div>
-        <span class="source-pill">CNBC</span>
-      </div>
-      <div class="detail">
-        <p class="summary">Economists reacted with alarm to July's surprise loss of 23,000 jobs, far below expectations for an 83,000 gain, calling it a warning sign for the broader labour market. Strategists said the reading raises the risk of a faster economic slowdown than markets have priced in. The report immediately shifted rate expectations toward a more dovish Fed path.</p>
-        <div class="why">
-          <div class="why-label">Why it matters</div>
-          <ul>
-            <li>A sharply weaker labour market raises recession risk, a key input for bank credit-loss provisioning and loan growth forecasts.</li>
-            <li>Economist alarm despite a stock-market rally highlights a growing disconnect between Wall Street pricing and underlying economic fundamentals.</li>
-            <li>A faster-than-expected slowdown would ripple into global trade and financing conditions relevant to Hong Kong's export-linked economy.</li>
-          </ul>
-        </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/07/wall-street-reacts-to-shocking-july-jobs-loss-this-is-a-pretty-horrendous-report.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/07/stocks-making-the-biggest-moves-premarket-atlassian-corporation-wendys-vista-corp-first-solar-airbnb-more.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
     <div class="card" data-cat="cn" data-topic="policy" onclick="toggleCard(this)">
-      <div class="card-head">
-        <div class="head-row">
-          <div>
-            <span class="tag tag-cn">China</span>
-            <h3 class="headline">US reviews China's offshore access to Nvidia AI chips after Moonshot breakthrough</h3>
-          </div>
-          <span class="chevron">▾</span>
-        </div>
-        <span class="source-pill gold">Bloomberg</span>
-      </div>
-      <div class="detail">
-        <p class="summary">A key US agency is reviewing how Chinese AI firms access Nvidia chips through offshore channels, after breakthroughs showed companies like Moonshot AI using restricted hardware despite export controls. White House officials said Moonshot accessed advanced GB300-equipped servers in Thailand. The review could tighten loopholes that have let Chinese firms train models on US-restricted chips.</p>
-        <div class="why">
-          <div class="why-label">Why it matters</div>
-          <ul>
-            <li>Tighter offshore chip-access rules would directly affect the AI hardware supply chain that Chinese and Hong Kong-listed tech firms depend on.</li>
-            <li>Continued US-China tech friction keeps regulatory uncertainty elevated for banks financing cross-border semiconductor and AI infrastructure deals.</li>
-            <li>Evidence of firms circumventing export controls raises the odds of stricter enforcement that could slow the pace of AI development in China.</li>
-          </ul>
-        </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/us-reviews-china-s-offshore-access-to-nvidia-chips-after-ai-breakthroughs" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
-      </div>
-    </div>
-
-    <div class="card" data-cat="cn" data-topic="markets" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
@@ -595,7 +570,7 @@
         <span class="source-pill">SCMP</span>
       </div>
       <div class="detail">
-        <p class="summary">China's trade surplus narrowed to $112.5 billion in July from $125.62 billion in June, even as exports held firm despite trade and geopolitical headwinds. Exports grew steadily, supported by strong overseas tech demand, while import growth outpaced expectations. Analysts said the narrowing surplus reflects resilient domestic consumption rather than weakening trade momentum.</p>
+        <p class="summary">China's trade surplus narrowed to $112.5 billion in July from $125.62 billion in June, even as exports held firm despite trade and geopolitical headwinds. Exports grew steadily on strong overseas tech demand, while import growth outpaced expectations. Analysts said the narrowing surplus reflects resilient domestic consumption rather than weakening trade momentum.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
@@ -608,78 +583,103 @@
       </div>
     </div>
 
-    <div class="card" data-cat="cn" data-topic="policy" onclick="toggleCard(this)">
+    <div class="card" data-cat="cn" data-topic="banking" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-cn">China</span>
-            <h3 class="headline">China, US spar over export controls ahead of Xi-Trump summit</h3>
+            <h3 class="headline">Chinese SOEs consolidate treasury hubs, with Hong Kong the top pick</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
-        <span class="source-pill gold">Bloomberg</span>
+        <span class="source-pill">SCMP</span>
       </div>
       <div class="detail">
-        <p class="summary">Beijing and Washington are clashing over technology export controls in the run-up to a planned meeting between Xi Jinping and Donald Trump. Chinese officials have pushed back on proposed US curbs targeting data-center components. The standoff underscores how fragile the two countries' trade truce remains ahead of any leaders' summit.</p>
+        <p class="summary">Chinese state-owned enterprises are consolidating scattered overseas accounts into unified treasury centres, with Hong Kong the preferred location. Central SOEs hold nearly 8 trillion yuan ($1.1 trillion) in overseas assets across more than 180 countries, and mainland authorities have required stronger treasury oversight since 2022. Hong Kong's banking infrastructure and offshore yuan facilities underpin its appeal.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Escalating export-control disputes threaten to reopen trade-war risk that Hong Kong's trade-exposed banks and exporters had only recently priced out.</li>
-            <li>A tense pre-summit backdrop raises the stakes for any leaders' meeting to stabilise the relationship underpinning global tech supply chains.</li>
-            <li>Continued friction over chip and component controls keeps AI infrastructure investment decisions clouded by policy risk on both sides.</li>
+            <li>Consolidated SOE treasury hubs bring large, sticky deposit and cash-management business to Hong Kong's banks.</li>
+            <li>Deeper offshore yuan activity from state firms reinforces Hong Kong's position as the leading hub for renminbi internationalisation.</li>
+            <li>Hong Kong winning this business over rival centres signals continued confidence in its banking infrastructure despite geopolitical headwinds.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/newsletters/2026-08-07/china-us-battle-over-export-controls-before-a-meeting-of-their-leaders" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.scmp.com/business/china-business/article/3363242/hong-kong-preferred-base-chinese-soes-consolidate-overseas-accounts-treasury-hubs" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
-    <div class="card" data-cat="gl" data-topic="energy" onclick="toggleCard(this)">
+    <div class="card" data-cat="cn" data-topic="tech" onclick="toggleCard(this)">
+      <div class="card-head">
+        <div class="head-row">
+          <div>
+            <span class="tag tag-cn">China</span>
+            <h3 class="headline">Hugging Face CEO says China is closing the gap in the global AI race</h3>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <span class="source-pill">CNBC</span>
+      </div>
+      <div class="detail">
+        <p class="summary">Hugging Face's chief executive said China is "clearly dominating" on open-source AI models and could lead at the frontier within a year or two. Beijing-based Moonshot's Kimi K3 model, released in July, has edged closer to top US models in benchmarks, even surpassing them on some tasks. The comments add to growing debate over America's shrinking AI lead.</p>
+        <div class="why">
+          <div class="why-label">Why it matters</div>
+          <ul>
+            <li>A narrowing AI gap raises competitive pressure on US chipmakers and cloud providers that Hong Kong and Asian investors hold heavily.</li>
+            <li>Strong Chinese open-source models could accelerate AI adoption among mainland banks and fintechs looking for cheaper alternatives to US systems.</li>
+            <li>Intensifying AI rivalry keeps export-control and technology policy risk elevated for firms financing cross-border AI infrastructure.</li>
+          </ul>
+        </div>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/07/china-us-ai-race-hugging-face-models.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="gl" data-topic="markets" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-gl">Global</span>
-            <h3 class="headline">Oil firms as Iran and Oman edge toward a Strait of Hormuz shipping deal</h3>
+            <h3 class="headline">Asian markets mixed, silver rallies to six-week high as risk mood improves</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">Oil prices firmed as investors weighed progress in talks between Iran and Oman aimed at restoring normal shipping through the Strait of Hormuz. The two sides have reportedly agreed on geographic coordinates for a safe transit corridor, though Iran's draft plan would still bar US and Israeli vessels. US Treasury Secretary Scott Bessent said a broader deal could come soon.</p>
+        <p class="summary">Asia-Pacific markets were mixed as investors awaited China's trade data, with Japan's Nikkei and Korea's Kospi higher while Australia's ASX 200 slipped. Spot silver jumped 5% to a six-week high of $64.57 an ounce, tracking gold higher as softer US hiring data and lower oil prices boosted precious metals. Hong Kong and mainland shares later turned higher on the trade beat.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Any resolution over Hormuz shipping access would ease a key risk premium built into global oil prices and shipping costs.</li>
-            <li>Continued uncertainty over the strait keeps energy-import costs volatile for trade-dependent economies including Hong Kong and mainland China.</li>
-            <li>A US-brokered deal would reduce geopolitical tail risk that has weighed on global risk appetite and bank exposure to shipping and energy financing.</li>
+            <li>A broad rally in precious metals signals investors are hedging against currency and rate uncertainty even as equities hit records.</li>
+            <li>Mixed regional performance shows Asian markets remain highly sensitive to single data releases like China's monthly trade figures.</li>
+            <li>Firmer risk appetite across Asia supports capital-markets activity that Hong Kong-based banks and brokers depend on for fee income.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/06/oil-investors-cautious-over-iran-oman-talk-progress.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/06/stock-market-today-live-updates.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
-    <div class="card" data-cat="ae" data-topic="banking" onclick="toggleCard(this)">
+    <div class="card" data-cat="ae" data-topic="energy" onclick="toggleCard(this)">
       <div class="card-head">
         <div class="head-row">
           <div>
             <span class="tag tag-ae">UAE</span>
-            <h3 class="headline">Another Morgan Stanley banker lands top investment role at Adnoc</h3>
+            <h3 class="headline">Adnoc spends $1.3 billion on tankers as UAE crude exports surge</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill gold">Bloomberg</span>
       </div>
       <div class="detail">
-        <p class="summary">Abu Dhabi's state energy giant Adnoc has hired another senior Morgan Stanley banker into a top investment role, continuing a pattern of poaching Wall Street talent. The move supports Adnoc's ambitious, multibillion-dollar global dealmaking push. The UAE has increasingly drawn top banking executives as its sovereign entities expand overseas investment activity.</p>
+        <p class="summary">Abu Dhabi National Oil Co. is spending $1.3 billion to expand its tanker fleet, nearly doubling its Very Large Crude Carriers from eight to 14. The move comes after the UAE left OPEC and ramped up crude exports to global markets. Adnoc has also been recruiting senior Wall Street bankers as it pursues a broader multibillion-dollar dealmaking push.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Wall Street talent flowing into Gulf sovereign investors reflects the growing scale and sophistication of UAE dealmaking on the global stage.</li>
-            <li>Adnoc's expanding investment arm represents a deep pool of capital that global and Asian banks compete to serve as advisers and financiers.</li>
-            <li>Continued Gulf hiring from top US banks signals Abu Dhabi's ambition to rival established financial centres for high-level dealmaking talent.</li>
+            <li>A major tanker-fleet expansion signals confidence in sustained UAE crude export volumes, a key driver of the country's financial surpluses.</li>
+            <li>Adnoc's growing capital spending and dealmaking ambitions create advisory and financing opportunities for global and regional banks.</li>
+            <li>Rising non-OPEC crude flows from the UAE add supply capacity that can ease global energy-price volatility.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/uae-abu-dhabi-another-morgan-stanley-banker-lands-top-investment-role-at-adnoc" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/uae-s-adnoc-buys-tankers-for-1-3-billion-as-crude-exports-boom" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -688,23 +688,23 @@
         <div class="head-row">
           <div>
             <span class="tag tag-tech">Tech/AI</span>
-            <h3 class="headline">Big Tech stocks storm back as AI fears fade</h3>
+            <h3 class="headline">Singapore PM vows AI will help, not sideline, workers worried about jobs</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill gold">Bloomberg</span>
       </div>
       <div class="detail">
-        <p class="summary">The world's biggest technology companies are leading markets again after months of investor doubt over AI spending. Strong earnings from Microsoft and Amazon showing accelerating AI revenue growth triggered the turnaround. The Nasdaq gained 5.2% on the week as chip stocks led the rebound, with the SOXX semiconductor ETF up more than 7%.</p>
+        <p class="summary">Singapore's Prime Minister Lawrence Wong said the government will ensure AI lifts productivity and job quality even as workers worry about being displaced. Wong acknowledged "jobs will change, some will disappear," but pledged support through retraining and inclusive-growth policies. The comments come as Singapore positions itself as a regional AI hub.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>Renewed AI euphoria supports valuations across the tech sector that underpins a large share of global equity index gains.</li>
-            <li>Accelerating cloud AI revenue growth validates the enormous capital spending banks have financed for hyperscaler data-center buildouts.</li>
-            <li>A broad tech rally lifts sentiment for Hong Kong and Asian tech names that trade in sympathy with Wall Street's AI leaders.</li>
+            <li>Government commitments to inclusive AI growth shape how quickly financial firms can automate roles without political or regulatory pushback.</li>
+            <li>Singapore's AI-hub ambitions put it in direct competition with Hong Kong for regional tech investment and talent.</li>
+            <li>Clear worker-support policies can smooth adoption of AI tools inside banks, reducing disruption-related operational risk.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/big-tech-stocks-storm-back-as-ai-fears-fade-and-euphoria-resumes" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-08/singapore-to-ensure-ai-helps-workers-worried-about-jobs-pm-says" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -713,23 +713,23 @@
         <div class="head-row">
           <div>
             <span class="tag tag-tech">Tech/AI</span>
-            <h3 class="headline">Nvidia gains as Musk reaffirms SpaceX's exclusive AI chip commitment</h3>
+            <h3 class="headline">Investors recap a wild week as AI stocks stage a massive rebound</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">Nvidia shares rose after Elon Musk said SpaceX would build exclusively on Nvidia's Vera Rubin chip architecture for its AI infrastructure buildout. Musk called it "the best architecture" during SpaceX's first earnings call since going public. Nvidia is up more than 10% on the week even as SpaceX's own stock swung sharply on surging AI capex costs.</p>
+        <p class="summary">Traders reviewed a whipsaw week in which AI-related stocks swung sharply before rebounding hard into Friday's close, lifting two major US indexes to fresh records. Strong earnings from cloud and chip companies helped restore confidence in AI capital spending after weeks of doubt. Strategists said positioning had grown too bearish heading into the rally.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A high-profile exclusivity commitment from SpaceX reinforces Nvidia's dominant position in the AI chip supply chain that banks are financing heavily.</li>
-            <li>Wild swings in SpaceX's newly public stock highlight how sensitive investors remain to the scale of AI capital spending.</li>
-            <li>Continued chip-demand signals support the outlook for Asian semiconductor suppliers tied into Nvidia's production chain.</li>
+            <li>A sharp AI-stock rebound shows how quickly sentiment can swing on a handful of earnings reports, a risk for concentrated portfolios.</li>
+            <li>Restored confidence in AI capex supports continued bank financing of data-centre and chip-supply-chain investment.</li>
+            <li>Volatile positioning ahead of the rebound highlights how crowded and sentiment-driven the AI trade has become.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/05/spacex-gives-nvidia-a-much-needed-boost-cramers-undervalued-stock-.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/08/heres-how-we-played-the-massive-rebound-in-ai-stocks-this-week.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -738,23 +738,23 @@
         <div class="head-row">
           <div>
             <span class="tag tag-tech">Tech/AI</span>
-            <h3 class="headline">AMD's Q2 revenue jumps 50% on AI chip demand, preps Helios rack system</h3>
+            <h3 class="headline">'SaaSpocalypse' debate intensifies as software stocks swing wildly on AI fears</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill">CNBC</span>
       </div>
       <div class="detail">
-        <p class="summary">AMD's second-quarter revenue climbed 50% from $7.69 billion a year earlier, driven by surging demand for AI data-center chips. The company will begin shipping Helios, its first rack-scale AI system combining CPUs, GPUs and networking chips, to customers including Meta, OpenAI and Oracle this quarter. The system directly challenges Nvidia's integrated AI infrastructure offering.</p>
+        <p class="summary">Software stocks have swung sharply in recent weeks amid debate over whether AI tools will erode subscription-based business models, dubbed by some the "SaaSpocalypse." Strong earnings from companies like Atlassian have pushed back against the thesis, while others have disappointed. Analysts remain split on how much AI coding tools will disrupt traditional software revenue.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A rack-scale AI system puts AMD in direct competition with Nvidia's full-stack offering, a shift that could reshape pricing across the AI hardware market.</li>
-            <li>Fifty percent revenue growth underscores how central AI chips have become to major semiconductor makers' earnings.</li>
-            <li>Big-name customers like Meta, OpenAI and Oracle adopting AMD hardware diversifies the AI supply chain banks and investors are financing.</li>
+            <li>The SaaS-disruption debate directly affects valuations of enterprise software firms that banks hold in equity portfolios and finance through debt.</li>
+            <li>Diverging earnings outcomes show AI's impact on software business models is uneven, complicating investment decisions across the sector.</li>
+            <li>Continued volatility in software stocks is a bellwether for how markets will price other industries facing AI disruption risk.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.cnbc.com/2026/08/04/amd-earnings-report-q2-2026.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.cnbc.com/2026/08/07/saaspocalypse-debate-intensifies-as-software-stocks-swing-wildly.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -763,23 +763,23 @@
         <div class="head-row">
           <div>
             <span class="tag tag-cr">Crypto</span>
-            <h3 class="headline">Trump Media ends token, prediction-market deals with Crypto.com</h3>
+            <h3 class="headline">Crypto faithful gather at a Bitcoin bar after a tough week for the industry</h3>
           </div>
           <span class="chevron">▾</span>
         </div>
         <span class="source-pill gold">Bloomberg</span>
       </div>
       <div class="detail">
-        <p class="summary">Trump Media &amp; Technology Group has ended a deal with Crypto.com that would have formed a digital treasury company to buy billions of dollars of Crypto.com's CRO token. The two companies also scrapped plans to bring prediction-market contracts to Truth Social. The retreat comes as bitcoin trades near $65,000, down roughly half from its October peak.</p>
+        <p class="summary">Crypto enthusiasts gathered at a Manhattan Bitcoin-themed bar to commiserate after a rough week that included a major hardware-wallet hack and renewed price volatility. The gathering reflected broader anxiety in the crypto community following the Coldcard cold-wallet breach that drained an estimated $130 million. Industry veterans said the mood was subdued but not despairing.</p>
         <div class="why">
           <div class="why-label">Why it matters</div>
           <ul>
-            <li>A high-profile corporate retreat from crypto treasury plans signals waning confidence in digital-asset strategies even among crypto-friendly companies.</li>
-            <li>Scrapped prediction-market plans remove a potential new distribution channel that could have expanded retail exposure to crypto derivatives.</li>
-            <li>The move adds to a string of setbacks, alongside the Coinkite hack, testing sentiment across the crypto sector this week.</li>
+            <li>Persistent anxiety after a major custody hack signals lingering doubts about the security promises underpinning crypto's institutional pitch.</li>
+            <li>Subdued sentiment among long-time holders can weigh on trading volumes and prices even without fresh negative catalysts.</li>
+            <li>Continued custody failures raise the compliance and insurance bar for exchanges and licensed platforms operating in markets like Hong Kong.</li>
           </ul>
         </div>
-        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-07/trump-media-ends-token-prediction-market-deals-with-crypto-com" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
+        <a class="read-link" href="https://www.bloomberg.com/news/articles/2026-08-08/a-tough-week-for-crypto-has-fans-downing-drinks-at-a-bitcoin-bar" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read the full story →</a>
       </div>
     </div>
 
@@ -789,7 +789,7 @@
 
   <footer>
     <p class="foot-sources"><strong>Sources:</strong> Bloomberg, CNBC, SCMP, The Standard, HKMA and other official HK/US/China sources.</p>
-    <p class="foot-updated">Last updated: Saturday 08 August 2026, Hong Kong time.</p>
+    <p class="foot-updated">Last updated: Sunday 09 August 2026, Hong Kong time.</p>
   </footer>
 </div>
 
@@ -798,15 +798,15 @@
   var currentTopic = 'all';
 
   var pulseData = {
-    all:   {mood:'steady', text:"Stocks are riding high into the weekend even as a shock jobs report muddies the outlook, with Hong Kong dealmaking active and crypto still shaken by a major hack."},
-    top:   {mood:'steady', text:"Wall Street cheered a weak jobs report as a green light for rate cuts, Beijing's trade engine is holding up, and a bitcoin hack is still rattling crypto confidence."},
-    hk:    {mood:'good',   text:"Hong Kong's mood is upbeat, with fresh IPO activity, hedge fund expansion and a resilient property pipeline offsetting a growing debate over the currency peg."},
-    us:    {mood:'steady', text:"Wall Street is riding a broad rally as investors bet a shock jobs loss keeps the Fed on hold, even as economists warn the labour market is cooling fast."},
-    cn:    {mood:'steady', text:"China's trade engine is holding up better than feared, though simmering chip-export tension with Washington keeps sentiment cautious ahead of a leaders' summit."},
-    gl:    {mood:'steady', text:"Global markets are watching the Strait of Hormuz closely, with cautious optimism building around a possible shipping deal easing oil-supply worries."},
-    ae:    {mood:'good',   text:"The Gulf's finance hubs keep pulling in top banking talent and capital, extending a run of momentum for the region's markets."},
-    tech:  {mood:'good',   text:"AI euphoria is back in force, with chipmakers and cloud giants rallying on fresh signs that AI spending is paying off."},
-    cr:    {mood:'weak',   text:"Confidence is shaky after a major cold-wallet hack and a high-profile retreat from crypto dealmaking, even as prices hold in a familiar range."}
+    all:   {mood:'steady', text:"Stocks are near record highs and Hong Kong's economy is looking stronger, though a weak jobs report and a shaky week for crypto keep the mood mixed."},
+    top:   {mood:'steady', text:"Big Tech and China's trade engine are both firing, but a surprisingly weak US jobs report is keeping investors a little cautious about what comes next."},
+    hk:    {mood:'good',   text:"Hong Kong's mood is upbeat, with growth forecasts rising, stocks climbing and mainland tax worries easing for its banks and insurers."},
+    us:    {mood:'steady', text:"Wall Street keeps grinding to new highs on strong earnings and options-fuelled buying, even as a surprisingly weak jobs report clouds the outlook."},
+    cn:    {mood:'steady', text:"China's trade engine is holding up better than expected, and confidence is building that the country is closing the gap in the global AI race."},
+    gl:    {mood:'steady', text:"Global markets are mixed heading into the weekend, with investors rotating into precious metals even as risk appetite broadly improves."},
+    ae:    {mood:'good',   text:"The Gulf's energy and dealmaking machine keeps expanding, with fresh spending and top banking talent flowing into the region."},
+    tech:  {mood:'good',   text:"AI-related stocks are back in favour, with strong earnings easing fears that spending on the technology was getting ahead of itself."},
+    cr:    {mood:'weak',   text:"Confidence is shaky after a tough week for crypto security, even as the industry's true believers aren't going anywhere."}
   };
   var moodWord = {good:'Good', steady:'Steady', weak:'Weak'};
 
