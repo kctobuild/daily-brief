@@ -41,14 +41,17 @@
   .kicker{font-size:13px;color:var(--sub);font-weight:600;letter-spacing:.2px;}
   h1.title{font-size:24px;line-height:1.15;margin:4px 0 6px;font-weight:800;letter-spacing:-.3px;}
   .date{font-size:14px;color:var(--sub);font-weight:500;}
+  .sess-ref{font-size:12px;color:var(--sub);font-weight:500;margin-top:2px;}
 
   .section-label{
     font-size:12.5px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.4px;
     margin:22px 16px 8px;max-width:520px;margin-left:auto;margin-right:auto;padding:0 16px;
   }
   .section-sub{
-    font-size:11.5px;color:var(--sub);font-weight:500;max-width:520px;margin:-4px auto 8px;padding:0 16px;
+    font-size:11.5px;color:var(--sub);font-weight:500;max-width:520px;margin:-4px auto 10px;padding:0 16px;
   }
+  .sess-list{margin:0;padding:0;list-style:none;}
+  .sess-list li{margin:1px 0;}
 
   /* House view strip */
   .stance-grid{
@@ -81,6 +84,7 @@
   .tile .val.na{font-size:12px;font-weight:600;font-style:italic;color:#9aa1ad;}
   .tile .chg{font-size:11px;font-weight:700;margin-top:3px;}
   .up{color:var(--green);} .down{color:var(--red);} .flat{color:var(--sub);}
+  .tile .src{font-size:9.5px;color:#9aa1ad;font-weight:600;margin-top:6px;text-transform:none;letter-spacing:0;}
 
   /* Chart section */
   .chart-wrap{
@@ -90,15 +94,14 @@
     background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow);
   }
   .chart-title{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:4px;}
-  .chart-note{font-size:11.5px;color:var(--sub);text-align:center;padding:30px 8px;font-weight:500;}
-  .chart-legend{display:flex;gap:14px;font-size:11px;color:var(--sub);font-weight:600;margin-top:6px;}
-  .legend-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:middle;}
-  .curve-vals{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;}
+  .chart-note{font-size:11.5px;color:var(--sub);text-align:center;padding:22px 8px 10px;font-weight:500;}
+  .curve-vals{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;}
   .curve-val{font-size:11.5px;color:#4b5567;font-weight:600;}
   .curve-val b{color:var(--ink);}
   .curve-val b.na{color:#9aa1ad;font-style:italic;font-weight:600;}
   .vix-row{display:flex;align-items:center;justify-content:space-between;}
   .vix-level{font-size:26px;font-weight:800;letter-spacing:-.5px;}
+  .vix-sub{font-size:11px;color:var(--sub);font-weight:600;margin-top:2px;}
   .vix-regime{
     display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;
     padding:4px 10px;border-radius:999px;
@@ -138,8 +141,6 @@
     line-height:1.6;border-top:1px solid var(--border);
   }
   footer b{color:#3d4658;}
-  .gap-line{margin-top:6px;}
-  .disclaimer{margin-top:10px;font-size:10.5px;color:#9aa1ad;line-height:1.55;}
 </style>
 </head>
 <body>
@@ -153,6 +154,7 @@
   <div class="kicker">Market Insight</div>
   <h1 class="title">Market Overview</h1>
   <div class="date">Friday 21 August 2026</div>
+  <div class="sess-ref">US &amp; Europe: Thu 20 Aug close · Asia: Thu 20 Aug close</div>
 </header>
 
 <div class="section-label">Today's House View</div>
@@ -160,48 +162,54 @@
   <div class="stance-card">
     <div class="stance-name">Equities</div>
     <span class="tag neutral">Neutral</span>
-    <p class="stance-rationale">HSI, HSCEI and CSI 300 firm on record southbound flow; S&amp;P 500 and Nikkei soften — regional split, not broad risk-on.</p>
+    <p class="stance-rationale">US slipped on the yield rebound (S&amp;P -0.9%) while HSI, HSCEI and CSI 300 rallied on bond relief — regional split.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">Rates / Credit</div>
     <span class="tag cautious">Cautious</span>
-    <p class="stance-rationale">10Y still near this week's 20-month high around 4.70%; HY spreads at 270bp offer little cushion.</p>
+    <p class="stance-rationale">10Y back up at 4.70% as the Treasury rally faded; curve only modestly steep at +50bp.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">FX</div>
     <span class="tag neutral">Neutral</span>
-    <p class="stance-rationale">DXY testing channel support near 99.60, below its declining 200-day average; no clear catalyst.</p>
+    <p class="stance-rationale">DXY soft near 98.8; HKD sits comfortably inside the peg band, CNH steady.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">Alternatives</div>
     <span class="tag attractive">Attractive</span>
-    <p class="stance-rationale">Gold holding most of its surge just under $4,500; Brent above $93 and WTI at a one-month high.</p>
+    <p class="stance-rationale">Gold firm near $4,470-4,480/oz as a hedge against yield volatility and dollar softness.</p>
   </div>
 </div>
 
 <div class="section-label">Cross-Asset Snapshot</div>
-<div class="section-sub">Levels at last close — Asia: Fri 21 Aug close; US &amp; Europe: latest available session (Thu 20 Aug NY/London close where noted). Compiled from Bloomberg and public sources.</div>
+<div class="section-sub">
+  Levels at last close
+  <ul class="sess-list">
+    <li>• US &amp; Europe — Thu 20 Aug close</li>
+    <li>• Asia — Thu 20 Aug close</li>
+  </ul>
+</div>
 
 <div class="snap-group">
   <div class="snap-group-title">Equity</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">S&amp;P 500</div><div class="val">7,641.16</div><div class="chg down">▼ -0.87% · Thu</div></div>
-    <div class="tile"><div class="lbl">Nasdaq 100</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">Hang Seng</div><div class="val">26,009</div><div class="chg up">▲ +1.2%</div></div>
-    <div class="tile"><div class="lbl">HSCEI</div><div class="val">8,634.34</div><div class="chg up">▲ +1.01%</div></div>
-    <div class="tile"><div class="lbl">CSI 300</div><div class="val">4,618.90</div><div class="chg up">▲ +0.57%</div></div>
-    <div class="tile"><div class="lbl">Euro Stoxx 50</div><div class="val">6,442.19</div><div class="chg up">▲ +0.31% · Thu</div></div>
-    <div class="tile"><div class="lbl">Nikkei 225</div><div class="val">66,016.36</div><div class="chg down">▼ -0.30% · Thu</div></div>
+    <div class="tile"><div class="lbl">S&amp;P 500</div><div class="val">7,641.16</div><div class="chg down">▼ -0.87% · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">Nasdaq 100</div><div class="val">29,213.16</div><div class="chg down">▼ -0.72% · Thu 20 Aug</div><div class="src">CNBC</div></div>
+    <div class="tile"><div class="lbl">Hang Seng</div><div class="val">25,495</div><div class="chg up">▲ +1.06% · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">HSCEI</div><div class="val">8,547.84</div><div class="chg up">▲ +0.90% · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">CSI 300</div><div class="val">4,618.90</div><div class="chg up">▲ +0.57% · Thu 20 Aug</div><div class="src">CNBC</div></div>
+    <div class="tile"><div class="lbl">Euro Stoxx 50</div><div class="val">6,444.46</div><div class="chg down">▼ -0.37% · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">Nikkei 225</div><div class="val">66,118</div><div class="chg up">▲ +1.21% · Thu 20 Aug</div><div class="src">CNBC</div></div>
   </div>
 </div>
 
 <div class="snap-group">
   <div class="snap-group-title">Rates</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">US 10Y Yield</div><div class="val">4.70%</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">US 2Y Yield</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">2s10s Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">China 10Y Yield</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">US 10Y Yield</div><div class="val">4.70%</div><div class="chg flat">n/a · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">US 2Y Yield</div><div class="val">4.20%</div><div class="chg flat">n/a · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">2s10s Spread</div><div class="val">+50bp</div><div class="chg flat">n/a · Thu 20 Aug</div><div class="src">Bloomberg (derived)</div></div>
+    <div class="tile"><div class="lbl">China 10Y Yield</div><div class="val">1.69%</div><div class="chg down">▼ -1bp · Thu 20 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
@@ -209,7 +217,7 @@
   <div class="snap-group-title">Credit</div>
   <div class="snapshot">
     <div class="tile"><div class="lbl">US IG Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">US HY Spread</div><div class="val">270bp</div><div class="chg flat">n/a · 17 Aug</div></div>
+    <div class="tile"><div class="lbl">US HY Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
     <div class="tile"><div class="lbl">Asia Credit Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
   </div>
 </div>
@@ -217,7 +225,7 @@
 <div class="snap-group">
   <div class="snap-group-title">Volatility</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">VIX</div><div class="val">16.01</div><div class="chg flat">Normal regime</div></div>
+    <div class="tile"><div class="lbl">VIX</div><div class="val">15.71</div><div class="chg up">▲ +5.51% · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
     <div class="tile"><div class="lbl">MOVE Index</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
   </div>
 </div>
@@ -225,20 +233,20 @@
 <div class="snap-group">
   <div class="snap-group-title">FX</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">DXY</div><div class="val">99.60</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">USD/HKD</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">USD/CNH</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">EUR/USD</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">DXY</div><div class="val">98.76</div><div class="chg down">▼ -0.07% · Thu 20 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">USD/HKD</div><div class="val">7.8428</div><div class="chg up">▲ +0.04% · Thu 20 Aug</div><div class="src">Yahoo Finance</div></div>
+    <div class="tile"><div class="lbl">USD/CNH</div><div class="val">6.7261</div><div class="chg flat">n/a · Thu 20 Aug</div><div class="src">Bloomberg</div></div>
+    <div class="tile"><div class="lbl">EUR/USD</div><div class="val">1.1690</div><div class="chg up">▲ +0.08% · Thu 20 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
 <div class="snap-group">
   <div class="snap-group-title">Commodities</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">Brent</div><div class="val">above $93/bbl</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">WTI</div><div class="val na">data unavailable</div><div class="chg up">▲ ~+2% · Thu</div></div>
-    <div class="tile"><div class="lbl">Gold</div><div class="val">just under $4,500/oz</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">Copper</div><div class="val">$6.46/lb</div><div class="chg down">▼ -0.40% · Thu</div></div>
+    <div class="tile"><div class="lbl">Brent</div><div class="val">$93.01/bbl</div><div class="chg up">▲ +1.52% · Thu 20 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">WTI</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">Gold</div><div class="val">$4,472/oz</div><div class="chg flat">n/a · Thu 20 Aug</div><div class="src">CNBC</div></div>
+    <div class="tile"><div class="lbl">Copper</div><div class="val">$6.46/lb</div><div class="chg down">▼ -0.40% · Thu 20 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
@@ -248,16 +256,17 @@
     <div class="chart-title">US 2Y / 10Y — 30-day series</div>
     <div class="chart-note">30-day series unavailable today — showing latest sourced points only.</div>
     <div class="curve-vals">
-      <div class="curve-val">10Y: <b>4.70%</b> (21 Aug)</div>
-      <div class="curve-val">2Y: <b class="na">data unavailable</b></div>
-      <div class="curve-val">2s10s: <b class="na">data unavailable</b></div>
+      <div class="curve-val">10Y: <b>4.70%</b> (Thu 20 Aug)</div>
+      <div class="curve-val">2Y: <b>4.20%</b> (Thu 20 Aug)</div>
+      <div class="curve-val">2s10s: <b>+50bp</b></div>
     </div>
   </div>
   <div class="chart-card">
     <div class="vix-row">
       <div>
         <div class="chart-title">VIX</div>
-        <div class="vix-level">16.01</div>
+        <div class="vix-level">15.71</div>
+        <div class="vix-sub">+5.51% · Thu 20 Aug close</div>
       </div>
       <span class="vix-regime normal">Normal</span>
     </div>
@@ -272,7 +281,7 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="acc-body">This week's snap-back in long yields — the 10-year still parked near 4.70% after touching a 20-month high — lifts the coupon math on new autocallable issuance, while a VIX sitting inside its 15–20 normal band keeps that optionality cheap to manufacture. Tight US high-yield spreads (270bp as of 17 Aug) argue for capital-protected structures on quality credit rather than reaching for carry in stressed names, and a firm gold and oil tape supports commodity-linked participation notes for clients wanting a haven overlay. With today's 2-year print and 2s10s spread unsourced, hold off quoting duration-extension pickup until the desk curve confirms it.</p>
+        <p class="acc-body">The 10-year snapping back to 4.70% as the Treasury rally faded, alongside a VIX that jumped 5.5% to 15.71, lifts coupon levels on new autocallable and range-accrual issuance without pushing vol out of its Normal band. A 2s10s spread that has only just turned modestly positive at +50bp gives a little duration-extension pickup back, but not enough to justify reaching materially further out the curve. Tight-but-unquotable credit spreads argue for sticking to quality underliers on capital-protected structures rather than chasing carry in stressed names.</p>
         <span class="sp-tag">Favorable for yield-enhancement notes</span>
       </div>
     </div>
@@ -287,7 +296,7 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="acc-body">Hong Kong extended its rally again today — the Hang Seng up 1.2% to around 26,000 and HSCEI up a similar margin — on softer local inflation and relentless southbound buying: a single-day net inflow of HK$35.9bn earlier this month pushed year-to-date southbound flows past HK$938.9bn, already well above all of 2025. HIBOR has eased sharply this year, a tailwind for property refinancing conversations, though we don't have a fresh print to quote today. With mainland policy support still the dominant driver, keep client conversations anchored on China catalysts rather than global rate noise.</p>
+        <p class="acc-body">Hong Kong and China extended Thursday's bond-relief rally: the Hang Seng added 1.06% to 25,495 and HSCEI 0.90% to 8,547.84, with CSI 300 up 0.57% as onshore sentiment held firm. The HKD peg stayed comfortably inside its band at 7.8428, and China's 10-year yield eased further to 1.69%, underscoring the still-accommodative policy backdrop supporting property and local-government financing. Southbound buying remains the structural bid behind the Hong Kong rally. With US yields ticking back up overnight, we'd keep client conversations anchored on the mainland policy and flow story rather than US rate noise.</p>
       </div>
     </div>
   </div>
@@ -301,18 +310,16 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="qa-q">"Hang Seng just hit fresh highs on record southbound inflows while the US 10-year is still near a 20-month high — should we lean harder into HK/China equities and trim duration on the fixed income sleeve?"</p>
+        <p class="qa-q">"The 10-year is back above 4.7% and the Treasury rally has fizzled — is now the time to add duration, or stay short and ride the HK/China equity rally instead?"</p>
         <div class="qa-label">House view</div>
-        <p class="acc-body">Yes to leaning into HK/China — the southbound bid is structural, not a one-day flow, and mainland policy support plus softer local inflation give the rally a fundamental underpin, not just momentum. On rates, we would not chase the long end after this week's spike; front-end and belly carry stay attractive without taking on duration risk. Use structured carry — autocallables or range accruals on rates — to capture the elevated coupon while credit spreads remain this tight, rather than extending duration outright.</p>
+        <p class="acc-body">Don't chase the long end yet — this week's rout shows the back end is still hostage to heavy Treasury supply and buyback-policy uncertainty, so keep fixed income duration in the front end and belly where the modestly positive 2s10s (+50bp) already pays you to wait. On the equity sleeve, stay overweight HK/China: the bond-relief bounce, a stable HKD peg and low China yields all argue the southbound bid has further to run. Use structured carry — autocallables on rates, participation notes on HSI/HSCEI — rather than outright duration extension.</p>
       </div>
     </div>
   </div>
 </div>
 
 <footer>
-  <div><b>Sources:</b> compiled from Bloomberg and public house views (CNBC, Trading Economics, Investing.com, FRED, Yahoo Finance).</div>
-  <div class="gap-line"><b>Data gaps today:</b> Nasdaq 100 level, US 2Y yield, 2s10s spread, China 10Y yield, US IG spread, Asia credit spread, MOVE index, USD/HKD, USD/CNH, EUR/USD, exact Brent/WTI/Gold levels and same-day % change, 30-day 2Y/10Y series.</div>
-  <div class="disclaimer">For internal relationship-manager reference only. Not investment advice and not a recommendation. Not for client distribution without compliance review. Levels are indicative and compiled from public sources; verify against firm systems before use with clients.</div>
+  <div><b>Data gaps today:</b> WTI, US IG spread, US HY spread, Asia credit spread, MOVE index, 30-day 2Y/10Y series.</div>
 </footer>
 
 <script>
