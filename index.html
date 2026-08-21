@@ -147,7 +147,12 @@
 </head>
 <body>
 
-<header class="top">
+<nav style="display:flex;gap:6px;max-width:520px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top)) 16px 0;">
+  <a href="index.html" style="flex:1;text-align:center;padding:9px 10px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-weight:600;font-size:13px;text-decoration:none;">Daily Brief</a>
+  <a href="market-insight.html" style="flex:1;text-align:center;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--sub);font-weight:600;font-size:13px;text-decoration:none;">Market Insight</a>
+</nav>
+
+<header class="top" style="padding-top:14px">
   <div class="kicker">Good morning ☕️</div>
   <h1 class="title">Your Daily Brief</h1>
   <div class="date" id="headerDate">Friday 21 August 2026</div>
@@ -155,7 +160,6 @@
 </header>
 
 <div class="wrap">
-  <a href="market-insight.html" style="display:block;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 14px;margin:0 0 14px;font-weight:600;color:var(--blue-text);text-decoration:none;box-shadow:var(--shadow);">Market Insight →</a>
   <div class="things-label">3 things to know today</div>
   <div class="things" id="things"></div>
 
