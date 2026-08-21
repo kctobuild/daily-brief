@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Market Insight">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<title>Market Insight — Friday 21 August 2026</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --ink:#141a26; --sub:#6b7280; --card:#ffffff;
+    --border:#e8ebf1; --shadow:0 1px 2px rgba(20,26,38,.04), 0 4px 14px rgba(20,26,38,.06);
+    --blue-bg:#eff6ff; --blue-border:#2563eb; --blue-text:#1e40af;
+    --green:#16a34a; --red:#dc2626; --amber:#d97706;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,Helvetica,Arial,sans-serif;
+    padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right);
+    padding-bottom:calc(28px + env(safe-area-inset-bottom));
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:520px;margin:0 auto;padding:0 16px;}
+
+  .backlink{
+    display:block;padding:calc(14px + env(safe-area-inset-top)) 16px 0;max-width:520px;margin:0 auto;
+  }
+  .backlink a{
+    font-size:13px;font-weight:600;color:var(--sub);text-decoration:none;
+  }
+
+  header.top{padding:6px 16px 14px;max-width:520px;margin:0 auto;}
+  .kicker{font-size:13px;color:var(--sub);font-weight:600;letter-spacing:.2px;}
+  h1.title{font-size:24px;line-height:1.15;margin:4px 0 6px;font-weight:800;letter-spacing:-.3px;}
+  .date{font-size:14px;color:var(--sub);font-weight:500;margin-bottom:10px;}
+  .pill-internal{
+    display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);
+    border-radius:999px;padding:6px 12px;font-size:12px;color:var(--blue-text);font-weight:700;
+    box-shadow:var(--shadow);background:var(--blue-bg);
+  }
+
+  .section-label{
+    font-size:12.5px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.4px;
+    margin:22px 16px 8px;max-width:520px;margin-left:auto;margin-right:auto;padding:0 16px;
+  }
+  .section-sub{
+    font-size:11.5px;color:var(--sub);font-weight:500;max-width:520px;margin:-4px auto 8px;padding:0 16px;
+  }
+
+  /* House view strip */
+  .stance-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:520px;margin:0 auto;padding:0 16px;
+  }
+  .stance-card{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px 12px 13px;
+    box-shadow:var(--shadow);
+  }
+  .stance-name{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+  .tag{
+    display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;
+    padding:3px 8px;border-radius:6px;margin-bottom:7px;
+  }
+  .tag.attractive{background:#ecfdf3;color:var(--green);}
+  .tag.neutral{background:#fef6e7;color:var(--amber);}
+  .tag.cautious{background:#fdecec;color:var(--red);}
+  .stance-rationale{font-size:12px;line-height:1.42;color:#4b5567;margin:0;}
+
+  /* Cross asset snapshot */
+  .snap-group{max-width:520px;margin:0 auto 14px;padding:0 16px;}
+  .snap-group-title{font-size:11px;font-weight:800;color:var(--sub);text-transform:uppercase;letter-spacing:.4px;margin-bottom:7px;}
+  .snapshot{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+  .tile{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 10px;
+    box-shadow:var(--shadow);
+  }
+  .tile .lbl{font-size:10.5px;color:var(--sub);font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
+  .tile .val{font-size:14.5px;font-weight:800;margin-top:4px;letter-spacing:-.2px;}
+  .tile .val.na{font-size:12px;font-weight:600;font-style:italic;color:#9aa1ad;}
+  .tile .chg{font-size:11px;font-weight:700;margin-top:3px;}
+  .up{color:var(--green);} .down{color:var(--red);} .flat{color:var(--sub);}
+
+  /* Chart section */
+  .chart-wrap{
+    max-width:520px;margin:0 auto 20px;padding:0 16px;display:flex;flex-direction:column;gap:10px;
+  }
+  .chart-card{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow);
+  }
+  .chart-title{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+  .chart-note{font-size:11.5px;color:var(--sub);text-align:center;padding:30px 8px;font-weight:500;}
+  .chart-legend{display:flex;gap:14px;font-size:11px;color:var(--sub);font-weight:600;margin-top:6px;}
+  .legend-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:middle;}
+  .curve-vals{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;}
+  .curve-val{font-size:11.5px;color:#4b5567;font-weight:600;}
+  .curve-val b{color:var(--ink);}
+  .vix-row{display:flex;align-items:center;justify-content:space-between;}
+  .vix-level{font-size:26px;font-weight:800;letter-spacing:-.5px;}
+  .vix-regime{
+    display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;
+    padding:4px 10px;border-radius:999px;
+  }
+  .vix-regime.low{background:#ecfdf3;color:var(--green);}
+  .vix-regime.normal{background:#fef6e7;color:var(--amber);}
+  .vix-regime.elevated{background:#fdecec;color:var(--red);}
+
+  /* Accordions */
+  .accordion{
+    max-width:520px;margin:0 auto 12px;padding:0 16px;
+  }
+  .acc-card{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
+  }
+  .acc-head{
+    display:flex;align-items:center;justify-content:space-between;padding:14px 14px;cursor:pointer;
+    -webkit-user-select:none;user-select:none;
+  }
+  .acc-head-left{display:flex;flex-direction:column;gap:3px;}
+  .acc-title{font-size:14.5px;font-weight:800;color:var(--ink);}
+  .acc-chevron{font-size:13px;color:var(--sub);transition:transform .2s ease;flex-shrink:0;margin-left:10px;}
+  .acc-card.open .acc-chevron{transform:rotate(180deg);}
+  .acc-detail{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+  .acc-card.open .acc-detail{max-height:700px;}
+  .acc-detail-inner{padding:0 14px 16px;}
+  .acc-body{font-size:13.5px;line-height:1.58;color:#333c4d;margin:0 0 12px;}
+  .sp-tag{
+    display:inline-block;font-size:11.5px;font-weight:800;padding:6px 12px;border-radius:8px;
+    background:var(--blue-bg);color:var(--blue-text);border-left:3px solid var(--blue-border);
+  }
+  .qa-q{font-size:13.5px;font-weight:700;color:var(--ink);margin:0 0 10px;line-height:1.4;}
+  .qa-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--blue-text);margin-bottom:5px;}
+
+  footer{
+    max-width:520px;margin:14px auto 0;padding:16px 16px 6px;color:var(--sub);font-size:11.5px;
+    line-height:1.6;border-top:1px solid var(--border);
+  }
+  footer b{color:#3d4658;}
+  .gap-line{margin-top:6px;}
+  .disclaimer{margin-top:10px;font-size:10.5px;color:#9aa1ad;line-height:1.55;}
+</style>
+</head>
+<body>
+
+<div class="backlink"><a href="index.html">← Daily Brief</a></div>
+
+<header class="top">
+  <div class="kicker">Market Insight</div>
+  <h1 class="title">Positioning &amp; Talking Points</h1>
+  <div class="date">Friday 21 August 2026</div>
+  <span class="pill-internal">Internal RM use only</span>
+</header>
+
+<div class="section-label">Today's House View</div>
+<div class="stance-grid">
+  <div class="stance-card">
+    <div class="stance-name">Equities</div>
+    <span class="tag neutral">Neutral</span>
+    <p class="stance-rationale">HSI and CSI 300 outperform; Nikkei and Stoxx soft as US yields back up.</p>
+  </div>
+  <div class="stance-card">
+    <div class="stance-name">Rates / Credit</div>
+    <span class="tag cautious">Cautious</span>
+    <p class="stance-rationale">10Y near 4.70% after this week's sharp rebound; buybacks offer only partial support.</p>
+  </div>
+  <div class="stance-card">
+    <div class="stance-name">FX</div>
+    <span class="tag neutral">Neutral</span>
+    <p class="stance-rationale">DXY steady near 98.8, still close to its three-month low; range-bound session.</p>
+  </div>
+  <div class="stance-card">
+    <div class="stance-name">Alternatives</div>
+    <span class="tag attractive">Attractive</span>
+    <p class="stance-rationale">Gold above $4,500 on haven demand; Brent +1.5%, WTI +2% on Hormuz risk premium.</p>
+  </div>
+</div>
+
+<div class="section-label">Cross-Asset Snapshot</div>
+<div class="section-sub">Levels at last close — Asia: Fri 21 Aug; US &amp; Europe: latest available session (Thu 20 Aug NY close where noted). Compiled from Bloomberg and public sources.</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">Equity</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">S&amp;P 500</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">Nasdaq 100</div><div class="val">29,213.16</div><div class="chg flat">n/a · Thu 20 Aug close</div></div>
+    <div class="tile"><div class="lbl">Hang Seng</div><div class="val na">data unavailable</div><div class="chg up">▲ ~+1.1%</div></div>
+    <div class="tile"><div class="lbl">HSCEI</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">CSI 300</div><div class="val">4,621.40</div><div class="chg up">▲ +0.62%</div></div>
+    <div class="tile"><div class="lbl">Euro Stoxx 50</div><div class="val">6,422.06</div><div class="chg down">▼ -0.35%</div></div>
+    <div class="tile"><div class="lbl">Nikkei 225</div><div class="val">66,016.36</div><div class="chg down">▼ -0.30%</div></div>
+  </div>
+</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">Rates</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">US 10Y Yield</div><div class="val">4.70%</div><div class="chg up">▲ +1bp</div></div>
+    <div class="tile"><div class="lbl">US 2Y Yield</div><div class="val">4.19%</div><div class="chg flat">n/a · as of 19 Aug</div></div>
+    <div class="tile"><div class="lbl">2s10s Spread</div><div class="val na">data unavailable*</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">China 10Y Yield</div><div class="val">1.69%</div><div class="chg flat">n/a</div></div>
+  </div>
+</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">Credit</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">US IG Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">US HY Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">Asia Credit Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+  </div>
+</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">Volatility</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">VIX</div><div class="val">16.01</div><div class="chg flat">Normal regime</div></div>
+    <div class="tile"><div class="lbl">MOVE Index</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+  </div>
+</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">FX</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">DXY</div><div class="val">98.80</div><div class="chg up">▲ +0.05%</div></div>
+    <div class="tile"><div class="lbl">USD/HKD</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">USD/CNH</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">EUR/USD</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+  </div>
+</div>
+
+<div class="snap-group">
+  <div class="snap-group-title">Commodities</div>
+  <div class="snapshot">
+    <div class="tile"><div class="lbl">Brent</div><div class="val">$93.01</div><div class="chg up">▲ +1.52% · Thu</div></div>
+    <div class="tile"><div class="lbl">WTI</div><div class="val">$86.16</div><div class="chg up">▲ +2.09% · Thu</div></div>
+    <div class="tile"><div class="lbl">Gold</div><div class="val">$4,500+/oz</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">Copper</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+  </div>
+</div>
+
+<div class="section-label">Yield Curve &amp; Volatility</div>
+<div class="chart-wrap">
+  <div class="chart-card">
+    <div class="chart-title">US 2Y / 10Y — 30-day series</div>
+    <div class="chart-note">30-day series unavailable today — showing latest sourced points only.</div>
+    <div class="curve-vals">
+      <div class="curve-val">10Y: <b>4.70%</b> (21 Aug)</div>
+      <div class="curve-val">2Y: <b>4.19%</b> (19 Aug)</div>
+      <div class="curve-val">2s10s: <b>data unavailable*</b></div>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="vix-row">
+      <div>
+        <div class="chart-title">VIX</div>
+        <div class="vix-level">16.01</div>
+      </div>
+      <span class="vix-regime normal">Normal</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-card open" id="acc-sp">
+    <div class="acc-head" onclick="toggleAcc('acc-sp')">
+      <div class="acc-head-left"><div class="acc-title">Structured Product Read-Through</div></div>
+      <div class="acc-chevron">▾</div>
+    </div>
+    <div class="acc-detail">
+      <div class="acc-detail-inner">
+        <p class="acc-body">The 10Y holding near 4.70% after this week's sharp rebound lifts the risk-free carry embedded in new autocallable coupons, and a VIX still inside its normal 15–20 band keeps that carry cheap to manufacture. With a same-day 2s10s print unavailable, we'd flag limited visibility on the duration-extension pickup rather than assume it — check the desk curve before quoting long-dated structures. Gold and oil momentum separately support participation notes on commodity/haven themes.</p>
+        <span class="sp-tag">Favorable for yield-enhancement notes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-card" id="acc-region">
+    <div class="acc-head" onclick="toggleAcc('acc-region')">
+      <div class="acc-head-left"><div class="acc-title">Regional Outlook — Asia / Hong Kong</div></div>
+      <div class="acc-chevron">▾</div>
+    </div>
+    <div class="acc-detail">
+      <div class="acc-detail-inner">
+        <p class="acc-body">Hong Kong outperformed again today, with the Hang Seng adding roughly 1% and the CSI 300 up 0.62%, as mainland sentiment holds up despite a still-cautious property backdrop. China's 10-year yield sits near 1.69%, underscoring the widening gap versus 4.70% in the US and keeping pressure on the peg-linked carry trade. Southbound flow and HIBOR prints weren't available today — worth checking desk data before quoting funding costs to clients. The divergence between resilient HK equities and a softer US/Europe tape keeps conversations with UHNW clients anchored on China policy catalysts rather than global beta.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-card" id="acc-qa">
+    <div class="acc-head" onclick="toggleAcc('acc-qa')">
+      <div class="acc-head-left"><div class="acc-title">Top Client Question of the Day</div></div>
+      <div class="acc-chevron">▾</div>
+    </div>
+    <div class="acc-detail">
+      <div class="acc-detail-inner">
+        <p class="qa-q">"Yields just rebounded sharply and gold broke $4,500 — should we be adding duration here, or sitting in cash?"</p>
+        <div class="qa-label">House view</div>
+        <p class="acc-body">We are not chasing duration into this rebound. Front-end and belly carry remain attractive without taking on long-end volatility risk, and the Treasury's buyback programme is a floor for the long end, not a reason to extend into it. For clients wanting rate exposure, structured carry — range accruals or autocallables referencing rates — captures the elevated coupon without outright duration risk. Keep gold and broader commodity exposure as the geopolitical hedge rather than adding conviction long-duration bond risk today.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div><b>Sources:</b> compiled from Bloomberg and public house views (CNBC, Trading Economics, Yahoo Finance, exchange data).</div>
+  <div class="gap-line"><b>Data gaps today:</b> S&amp;P 500 close, HSCEI (no same-day print), Hang Seng index level (source data corrupted — change estimate only), same-day US 2Y yield and 2s10s spread (*2Y last confirmed 19 Aug, spread not computed across mismatched dates), US IG/HY spreads, Asia credit spread, MOVE index, USD/HKD, USD/CNH, EUR/USD, copper, exact gold fix, 30-day 2Y/10Y series.</div>
+  <div class="disclaimer">For internal relationship-manager reference only. Not investment advice and not a recommendation. Not for client distribution without compliance review. Levels are indicative and compiled from public sources; verify against firm systems before use with clients.</div>
+</footer>
+
+<script>
+function toggleAcc(id){
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
