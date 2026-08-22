@@ -90,6 +90,12 @@
   }
   .chart-title{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:4px;}
   .chart-note{font-size:11.5px;color:var(--sub);text-align:center;padding:22px 8px 10px;font-weight:500;}
+  .chart-svg-wrap{position:relative;margin-top:4px;}
+  .chart-svg-wrap svg{width:100%;height:auto;display:block;}
+  .chart-yaxis{font-size:9px;fill:#9aa1ad;font-weight:600;}
+  .legend{display:flex;gap:14px;margin-top:8px;}
+  .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#4b5567;}
+  .legend-swatch{width:10px;height:3px;border-radius:2px;}
   .curve-vals{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;}
   .curve-val{font-size:11.5px;color:#4b5567;font-weight:600;}
   .curve-val b{color:var(--ink);}
@@ -157,22 +163,22 @@
   <div class="stance-card">
     <div class="stance-name">Equities</div>
     <span class="tag neutral">Neutral</span>
-    <p class="stance-rationale">S&amp;P 500 rebounded +0.43% Friday, but still finished the week down 1.4%.</p>
+    <p class="stance-rationale">S&amp;P 500 +0.43% and HSI +1.21% Friday, but Wall Street still logged a second straight weekly loss.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">Rates / Credit</div>
     <span class="tag cautious">Cautious</span>
-    <p class="stance-rationale">10Y holds near cycle-high 4.71%; credit-spread data gaps keep us defensive here.</p>
+    <p class="stance-rationale">10Y climbed to 4.69% and 2s10s widened to 50bp as IG/HY spreads both ticked wider Thursday.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">FX</div>
     <span class="tag neutral">Neutral</span>
-    <p class="stance-rationale">DXY steady near 98.8; HKD and CNH both comfortably range-bound into the weekend.</p>
+    <p class="stance-rationale">DXY steady near 98.8; HKD and CNH both comfortably range-bound heading into the Fed weekend.</p>
   </div>
   <div class="stance-card">
     <div class="stance-name">Alternatives</div>
     <span class="tag attractive">Attractive</span>
-    <p class="stance-rationale">Gold jumped to $4,587/oz (+1.58%) as debt-concern hedging demand stayed firm Friday.</p>
+    <p class="stance-rationale">Gold jumped 2.0% to $4,607/oz Friday as debt and policy-risk hedging demand stayed firm.</p>
   </div>
 </div>
 
@@ -182,11 +188,11 @@
   <div class="snap-group-title">Equity</div>
   <div class="snapshot">
     <div class="tile"><div class="lbl">S&amp;P 500</div><div class="val">7,674.37</div><div class="chg up">▲ +0.43% · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
-    <div class="tile"><div class="lbl">Nasdaq 100</div><div class="val">~29,347</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Vantage Markets</div></div>
+    <div class="tile"><div class="lbl">Nasdaq 100</div><div class="val">29,347.09</div><div class="chg up">▲ +0.46% · Fri 21 Aug</div><div class="src">Vantage Markets</div></div>
     <div class="tile"><div class="lbl">Hang Seng</div><div class="val">26,009</div><div class="chg up">▲ +1.21% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
     <div class="tile"><div class="lbl">HSCEI</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">CSI 300</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">Euro Stoxx 50</div><div class="val">6,433</div><div class="chg up">▲ +0.19% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">CSI 300</div><div class="val">4,618.90</div><div class="chg up">▲ +0.57% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">Euro Stoxx 50</div><div class="val">6,422.06</div><div class="chg down">▼ -0.35% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
     <div class="tile"><div class="lbl">Nikkei 225</div><div class="val">66,016.36</div><div class="chg down">▼ -0.30% · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
   </div>
 </div>
@@ -194,26 +200,26 @@
 <div class="snap-group">
   <div class="snap-group-title">Rates</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">US 10Y Yield</div><div class="val">4.71%</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
-    <div class="tile"><div class="lbl">US 2Y Yield</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">2s10s Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">China 10Y Yield</div><div class="val">1.71%</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">US 10Y Yield</div><div class="val">4.69%</div><div class="chg up">▲ +4bp · Thu 20 Aug</div><div class="src">FRED (DGS10)</div></div>
+    <div class="tile"><div class="lbl">US 2Y Yield</div><div class="val">4.19%</div><div class="chg flat">flat · Thu 20 Aug</div><div class="src">FRED (DGS2)</div></div>
+    <div class="tile"><div class="lbl">2s10s Spread</div><div class="val">50bp</div><div class="chg up">▲ +4bp · Thu 20 Aug</div><div class="src">FRED (DGS10−DGS2)</div></div>
+    <div class="tile"><div class="lbl">China 10Y Yield</div><div class="val">1.69%</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
 <div class="snap-group">
   <div class="snap-group-title">Credit</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">US IG Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">US HY Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
-    <div class="tile"><div class="lbl">Asia Credit Spread</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
+    <div class="tile"><div class="lbl">US IG Spread</div><div class="val">82bp</div><div class="chg up">▲ +1bp · Thu 20 Aug</div><div class="src">FRED (BAMLC0A0CM)</div></div>
+    <div class="tile"><div class="lbl">US HY Spread</div><div class="val">275bp</div><div class="chg up">▲ +2bp · Thu 20 Aug</div><div class="src">FRED (BAMLH0A0HYM2)</div></div>
+    <div class="tile"><div class="lbl">Asia Credit Spread</div><div class="val">83bp</div><div class="chg flat">flat · Thu 20 Aug</div><div class="src">FRED (BAMLEMRACRPIASIAOAS)</div></div>
   </div>
 </div>
 
 <div class="snap-group">
   <div class="snap-group-title">Volatility</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">VIX</div><div class="val">15.13</div><div class="chg down">▼ -5.50% · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
+    <div class="tile"><div class="lbl">VIX</div><div class="val">16.01</div><div class="chg up">▲ +7.5% · Thu 20 Aug</div><div class="src">FRED (VIXCLS)</div></div>
     <div class="tile"><div class="lbl">MOVE Index</div><div class="val na">data unavailable</div><div class="chg flat">n/a</div></div>
   </div>
 </div>
@@ -222,19 +228,19 @@
   <div class="snap-group-title">FX</div>
   <div class="snapshot">
     <div class="tile"><div class="lbl">DXY</div><div class="val">98.80</div><div class="chg down">▼ -0.10% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
-    <div class="tile"><div class="lbl">USD/HKD</div><div class="val">7.8428</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
-    <div class="tile"><div class="lbl">USD/CNH</div><div class="val">6.7259</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
-    <div class="tile"><div class="lbl">EUR/USD</div><div class="val">1.1677</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">USD/HKD</div><div class="val">7.8426</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
+    <div class="tile"><div class="lbl">USD/CNH</div><div class="val">6.7562</div><div class="chg down">▼ -0.04% · Fri 21 Aug</div><div class="src">Yahoo Finance</div></div>
+    <div class="tile"><div class="lbl">EUR/USD</div><div class="val">1.1678</div><div class="chg down">▼ -0.04% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
 <div class="snap-group">
   <div class="snap-group-title">Commodities</div>
   <div class="snapshot">
-    <div class="tile"><div class="lbl">Brent</div><div class="val">$93.86</div><div class="chg up">▲ +0.08% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">Brent</div><div class="val">$94.39</div><div class="chg up">▲ +0.65% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
     <div class="tile"><div class="lbl">WTI</div><div class="val">$86.65</div><div class="chg down">▼ -0.21% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
-    <div class="tile"><div class="lbl">Gold</div><div class="val">$4,587.27/oz</div><div class="chg up">▲ +1.58% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
-    <div class="tile"><div class="lbl">Copper</div><div class="val">$6.57/lb</div><div class="chg flat">n/a · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">Gold</div><div class="val">$4,607.35/oz</div><div class="chg up">▲ +2.03% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
+    <div class="tile"><div class="lbl">Copper</div><div class="val">$6.58/lb</div><div class="chg up">▲ +1.79% · Fri 21 Aug</div><div class="src">Trading Economics</div></div>
   </div>
 </div>
 
@@ -242,19 +248,30 @@
 <div class="chart-wrap">
   <div class="chart-card">
     <div class="chart-title">US 2Y / 10Y — 30-day series</div>
-    <div class="chart-note">30-day series unavailable today — showing latest sourced points only.</div>
+    <div class="chart-svg-wrap">
+      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+        <text x="0" y="10" class="chart-yaxis">4.80%</text>
+        <text x="0" y="94" class="chart-yaxis">4.10%</text>
+        <polyline points="8.0,23.4 21.5,18.6 35.0,21.0 48.6,25.9 62.1,30.7 75.6,23.4 89.1,22.2 102.7,13.8 116.2,19.8 129.7,28.3 143.2,28.3 156.8,21.0 170.3,25.9 183.8,17.4 197.3,19.8 210.9,22.2 224.4,28.3 237.9,22.2 251.4,17.4 265.0,18.6 278.5,25.9 292.0,21.0" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <polyline points="8.0,66.9 21.5,59.7 35.0,64.5 48.6,66.9 62.1,72.9 75.6,77.8 89.1,76.6 102.7,70.5 116.2,74.1 129.7,80.2 143.2,82.6 156.8,74.1 170.3,81.4 183.8,74.1 197.3,77.8 210.9,80.2 224.4,86.2 237.9,83.8 251.4,81.4 265.0,81.4 278.5,81.4 292.0,81.4" fill="none" stroke="#d97706" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#2563eb;"></span>10Y</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#d97706;"></span>2Y</div>
+    </div>
     <div class="curve-vals">
-      <div class="curve-val">10Y: <b>4.71%</b> (Fri 21 Aug)</div>
-      <div class="curve-val">2Y: <b class="na">data unavailable</b></div>
-      <div class="curve-val">2s10s: <b class="na">data unavailable</b></div>
+      <div class="curve-val">10Y: <b>4.69%</b> (Thu 20 Aug)</div>
+      <div class="curve-val">2Y: <b>4.19%</b> (Thu 20 Aug)</div>
+      <div class="curve-val">2s10s: <b>50bp</b></div>
     </div>
   </div>
   <div class="chart-card">
     <div class="vix-row">
       <div>
         <div class="chart-title">VIX</div>
-        <div class="vix-level">15.13</div>
-        <div class="vix-sub">-5.50% · Fri 21 Aug close</div>
+        <div class="vix-level">16.01</div>
+        <div class="vix-sub">+7.5% · Thu 20 Aug close</div>
       </div>
       <span class="vix-regime normal">Normal</span>
     </div>
@@ -269,7 +286,7 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="acc-body">Friday's sharp VIX pullback to 15.13 (-5.5%) eased near-term optionality premium just as the 10-year held firm near 4.71% — a combination that keeps coupon levels reasonably rich on new autocallable and range-accrual issuance even as realised vol compresses. With the front-end 2-year print unavailable today, we'd hold off sizing duration-extension trades until the curve read is confirmed early next week. Gold's continued bid into $4,587/oz supports participation structures on defensive baskets heading into the weekend.</p>
+        <p class="acc-body">A firmer VIX (16.01, +7.5% Thursday) alongside the 10-year's push back to 4.69% lifts coupon levels on new autocallable and range-accrual issuance heading into next week. The 2s10s spread widening to 50bp modestly improves the pickup from duration extension, though we'd still favour shorter tenors until the Jackson Hole read-through is confirmed on Monday. Gold's 2.0% surge to $4,607/oz keeps participation structures on defensive baskets attractive for clients wanting inflation and policy-risk hedges.</p>
         <span class="sp-tag">Favorable for yield-enhancement notes</span>
       </div>
     </div>
@@ -284,7 +301,7 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="acc-body">Hong Kong closed out the week on a strong note, with the Hang Seng adding 1.21% to 26,009 on Friday — its best level in weeks — while USD/HKD held comfortably inside the peg band at 7.8428 and USD/CNH stayed anchored near 6.726. China's 10-year yield remains pinned near 1.71%, consistent with Beijing's still-accommodative stance. With HSCEI and CSI 300 prints unavailable today and markets shut over the weekend, we'd frame client conversations around the HSI's own momentum and steady southbound flows heading into next week rather than any single data point.</p>
+        <p class="acc-body">Hong Kong markets are closed for the weekend after a firm finish Friday, with the Hang Seng adding 1.21% to 26,009 on softer local inflation — its best close in weeks. USD/HKD held comfortably inside the peg band at 7.8426 and USD/CNH stayed anchored near 6.756, while China's 10-year yield eased to 1.69% as growth concerns keep the PBOC accommodative. With HSCEI unavailable today and CSI 300 up a modest 0.57%, we'd frame Monday conversations around HSI momentum and steady southbound demand rather than a single print, watching for any policy signal out of Beijing over the weekend.</p>
       </div>
     </div>
   </div>
@@ -298,17 +315,17 @@
     </div>
     <div class="acc-detail">
       <div class="acc-detail-inner">
-        <p class="qa-q">"The Hang Seng just closed its best week in a while near 26,000, but US yields are still parked above 4.7% — with markets shut till Monday, should we be adding risk into the reopen or waiting for more confirmation?"</p>
+        <p class="qa-q">"With Fed commentary from the Jackson Hole symposium landing this weekend and the 10-year back above 4.65%, should we be adding duration into next week, or holding at the front end?"</p>
         <div class="qa-label">House view</div>
-        <p class="acc-body">We wouldn't wait. Friday's HSI strength was broad, not a single-stock pop, and it came alongside a sharp VIX pullback to 15.13 — a genuine risk-on signal, not short covering. On the US side, keep duration anchored in the front end; the 10-year's stickiness above 4.7% argues against reaching for the long end until we get a confirmed 2-year print next week. Use the reopen to add HSI participation exposure paired with front-end carry, not long-duration bets.</p>
+        <p class="acc-body">We'd hold at the front end into the weekend. Friday's move higher in the 10-year came alongside a firmer VIX, not a clean risk-on rates sell-off, and a 50bp 2s10s doesn't yet reward reaching for duration. Wait for Monday's post-Jackson Hole confirmation before extending tenor. In the meantime, front-end carry paired with HSI participation exposure remains the more efficient trade, especially with gold's bid confirming hedging demand is still intact.</p>
       </div>
     </div>
   </div>
 </div>
 
 <footer>
-  <div>Last updated: Saturday 22 August 2026, 08:19 Hong Kong time.</div>
-  <div><b>Data gaps today:</b> HSCEI, CSI 300, US 2Y yield, 2s10s spread, US IG spread, US HY spread, Asia credit spread, MOVE index, 30-day 2Y/10Y series.</div>
+  <div>Last updated: Saturday 22 August 2026, 10:30 Hong Kong time.</div>
+  <div><b>Data gaps today:</b> HSCEI, MOVE index.</div>
 </footer>
 
 <script>
