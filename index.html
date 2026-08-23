@@ -155,7 +155,7 @@
 <header class="top" style="padding-top:14px">
   <div class="kicker">Good morning ☕️</div>
   <h1 class="title">Your Daily Brief</h1>
-  <div class="date" id="headerDate">Saturday 22 August 2026</div>
+  <div class="date" id="headerDate">Sunday 23 August 2026</div>
   <div class="readtime" id="readtimePill">≈ 9-min read · 20 stories · fresh (last 24–48h)</div>
 </header>
 
@@ -180,12 +180,12 @@
 
 <footer>
   <div><b>Sources:</b> Bloomberg, CNBC, SCMP, The Standard (thestandard.com.hk), HKMA and official HK/US/China government sites.</div>
-  <div style="margin-top:6px;">Last updated: <span id="footerDate">Saturday 22 August 2026, 07:44</span> Hong Kong time.</div>
+  <div style="margin-top:6px;">Last updated: <span id="footerDate">Sunday 23 August 2026, 09:16</span> Hong Kong time.</div>
 </footer>
 
 <script>
 (function(){
-  var HK_DATE = "Saturday 22 August 2026";
+  var HK_DATE = "Sunday 23 August 2026";
   document.getElementById('headerDate').textContent = HK_DATE;
 
   var CATS = {
@@ -204,23 +204,23 @@
   var TOPIC_LABEL = {all:"All topics",markets:"Markets",banking:"Banking",policy:"Policy",tech:"Tech",crypto:"Crypto",energy:"Energy"};
 
   var PULSE = {
-    all:    {mood:"good",   text:"Stocks, bitcoin and gold all firmed together, with Beijing's fresh stimulus talk and a calmer bond market lifting the mood across regions."},
-    top:    {mood:"good",   text:"Crypto, Wall Street and Beijing policymakers all pointed the same optimistic direction into the weekend."},
-    hk:     {mood:"good",   text:"Hong Kong markets and financing activity firmed, with fresh developer launches and data-centre lending adding to the upbeat tone."},
-    us:     {mood:"good",   text:"Wall Street extended its August advance on strong business-activity data, even after a choppy, yield-driven week."},
-    china:  {mood:"steady", text:"Policymakers leaned further into fiscal support even as the underlying growth picture stayed soft."},
-    global: {mood:"good",   text:"Bullion and haven assets caught a bid as bond-market jitters eased and the dollar softened."},
-    uae:    {mood:"steady", text:"A diplomatic rupture with Iran added a note of caution even as the emirates kept pressing ahead with market-building efforts."},
-    tech:   {mood:"good",   text:"Chip dealmaking and memory-market strength kept the AI investment story rolling."},
-    crypto: {mood:"good",   text:"Bitcoin roared through a fresh high as short-covering and policy optimism fed the rally."}
+    all:    {mood:"good",   text:"Stocks, crypto and Asian equities firmed together as fresh stimulus, cooling bond-market jitters and AI dealmaking lifted the mood into the weekend."},
+    top:    {mood:"good",   text:"Chip pricing power, Beijing stimulus and a roaring crypto rally all pointed in the same upbeat direction to close the week."},
+    hk:     {mood:"good",   text:"Hong Kong stocks capped a strong week with broad gains across tech, property and insurance, even as developers stayed watchful on the ground."},
+    us:     {mood:"steady", text:"Wall Street steadied after a rocky week, but a heavy retail miss and climbing bond yields kept the picture mixed beneath the surface."},
+    china:  {mood:"steady", text:"Policymakers leaned further into targeted stimulus even as trade flows and the property market painted an uneven picture."},
+    global: {mood:"steady", text:"Energy markets stayed on edge as sanctions threats clouded the outlook for Gulf shipping, keeping traders cautious."},
+    uae:    {mood:"weak",   text:"A deepening rupture with Iran added a fresh note of strain even as the wider Gulf economy kept pressing ahead."},
+    tech:   {mood:"good",   text:"AI dealmaking kept accelerating, from mega debt financing to custom-chip ambitions, even as new pricing showed the boom has a cost."},
+    crypto: {mood:"good",   text:"Bitcoin's blistering rally continued, though traders are already debating how much further this particular leg can run."}
   };
   var MOOD_WORD = {good:"Good", steady:"Steady", weak:"Weak"};
 
   var SNAPSHOT = [
-    {lbl:"S&P 500", val:"7,703.10", chg:"+0.8%", dir:"up"},
-    {lbl:"Nasdaq", val:"26,330.44", chg:"+1.0%", dir:"up"},
-    {lbl:"Dow", val:"53,340.05", chg:"+1.1%", dir:"up"},
-    {lbl:"Hang Seng", val:"25,972.11", chg:"+1.1%", dir:"up"},
+    {lbl:"S&P 500", val:"7,674.37", chg:"+0.43%", dir:"up"},
+    {lbl:"Nasdaq", val:"26,180.45", chg:"+0.43%", dir:"up"},
+    {lbl:"Dow", val:"53,277.01", chg:"+0.98%", dir:"up"},
+    {lbl:"Hang Seng", val:"26,009", chg:"+1.21%", dir:"up"},
     {lbl:"USD/CNY", val:"7.12", chg:"flat", dir:"flat"},
     {lbl:"Bitcoin", val:"$76,943.90", chg:"+6.0%", dir:"up"},
     {lbl:"UAE (DFM)", val:"5,795.93", chg:"steady", dir:"flat"},
@@ -228,165 +228,165 @@
   ];
 
   var STORIES = [
-    {cat:"top", topic:"crypto", source:"Bloomberg",
-     headline:"Bitcoin leaps past $75,000 as Asia-led crypto rally accelerates",
-     summary:"Bitcoin jumped as much as 4.2% to touch $75,740 in Asian trading before easing back, extending a rally that has added roughly a fifth to its price this week. The move followed a Treasury-driven pullback in bond yields and a wave of short-position liquidations across crypto markets. Ether and other major tokens rose in tandem.",
-     why:["A rally of this speed pulls fresh institutional and retail capital toward crypto trading desks, a business Hong Kong's licensed exchanges are racing to capture.",
-          "Renewed bitcoin strength eases balance-sheet pressure on crypto lenders and custodians that were squeezed during the year's earlier drawdown.",
-          "Banks weighing digital-asset custody and trading services gain a stronger commercial case as retail and institutional demand both firm up."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/bitcoin-leaps-past-75-000-as-crypto-rally-continues-in-asia"},
+    {cat:"top", topic:"tech", source:"Bloomberg",
+     headline:"Nvidia's biggest customers hit with AI server price hikes above 15%",
+     summary:"Nvidia has told its largest customers that prices for AI servers built around its chips are rising more than 15% in many cases. The increases apply to systems shipped from early next year, including the flagship Vera Rubin and Grace Blackwell platforms. Soaring memory-chip costs are a key driver of the higher pricing.",
+     why:["Higher AI server costs raise the bar for banks and enterprises budgeting AI infrastructure spend, squeezing near-term returns on compute investment.",
+          "Passing through memory-driven cost inflation shows Nvidia's pricing power remains intact even as competitors chase its lead.",
+          "Hong Kong data-centre operators and their lenders will need to reprice project economics as hardware costs climb heading into 2027."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-22/nvidia-customers-notified-about-ai-related-price-hikes-above-15"},
 
-    {cat:"top", topic:"markets", source:"CNBC",
-     headline:"Wall Street extends August advance as business activity hits four-year high",
-     summary:"US stocks climbed further into their August rally after a report showed business activity expanding at its fastest pace in more than four years. The Dow rose over 1% and the Nasdaq snapped a five-day losing streak. Traders are now bracing for Nvidia's earnings, due next week, as the next major test for the AI-led rally.",
-     why:["Stronger business-activity data reduces near-term recession worry, supporting risk appetite across bank trading desks and asset managers.",
-          "A sturdier US economic backdrop underpins the credit conditions that Hong Kong and Asian banks price into cross-border lending.",
-          "Nvidia's upcoming results are now a de facto referendum on AI spending, with markets primed to swing sharply either way."],
-     url:"https://www.cnbc.com/2026/08/21/here-are-the-top-10-things-were-watching-in-the-stock-market-friday.html"},
+    {cat:"top", topic:"policy", source:"SCMP",
+     headline:"China unveils fresh targeted stimulus as growth slips below target",
+     summary:"China's finance and planning bodies are accelerating support measures after weak data intensified calls for action. New credit-card financing for cars and home renovations now carries a one-percentage-point interest subsidy. The loan-subsidy cap per borrower has also been raised, with more small-business lending support pledged for later this year.",
+     why:["Expanded consumer and SME credit subsidies could revive loan demand at mainland banks that have struggled with weak borrowing this year.",
+          "A credible stimulus push feeds directly into Hong Kong's economy through trade, tourism and mainland-linked capital-markets activity.",
+          "Investors will judge whether these targeted measures are enough to arrest the slowdown, a key swing factor for Asian risk assets."],
+     url:"https://www.scmp.com/economy/policy/article/3364851/china-unveils-targeted-measures-aid-slowing-economy-amid-louder-calls-policy-support"},
 
-    {cat:"top", topic:"policy", source:"Bloomberg",
-     headline:"China unveils fresh fiscal stimulus push as growth slows",
-     summary:"China is preparing new coordinated fiscal and financial policies for the second half of the year as economic growth slips below the government's annual target. Vice Finance Minister Liao Min said Beijing has studied and drafted measures to drive borrowing by businesses and consumers. The announcement follows weaker-than-expected industrial output and retail sales data.",
-     why:["Expanded fiscal support could stabilise credit demand at Chinese banks that have struggled with weak corporate borrowing this year.",
-          "A firmer mainland growth trajectory feeds directly into Hong Kong's economy through trade, tourism and capital-markets activity.",
-          "Investors will watch whether the stimulus is large enough to arrest the slowdown, a key swing factor for Asian risk assets."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/china-plans-new-fiscal-support-policies-this-year-amid-slowdown"},
-
-    {cat:"hk", topic:"banking", source:"HKMA",
-     headline:"HKMA to hold tender of 2-year Exchange Fund Notes",
-     summary:"The Hong Kong Monetary Authority will hold a tender of 2-Year Exchange Fund Notes on 21 August, with settlement due 24 August. The notes are part of the HKMA's regular debt-issuance programme used to manage Hong Kong dollar liquidity. Results will set a fresh benchmark yield for short-dated local currency debt.",
-     why:["The tender result gives banks and treasurers an updated benchmark for pricing short-dated Hong Kong dollar funding.",
-          "Regular Exchange Fund Notes issuance underpins the depth and liquidity of Hong Kong's local currency bond market.",
-          "Demand at the tender offers a read on how banks are positioning liquidity ahead of the autumn funding season."],
-     url:"https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/08/20260812-3/"},
-
-    {cat:"hk", topic:"policy", source:"SCMP",
-     headline:"Hong Kong financiers press for carried-interest tax break after Singapore move",
-     summary:"Fund managers are urging Hong Kong lawmakers to pass a proposed tax exemption on carried interest after Singapore unveiled a rival scheme. The bill, submitted in June, is expected to come to a vote later this year. Industry figures warn that delay could push traders and dealmakers toward jurisdictions offering similar incentives.",
-     why:["Losing the tax-break race to Singapore risks pulling fund managers and their fee income away from Hong Kong's asset-management industry.",
-          "A swift vote would give private equity and hedge fund firms the clarity needed to keep booking carried interest through Hong Kong.",
-          "The episode highlights how directly regional tax competition now shapes where financial firms choose to base staff and capital."],
-     url:"https://www.scmp.com/business/markets/article/3364693/hong-kong-financiers-press-tax-breaks-after-singapore-unveils-rival-scheme"},
-
-    {cat:"hk", topic:"banking", source:"Bloomberg",
-     headline:"DayOne seeks HK$1.86 billion loan for Hong Kong data centre ahead of US IPO",
-     summary:"DayOne Data Centers is in talks with a consortium of Asian banks, including DBS, OCBC and UOB, for a five-year HK$1.86 billion loan. The financing will help fund a Hong Kong data centre and adds to the Singapore-based operator's recent borrowing spree. The move comes ahead of DayOne's planned US initial public offering.",
-     why:["A large syndicated loan for Hong Kong data-centre capacity shows banks are comfortable underwriting AI-infrastructure credit risk in the city.",
-          "Growth in data-centre financing supports demand for Hong Kong-based project and structured lending desks.",
-          "The looming US IPO gives lenders a defined exit path, shaping how aggressively they price this financing round."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/dayone-seeks-loan-to-fund-hong-kong-data-center-ahead-of-us-ipo"},
+    {cat:"top", topic:"crypto", source:"CNBC",
+     headline:"Bitcoin logs its best weekly gain since 2023 as optimism floods back",
+     summary:"Bitcoin ended the week up roughly 22%, its strongest weekly performance in more than two years. The rally was fuelled by a bond-market relief rally, a $2.7 billion wave of short-position liquidations, and a White House push for crypto-friendly legislation. Analysts say sentiment has turned decisively bullish after a rough summer.",
+     why:["A rally this size can quickly reverse outflows at crypto funds and exchanges that struggled through the summer drawdown.",
+          "Renewed bullish sentiment strengthens the case for banks and asset managers expanding digital-asset product lines.",
+          "Momentum like this tends to pull in fresh retail participation, a trend Hong Kong-licensed crypto platforms are positioned to capture."],
+     url:"https://www.cnbc.com/2026/08/21/bitcoin-gain-cryptocurrency-investors-optimistic.html"},
 
     {cat:"hk", topic:"markets", source:"The Standard",
-     headline:"China Resources' Sterling I set for August launch amid mainland buyer interest",
-     summary:"China Resources Land has opened a sales office for The Sterling I, its Southwest Kowloon residential project, with sales expected to begin this month. The developer reports strong inquiries from mainland buyers alongside company staff and brand supporters. The launch adds to a steady stream of new project releases from major developers this summer.",
-     why:["Strong mainland buyer interest signals cross-border demand for Hong Kong property is holding up even as rates stay elevated.",
-          "New project launches feed directly into mortgage origination volumes at Hong Kong's retail banks.",
-          "Developer pricing strategy at Sterling I will be watched as a gauge of confidence for the wider autumn launch season."],
-     url:"https://www.thestandard.com.hk/property/article/338778/The-Sterling-Is-set-for-August-launch-amid-strong-mainland-buyer-interest"},
+     headline:"Hang Seng closes above 26,000 as tech, property and insurance names rally",
+     summary:"The Hang Seng Index climbed 310 points, or 1.21%, to 26,009 on Friday as turnover hit HK$257 billion. Tech names led the advance, with the Hang Seng Tech Index up 1.4%, while property and insurance stocks also firmed. Ping An and AIA both gained more than 3% after strong earnings updates.",
+     why:["A broad-based rally across tech, property and insurance signals improving risk appetite across Hong Kong's capital markets, not just a single sector.",
+          "Higher turnover supports fee income at Hong Kong brokerages and exchange operators heading into the autumn trading season.",
+          "Insurer strength on the index feeds directly into the wealth-management and bancassurance businesses that HK banks rely on."],
+     url:"https://www.thestandard.com.hk/finance/article/340608/HSI-closes-at-26000-points-on-major-tech-gains-property-and-insurance-sectors-optimism"},
 
-    {cat:"hk", topic:"tech", source:"The Standard",
-     headline:"Moonshot AI denies plans to file for Hong Kong IPO in August",
-     summary:"Chinese AI start-up Moonshot AI has denied reports that it plans to file for a Hong Kong initial public offering this month. Speculation had built around a potential listing given the mainland AI sector's fundraising boom. The denial leaves Hong Kong's IPO pipeline for AI companies uncertain heading into the autumn listing season.",
-     why:["A denied IPO rumour underscores how closely Hong Kong's exchange and underwriters are watching mainland AI start-ups as listing candidates.",
-          "Uncertainty over Moonshot's plans affects sentiment for the broader queue of AI-linked companies eyeing Hong Kong listings.",
-          "Hong Kong's ability to attract high-profile AI IPOs is central to its push to stay competitive as a fundraising hub."],
-     url:"https://www.thestandard.com.hk/finance/article/338896/Moonshot-AI-denies-plans-to-file-Hong-Kong-IPO-in-August"},
+    {cat:"hk", topic:"markets", source:"The Standard",
+     headline:"Henderson Land presses ahead with launches despite cooling HK property market",
+     summary:"Henderson Land says it will keep to its project launch schedule even as the residential market has cooled over the past month, particularly in mid- to high-end segments. The developer is resisting the discounting other builders are using to clear inventory. Its Central office tower has reached 95% occupancy amid modest rent growth.",
+     why:["A developer holding firm on pricing, rather than discounting, is a signal worth watching for where the broader autumn launch season is headed.",
+          "New project launches feed directly into mortgage origination volumes at Hong Kong's retail banks.",
+          "Steady office occupancy in Central offers a rare bright spot for banks exposed to Hong Kong commercial-property lending."],
+     url:"https://www.thestandard.com.hk/property/article/340623/Henderson-Land-vows-to-launch-projects-as-planned-amid-cooling-HK-property-market"},
+
+    {cat:"hk", topic:"policy", source:"The Standard",
+     headline:"Singapore's new tax breaks put fund managers' Hong Kong relocation plans on hold",
+     summary:"Singapore-based fund managers are pausing planned moves to Hong Kong after Singapore unveiled new tax exemptions and eased visa rules for investment professionals. Full details of the incentive will come in Singapore's February budget. Fund managers with school-age children face pressure to decide soon, as international-school applications typically close in November.",
+     why:["Losing fund managers and their fee income to Singapore's rival tax regime directly threatens Hong Kong's asset-management hub ambitions.",
+          "The episode shows how sensitive relocation decisions are to small shifts in regional tax competition.",
+          "Hong Kong policymakers may face renewed pressure to sweeten incentives if the outflow becomes more than a delay."],
+     url:"https://www.thestandard.com.hk/finance/article/340603/Singapores-new-tax-benefits-put-fund-managers-Hong-Kong-relocation-plans-on-hold-Bloomberg-reports"},
+
+    {cat:"hk", topic:"markets", source:"The Standard",
+     headline:"HSI grows to 95 members as Hua Hong Semiconductor and Weichai Power join",
+     summary:"Hang Seng Indexes Company's quarterly review adds Hua Hong Semiconductor and Weichai Power to the benchmark, expanding it from 93 to 95 constituents with no removals. Shanghai Iluvatar CoreX Semiconductor replaces Tongcheng Travel in the Hang Seng Tech Index. The wider Composite Index will add 61 stocks and remove 15, taking effect from 7 September.",
+     why:["A larger, more chip-heavy benchmark gives passive funds and ETFs tracking the HSI greater exposure to Hong Kong's semiconductor listings.",
+          "Index inclusion typically drives fresh passive-fund buying, a near-term tailwind for the newly added stocks.",
+          "The reshuffle reflects how central semiconductor and tech names have become to Hong Kong's equity market identity."],
+     url:"https://www.thestandard.com.hk/finance/article/340633/HSI-expands-to-95-as-it-adds-Hua-Hong-and-Weichai-Power-CoreX-Semiconductor-joins-Tech-Index"},
+
+    {cat:"hk", topic:"banking", source:"The Standard",
+     headline:"Ping An leans on high-dividend strategy while eyeing AI investment push",
+     summary:"Ping An says its insurance funds portfolio grew nearly 2% to 6.6 trillion yuan by end-June despite market volatility, helped by a balanced mix of high-dividend and growth stocks. The insurer plans to shift toward more dividend-linked policies and wants to take part in key AI-industry investment projects. Executives remain bullish on AI as a long-term growth theme.",
+     why:["A major insurer committing capital to AI investment projects widens the pool of institutional money backing the sector's build-out.",
+          "A pivot toward dividend-linked products reshapes what Hong Kong's bancassurance channel will be selling to savers.",
+          "Stable investment returns despite volatility reinforce confidence in insurers' balance sheets, a factor regulators and rating agencies both watch closely."],
+     url:"https://www.thestandard.com.hk/finance/article/340617/Ping-An-stays-resilient-with-high-dividend-strategy-eyes-AI-and-innovation"},
 
     {cat:"us", topic:"markets", source:"CNBC",
-     headline:"Dow jumps 500 points Friday, but logs a second straight weekly loss",
-     summary:"The Dow Jones Industrial Average jumped roughly 500 points on Friday, clawing back ground after a volatile week. Despite the rebound, the index still logged its second consecutive weekly loss as bond-market swings unsettled investors. Traders pointed to easing Treasury yields and strong corporate earnings as drivers of the late-week bounce.",
-     why:["A sharp single-day rebound after a weekly loss shows how sensitive equity markets remain to swings in Treasury yields.",
-          "Continued volatility keeps risk-management desks at banks and brokers on alert heading into the seasonally choppy September period.",
-          "Investors' quick pivot back to buying suggests underlying confidence in corporate earnings even amid bond-market noise."],
+     headline:"Wall Street steadies as S&P, Nasdaq and Dow all close higher Friday",
+     summary:"US stocks rose on Friday as investors tried to find their footing after a steep, yield-driven sell-off earlier in the week. The S&P 500 added 0.43% to 7,674.37 and the Nasdaq rose 0.43% to 26,180.45, while the Dow jumped 0.98% to 53,277.01. Financials and crypto-linked stocks led the bounce, with materials also outperforming.",
+     why:["A late-week bounce after a rocky stretch shows how quickly risk appetite can snap back once bond-market pressure eases.",
+          "Financials leading the rally is a signal bank trading and lending desks are reading the week's turbulence as manageable.",
+          "Continued volatility keeps risk-management teams at banks and brokers on alert heading into a seasonally choppy September."],
      url:"https://www.cnbc.com/2026/08/20/stock-market-today-live-updates.html"},
 
     {cat:"us", topic:"banking", source:"CNBC",
-     headline:"10-year Treasury yield climbs as bond buyback relief rally fizzles out",
-     summary:"The 10-year Treasury yield rose more than three basis points to 4.734% on Friday, while the 30-year climbed past 5.27%. The move came as relief from the Treasury's debt-buyback intervention earlier in the week began to fade. Investors remain focused on the scale of US government borrowing and its effect on long-term rates.",
-     why:["Rising long-term yields raise funding costs for banks and corporates that rely on Treasury benchmarks to price debt.",
-          "Faded buyback relief suggests underlying US debt-supply pressure has not been resolved, a risk factor for global bond markets.",
-          "Higher yields make US assets more attractive relative to Asian fixed income, a dynamic Hong Kong-based fund managers track closely."],
+     headline:"10-year Treasury yield climbs to 4.734% as buyback relief rally fades",
+     summary:"The 10-year Treasury yield rose more than three basis points to 4.734% on Friday, while the 30-year pushed past 5.27%. The move erodes relief from the Treasury's debt-buyback intervention earlier in the week. Investors remain focused on the scale of US government borrowing and its effect on long-term rates.",
+     why:["Rising long-term yields raise funding costs for banks and corporates that price debt off Treasury benchmarks.",
+          "Faded buyback relief suggests underlying US debt-supply pressure hasn't been resolved, a risk factor for global bond markets.",
+          "Higher US yields make dollar assets relatively more attractive, a dynamic Hong Kong-based fund managers track closely when allocating capital."],
      url:"https://www.cnbc.com/2026/08/21/treasury-yields-bonds-inflation-rates.html"},
 
-    {cat:"us", topic:"tech", source:"CNBC",
-     headline:"Micron's $50 billion Boise buildout reshapes its hometown as memory boom accelerates",
-     summary:"Micron has broken ground on new manufacturing capacity in Boise, part of a roughly $50 billion investment tied to surging demand for AI memory chips. The buildout is expected to create thousands of jobs and reshape the company's hometown economy. Micron is one of several memory makers benefiting from the AI infrastructure boom.",
-     why:["Large-scale memory-chip capacity additions help ease supply bottlenecks that have driven up costs across the AI hardware chain.",
-          "A $50 billion domestic investment signals sustained conviction that AI-driven chip demand will remain elevated for years.",
-          "Memory-market strength flows through to Asian supply chains, including Hong Kong-listed suppliers and distributors tied to Micron's ecosystem."],
-     url:"https://www.cnbc.com/2026/08/20/micron-boise-chip-fab-expansion.html"},
+    {cat:"us", topic:"markets", source:"CNBC",
+     headline:"Walmart's worst day in four years still leaves JPMorgan bullish",
+     summary:"Walmart shares fell 9% on Thursday, their biggest one-day drop since 2022, after weak guidance and a same-store sales miss. Third-quarter earnings guidance also came in below analyst expectations. JPMorgan cut its price target to $125 from $137 but kept a buy rating, citing AI-driven automation gains and alternative profit pools ahead.",
+     why:["A retail bellwether missing guidance is an early read on consumer spending health heading into the holiday season.",
+          "Analysts framing the selloff as a buying opportunity shows confidence that AI-driven cost savings can offset near-term softness.",
+          "Retail-sector wobbles ripple into consumer lending and card-spending trends that Hong Kong and Asian banks track for global demand signals."],
+     url:"https://www.cnbc.com/2026/08/21/walmart-just-had-its-worst-day-in-4-years-jpmorgan-says-buy-it-now.html"},
+
+    {cat:"china", topic:"policy", source:"SCMP",
+     headline:"China's strategic mineral exports diverge sharply between the US and Japan",
+     summary:"China's rare-earth and critical-mineral shipments to the US rose sharply in July, with rare-earth magnets up 4.6% year-on-year and other rare-earth oxides up 56.8%. Exports of the same materials to Japan fell just as sharply, with magnet shipments down 52.2%. Tungsten carbide exports to Japan have been at zero for six straight months.",
+     why:["Easing curbs toward the US but tightening them toward Japan shows Beijing is using mineral trade as a precise diplomatic lever.",
+          "Supply-chain risk for Japanese manufacturers could redirect sourcing and financing toward alternative suppliers, a shift Asian banks are pricing into trade-finance books.",
+          "Stabilising US-bound flows removes one source of uncertainty for global tech-hardware supply chains reliant on Chinese rare earths."],
+     url:"https://www.scmp.com/economy/china-economy/article/3364810/china-strategic-mineral-exports-us-rise-japan-shipments-plunge"},
 
     {cat:"china", topic:"policy", source:"Bloomberg",
-     headline:"China eases austerity as budget spending decline narrows sharply",
-     summary:"China's government spending contracted 4.4% year-on-year in July, a much smaller drop than June's 11.9% plunge. The narrower decline suggests policymakers may be inching away from the fiscal austerity that has weighed on growth this year. Economists see it as an early signal of a broader spending pivot.",
-     why:["A slower spending contraction eases one of the drags that has weighed on credit demand at Chinese banks this year.",
-          "Any pivot away from austerity could support construction and infrastructure-linked demand that feeds into Hong Kong's trade and logistics sectors.",
-          "Investors will watch whether the smaller spending cut marks a genuine policy turn or a one-off monthly swing."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/china-scales-back-austerity-with-smaller-drop-in-budget-spending"},
+     headline:"Shanghai rolls out fresh property easing as China's top-tier cities loosen up",
+     summary:"Shanghai has introduced a new round of homebuying support measures, becoming the first top-tier Chinese city to ease policy after July's economic slowdown deepened. Residents can now withdraw housing provident-fund savings for downpayments on both completed and under-construction homes. The move follows weaker-than-expected national economic data over recent months.",
+     why:["A top-tier city easing signals Beijing is willing to let local governments loosen property rules further if the slowdown persists.",
+          "Improved property-market sentiment in Shanghai could stabilise mortgage demand at mainland banks that have absorbed years of housing-related credit stress.",
+          "A steadier mainland property market removes a persistent drag on Hong Kong-listed developers and banks with mainland exposure."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-20/shanghai-starts-new-round-of-property-easing-after-economy-slows"},
 
-    {cat:"china", topic:"markets", source:"Bloomberg",
-     headline:"China's materials stocks surge to market leadership as gold and copper rally",
-     summary:"Chinese materials stocks have climbed to the top of the market over the past month, driven by rallies in gold and copper. Gold has been lifted by steady People's Bank of China buying and a weaker dollar, while tight supply and AI-driven power demand have pushed copper higher. The sector rotation marks a reversal from earlier in the year, when materials lagged.",
-     why:["Central-bank gold buying reinforces a structural bid for the metal that Hong Kong bullion traders and private banks are positioning around.",
-          "AI-driven copper demand ties materials-sector performance directly to the broader AI infrastructure buildout.",
-          "A rotation into materials could pull capital away from other sectors, reshaping flows through Hong Kong-listed China funds."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/china-materials-stocks-emerge-from-slump-as-new-market-leaders"},
-
-    {cat:"china", topic:"policy", source:"Bloomberg",
-     headline:"China's policymakers set to look past weak economic data, analysts say",
-     summary:"Despite a run of soft indicators including industrial output and retail sales, Beijing is expected to avoid a dramatic policy overreaction. Analysts say policymakers view the slowdown as manageable given targeted fiscal tools already in motion. The approach reflects confidence that gradual stimulus will be enough to stabilise growth without triggering new imbalances.",
-     why:["A measured policy response avoids the kind of abrupt stimulus swings that have previously destabilised credit markets.",
-          "Confidence in gradual tools over shock stimulus shapes how banks price China-linked credit and equity risk.",
-          "The wait-and-see approach keeps pressure on Hong Kong-listed mainland companies to demonstrate resilience without major state support."],
-     url:"https://www.bloomberg.com/news/newsletters/2026-08-21/why-china-s-policymakers-will-ride-out-poor-economic-data"},
+    {cat:"china", topic:"tech", source:"Bloomberg",
+     headline:"Alibaba's revenue climbs 9% but profit tumbles on AI spending surge",
+     summary:"Alibaba's revenue rose 9% last quarter, underscoring China's AI boom, but net income slumped roughly three-quarters to 10.5 billion yuan. The company ramped quarterly capital spending to almost $10 billion to build out AI and computing infrastructure. Alibaba is racing to defend its position in an increasingly competitive domestic and global AI market.",
+     why:["A steep profit hit from AI capex shows even China's largest tech firms are trading near-term earnings for long-term AI positioning.",
+          "Heavy AI infrastructure spending by Alibaba supports demand for chips, cloud capacity and data-centre financing across the region.",
+          "Investors weighing Alibaba's spending discipline will shape sentiment toward the wider basket of Hong Kong-listed Chinese tech stocks."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-20/alibaba-s-revenue-climbs-9-in-testament-to-china-s-ai-boom"},
 
     {cat:"tech", topic:"tech", source:"Bloomberg",
-     headline:"Nvidia in talks with Korean chip startup Rebellions over potential deal",
-     summary:"Nvidia is holding early discussions with Korean AI chip designer Rebellions about a possible technical partnership, investment or acquisition. Nvidia chief executive Jensen Huang reportedly met Rebellions' co-founder at the company's Santa Clara headquarters this week. Any tie-up would extend Nvidia's reach into custom AI silicon design beyond its core GPU business.",
-     why:["A deal would give Nvidia a stronger foothold in custom AI chip design, broadening its moat beyond general-purpose GPUs.",
-          "Growing interest in Asian chip startups signals intensifying competition for AI silicon talent and intellectual property.",
-          "Investment or acquisition activity at this scale could accelerate financing and valuation gains across the AI chip supply chain."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-21/nvidia-in-talks-with-chip-startup-rebellions-for-potential-deal"},
+     headline:"Anthropic hires Google chip veteran as it pushes into custom hardware",
+     summary:"Anthropic has hired Amir Salek, a founder of Google's custom-chip program, as it lays the groundwork for building its own AI semiconductors. The move signals growing ambition among AI labs to control their hardware stack rather than rely solely on Nvidia. It follows a wave of custom-chip investment across the AI industry this year.",
+     why:["A frontier AI lab building custom silicon could eventually reduce its dependence on Nvidia, reshaping competitive dynamics across the chip supply chain.",
+          "Growing in-house chip ambitions among AI labs increase demand for specialised engineering talent and manufacturing capacity worldwide.",
+          "Financing this kind of hardware push typically requires large capital raises, a growing opportunity for banks structuring AI-infrastructure debt."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-21/anthropic-taps-google-chip-veteran-as-part-of-push-into-hardware"},
 
     {cat:"tech", topic:"tech", source:"Bloomberg",
-     headline:"UK leans on AI chip startups to build its sovereign silicon strategy",
-     summary:"The UK government is directing funding toward a wave of emerging AI chip design startups as part of its sovereign AI strategy. Officials hope backing domestic chip newcomers will reduce reliance on US and Asian suppliers for critical AI infrastructure. The push comes as several countries race to secure their own AI hardware capacity.",
-     why:["State-backed chip funding shows governments increasingly treat AI silicon as a national-security priority, not just a commercial market.",
-          "A UK sovereign-chip push adds another competitor to a global race for AI hardware capacity and talent.",
-          "Diversifying chip supply away from a handful of dominant players could reshape financing flows into AI hardware startups worldwide."],
-     url:"https://www.bloomberg.com/news/newsletters/2026-08-21/uk-bets-on-a-boom-in-ai-chip-newcomers"},
+     headline:"AI is squeezing pay more than jobs so far, Apollo economist says",
+     summary:"Apollo's chief economist says AI's labour-market impact has so far shown up mainly in weaker wage growth rather than mass job cuts. Despite years of warnings about AI-driven displacement, hiring has held up better than expected. The comments come as companies keep pouring record capital into AI infrastructure and automation tools.",
+     why:["Weaker wage growth rather than job losses changes how banks and investors should read labour-market data for signs of AI disruption.",
+          "A more gradual AI labour impact gives policymakers more time to adjust before disruption becomes acute.",
+          "The findings feed into how asset managers price AI-exposed equities against fears of a sudden productivity-driven earnings shock."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-22/apollo-s-slok-says-ai-weighs-on-pay-without-cutting-jobs-yet"},
 
     {cat:"tech", topic:"tech", source:"CNBC",
-     headline:"Memory chipmakers emerge as the AI boom's newest darlings",
-     summary:"Memory stocks including Micron have become standout performers of the AI rally as high-bandwidth memory becomes critical to AI computing. Analysts point to tightening supply and surging demand from AI data centres as key drivers. The shift marks a notable change from memory's traditionally cyclical, boom-bust reputation.",
-     why:["Structural demand for high-bandwidth memory gives chipmakers steadier pricing power than in past memory cycles.",
-          "Strength in memory stocks broadens the AI investment story beyond logic chips and GPUs into a wider hardware ecosystem.",
-          "Sustained memory demand supports capital spending plans that ripple into Asian component suppliers and contract manufacturers."],
-     url:"https://www.cnbc.com/2026/08/21/4-memory-stocks-are-darlings-of-the-ai-boom-how-they-differ-and-why-we-own-micron.html"},
+     headline:"Broadcom seeks up to $70 billion in debt to finance AI chip build-out",
+     summary:"Broadcom is in talks to raise as much as $70 billion to $80 billion in debt to finance AI chip supply deals, including for Anthropic. The senior tranche is expected at around $45 billion with a junior tranche near $35 billion. Blackstone and Apollo Global Management are among the firms in talks to participate.",
+     why:["A debt deal of this size shows how much capital the AI buildout now requires beyond just equity financing.",
+          "Private-credit giants like Blackstone and Apollo taking part deepens the ties between Wall Street's alternative-asset managers and the AI infrastructure boom.",
+          "Banks structuring and underwriting mega AI-financing deals stand to earn substantial fee income as this financing wave continues."],
+     url:"https://www.cnbc.com/2026/08/21/broadcom-debt-deal-expected-to-reach-upwards-of-70-billion-sources.html"},
 
-    {cat:"global", topic:"markets", source:"CNBC",
-     headline:"Gold rebounds as bond jitters and a weaker dollar revive bullion demand",
-     summary:"Gold prices climbed as renewed worries over US debt and a softer dollar sent investors back into bullion. The metal is on track for a third straight weekly gain, supported by falling US yields. Traders said uncertainty around Treasury issuance is keeping haven demand elevated even as equities rally.",
-     why:["Simultaneous gains in gold and equities signal investors are hedging even while chasing risk, a sign of underlying caution.",
-          "A weaker dollar makes dollar-priced assets, including many across Asia, relatively more attractive to international buyers.",
-          "Sustained haven demand keeps gold-linked products in focus for private banks and wealth managers across Hong Kong."],
-     url:"https://www.cnbc.com/2026/08/21/gold-prices-us-debt-dollar.html"},
+    {cat:"global", topic:"energy", source:"Bloomberg",
+     headline:"Oil holds near multi-week highs as Iran sanctions threat clouds outlook",
+     summary:"Brent crude closed above $93 a barrel this week for the first time since late July, on track for a near 6% monthly gain. Prices eased slightly on Friday as traders weighed Washington's threat of tougher sanctions on Iran. The standoff continues to dash hopes of restoring normal shipping levels through the Strait of Hormuz.",
+     why:["Sustained supply-risk pricing keeps energy costs elevated for shippers and manufacturers financed by Asian and Gulf banks alike.",
+          "A prolonged Hormuz disruption threat keeps energy-security concerns front of mind for banks underwriting shipping and commodities trade.",
+          "Higher, sticky oil prices add a fresh input-cost risk that could complicate central banks' inflation calculus into year-end."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-20/latest-oil-market-news-and-analysis-for-aug-21"},
 
     {cat:"uae", topic:"policy", source:"Bloomberg",
-     headline:"UAE cuts economic ties with Iran after missile strikes on its territory",
-     summary:"The UAE halted trade and financial transactions with Iran after accusing Tehran of firing ballistic missiles at its territory. The move marks a sharp escalation in a regional standoff that has already disrupted shipping through the Strait of Hormuz. Officials say the freeze will remain until further notice.",
-     why:["A full economic rupture between two regional heavyweights raises settlement and counterparty risk for banks with Gulf exposure.",
-          "Further disruption near the Strait of Hormuz keeps energy-security concerns elevated for banks financing shipping and commodities trade.",
-          "Escalating regional tension adds a fresh risk premium that could ripple into oil-linked funding costs across Asia."],
-     url:"https://www.bloomberg.com/news/articles/2026-08-19/uae-cuts-economic-ties-with-iran-after-missiles-target-territory"},
+     headline:"Iran risks losing a key economic lifeline as the UAE halts trade",
+     summary:"The UAE has suspended trade and financial transactions with Iran after accusing Tehran of firing missiles at its territory. The UAE was one of Iran's most important commercial partners, making the freeze a significant blow to an already sanctions-strained economy. Officials say the halt will continue until further notice.",
+     why:["Losing a major trade partner deepens Iran's economic isolation, raising counterparty and settlement risk for banks with any residual regional exposure.",
+          "A full rupture between two regional players adds a fresh risk premium that can ripple into Gulf funding costs and shipping insurance.",
+          "Banks financing trade through the Strait of Hormuz corridor face a more uncertain operating backdrop as the standoff drags on."],
+     url:"https://www.bloomberg.com/news/articles/2026-08-19/iran-risks-losing-key-economic-lifeline-with-uae-halting-trade"},
 
     {cat:"crypto", topic:"crypto", source:"CNBC",
-     headline:"Bitcoin on track for its best weekly gain since 2023 as optimism floods back",
-     summary:"Bitcoin is heading for roughly a 23% weekly gain, its strongest weekly performance since 2023, as investor optimism returns to crypto markets. The rally follows a bond-market relief rally, a wave of short-position liquidations, and renewed political support for crypto legislation in Washington. Analysts say sentiment has shifted decisively bullish after a rocky summer.",
-     why:["A rally of this size can quickly reverse outflows at crypto funds and exchanges that struggled during the summer drawdown.",
-          "Renewed bullish sentiment strengthens the case for banks and asset managers expanding digital-asset product offerings.",
-          "Momentum this strong tends to draw new retail participation, a trend Hong Kong-licensed crypto platforms are positioned to capture."],
-     url:"https://www.cnbc.com/2026/08/21/bitcoin-gain-cryptocurrency-investors-optimistic.html"}
+     headline:"Kalshi traders bet bitcoin's rally won't run much further this year",
+     summary:"Prediction-market traders on Kalshi are wagering that bitcoin's blistering rally will cool before year-end, even after its best weekly gain since 2023. Positioning suggests scepticism that the current momentum can push prices meaningfully higher from here. The bets add a note of caution to an otherwise euphoric run in crypto markets.",
+     why:["Prediction markets pricing in a cooling rally offer banks and trading desks an early signal for how to hedge crypto-linked exposure.",
+          "Scepticism from active traders, even amid a rally, suggests the current move may be more short-covering than a fresh structural bull case.",
+          "How this plays out will shape appetite among Hong Kong-licensed platforms weighing how aggressively to expand retail crypto trading access."],
+     url:"https://www.cnbc.com/2026/08/21/kalshi-traders-say-bitcoin-rally-wont-go-much-higher-by-end-of-2026.html"}
   ];
 
   var ICONS = {
@@ -396,9 +396,9 @@
   };
 
   var THINGS = [
-    {icon:"trend", tab:"top", text:"Bitcoin leaps past $75,000 as an Asia-led crypto rally heads for its best week since 2023."},
-    {icon:"cpu", tab:"top", text:"Wall Street extends its August advance as business activity hits a four-year high ahead of Nvidia's earnings."},
-    {icon:"globe", tab:"top", text:"Beijing signals fresh fiscal stimulus as growth slows, doubling down on support for businesses and consumers."}
+    {icon:"cpu", tab:"top", text:"Nvidia tells customers AI server prices are rising above 15%, hitting next year's Vera Rubin and Blackwell shipments."},
+    {icon:"globe", tab:"top", text:"Beijing unveils fresh consumer and SME stimulus, cutting borrowing costs as growth slips below its annual target."},
+    {icon:"trend", tab:"top", text:"Bitcoin logs its best weekly gain since 2023, rallying 22% on short-covering and fresh Clarity Act optimism."}
   ];
 
   var state = {tab:"all", topic:"all"};
