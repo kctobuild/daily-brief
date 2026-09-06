@@ -203,7 +203,7 @@
 <header>
   <p class="kicker">Good morning ☕️</p>
   <h1>Your Daily Brief</h1>
-  <p class="date">Saturday 05 September 2026</p>
+  <p class="date">Monday 07 September 2026</p>
   <span class="readpill">≈ 7-min read · 20 stories · fresh (last 24–48h)</span>
 </header>
 
@@ -212,15 +212,15 @@
   <div class="three-list">
     <div class="three-card" data-jump="top">
       <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Wall Street slides as a blowout August jobs report revives bets on a Fed rate hike this month.</span>
+      <span>Trump ratchets up pressure on the Fed to cut rates, threatening trade cuts after a blowout jobs report revives hike bets.</span>
     </div>
     <div class="three-card" data-jump="top">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M6 8l6-5 6 5M6 16l6 5 6-5" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Bitcoin nears $82,000, its highest since May, as investors rotate out of dollars into hard assets.</span>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 15l4-5 3 3 5-7" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>China's fastest profit growth in nearly five years fails to lift a stock market gripped by AI-return doubts.</span>
     </div>
     <div class="three-card" data-jump="top">
       <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b45309" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>OpenAI begins rolling out GPT-6 Astra, fuelling talk that AGI may be closer than expected.</span>
+      <span>Nvidia's AI equity empire swells to $99 billion as it bankrolls labs, clouds and data centres worldwide.</span>
     </div>
   </div>
 </section>
@@ -235,9 +235,9 @@
     <div class="tile"><div class="lbl">USD/CNY</div><div class="val">6.71</div><div class="chg down">▼ 0.15%</div></div>
     <div class="tile"><div class="lbl">Bitcoin</div><div class="val">$82,272</div><div class="chg up">▲ 3rd win week</div></div>
     <div class="tile"><div class="lbl">ADX (UAE)</div><div class="val">10,120.6</div><div class="chg flat">≈ steady</div></div>
-    <div class="tile"><div class="lbl">US 10-yr</div><div class="val">4.818%</div><div class="chg down">▲ 3-yr high</div></div>
+    <div class="tile"><div class="lbl">US 10-yr</div><div class="val">4.818%</div><div class="chg up">▲ 3-yr high</div></div>
   </div>
-  <p class="snap-note">Snapshot at last close</p>
+  <p class="snap-note">Snapshot at last close (US markets shut Mon for Labor Day)</p>
 </section>
 
 <div class="sticky-wrap">
@@ -263,7 +263,7 @@
   </div>
   <div class="pulse" id="pulse">
     <span class="dot steady" id="pulseDot"></span>
-    <span id="pulseText"><b>Steady</b> — markets are choppy after a hot jobs report reignited Fed rate-hike bets, even as bitcoin and Asian equities hold a firmer tone.</span>
+    <span id="pulseText"><b>Steady</b> — markets are holding a cautious tone as Fed rate-hike bets firm up, even as Hong Kong assets and Gulf AI investment keep a steadier undertone.</span>
   </div>
 </div>
 
@@ -272,170 +272,159 @@
 
 <footer>
   Sources: Bloomberg, CNBC, SCMP, The Standard.<br>
-  Last updated: Saturday 05 September 2026, 07:50 Hong Kong time.
+  Last updated: Monday 07 September 2026, 07:48 Hong Kong time.
 </footer>
 
 <script>
 const PULSES = {
-  all:    {mood:'steady', text:'Markets are choppy after a hot jobs report reignited Fed rate-hike bets, even as bitcoin and Asian equities hold a firmer tone.'},
-  top:    {mood:'steady', text:'A hot jobs print, a surging bitcoin and an accelerating AI race are pulling sentiment in different directions at once.'},
-  hk:     {mood:'good',   text:'Hong Kong assets are firm, with record bond demand and a strong equity session offsetting a soft patch in retail property.'},
-  us:     {mood:'weak',   text:'Wall Street is on the back foot as strong jobs data and fresh political pressure on the Fed stoke rate-hike anxiety.'},
-  china:  {mood:'weak',   text:'Mainland sentiment stays fragile as factory activity struggles to escape contraction and automakers feel the squeeze of price wars.'},
-  global: {mood:'steady', text:'Markets worldwide are holding a cautious, mixed tone as traders digest a stronger-than-expected US jobs report.'},
-  uae:    {mood:'steady', text:'Gulf markets are steady, with fresh fund openings underscoring Abu Dhabi’s staying power as a finance hub.'},
-  tech:   {mood:'good',   text:'AI investment keeps accelerating even as a bumpy robotaxi reveal gives investors a moment of pause.'},
-  crypto: {mood:'good',   text:'Bitcoin is riding a third straight winning week as investors lean into hard assets over the dollar.'}
+  all:    {mood:'steady', text:'Markets are holding a cautious tone as Fed rate-hike bets firm up, even as Hong Kong assets and Gulf AI investment keep a steadier undertone.'},
+  top:    {mood:'steady', text:'A hawkish turn on rates, a China earnings-versus-stocks puzzle and Nvidia’s expanding AI empire are pulling sentiment in different directions.'},
+  hk:     {mood:'good',   text:'Hong Kong sentiment is constructive, with fresh policy support for banks and IPOs offsetting mortgage-rate jitters tied to the Fed.'},
+  us:     {mood:'weak',   text:'Wall Street is on the back foot as a hot jobs print and political pressure on the Fed stoke rate-hike anxiety.'},
+  china:  {mood:'steady', text:'Mainland sentiment stays mixed, with bullish derivatives flows and diplomacy hopes offsetting a market still shrugging off strong earnings.'},
+  global: {mood:'steady', text:'World markets are holding a cautious, watchful tone as investors digest US jobs data and rising European inflation.'},
+  uae:    {mood:'good',   text:'Gulf markets stay confident, with Abu Dhabi pressing ahead on AI infrastructure despite lingering regional risk.'},
+  tech:   {mood:'steady', text:'AI investment keeps accelerating even as investors grow choosier about which bets will actually pay off.'},
+  crypto: {mood:'steady', text:'Crypto sentiment is holding steady even as hopes fade for landmark US market-structure legislation this year.'}
 };
 
 const STORIES = [
   {
-    id:1, cat:'top', topic:'markets', tag:'Top', source:'CNBC',
-    headline:'Wall Street slides as blowout August jobs report fuels Fed rate-hike bets',
-    summary:'US employers added 162,000 jobs in August, far exceeding forecasts of roughly 53,000. The S&P 500 and Nasdaq each fell 0.4% Friday while the Dow dropped 271 points, snapping a two-day advance. Two-year Treasury yields rose to 4.37% as traders priced in over 50% odds of a September rate hike.',
+    id:1, cat:'top', topic:'policy', tag:'Top', source:'Bloomberg',
+    headline:'Trump escalates Fed pressure campaign, threatens trade cuts after blowout jobs report',
+    summary:'President Trump intensified pressure on the Federal Reserve to cut rates, threatening trade cuts against surplus countries unless it acts before September’s meeting. The move followed a stronger-than-expected August jobs report that revived bets on a hike instead of a cut. Vice President JD Vance separately urged the Fed to ease rates to lower housing costs.',
     why:[
-      'A hawkish rate turn raises borrowing costs for banks and businesses just as markets had priced in cuts.',
-      'Higher-for-longer US rates keep pressure on the Hong Kong dollar peg and local mortgage costs.',
-      'Renewed rate-hike bets could reprice risk assets globally, from equities to crypto to emerging-market currencies.'
+      'Political pressure this intense raises uncertainty for banks pricing loans ahead of the Fed’s rate decision.',
+      'Tying trade policy to monetary policy risks unsettling currency and bond markets already on edge.',
+      'Questions over the Fed’s independence tend to lift the risk premium investors demand on US debt.'
     ],
-    url:'https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html'
+    url:'https://www.bloomberg.com/news/articles/2026-09-04/trump-demands-fed-lower-rates-reviving-pressure-campaign'
   },
   {
-    id:2, cat:'top', topic:'crypto', tag:'Top', source:'CNBC',
-    headline:'Bitcoin nears $82,000 in third straight winning week as ‘debasement trade’ accelerates',
-    summary:'Bitcoin climbed as high as $82,272 overnight, its strongest level since May, heading for a third consecutive winning week. Traders are rotating out of dollars into bitcoin and gold as the so-called debasement trade regains momentum. Goldman Sachs linked the move to rising Treasury purchases, falling long yields and a weakening dollar.',
+    id:2, cat:'top', topic:'markets', tag:'Top', source:'Bloomberg',
+    headline:'China’s record 26% profit surge fails to lift a stock market gripped by doubt',
+    summary:'Profits at China’s listed companies jumped 25.7% in the second quarter, the fastest pace in nearly five years. Yet the CSI 300 has slipped about 9% this quarter and the tech-heavy Star 50 has tumbled 29% as AI-return doubts persist. Analysts say a weak economy is overshadowing even blockbuster earnings growth.',
     why:[
-      'A sustained bitcoin rally strengthens the case for banks and asset managers to expand digital-asset custody and trading desks.',
-      'The debasement trade signals investors are hedging against currency and inflation risk, a theme relevant to Hong Kong’s dollar-linked reserves.',
-      'Rising crypto prices renew scrutiny on exchanges and stablecoins just as regulators weigh new digital-asset rules.'
+      'A widening gap between earnings and share prices signals investors distrust China’s AI-led rally.',
+      'Continued market weakness despite strong profits complicates Beijing’s push to revive household wealth and spending.',
+      'Banks and brokers financing China’s AI buildout face growing pressure to justify valuations with real returns.'
     ],
-    url:'https://www.cnbc.com/2026/09/04/bitcoin-heads-for-third-winning-week-in-a-row-as-macro-pressures-mount.html'
+    url:'https://www.bloomberg.com/news/articles/2026-09-05/china-s-26-earnings-boom-lands-with-a-thud-in-the-stock-market'
   },
   {
-    id:3, cat:'top', topic:'tech', tag:'Top', source:'Bloomberg',
-    headline:'OpenAI’s GPT-6 Astra rollout fuels AGI race as US and China pour in billions',
-    summary:'OpenAI began rolling out GPT-6 Astra, a more powerful model it says could mark early steps toward artificial general intelligence. Rivals including Anthropic are racing to match the capability, framing AGI as a potential ‘intelligence explosion’ that reshapes the economy. US and Chinese firms are together committing hundreds of billions of dollars to data centres, chips and talent.',
+    id:3, cat:'top', topic:'tech', tag:'Top', source:'CNBC',
+    headline:'Nvidia’s equity empire swells to $99 billion as it bankrolls the AI boom',
+    summary:'Nvidia’s equity stakes in AI labs, clouds and infrastructure firms have grown to $99 billion, up from about $7 billion a year ago. It has unveiled financing partnerships aiming to mobilise more than $500 billion for its chips, including up to $105 billion in credit support for an OpenAI data centre in Ohio.',
     why:[
-      'An AGI race this well-funded accelerates demand for chips, power and data-centre financing worldwide.',
-      'Banks underwriting AI infrastructure debt face growing concentration risk in a handful of fast-moving tech giants.',
-      'Faster, more capable models raise fresh questions for regulators about AI use in trading, credit and compliance.'
+      'Nvidia acting as financier as well as supplier deepens its grip across the entire AI investment chain.',
+      'Vendor financing at this scale raises questions for banks about circular funding risk in AI infrastructure deals.',
+      'Concentrated credit exposure to a handful of AI projects could ripple through lenders if spending ever slows.'
     ],
-    url:'https://www.bloomberg.com/news/features/2026-09-04/what-is-agi-openai-anthropic-race-for-artificial-general-intelligence'
+    url:'https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html'
   },
   {
     id:4, cat:'hk', topic:'banking', tag:'Hong Kong', source:'SCMP',
-    headline:'Hong Kong’s Silver Bonds draw record 480,000 bids as coupon rises to 4.25%',
-    summary:'Hong Kong’s 11th Silver Bonds batch drew a record 478,000 bids worth HK$119.8 billion during its offering period, which closed Friday. The government lifted the guaranteed coupon to 4.25%, up from 3.85% a year earlier. Elderly investors piled in to lock in returns well above prevailing bank deposit rates.',
+    headline:'John Lee urges banks to bankroll Hong Kong’s tech push, expand offshore yuan business',
+    summary:'Chief Executive John Lee called on the banking sector to help finance the city’s innovation and technology drive. He asked lenders to expand offshore renminbi business, deepen Stock Connect and other mutual-market-access schemes, and strengthen financial security. The appeal marks a push for closer government-bank partnership as Hong Kong repositions around tech financing.',
     why:[
-      'Record demand for government bonds can pull retail deposits away from commercial banks, tightening their funding base.',
-      'Rising guaranteed coupons show the government must offer richer terms to keep retail savers in local-currency products.',
-      'Strong retail bond appetite supports Hong Kong’s push to deepen its fixed-income market for future issuance.'
+      'Banks redirecting capital toward tech financing could reshape lending priorities across Hong Kong’s financial sector.',
+      'A bigger offshore yuan role strengthens Hong Kong’s position as the main gateway for renminbi internationalisation.',
+      'Deeper connect schemes widen the channel for mainland capital to flow through Hong Kong into global markets.'
     ],
-    url:'https://www.scmp.com/business/banking-finance/article/3366431/hong-kongs-silver-bonds-draw-record-480000-bids-higher-interest-rate'
+    url:'https://www.scmp.com/news/hong-kong/article/3366350/john-lee-urges-banks-finance-citys-tech-growth-expand-offshore-yuan-business'
   },
   {
-    id:5, cat:'hk', topic:'policy', tag:'Hong Kong', source:'SCMP',
-    headline:'SFC reclassifies private-market-heavy funds as complex products, raising retail bar',
-    summary:'Hong Kong’s Securities and Futures Commission will reclassify authorised funds with heavy private-market exposure as complex investment products. Funds where private assets make up 50% or more of net asset value now face the tighter rule. The change raises the suitability bar for how such products can be sold to retail investors.',
-    why:[
-      'Tighter suitability rules could slow retail inflows into private-market funds distributed through Hong Kong banks.',
-      'The move reflects regulators’ growing caution as private-credit and private-equity products reach more retail investors globally.',
-      'Asset managers may need to redesign distribution and disclosure to keep funds accessible to retail clients.'
-    ],
-    url:'https://www.scmp.com/business/banking-finance/article/3366260/hong-kong-regulator-reclassifies-certain-funds-exposure-private-markets'
-  },
-  {
-    id:6, cat:'hk', topic:'markets', tag:'Hong Kong', source:'SCMP',
-    headline:'Foreclosure sale and collapsed deal underscore Hong Kong’s struggling retail property market',
-    summary:'A foreclosure sale in Lan Kwai Fong and a cancelled shop deal in North Point highlight weakness in Hong Kong’s retail property sector. The Lan Kwai Fong unit, once home to bar Insomnia, changed hands for 60% less than its 2015 sale value. Analysts expect retail property to stay under pressure through year-end as consumer spending remains soft.',
-    why:[
-      'Steep discounts on prime retail units signal landlords are accepting losses to offload struggling assets.',
-      'Weak retail property values pressure banks holding commercial mortgages against ageing loan books.',
-      'Persistently soft consumer spending clouds the outlook for Hong Kong’s broader commercial real estate recovery.'
-    ],
-    url:'https://www.scmp.com/business/article/3366330/bargain-sale-collapsed-deal-reflect-hong-kongs-struggling-retail-property-market'
-  },
-  {
-    id:7, cat:'hk', topic:'banking', tag:'Hong Kong', source:'SCMP',
-    headline:'Hong Kong property market braces for rate risk as Fed-hike expectations mount',
-    summary:'Hong Kong’s property market is watching for knock-on effects after Fed chief Kevin Warsh’s comments lifted expectations of a US rate hike. Knight Frank said local note-issuing banks are unlikely to raise the prime rate soon, projecting it holds steady or rises at most an eighth of a point. The city’s dollar peg keeps local rates closely tied to Washington’s next move.',
+    id:5, cat:'hk', topic:'banking', tag:'Hong Kong', source:'SCMP',
+    headline:'Hong Kong property braces for rate risk as Fed-hike bets mount',
+    summary:'Hong Kong’s property market is watching for knock-on effects after Fed chief Kevin Warsh’s comments lifted hike expectations. Knight Frank said local note-issuing banks are unlikely to move the prime rate soon, projecting it holds steady or rises at most an eighth of a point. The city’s dollar peg keeps local rates tied to Washington’s next move.',
     why:[
       'Even a small prime-rate move ripples through mortgage payments across Hong Kong’s dollar-pegged banking system.',
-      'Cautious rate guidance from major consultancies helps anchor expectations for developers pricing new residential launches.',
+      'Cautious rate guidance helps anchor expectations for developers pricing new residential launches into year-end.',
       'The currency peg keeps local borrowing costs tightly bound to the direction of US monetary policy.'
     ],
     url:'https://www.scmp.com/business/article/3365920/rate-rise-expectations-mount-hong-kong-property-market-following-fed-chiefs-comments'
   },
   {
+    id:6, cat:'hk', topic:'policy', tag:'Hong Kong', source:'SCMP',
+    headline:'John Lee’s first five-year plan casts Hong Kong as mainland China’s ‘super connector’',
+    summary:'Hong Kong’s leader pledged to link mainland capital and enterprises with global markets under the city’s first five-year plan. Concrete measures on housing, livelihoods and finance will be detailed annually, starting with the policy address on 16 September. The plan frames Hong Kong as both a ‘super connector’ and a ‘super value-adder’ for capital and talent.',
+    why:[
+      'A multi-year policy framework gives banks and investors clearer visibility into Hong Kong’s strategic priorities.',
+      'Positioning as a connector for mainland capital reinforces demand for Hong Kong’s wealth-management industry.',
+      'Annual concrete measures on housing and livelihoods could reshape consumer spending and mortgage demand over time.'
+    ],
+    url:'https://www.scmp.com/news/hong-kong/politics/article/3366528/5-year-plan-boost-livelihoods-policy-address-set-out-concrete-measures-john-lee'
+  },
+  {
+    id:7, cat:'hk', topic:'markets', tag:'Hong Kong', source:'SCMP',
+    headline:'Hong Kong sees ‘opportune time’ to advance long-awaited IPO Connect scheme',
+    summary:'Securities and Futures Commission executive director Pamela Chung said Hong Kong is well positioned to push forward an IPO Connect scheme. The plan would let mainland investors buy into Hong Kong initial public offerings, improving price discovery and widening the capital pool. It follows a decade after Stock Connect first linked mainland and Hong Kong equity markets.',
+    why:[
+      'A mainland-investor channel into Hong Kong IPOs could meaningfully deepen liquidity for the city’s listing pipeline.',
+      'Wider access to capital strengthens Hong Kong’s case as the preferred listing venue over rival hubs.',
+      'Better price discovery on IPOs benefits banks and brokers underwriting Hong Kong’s resurgent new-listing market.'
+    ],
+    url:'https://www.scmp.com/business/banking-finance/article/3364629/hong-kong-sees-opportune-time-advancing-ipo-connect-scheme-ipo-queen-pamela-chung'
+  },
+  {
     id:8, cat:'hk', topic:'markets', tag:'Hong Kong', source:'SCMP',
-    headline:'Hong Kong holds as world’s second-largest billionaire hub as Treasury yields hit highs',
-    summary:'Hong Kong remains the world’s second-largest billionaire hub with 106 billionaires, trailing only New York’s 164. The milestone comes as benchmark Treasury yields touch recent highs and China’s forex regulator approves $6.84 billion in fresh QDII quotas. The figures underscore Hong Kong’s enduring pull for global wealth even amid market volatility.',
+    headline:'China’s top brokerages step up overseas push as global profits surge 45%',
+    summary:'CICC’s overseas revenue jumped 45% in the first half of 2026 to 9.19 billion yuan, as mainland brokerages expand their global footprint. The firm led Hong Kong IPO sponsorship, helping raise $3.23 billion from 36 deals for a 12.23% market share. Chinese banks are increasingly challenging global rivals for fees across Hong Kong’s IPO wave.',
     why:[
-      'A deep billionaire base sustains demand for Hong Kong’s private banking, family office and wealth management industries.',
-      'Rising global bond yields affect how the city’s wealthy allocate between cash, bonds and risk assets.',
-      'Expanded QDII quotas widen the channel for mainland capital to flow into Hong Kong and overseas markets.'
+      'Mainland brokerages capturing more Hong Kong IPO fees intensifies competition for established global investment banks.',
+      'Rising overseas profits give Chinese securities firms more capital to expand further into Hong Kong’s finance hub.',
+      'A brokerage-led IPO wave supports Hong Kong’s broader ambition to reclaim its status as a top listing venue.'
     ],
-    url:'https://www.scmp.com/business/markets/article/3366336/hong-kongs-106-billionaires-treasury-yields-hit-recent-highs-numbers-moving-markets'
+    url:'https://www.scmp.com/business/banking-finance/article/3365823/chinas-top-brokerages-step-global-push-overseas-profits-surge'
   },
   {
-    id:9, cat:'us', topic:'policy', tag:'US', source:'Bloomberg',
-    headline:'Trump escalates pressure campaign on the Fed, threatens trade cuts over rates',
-    summary:'President Trump intensified pressure on the Federal Reserve to lower interest rates, threatening to cut trade with countries running surpluses with the US unless the central bank acts. He argued the US should have the world’s lowest borrowing costs. The threat lands days before the Fed’s September meeting, reviving questions about central-bank independence.',
-    why:[
-      'Political pressure on the Fed raises uncertainty for banks and investors pricing the future path of US rates.',
-      'Threats tying trade policy to monetary policy could unsettle currency and bond markets already on edge.',
-      'Questions over Fed independence tend to raise the risk premiums demanded by global bond investors.'
-    ],
-    url:'https://www.bloomberg.com/news/articles/2026-09-04/trump-demands-fed-lower-rates-reviving-pressure-campaign'
-  },
-  {
-    id:10, cat:'us', topic:'banking', tag:'US', source:'CNBC',
-    headline:'Fed officials split as Waller favors holding rates, Warsh warns on inflation',
-    summary:'Federal Reserve Governor Christopher Waller said he leans toward holding rates steady at September’s meeting if inflation keeps cooling. That contrasts with Chair Kevin Warsh, who has flagged inflation concerns and floated a possible hike. The divide leaves traders guessing at the Fed’s next move just as the jobs data adds fresh complexity.',
+    id:9, cat:'us', topic:'banking', tag:'US', source:'CNBC',
+    headline:'Fed officials split as Waller favours holding rates, Warsh flags inflation risk',
+    summary:'Federal Reserve Governor Christopher Waller said he leans toward holding rates steady in September if inflation keeps cooling. That contrasts with Chair Kevin Warsh, who has flagged inflation concerns and floated a possible hike. The divide leaves traders guessing at the Fed’s next move just as fresh jobs data adds complexity.',
     why:[
       'A divided Fed increases uncertainty for banks setting loan and deposit rates ahead of the September meeting.',
-      'Conflicting signals from policymakers can heighten volatility across bond and currency markets.',
-      'The outcome will shape borrowing costs for consumers and businesses across the dollar-linked global financial system.'
+      'Conflicting signals from policymakers can heighten volatility across bond and currency markets in the meantime.',
+      'The eventual outcome will shape borrowing costs for consumers and businesses across the dollar-linked global system.'
     ],
     url:'https://www.cnbc.com/2026/09/03/fed-governor-waller-indicates-he-will-support-holding-rates-steady-at-september-meeting.html'
   },
   {
-    id:11, cat:'us', topic:'banking', tag:'US', source:'Bloomberg',
-    headline:'Treasury yields swing as blowout jobs report boosts Fed rate-hike bets',
-    summary:'US Treasuries fell after August payroll growth topped forecasts, pushing traders to raise bets that the Fed could hike rates this month. The two-year yield, most sensitive to policy expectations, climbed to 4.37%. The move capped a volatile week in which yields also touched multi-year highs on separate inflation worries.',
+    id:10, cat:'us', topic:'markets', tag:'US', source:'Bloomberg',
+    headline:'Treasury yields swing to multi-year highs as blowout jobs data lifts hike bets',
+    summary:'US Treasuries fell after August payroll growth topped forecasts, pushing traders to raise bets on a September Fed hike. The two-year yield, most sensitive to policy expectations, climbed to 4.37%. The move capped a volatile week in which longer-dated yields also touched multi-year highs on separate inflation worries.',
     why:[
-      'Rising short-term yields immediately lift funding costs for banks and short-duration borrowers.',
-      'Volatile Treasury swings complicate hedging and balance-sheet planning for global fixed-income desks.',
+      'Rising short-term yields immediately lift funding costs for banks and short-duration corporate borrowers.',
+      'Volatile Treasury swings complicate hedging and balance-sheet planning for global fixed-income trading desks.',
       'Higher US yields tend to pull capital away from emerging and Asian markets seeking safer returns.'
     ],
     url:'https://www.bloomberg.com/news/articles/2026-09-04/treasuries-slide-after-strong-jobs-data-lift-fed-hike-wagers'
   },
   {
-    id:12, cat:'china', topic:'policy', tag:'China', source:'CNBC',
-    headline:'China’s factory activity shrinks for a second month, though less than feared',
-    summary:'China’s official manufacturing PMI came in at 49.8 in August, still below the 50-point growth threshold but better than July’s 49.2. A private RatingDog survey painted a rosier picture, rising to 51.5 on stronger export orders. The split readings highlight uneven strength between large state firms and smaller exporters.',
+    id:11, cat:'us', topic:'energy', tag:'US', source:'Bloomberg',
+    headline:'AI data centres become a political flashpoint for Trump and Republicans ahead of midterms',
+    summary:'President Trump’s embrace of AI data centres is colliding with growing voter opposition, with roughly seven in ten Americans not wanting facilities built nearby. Concerns over electricity prices and water use are fuelling backlash in swing districts. The friction adds political risk to a buildout worth hundreds of billions of dollars ahead of the 2026 midterms.',
     why:[
-      'Continued factory contraction keeps pressure on Beijing to deliver further stimulus to stabilise growth.',
-      'Improving export orders offer a tentative sign that global demand for Chinese goods is not collapsing further.',
-      'Diverging official and private surveys complicate how banks and investors gauge the true state of China’s economy.'
+      'Local backlash over power and water use could slow permitting timelines for AI infrastructure projects.',
+      'Political risk around data centres adds a new variable for lenders financing multi-billion-dollar builds.',
+      'Rising electricity costs tied to AI demand could feed into broader inflation and rate debates.'
     ],
-    url:'https://www.cnbc.com/2026/08/31/china-pmi-august-economy-slowdown.html'
+    url:'https://www.bloomberg.com/news/articles/2026-09-05/trump-s-embrace-of-ai-data-centers-adds-to-gop-s-midterm-peril'
   },
   {
-    id:13, cat:'china', topic:'markets', tag:'China', source:'CNBC',
-    headline:'BYD shares slide as fierce China competition dents first-half earnings',
-    summary:'BYD shares fell even after the automaker posted a 30% rise in second-quarter profit to 8.2 billion yuan on stronger exports. First-half revenue dropped 7.1% and net profit fell 20.5% as brutal domestic price competition squeezed margins. BYD said sluggish home demand alongside robust exports defined the industry’s first half.',
+    id:12, cat:'china', topic:'markets', tag:'China', source:'Bloomberg',
+    headline:'Traders flock to bullish Chinese stock bets as an AI-trade alternative',
+    summary:'Investors looking to diversify beyond crowded AI trades in Korea and Japan are turning to Chinese equity derivatives. Trading desks at Barclays and UBS report rising client demand for bullish options and swaps tied to China’s CSI indexes. The shift suggests global funds see China as an undervalued play despite a shaky domestic market.',
     why:[
-      'Margin pressure at China’s largest automaker signals the EV price war is far from over.',
-      'Weak domestic demand alongside export strength shows China’s growth increasingly depends on overseas markets.',
-      'Auto-sector strain affects lenders and suppliers financing China’s sprawling EV manufacturing ecosystem.'
+      'Rising derivatives demand signals global funds are quietly repositioning toward Chinese equities despite recent weakness.',
+      'Banks structuring these products stand to gain fee income as flows into China-linked instruments grow.',
+      'A rotation away from crowded Asian AI trades could redirect capital across regional markets broadly.'
     ],
-    url:'https://www.cnbc.com/2026/08/31/byd-shares-slide-as-fierce-china-competition-dents-first-half-earnings.html'
+    url:'https://www.bloomberg.com/news/articles/2026-09-06/traders-flock-to-bullish-chinese-stock-bets-for-ai-alternative'
   },
   {
-    id:14, cat:'china', topic:'policy', tag:'China', source:'Bloomberg',
+    id:13, cat:'china', topic:'policy', tag:'China', source:'Bloomberg',
     headline:'China’s bond sales set to accelerate as Beijing leans on fiscal stimulus',
-    summary:'China’s government bond issuance is expected to pick up pace after a lull, as authorities lean on fiscal tools to support a sluggish economy. Central and local governments had used only about 68% of this year’s bond quota through August, versus 76% a year earlier. Faster issuance is likely to prompt the central bank to inject more liquidity.',
+    summary:'China’s government bond issuance is expected to pick up after a lull, as authorities lean on fiscal tools to support a sluggish economy. Central and local governments had used only about 68% of this year’s quota through August, versus 76% a year earlier. Faster issuance is likely to prompt the central bank to inject more liquidity.',
     why:[
       'Accelerated bond issuance signals Beijing is prioritising fiscal stimulus alongside monetary easing.',
       'Expected PBOC liquidity injections could ease funding conditions for Chinese banks and corporate borrowers.',
@@ -444,70 +433,81 @@ const STORIES = [
     url:'https://www.bloomberg.com/news/articles/2026-09-02/china-bond-sales-set-to-accelerate-putting-focus-on-pboc'
   },
   {
-    id:15, cat:'tech', topic:'tech', tag:'Tech/AI', source:'CNBC',
-    headline:'Nvidia’s equity stakes in AI startups swell to $99 billion',
-    summary:'Nvidia’s equity holdings in AI labs, cloud providers and infrastructure firms have grown to $99 billion, up from about $7 billion a year ago. In August, it unveiled partnerships aiming to mobilise more than $500 billion in financing for its GPUs. Nvidia also offered up to $105 billion in conditional credit support for an OpenAI data centre in Ohio.',
+    id:14, cat:'china', topic:'policy', tag:'China', source:'SCMP',
+    headline:'Chinese executives may join Xi’s Washington trip as trade truce extension looks ‘almost certain’',
+    summary:'Chinese business leaders could accompany President Xi Jinping on his planned visit to Washington later this month. Officials on both sides are said to view an extension of the current trade truce as nearly certain ahead of the summit. The meeting, expected around 24 September, will also cover AI cooperation alongside trade.',
     why:[
-      'Nvidia acting as financier as well as supplier deepens its grip across the entire AI investment chain.',
-      'Vendor financing this large raises questions for banks about circular funding risk in AI infrastructure deals.',
-      'Massive credit commitments to single projects concentrate exposure that could ripple through lenders if AI spending slows.'
+      'Corporate participation signals Beijing wants to pair diplomacy with concrete business and investment deals.',
+      'A likely truce extension reduces near-term tariff risk for exporters and the banks that finance them.',
+      'AI on the summit agenda could shape cross-border rules on chips, data and technology investment.'
     ],
-    url:'https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html'
+    url:'https://www.scmp.com/news/china/diplomacy/article/3365440/chinese-executives-may-join-xis-us-trip-trade-truce-extension-almost-certain'
   },
   {
-    id:16, cat:'tech', topic:'tech', tag:'Tech/AI', source:'CNBC',
-    headline:'Tesla’s Cybercab reveal underwhelms investors, draws fresh US safety probe',
-    summary:'Tesla shares fell more than 6% Friday after its long-awaited Cybercab update failed to impress investors. US safety regulators opened an audit into whether the robotaxi meets federal standards, and the invite-only event lacked new detail on scaling plans. The drop followed a 5.4% gain Thursday ahead of the event.',
+    id:15, cat:'tech', topic:'tech', tag:'Tech/AI', source:'Bloomberg',
+    headline:'Nvidia partner Hon Hai’s sales jump 52% on relentless AI server demand',
+    summary:'Hon Hai Precision, a major Nvidia server supplier, posted August revenue of $29.1 billion, up 52% year on year. The pace matches July’s blistering 54% growth, keeping the company well ahead of forecasts. Demand for AI servers in the global data-centre race continues to outstrip expectations.',
     why:[
-      'A stumble in Tesla’s robotaxi rollout raises fresh doubts about the near-term economics of autonomous-vehicle bets.',
-      'Regulatory scrutiny of self-driving technology could slow the pace of commercial rollout across the industry.',
-      'Sharp swings in a bellwether AI-adjacent stock ripple through sentiment for the wider tech and EV sector.'
+      'Sustained AI-server demand signals no near-term slowdown in the global data-centre buildout.',
+      'Strong supplier results support the credit and equity backing banks have extended across the AI supply chain.',
+      'Continued upside surprises reinforce confidence among lenders financing multi-year AI infrastructure commitments.'
     ],
-    url:'https://www.cnbc.com/2026/09/04/teslas-stock-drops-as-cybercab-update-underwhelms-nhtsa-probe.html'
+    url:'https://www.bloomberg.com/news/articles/2026-09-05/nvidia-partner-hon-hai-s-sales-climb-52-with-ai-server-momentum'
   },
   {
-    id:17, cat:'tech', topic:'tech', tag:'Tech/AI', source:'Bloomberg',
-    headline:'Researchers uncover new way to confuse AI models, exposing security blind spots',
-    summary:'New research has surfaced a fresh technique for tricking AI models into ignoring their safety guardrails. The method exploits how models process ambiguous instructions, extending a long-running arms race between AI developers and adversarial researchers. Experts say the finding adds urgency to efforts to build more robust model defences.',
+    id:16, cat:'tech', topic:'markets', tag:'Tech/AI', source:'CNBC',
+    headline:'Wall Street turns more defensive on AI stocks as the bar for returns rises',
+    summary:'Fund managers say they grew more cautious last week, rotating toward defensive stocks as oil prices and Treasury yields climbed. Investors are demanding clearer evidence that AI spending is translating into profit, not just capacity. The shift suggests patience for unproven AI bets is thinning even as headline valuations stay elevated.',
     why:[
-      'Fresh jailbreak techniques raise the stakes for banks and fintechs deploying AI in customer-facing systems.',
-      'Persistent security gaps could slow enterprise adoption of AI tools in regulated financial workflows.',
-      'The finding adds pressure on AI labs to harden models before wider integration into critical infrastructure.'
+      'A tougher bar for AI returns could slow the flow of fresh capital into unproven ventures.',
+      'Rotation toward defensive stocks signals investors are hedging against a potential AI valuation correction.',
+      'Banks holding AI-heavy portfolios face growing pressure to reassess concentration risk in client accounts.'
     ],
-    url:'https://www.bloomberg.com/news/newsletters/2026-09-04/a-new-way-to-confuse-ai'
+    url:'https://www.cnbc.com/2026/09/05/we-got-more-defensive-last-week-as-wall-street-raised-the-bar-for-ai-stocks.html'
+  },
+  {
+    id:17, cat:'tech', topic:'policy', tag:'Tech/AI', source:'CNBC',
+    headline:'G20 ministerial sees US pitch global adoption of American AI models',
+    summary:'US Commerce Secretary Howard Lutnick used the G20 Innovation Ministerial to push other nations toward adopting American AI technology and hosting more data centres. Tech leaders including Nvidia’s Jensen Huang and OpenAI’s Sam Altman attended the Chapel Hill gathering. The push underscores Washington’s effort to lock in AI infrastructure and standards abroad before rivals do.',
+    why:[
+      'Wider adoption of US AI standards abroad could financially favour American chipmakers and cloud providers.',
+      'Government-led AI diplomacy adds a geopolitical dimension to where global data-centre investment ultimately flows.',
+      'Faster international buildout of US-aligned infrastructure could accelerate financing needs for backing banks.'
+    ],
+    url:'https://www.cnbc.com/2026/09/02/g20-innovation-ministerial-live-updates.html'
   },
   {
     id:18, cat:'global', topic:'markets', tag:'Global', source:'Bloomberg',
-    headline:'US stocks and Treasuries hold steady in cautious global session ahead of jobs data',
-    summary:'Global markets traded cautiously as investors worldwide awaited the pivotal US August jobs report. Asia-Pacific shares were mixed, with Japan’s Nikkei and South Korea’s Kospi both gaining while mainland China’s CSI 300 slipped slightly. Europe’s Stoxx 600 opened lower as chemical stocks weighed, even as Volkswagen jumped on new job-cut plans.',
+    headline:'World markets hold a cautious tone as Asia mixes and Europe weighs inflation',
+    summary:'Global markets traded cautiously into the weekend as investors digested a stronger-than-expected US jobs report. Japan’s Nikkei and South Korea’s Kospi advanced while mainland China’s CSI 300 slipped slightly. European markets stayed on edge after euro-area inflation accelerated to 3.3% in August on higher energy costs.',
     why:[
-      'A synchronised global wait-and-see stance shows how tightly interconnected markets have become around a single US data point.',
-      'Muted trading conditions ahead of major data can amplify volatility once the numbers are released.',
-      'Divergent regional performance highlights how differently Asian and European investors are positioned heading into the print.'
+      'A synchronised cautious stance shows how tightly global markets remain tied to a single US data point.',
+      'Rising European inflation complicates the ECB’s path just as the Fed weighs its own next move.',
+      'Divergent regional performance highlights how differently positioned investors are heading into central-bank decisions.'
     ],
     url:'https://www.bloomberg.com/news/articles/2026-09-03/stock-market-today-dow-s-p-live-updates'
   },
   {
-    id:19, cat:'uae', topic:'markets', tag:'UAE', source:'Bloomberg',
-    headline:'Hedge fund ADAPT opens Abu Dhabi office, joining wave of global money managers',
-    summary:'Swiss hedge fund ADAPT Investment Managers is opening an office in Abu Dhabi, joining peers including Brevan Howard and Rokos Capital. The move comes despite lingering regional tensions from earlier conflict in the Middle East this year. Abu Dhabi continues to court global financial firms with tax incentives and deep sovereign-wealth capital pools.',
+    id:19, cat:'uae', topic:'tech', tag:'UAE', source:'Bloomberg',
+    headline:'Gulf states push ahead on AI data centres despite lingering security risks',
+    summary:'State-backed firms in the UAE are continuing to build a sprawling AI campus in Abu Dhabi designed to add five gigawatts of computing capacity. Work continued even after new measures were added to protect workers during the region’s recent conflict. The project underscores the Gulf’s determination to become a major node in global AI infrastructure.',
     why:[
-      'A growing hedge fund cluster deepens Abu Dhabi’s liquidity and deal flow as a regional financial hub.',
-      'Continued inflows of global asset managers despite regional risk signal confidence in the UAE’s long-term stability.',
-      'Expanding fund presence increases competition for talent and office space across Gulf financial centres.'
+      'A five-gigawatt AI campus would position Abu Dhabi among the world’s largest dedicated computing hubs.',
+      'Continued investment despite regional risk signals confidence among financiers backing Gulf AI infrastructure projects.',
+      'Deepening Gulf AI capacity could redirect global chip and financing demand toward Middle East hubs.'
     ],
-    url:'https://www.bloomberg.com/news/articles/2026-09-02/hedge-fund-adapt-joins-brevan-rokos-in-opening-abu-dhabi-office'
+    url:'https://www.bloomberg.com/news/articles/2026-09-04/middle-east-s-data-center-push-endures-under-the-cloud-of-war'
   },
   {
-    id:20, cat:'crypto', topic:'crypto', tag:'Crypto', source:'Bloomberg',
-    headline:'Crypto exchanges become major venues for stock and commodity contracts',
-    summary:'Crypto exchanges are increasingly hosting trading in contracts tied to stocks, indexes and commodities, blurring the line with traditional markets. Contracts on mainstream assets made up 23.5% of perpetual-futures volume on major digital-asset platforms in August, up from just 0.5% in November. Fasanara Digital said the shift reflects deepening convergence between crypto-native and traditional trading infrastructure.',
+    id:20, cat:'crypto', topic:'crypto', tag:'Crypto', source:'CNBC',
+    headline:'Crypto’s hopes for landmark US legislation hang by a thread heading into September',
+    summary:'The Senate has scheduled a key procedural vote on the Clarity Act for 15 September, once lawmakers return from recess. Crypto executives and President Trump have pushed to get the market-structure bill passed this year. Many in the industry are increasingly resigned that the legislation will not become law in 2026.',
     why:[
-      'Blurring lines between crypto and traditional markets raises new questions for regulators overseeing cross-market risk.',
-      'Banks and brokers face growing competition from crypto-native venues for traditional-asset trading volume.',
-      'Rapid growth in tokenised-style contracts could accelerate demand for clearer digital-asset market-structure rules.'
+      'Continued regulatory limbo leaves banks and exchanges without clear rules for handling digital-asset custody.',
+      'A stalled Clarity Act delays the legal clarity institutional investors say they need before scaling crypto exposure.',
+      'Political gridlock on crypto rules keeps the US at a disadvantage next to jurisdictions with clearer frameworks.'
     ],
-    url:'https://www.bloomberg.com/news/articles/2026-09-04/stocks-and-commodities-fuel-778-billion-boom-on-crypto-venues'
+    url:'https://www.cnbc.com/2026/09/01/crypto-enters-september-with-policy-gamble-hanging-by-a-thread.html'
   }
 ];
 
