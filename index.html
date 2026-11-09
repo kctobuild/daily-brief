@@ -1,212 +1,500 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Daily Brief"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" href="apple-touch-icon.png"><title>Daily Brief</title><meta name="date" content="Monday 09 November 2026"><style>
-  :root{
-    --bg:#f5f7fb;
-    --ink:#141a26;
-    --sub:#5b6472;
-    --card:#ffffff;
-    --border:#e6e9f0;
-    --shadow:0 2px 10px rgba(20,26,38,.06);
-    --good:#16a34a;
-    --weak:#dc2626;
-    --steady:#d97706;
-    --top:#b45309;
-    --hk:#dc2626;
-    --us:#2563eb;
-    --china:#be123c;
-    --global:#0d9488;
-    --uae:#059669;
-    --tech:#7c3aed;
-    --crypto:#ea580c;
-    --bloomberg:#8a6d1e;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Daily Brief">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f5f7fb">
+<meta name="description" content="Your interactive daily brief for Tuesday 10 November 2026 — twenty fresh stories on banking, markets and AI.">
+<meta name="date" content="2026-11-10">
+<title>Daily Brief</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#141a26;--sub:#687386;--border:#e3e8ef;--card:#fff;--green:#16845c;--red:#cf414b;--amber:#aa7718;--shadow:0 3px 16px rgba(26,42,70,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0 auto;max-width:720px;padding:calc(18px + env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+button,a,summary{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #5799f1;outline-offset:4px}
+.switch{display:flex;gap:6px;margin:0 0 14px}.switch a{flex:1;text-align:center;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-weight:600;font-size:13px;text-decoration:none;color:var(--sub)}.switch a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+header{padding:10px 2px 21px}.kicker{margin:0 0 5px;color:var(--sub);font-size:14px;font-weight:550}
+h1{font-size:32px;line-height:1.17;letter-spacing:-1.15px;margin:0 0 8px;font-weight:780}
+.date{font-size:14px;color:var(--sub);margin:0 0 13px}.read-time{display:inline-block;background:#eaf0fa;color:#53657e;border:1px solid #dfe7f4;padding:6px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.section-heading{font-size:15px;margin:0 0 11px;letter-spacing:-.2px;font-weight:750}
+.takeaways{display:grid;gap:8px;margin-bottom:23px}.takeaway{display:flex;align-items:center;gap:12px;text-align:left;width:100%;border:1px solid var(--border);border-radius:13px;padding:13px;background:var(--card);box-shadow:var(--shadow);color:var(--ink);font-size:13px;font-weight:600;line-height:1.4}
+.takeaway:active{background:#f0f4fa}.icon{width:32px;height:32px;flex:none;border-radius:9px;background:#fff4dc;display:grid;place-items:center}.icon svg{width:22px;height:22px}.takeaway:nth-child(2) .icon{background:#fcebef}.takeaway:nth-child(3) .icon{background:#e9f1ff}.takeaway-text{flex:1}.takeaway-arrow{color:#a1aabb;font-size:18px}
+.snapshot{margin-bottom:18px}.snapshot-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}.snapshot-title h2{margin:0;font-size:15px;letter-spacing:-.2px}.snapshot-title span{font-size:10px;color:var(--sub)}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.tile{padding:12px 7px 10px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);min-width:0;text-align:center}
+.tile-label{display:block;color:var(--sub);font-size:10px;white-space:nowrap;margin-bottom:5px;font-weight:600}
+.tile-value{display:block;font-size:14px;font-weight:750;letter-spacing:-.25px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tile-move{display:block;font-size:10px;margin-top:4px;font-weight:650;font-variant-numeric:tabular-nums}.up{color:var(--green)}.down{color:var(--red)}
+.snapshot-note{font-size:10px;color:#8390a1;line-height:1.6;margin:8px 2px 0}
+.sticky-nav{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.97);padding:12px 0 10px;margin-bottom:12px;border-bottom:1px solid var(--border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.tabs,.filters{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;overscroll-behavior-x:contain}.tabs::-webkit-scrollbar,.filters::-webkit-scrollbar{display:none}.tabs{padding:2px 2px 4px}
+.tabs button{flex:none;white-space:nowrap;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:10px;font-size:12px;font-weight:700;padding:8px 12px;min-height:37px;transition:background .15s,color .15s}
+.tabs button[aria-pressed="true"]{background:var(--accent);color:white}.filters{margin-top:8px;padding:2px}
+.filters button{flex:none;white-space:nowrap;padding:5px 10px;min-height:30px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--sub);font-size:11px;font-weight:600}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:#c9d4e4;background:#e7edf6}
+.pulse{display:flex;align-items:baseline;gap:9px;border:1px solid #e4e9f1;border-radius:12px;background:#eef2f8;padding:12px 13px;font-size:12px;margin:0 0 19px;line-height:1.55}
+#mood{flex:none;font-weight:750}#pulse-message{color:#536176}.steady #mood{color:var(--amber)}.good #mood{color:var(--green)}.weak #mood{color:var(--red)}
+.story-list-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.story-list-heading h2{font-size:15px;margin:0;letter-spacing:-.2px}#result-count{font-size:11px;color:var(--sub)}
+.story{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:14px;box-shadow:var(--shadow);margin-bottom:11px;overflow:hidden;scroll-margin-top:140px}
+.story summary{position:relative;padding:16px 41px 16px 15px;cursor:pointer;list-style:none}.story summary::-webkit-details-marker{display:none}.story summary::marker{content:""}
+.category{display:block;text-transform:uppercase;letter-spacing:1px;font-size:9px;font-weight:800;color:var(--accent);margin-bottom:7px}
+.headline{display:block;font-size:15px;font-weight:700;line-height:1.43;letter-spacing:-.18px;margin:0 0 9px}
+.source{display:inline-block;padding:3px 8px;border-radius:6px;color:#536074;background:#f0f3f7;border:1px solid #e6eaf0;font-size:10px;line-height:1.4;font-weight:650}.source.gold{color:#966716;background:#fff3d8;border-color:#f3dfaa}
+.chevron{position:absolute;right:15px;top:24px;width:17px;height:17px;stroke:#91a0b5;stroke-width:1.8;fill:none;transition:transform .18s}.story[open] .chevron{transform:rotate(180deg)}.story[open] summary{padding-bottom:13px}
+.detail{padding:0 15px 17px;border-top:1px solid #f0f3f7}.summary-text{margin:14px 0;color:#48556a;font-size:13px;line-height:1.75}
+.why{background:#edf5ff;border-left:3px solid #538fe1;border-radius:0 9px 9px 0;padding:12px 12px 10px;margin:0 0 14px}.why h3{color:#3974bd;font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin:0 0 7px}
+.why ul{margin:0;padding-left:16px;color:#405b7c;font-size:12px;line-height:1.6}.why li{padding-left:1px;margin-bottom:5px}.why li:last-child{margin-bottom:0}
+.read-link{display:inline-block;color:#336fbe;text-decoration:none;font-size:12px;font-weight:700;padding:5px 0}.read-link:hover{text-decoration:underline}
+.empty{text-align:center;background:#fff;border:1px dashed #ced7e5;border-radius:14px;padding:27px 20px;color:var(--sub);font-size:13px}[hidden]{display:none!important}
+footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-height:1.8}footer p{margin:4px 0}footer .footer-brand{font-size:12px;font-weight:700;color:#66748a;margin-bottom:8px}noscript p{padding:20px;background:#fff;border-radius:12px}
+@media(min-width:600px){body{padding-left:28px;padding-right:28px}header{padding-top:17px}h1{font-size:38px}.tiles{gap:9px}.tile{padding:14px 10px}.headline{font-size:16px}.tabs{gap:7px}.tabs button{padding-left:13px;padding-right:13px}.story summary{padding-top:18px;padding-bottom:18px}.takeaway{padding:14px}.sticky-nav{padding-top:15px}}
+@media(max-width:350px){body{padding-left:12px;padding-right:12px}h1{font-size:29px}.read-time{font-size:10px}.tile-value{font-size:13px}.tile{padding-left:3px;padding-right:3px}.pulse{gap:7px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="switch"><a href="index.html" class="on" aria-current="page">Daily Brief</a><a href="market-insight.html">Market Insight</a></nav>
+<header>
+<p class="kicker">Good morning ☕️</p>
+<h1>Your Daily Brief</h1>
+<p class="date"><time datetime="2026-11-10">Tuesday 10 November 2026</time></p>
+<span class="read-time">≈ 8-min read · 20 stories · fresh (last 24h)</span>
+</header>
+<section aria-labelledby="takeaway-heading">
+<h2 class="section-heading" id="takeaway-heading">3 things to know today</h2>
+<div class="takeaways">
+<button type="button" class="takeaway" data-takeaway="top-1"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3" fill="#eab64b"/><path d="M9 9h6v6H9zM8 2v3m4-3v3m4-3v3M8 19v3m4-3v3m4-3v3M2 8h3m-3 4h3m-3 4h3m14-8h3m-3 4h3m-3 4h3" fill="none" stroke="#a87517" stroke-width="1.5"/></svg></span><span class="takeaway-text">Nvidia’s leadership probe weighs on the AI trade.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+<button type="button" class="takeaway" data-takeaway="top-2"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l6 3V7l6 3V4h4v16z" fill="#df7584"/><path d="M7 16h2m3 0h2m3 0h1" stroke="#fff" stroke-width="2"/></svg></span><span class="takeaway-text">China’s factory costs rise as consumer inflation cools.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+<button type="button" class="takeaway" data-takeaway="top-3"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#79a4e0"/><path d="M7 10h10l-3-3m3 7H7l3 3" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="takeaway-text">China extends its partial US tariff pause.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+</div>
+</section>
+<section class="snapshot" aria-labelledby="snapshot-heading">
+<div class="snapshot-title"><h2 id="snapshot-heading">Market snapshot</h2><span>Snapshot at last close</span></div>
+<div class="tiles">
+<div class="tile"><span class="tile-label">S&amp;P 500</span><span class="tile-value">7,549.94</span><span class="tile-move up">↑ 2.35%</span></div>
+<div class="tile"><span class="tile-label">Nasdaq</span><span class="tile-value">25,253.14</span><span class="tile-move up">↑ 2.74%</span></div>
+<div class="tile"><span class="tile-label">Dow</span><span class="tile-value">52,389.75</span><span class="tile-move up">↑ 2.15%</span></div>
+<div class="tile"><span class="tile-label">Hang Seng</span><span class="tile-value">24,448.95</span><span class="tile-move down">↓ 0.13%</span></div>
+<div class="tile"><span class="tile-label">USD/CNY</span><span class="tile-value">6.6728</span><span class="tile-move up">↑ 0.001%</span></div>
+<div class="tile"><span class="tile-label">Bitcoin</span><span class="tile-value">$75,118.21</span><span class="tile-move down">↓ 0.81%</span></div>
+<div class="tile"><span class="tile-label">Dubai DFM</span><span class="tile-value">6,087.47</span><span class="tile-move up">↑ 1.03%</span></div>
+<div class="tile"><span class="tile-label">US 10-year</span><span class="tile-value">4.880%</span><span class="tile-move up">↑ 1.8 bp</span></div>
+</div>
+<p class="snapshot-note">Equities: Monday close. Dubai: latest Monday quote. FX, Bitcoin and Treasury: latest available quotes, Tuesday morning HKT. Data: CNBC; Hang Seng move calculated against Friday’s close.</p>
+<!-- Snapshot references: https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html ; https://www.cnbc.com/quotes/.HSI ; https://www.cnbc.com/quotes/CNY= ; https://www.cnbc.com/quotes/BTC.CM= ; https://www.cnbc.com/quotes/.DFMGI ; https://www.cnbc.com/quotes/US10Y -->
+</section>
+<nav class="sticky-nav" aria-label="Browse the brief">
+<div class="tabs" id="tabs" role="group" aria-label="Categories"></div>
+<div class="filters" id="filters" role="group" aria-label="Topics"></div>
+</nav>
+<div class="pulse steady" id="pulse" aria-live="polite"><span id="mood">● Steady</span><span id="pulse-message">Stocks bounce, but inflation and AI uncertainty keep investors alert.</span></div>
+<main>
+<div class="story-list-heading"><h2 id="section-label">Your stories</h2><span id="result-count" role="status">20 stories</span></div>
+<div id="stories" aria-labelledby="section-label"></div>
+<p id="empty" class="empty" hidden>No stories match this combination. Try another topic or select All topics.</p>
+<noscript><p>Enable JavaScript to load the twenty stories and use the category and topic filters.</p></noscript>
+</main>
+<footer>
+<p class="footer-brand">Your Daily Brief</p>
+<p>Sources: CNBC · The Standard · Hong Kong Government · China Government · WAM</p>
+<p>Impact statements are editorial analysis. All stories published within the last twenty-four hours.</p>
+<p>Last updated: Tuesday 10 November 2026, 07:42 Hong Kong time.</p>
+</footer>
+<script type="application/json" id="brief-data">
+[
+  {
+    "id": "top-1",
+    "cat": "top",
+    "topic": "tech",
+    "tag": "Top Stories",
+    "headline": "Nvidia falls as board investigates Huang’s relationship and alleged spying",
+    "source": "CNBC",
+    "summary": "Nvidia shares closed lower on Monday as its board investigated chief executive Jensen Huang’s relationship with a businesswoman accused of spying for China. Huang has acknowledged an affair and committed to cooperating with the independent review. The company said the investigation follows reports that he was targeted by a foreign intelligence effort.",
+    "why": [
+      "Leadership uncertainty can increase volatility across AI portfolios.",
+      "Banks financing chip customers face greater counterparty scrutiny.",
+      "Hong Kong technology funds remain exposed to shifts in AI sentiment."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html",
+    "published": "2026-11-09T09:05:48Z"
+  },
+  {
+    "id": "top-2",
+    "cat": "top",
+    "topic": "markets",
+    "tag": "Top Stories",
+    "headline": "China’s factory inflation accelerates while consumer prices cool",
+    "source": "CNBC",
+    "summary": "China’s producer prices rose by 5.7 percent in October, their fastest annual increase since June 2022 and a third consecutive acceleration. Consumer inflation slowed to 0.7 percent, with core inflation also easing. Higher mining and raw material prices drove factory inflation, while weakness in property continued to weigh on domestic demand.",
+    "why": [
+      "Rising input costs can squeeze borrowers’ operating margins.",
+      "Soft household demand complicates the outlook for consumer lending.",
+      "Hong Kong investors face uneven earnings prospects across mainland sectors."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html",
+    "published": "2026-11-09T01:40:11Z"
+  },
+  {
+    "id": "top-3",
+    "cat": "top",
+    "topic": "policy",
+    "tag": "Top Stories",
+    "headline": "China extends partial US tariff suspension for two months",
+    "source": "China Government",
+    "summary": "China will keep its additional 24 percent tariff on American imports suspended for another two months, while retaining the additional 10 percent levy. The extension takes effect on Tuesday afternoon under a State Council tariff commission decision announced Monday. Beijing said it would monitor subsequent American measures and adjust its response accordingly.",
+    "why": [
+      "Importers gain a longer window to plan purchasing costs.",
+      "Trade finance teams can assess shipments against a clearer tariff timetable.",
+      "Hong Kong intermediaries retain exposure to any renewed trade friction."
+    ],
+    "url": "https://english.www.gov.cn/news/202611/09/content_WS6af18d6bc6d00ca5f9a0e308.html",
+    "published": "2026-11-09T17:07:00+08:00"
+  },
+  {
+    "id": "hk-1",
+    "cat": "hk",
+    "topic": "markets",
+    "tag": "Hong Kong",
+    "headline": "New World plans Fanling launch with 2,290 homes",
+    "source": "The Standard",
+    "summary": "New World Development expects to launch its Ma Sik Road residential project in Fanling next year with partner China Merchants Shekou. The development will provide 2,290 homes across four phases and include a large shopping mall. The developer also plans to launch about 100 smaller homes at its Hankow Road project this year.",
+    "why": [
+      "New supply will shape mortgage opportunities in the Northern Metropolis.",
+      "Launch timing matters for developer cash flow and debt repayment.",
+      "Retail space adds a commercial leasing component to the project’s returns."
+    ],
+    "url": "https://www.thestandard.com.hk/property/article/347956/NWDs-Ma-Sik-Road-residential-project-inFanling-to-be-launched-next-year",
+    "published": "2026-11-09T16:56:00+08:00"
+  },
+  {
+    "id": "hk-2",
+    "cat": "hk",
+    "topic": "banking",
+    "tag": "Hong Kong",
+    "headline": "Paul Chan urges financial professionals to pair AI skills with integrity",
+    "source": "The Standard",
+    "summary": "Financial Secretary Paul Chan told a regulatory forum that Hong Kong’s financial professionals must preserve integrity while adapting to artificial intelligence. He warned that AI outputs and their assumptions still require professional judgment, particularly in generated documents. Chan also highlighted increasing use of Hong Kong by overseas businesses to list shares and issue bonds.",
+    "why": [
+      "Financial firms need human review of consequential AI outputs.",
+      "Document controls become more important as automated drafting spreads.",
+      "Reliable governance supports Hong Kong’s appeal for international fundraising."
+    ],
+    "url": "https://www.thestandard.com.hk/finance/article/347941/Paul-Chan-calls-for-integrity-and-AI-native-AFRC-Forum-2026",
+    "published": "2026-11-09T14:33:58+08:00"
+  },
+  {
+    "id": "hk-3",
+    "cat": "hk",
+    "topic": "markets",
+    "tag": "Hong Kong",
+    "headline": "MTR demands answers over defective Tung Chung West pillars",
+    "source": "The Standard",
+    "summary": "About 30 platform level pillars at the unfinished Tung Chung West station were found not to have been fully filled with concrete. MTR said it had issued a nonconformance notice and was pursuing the contractor’s responsibility and remedial plans. The Buildings Department said there was no immediate danger and requested an investigation report.",
+    "why": [
+      "Remedial work can create additional costs for construction counterparties.",
+      "Lenders need to monitor delivery risks on infrastructure projects.",
+      "Quality controls protect confidence in Hong Kong’s transport investment pipeline."
+    ],
+    "url": "https://www.thestandard.com.hk/news/article/347998/MTR-to-take-firm-action-against-contractor-over-defective-Tung-Chung-West-station-pillars",
+    "published": "2026-11-10T05:07:16+08:00"
+  },
+  {
+    "id": "hk-4",
+    "cat": "hk",
+    "topic": "tech",
+    "tag": "Hong Kong",
+    "headline": "Hong Kong makes the case for wider access to surgical robotics",
+    "source": "HK Government",
+    "summary": "Paul Chan used Monday’s Surgical Futures Forum to call for wider access to robotic surgery, pointing to cost, equipment size and training barriers. He highlighted Hong Kong’s investment, fundraising and clinical infrastructure as support for medical innovators. His speech also described artificial intelligence as a tool for surgical guidance, training and earlier patient care.",
+    "why": [
+      "Medical technology creates opportunities for patient capital and specialist financing.",
+      "Lower deployment costs could broaden the market for surgical systems.",
+      "Hong Kong’s clinical infrastructure can help local innovators reach overseas customers."
+    ],
+    "url": "https://www.info.gov.hk/gia/general/202611/09/P2026110900335.htm",
+    "published": "2026-11-09T12:30:00+08:00"
+  },
+  {
+    "id": "hk-5",
+    "cat": "hk",
+    "topic": "banking",
+    "tag": "Hong Kong",
+    "headline": "Investment fraud case brings prison terms of up to 54 months",
+    "source": "The Standard",
+    "summary": "Five people have received prison sentences over a scheme that induced Japanese investors to put more than 400 million yen into companies using false banking documents. Three defendants were sentenced on Monday, following earlier sentences for two former relationship managers. The documents falsely presented bank guarantees and substantial assets as backing for the investments.",
+    "why": [
+      "Banks need strong controls over staff use of institutional credentials.",
+      "Investors should independently verify guarantees before transferring funds.",
+      "Cross border fraud can damage trust in Hong Kong’s financial services."
+    ],
+    "url": "https://www.thestandard.com.hk/news/article/347970/Five-jailed-up-to-54-months-over-400-million-yen-cross-border-investment-fraud",
+    "published": "2026-11-09T19:47:28+08:00"
+  },
+  {
+    "id": "us-1",
+    "cat": "us",
+    "topic": "banking",
+    "tag": "United States",
+    "headline": "Warren outlines banking committee priorities as Democrats prepare to take control",
+    "source": "CNBC",
+    "summary": "Elizabeth Warren is preparing to lead the Senate Banking Committee when the new Congress convenes in January following Democratic election gains. Her planned agenda includes credit card costs, housing, AI chip export controls and prediction market regulation, according to a committee aide. She also intends aggressive oversight of financial firms, technology executives and administration officials.",
+    "why": [
+      "Banks face potential pressure on consumer credit pricing.",
+      "Prediction market businesses may encounter tougher scrutiny of safeguards.",
+      "AI export policy remains a risk for technology financing and valuations."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/elizabeth-warren-senate-banking-agenda.html",
+    "published": "2026-11-09T19:34:43Z"
+  },
+  {
+    "id": "us-2",
+    "cat": "us",
+    "topic": "policy",
+    "tag": "United States",
+    "headline": "Congress returns to a funding deadline and debt limit debate",
+    "source": "CNBC",
+    "summary": "American lawmakers return to Washington with government funding due to expire on December 11 and limited time before the next Congress takes office. Republicans also face decisions on defense legislation and whether to address the debt ceiling. Democratic election gains change the bargaining landscape, while spending measures will still require cooperation across party lines.",
+    "why": [
+      "Funding uncertainty can affect contractors’ cash flow and borrowing needs.",
+      "Debt ceiling negotiations can unsettle Treasury markets and collateral planning.",
+      "Hong Kong portfolios remain sensitive to shifts in US fiscal risk."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/congress-government-funding-debt-limit-elections.html",
+    "published": "2026-11-09T11:00:01Z"
+  },
+  {
+    "id": "us-3",
+    "cat": "us",
+    "topic": "markets",
+    "tag": "United States",
+    "headline": "US inflation preview puts persistent price pressures in focus",
+    "source": "CNBC",
+    "summary": "Tuesday’s American consumer price report is expected to show monthly headline inflation of 0.3 percent and core inflation of 0.2 percent. Federal Reserve officials remain concerned that price pressures are spreading beyond energy and tariffs despite cheaper gasoline. Annual comparisons will be unavailable because the government shutdown interrupted data collection a year earlier.",
+    "why": [
+      "The release can reshape expectations for US interest rates.",
+      "Hong Kong funding costs remain sensitive to the dollar rate outlook.",
+      "Persistent service inflation would complicate banks’ forecasts for borrowing demand."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/october-cpi-report-2026-inflation.html",
+    "published": "2026-11-09T21:03:55Z"
+  },
+  {
+    "id": "china-1",
+    "cat": "china",
+    "topic": "markets",
+    "tag": "China",
+    "headline": "China markets its first yuan green sovereign bonds in Canada",
+    "source": "The Standard",
+    "summary": "China has begun marketing its first yuan denominated green sovereign bonds in Canada, extending offshore issuance beyond established markets including Hong Kong and London. The Ministry of Finance is seeking up to four billion yuan through three and five year notes. The reported sale comes as China and Canada pursue closer economic and financial engagement.",
+    "why": [
+      "Offshore yuan issuance gives investors more sovereign bond choices.",
+      "Banks can develop distribution and currency services around new issuance venues.",
+      "Hong Kong faces growing competition in arranging mainland offshore debt."
+    ],
+    "url": "https://www.thestandard.com.hk/esg/article/347953/China-markets-first-yuan-green-bond-sale-in-Canada-Bloomberg",
+    "published": "2026-11-09T16:41:20+08:00"
+  },
+  {
+    "id": "china-2",
+    "cat": "china",
+    "topic": "tech",
+    "tag": "China",
+    "headline": "Alibaba’s T-Head reportedly targets a Hong Kong IPO next year",
+    "source": "The Standard",
+    "summary": "Alibaba’s chip design subsidiary T-Head is planning a Hong Kong listing next year that could raise between two billion and three billion US dollars, according to an IFR report cited by The Standard. The business develops chips for AI data centers. Its next generation Zhenwu V900 is expected to enter mass production in early 2027.",
+    "why": [
+      "A large chip listing could expand Hong Kong’s technology fundraising pipeline.",
+      "Domestic AI hardware creates financing opportunities across the supply chain.",
+      "Investors must distinguish reported listing plans from a confirmed offering."
+    ],
+    "url": "https://www.thestandard.com.hk/finance/article/347954/Alibabas-chip-unit-T-Head-eyes-US3-billion-Hong-Kong-IPO-in-2027-IFR",
+    "published": "2026-11-09T16:41:57+08:00"
+  },
+  {
+    "id": "china-3",
+    "cat": "china",
+    "topic": "markets",
+    "tag": "China",
+    "headline": "New World reports strong initial sales at Shenzhen’s Wellspring",
+    "source": "The Standard",
+    "summary": "New World Development said its Wellspring residential project in Shenzhen had sold 70 percent of the first batch of 300 homes. The developer reported that all four bedroom units measuring 1,055 square feet had sold out. Hong Kong buyers now account for a larger share, with selected purchases eligible for a furniture package.",
+    "why": [
+      "Sales collections support liquidity at a Hong Kong listed developer.",
+      "Cross border home purchases create mortgage and payment service demand.",
+      "Buyer incentives remain important when assessing underlying mainland housing demand."
+    ],
+    "url": "https://www.thestandard.com.hk/property/article/347931/NWDs-Wellspring-in-Shenzhen-sells-70-percent-of-first-batch-offers-HK-buyer-incentives",
+    "published": "2026-11-09T11:41:53+08:00"
+  },
+  {
+    "id": "global-1",
+    "cat": "global",
+    "topic": "markets",
+    "tag": "Global Markets",
+    "headline": "Stocks rebound as cheaper oil helps steady sentiment",
+    "source": "CNBC",
+    "summary": "American stock futures were little changed on Monday night after a sharp rebound in the regular session, supported by falling oil prices and stronger technology shares. The Dow, S&P and Nasdaq all advanced strongly despite Nvidia’s decline. Investors are now watching inflation data and technology earnings for evidence that the recovery can hold.",
+    "why": [
+      "Cheaper energy can ease cost pressure on corporate borrowers.",
+      "A broader equity rebound supports portfolio values and financing confidence.",
+      "Upcoming data still leaves Hong Kong investors exposed to overnight volatility."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/stock-market-today-live-updates.html",
+    "published": "2026-11-09T23:05:52Z"
+  },
+  {
+    "id": "uae-1",
+    "cat": "uae",
+    "topic": "banking",
+    "tag": "UAE",
+    "headline": "Emirates combines Islamic finance and French leasing for aircraft funding",
+    "source": "WAM",
+    "summary": "Emirates, Dubai Islamic Bank and Natixis announced a twelve year Shariah compliant French lease transaction financing two Airbus A350 aircraft acquired in 2026. The structure combines financing frameworks usually arranged separately within a single transaction. The airline said the deal diversifies funding sources while supporting fleet expansion, with both banks acting as financiers and arrangers.",
+    "why": [
+      "Islamic financing can connect airlines with additional pools of capital.",
+      "Complex aircraft structures generate arranging and advisory opportunities for banks.",
+      "A repeatable structure could broaden cross border aviation financing options."
+    ],
+    "url": "https://www.wam.ae/en/article/c363diy-emirates-secures-innovative-shariah-compliant",
+    "published": "2026-11-09T17:23:12+04:00"
+  },
+  {
+    "id": "tech-1",
+    "cat": "tech",
+    "topic": "tech",
+    "tag": "Technology / AI",
+    "headline": "Anthropic launches new frontier models ahead of a potential IPO",
+    "source": "CNBC",
+    "summary": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday as it prepares for a potential public offering. The company says the models produce outputs faster and cost less than their predecessors following additional safety testing. Fable is generally available, while Mythos remains restricted to vetted organizations through designated verification programs.",
+    "why": [
+      "Lower model costs can improve the economics of enterprise AI deployment.",
+      "Restricted access means banks must check eligibility before planning adoption.",
+      "An AI flotation would test investor appetite after recent sector volatility."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html",
+    "published": "2026-11-09T19:00:01Z"
+  },
+  {
+    "id": "tech-2",
+    "cat": "tech",
+    "topic": "banking",
+    "tag": "Technology / AI",
+    "headline": "CoreWeave heads into earnings with credit risk under scrutiny",
+    "source": "CNBC",
+    "summary": "CoreWeave and Nebius face increasingly selective lenders as they prepare to report earnings this week following steep declines in their share prices. Both rely on debt to finance advanced AI computing systems, making funding conditions central to growth. CoreWeave’s chief executive said political changes were not expected to affect existing customer commitments or backlog.",
+    "why": [
+      "AI lenders need to scrutinize cash flow and refinancing schedules.",
+      "Heavy customer concentration can amplify credit exposure across infrastructure projects.",
+      "Funding constraints may slow computing expansion even when customer demand persists."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/coreweave-debt-credit-risk-neoclouds.html",
+    "published": "2026-11-09T12:00:01Z"
+  },
+  {
+    "id": "tech-3",
+    "cat": "tech",
+    "topic": "banking",
+    "tag": "Technology / AI",
+    "headline": "Goldman’s Solomon says AI financing demand remains strong",
+    "source": "CNBC",
+    "summary": "Goldman Sachs chief executive David Solomon said demand for financing AI infrastructure remains strong despite recent market turbulence and political uncertainty. He told CNBC the bank had been active in related capital markets transactions and expected activity to continue. Solomon described the market environment as constructive while declining to discuss Anthropic’s potential offering in detail.",
+    "why": [
+      "AI infrastructure remains a source of capital markets fees for banks.",
+      "Political resistance can change project timelines and financing terms.",
+      "Investors should assess financing demand separately from short term share performance."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/goldman-ceo-ai-financing-market.html",
+    "published": "2026-11-09T18:14:47Z"
+  },
+  {
+    "id": "crypto-1",
+    "cat": "crypto",
+    "topic": "crypto",
+    "tag": "Crypto",
+    "headline": "Securitize expands into asset-backed finance after quarterly growth",
+    "source": "CNBC",
+    "summary": "Securitize shares rose in extended trading after the tokenization platform reported revenue growth and announced the acquisition of River One. Tokenized assets and transaction volumes increased, although higher operating expenses weighed on profitability. The acquisition adds an institutional financing platform intended to connect stablecoin capital with traditional lending markets and broaden the company’s business.",
+    "why": [
+      "Tokenization is extending from investment funds into credit financing.",
+      "Banks face new competition and partnership options in digital asset infrastructure.",
+      "Growing transaction volumes do not remove profitability and operational risks."
+    ],
+    "url": "https://www.cnbc.com/2026/11/09/tokenization-platform-securitize-reports-gains-expands-into-asset-backed-finance.html",
+    "published": "2026-11-09T21:16:53Z"
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    padding:calc(env(safe-area-inset-top) + 14px) calc(env(safe-area-inset-right) + 14px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 14px);
-    max-width:560px;
-    margin:0 auto;
-  }
-  a{color:inherit;}
-
-  /* Module switcher */
-  nav.switch{display:flex;gap:6px;margin:0 0 14px;}
-  nav.switch a{
-    flex:1;text-align:center;padding:9px 10px;border-radius:10px;
-    border:1px solid var(--border);background:var(--card);
-    font-weight:600;font-size:13px;text-decoration:none;color:var(--sub);
-  }
-  nav.switch a.on{background:var(--ink);color:#fff;border-color:var(--ink);}
-
-  /* Header */
-  header{margin-bottom:16px;}
-  .kicker{font-size:14px;color:var(--sub);font-weight:600;margin:0 0 4px;}
-  h1{font-size:26px;margin:0 0 4px;letter-spacing:-.02em;}
-  .date{font-size:14px;color:var(--sub);margin:0 0 10px;}
-  .readpill{
-    display:inline-block;font-size:12px;font-weight:600;color:var(--sub);
-    background:var(--card);border:1px solid var(--border);border-radius:999px;
-    padding:5px 12px;
-  }
-
-  /* 3 things */
-  .three{margin:18px 0;}
-  .three h2{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);margin:0 0 8px;}
-  .three-list{display:flex;flex-direction:column;gap:8px;}
-  .three-card{
-    display:flex;align-items:center;gap:10px;background:var(--card);
-    border:1px solid var(--border);border-radius:14px;padding:10px 12px;
-    box-shadow:var(--shadow);cursor:pointer;
-  }
-  .three-card svg{flex:none;width:22px;height:22px;}
-  .three-card span{font-size:13.5px;line-height:1.35;font-weight:500;}
-
-  /* Snapshot */
-  .snapshot{margin:18px 0;}
-  .snapshot h2{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);margin:0 0 8px;}
-  .snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-  .tile{
-    background:var(--card);border:1px solid var(--border);border-radius:12px;
-    padding:8px 6px;text-align:center;box-shadow:var(--shadow);
-  }
-  .tile .lbl{font-size:10px;color:var(--sub);font-weight:600;margin-bottom:3px;text-transform:uppercase;letter-spacing:.02em;}
-  .tile .val{font-size:14px;font-weight:700;}
-  .tile .chg{font-size:10.5px;font-weight:600;margin-top:2px;}
-  .up{color:var(--good);}
-  .down{color:var(--weak);}
-  .flat{color:var(--steady);}
-  .snap-note{font-size:11px;color:var(--sub);margin-top:6px;text-align:right;}
-
-  /* Sticky nav */
-  .sticky-wrap{
-    position:sticky;top:0;z-index:10;background:var(--bg);
-    padding-top:8px;margin:0 -14px;padding-left:14px;padding-right:14px;
-    border-bottom:1px solid transparent;
-  }
-  .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none;}
-  .tabs::-webkit-scrollbar{display:none;}
-  .tab{
-    flex:none;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;
-    border:1.5px solid currentColor;background:transparent;white-space:nowrap;cursor:pointer;
-  }
-  .tab.active{color:#fff !important;border-color:transparent;}
-  .tab[data-tab="all"]{color:var(--ink);}
-  .tab[data-tab="all"].active{background:var(--ink);}
-  .tab[data-tab="top"]{color:var(--top);}
-  .tab[data-tab="top"].active{background:var(--top);}
-  .tab[data-tab="hk"]{color:var(--hk);}
-  .tab[data-tab="hk"].active{background:var(--hk);}
-  .tab[data-tab="us"]{color:var(--us);}
-  .tab[data-tab="us"].active{background:var(--us);}
-  .tab[data-tab="china"]{color:var(--china);}
-  .tab[data-tab="china"].active{background:var(--china);}
-  .tab[data-tab="global"]{color:var(--global);}
-  .tab[data-tab="global"].active{background:var(--global);}
-  .tab[data-tab="uae"]{color:var(--uae);}
-  .tab[data-tab="uae"].active{background:var(--uae);}
-  .tab[data-tab="tech"]{color:var(--tech);}
-  .tab[data-tab="tech"].active{background:var(--tech);}
-  .tab[data-tab="crypto"]{color:var(--crypto);}
-  .tab[data-tab="crypto"].active{background:var(--crypto);}
-
-  .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;}
-  .chips::-webkit-scrollbar{display:none;}
-  .chip{
-    flex:none;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;
-    border:1px solid var(--border);background:var(--card);color:var(--sub);cursor:pointer;
-  }
-  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
-
-  /* Pulse banner */
-  .pulse{
-    display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);
-    border-radius:12px;padding:10px 12px;margin:10px 0 14px;box-shadow:var(--shadow);
-    font-size:13px;font-weight:500;color:var(--ink);
-  }
-  .dot{width:9px;height:9px;border-radius:50%;flex:none;}
-  .dot.good{background:var(--good);}
-  .dot.weak{background:var(--weak);}
-  .dot.steady{background:var(--steady);}
-  .pulse b{font-weight:700;}
-
-  /* Cards */
-  .list{display:flex;flex-direction:column;gap:10px;}
-  .card{
-    background:var(--card);border:1px solid var(--border);border-radius:16px;
-    padding:14px;box-shadow:var(--shadow);cursor:pointer;
-  }
-  .tag{
-    display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;
-    letter-spacing:.03em;padding:3px 8px;border-radius:6px;margin-bottom:8px;color:#fff;
-  }
-  .tag.top{background:var(--top);}
-  .tag.hk{background:var(--hk);}
-  .tag.us{background:var(--us);}
-  .tag.china{background:var(--china);}
-  .tag.global{background:var(--global);}
-  .tag.uae{background:var(--uae);}
-  .tag.tech{background:var(--tech);}
-  .tag.crypto{background:var(--crypto);}
-  .headline{font-size:16px;font-weight:700;line-height:1.35;margin:0 0 8px;}
-  .source-pill{
-    display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;
-    padding:4px 9px;border-radius:999px;background:#eef1f6;color:var(--sub);
-    margin-bottom:2px;
-  }
-  .source-pill.bloomberg{background:#fbf1d6;color:var(--bloomberg);}
-  .detail{
-    max-height:0;overflow:hidden;transition:max-height .28s ease;
-  }
-  .card.open .detail{max-height:900px;}
-  .detail-inner{padding-top:10px;}
-  .summary{font-size:13.5px;line-height:1.55;color:#333c4a;margin:0 0 10px;}
-  .why{
-    background:#eaf3fd;border-left:3px solid #2563eb;border-radius:8px;
-    padding:9px 11px;margin:0 0 10px;
-  }
-  .why .why-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#2563eb;margin-bottom:5px;}
-  .why ul{margin:0;padding-left:16px;}
-  .why li{font-size:12.5px;line-height:1.5;color:#243352;margin-bottom:4px;}
-  .why li:last-child{margin-bottom:0;}
-  .readlink{
-    display:inline-block;font-size:13px;font-weight:700;color:var(--us);text-decoration:none;
-  }
-  .chevron{float:right;font-size:12px;color:var(--sub);transition:transform .2s ease;}
-  .card.open .chevron{transform:rotate(180deg);}
-
-  .empty{
-    text-align:center;font-size:13px;color:var(--sub);padding:30px 10px;
-  }
-
-  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--border);font-size:11.5px;color:var(--sub);line-height:1.6;}
-
-[hidden]{display:none!important}.story-toggle{display:block;width:100%;border:0;background:transparent;text-align:left;padding:0;color:inherit;font:inherit;cursor:pointer}.story-toggle:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #93c5fd;outline-offset:4px}.card .detail{max-height:none}.sticky-wrap{top:env(safe-area-inset-top,0px)}.list{scroll-margin-top:160px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-
-.three-card{width:100%;text-align:left;color:var(--ink);font-family:inherit}
-.pulse{align-items:flex-start}.pulse b{white-space:nowrap}.card{position:relative}.headline{padding-right:9px}.source-pill{margin-top:0}.story-count{font-size:11px;color:var(--sub);margin:0 0 9px}.snap-note{text-align:left;line-height:1.5}.snapshot a{text-decoration:none}.snapshot a:focus-visible{outline:3px solid #93c5fd}.summary{white-space:normal}.summary span{display:block;margin-bottom:5px}.summary span:last-child{margin-bottom:0}.three-card:active,.story-toggle:active{opacity:.75}.sticky-wrap{padding-top:8px}.detail-inner{cursor:default}
-</style></head><body><nav class="switch"><a href="index.html" class="on" aria-current="page">Daily Brief</a><a href="market-insight.html">Market Insight</a></nav>
-<header><p class="kicker">Good morning ☕️</p><h1>Your Daily Brief</h1><p class="date">Monday 09 November 2026</p><span class="readpill">≈ 9-min read · 20 stories · fresh (last 24h)</span></header>
-<section class="three" aria-labelledby="three-title"><h2 id="three-title">3 things to know today</h2><div class="three-list">
-<button class="three-card" data-jump="top" data-story="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#b45309" d="M3 14h4v7H3zm7-6h4v13h-4zm7-5h4v18h-4z"/></svg><span>Nvidia’s board review unsettles AI investors.</span></button>
-<button class="three-card" data-jump="top" data-story="2"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#be123c" d="M3 3h3v15h15v3H3zM8 5h4v10H8zm6 4h5v6h-5z"/></svg><span>China’s factory costs outpace consumer inflation.</span></button>
-<button class="three-card" data-jump="top" data-story="3"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0d9488" d="M13 2C10 7 5 12 5 16a7 7 0 0014 0c0-4-4-8-6-14z"/></svg><span>Iran talks remain stalled as energy prices ease.</span></button>
-</div></section><section class="snapshot" aria-labelledby="snapshot-title"><h2 id="snapshot-title">Snapshot at last close</h2><div class="snap-grid"><a class="tile" href="https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer"><div class="lbl">S&P 500</div><div class="val">7,376.86</div><div class="chg up">+0.31%</div></a><a class="tile" href="https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer"><div class="lbl">Nasdaq</div><div class="val">24,579.42</div><div class="chg up">+1.09%</div></a><a class="tile" href="https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer"><div class="lbl">Dow</div><div class="val">51,285.73</div><div class="chg down">−0.46%</div></a><a class="tile" href="https://www.cnbc.com/quotes/.HSI" target="_blank" rel="noopener noreferrer"><div class="lbl">Hang Seng</div><div class="val">24,448.95</div><div class="chg down">−0.13%</div></a><a class="tile" href="https://www.cnbc.com/quotes/CNY=" target="_blank" rel="noopener noreferrer"><div class="lbl">USD/CNY</div><div class="val">6.6760</div><div class="chg ">Move unverified</div></a><a class="tile" href="https://www.cnbc.com/quotes/BTC.CM=" target="_blank" rel="noopener noreferrer"><div class="lbl">Bitcoin</div><div class="val">$75,730.77</div><div class="chg ">Daily reference</div></a><a class="tile" href="https://www.cnbc.com/quotes/.DFMGI" target="_blank" rel="noopener noreferrer"><div class="lbl">DFM · UAE</div><div class="val">6,087.47</div><div class="chg up">+1.03% latest</div></a><a class="tile" href="https://www.cnbc.com/quotes/US10Y" target="_blank" rel="noopener noreferrer"><div class="lbl">US 10-year</div><div class="val">4.859%</div><div class="chg ">Prior close</div></a></div><p class="snap-note">US equities: Friday close; Hang Seng: Monday close. FX, Bitcoin and Treasury: quoted previous close; Bitcoin trades continuously. DFM: latest verified quote, 14:55 UAE time. Unverified prior-session moves are labelled. Tap a tile for quote context.</p></section>
-<div class="sticky-wrap"><nav class="tabs" aria-label="Categories"><button class="tab active" data-tab="all" aria-pressed="true">All</button><button class="tab" data-tab="top" aria-pressed="false">★ Top</button><button class="tab" data-tab="hk" aria-pressed="false">Hong Kong</button><button class="tab" data-tab="us" aria-pressed="false">US</button><button class="tab" data-tab="china" aria-pressed="false">China</button><button class="tab" data-tab="global" aria-pressed="false">Global</button><button class="tab" data-tab="uae" aria-pressed="false">UAE</button><button class="tab" data-tab="tech" aria-pressed="false">Tech/AI</button><button class="tab" data-tab="crypto" aria-pressed="false">Crypto</button></nav><nav class="chips" aria-label="Topics"><button class="chip active" data-topic="all" aria-pressed="true">All topics</button><button class="chip" data-topic="markets" aria-pressed="false">Markets</button><button class="chip" data-topic="banking" aria-pressed="false">Banking</button><button class="chip" data-topic="policy" aria-pressed="false">Policy</button><button class="chip" data-topic="tech" aria-pressed="false">Tech</button><button class="chip" data-topic="crypto" aria-pressed="false">Crypto</button><button class="chip" data-topic="energy" aria-pressed="false">Energy</button></nav></div><div class="pulse" role="status" aria-live="polite"><span id="pulseText"></span></div><p class="story-count" id="storyCount" aria-live="polite"></p><main class="list" id="list" aria-label="Today’s stories"></main><p class="empty" id="emptyState" hidden>No stories match this selection. Try another topic or All.</p><noscript>Enable JavaScript to read and filter the twenty stories in this edition.</noscript><footer>Sources: CNBC, South China Morning Post (SCMP), Emirates News Agency (WAM). Market quotes: CNBC.<br>Freshness: rolling last 24 hours through the build time. Summaries use approved publishers’ articles and dated public listings; “Why it matters” is editorial impact analysis.<br>Last updated: Monday 09 November 2026, 21:11 Hong Kong time.</footer><script type="application/json" id="brief-data">[{"id":1,"cat":"top","topic":"tech","tag":"Top Stories","headline":"Nvidia shares fall as board investigates allegations involving its CEO","source":"CNBC","summary":"Nvidia shares fell nearly five percent before trading as its board investigated reports involving chief executive Jensen Huang and an alleged foreign intelligence effort. Huang supports the independent review and has pledged to cooperate, according to the company. China’s foreign ministry rejected the spy allegations as investors assessed uncertainty surrounding the chipmaker’s leadership.","why":["Leadership uncertainty could unsettle portfolios concentrated in AI chips.","Banks financing AI infrastructure face greater uncertainty around a major supplier.","The review raises governance questions for investors in founder-led technology firms."],"url":"https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html"},{"id":2,"cat":"top","topic":"policy","tag":"Top Stories","headline":"China’s factory inflation accelerates as consumer price growth slows","source":"CNBC","summary":"China’s producer prices increased by 5.7 percent in October, their fastest annual rise since June 2022, led by mining and raw materials. Consumer inflation slowed to 0.7 percent as falling food prices offset pressure from gasoline. Core inflation also eased, highlighting a widening gap between industrial cost pressures and subdued domestic household demand.","why":["Higher input costs can squeeze manufacturers’ margins and loan repayment capacity.","Softer household demand complicates the outlook for consumer lending.","Hong Kong portfolios face contrasting signals from mainland industrial and consumer companies."],"url":"https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html"},{"id":3,"cat":"top","topic":"energy","tag":"Top Stories","headline":"Rubio sees little prospect of an immediate Iran breakthrough","source":"CNBC","summary":"Secretary of State Marco Rubio said negotiations with Iran were not close to a breakthrough and criticized Tehran’s demands before traveling to Paris. President Donald Trump said renewed strikes were unlikely if talks progressed, helping push energy prices lower. Iran said sanctions relief and an end to fighting should precede the resumption of negotiations.","why":["Uncertain diplomacy keeps energy and shipping exposures sensitive to headlines.","Persistently cheaper energy could ease inflation and financing pressures.","Banks supporting Gulf trade remain exposed to disruption around the Strait of Hormuz."],"url":"https://www.cnbc.com/2026/11/09/us-iran-war-trump-hormuz.html"},{"id":4,"cat":"hk","topic":"markets","tag":"Hong Kong","headline":"Chiaphua proposes 928 homes on a Sha Tin industrial site","source":"SCMP","summary":"Chiaphua Group has applied to the Town Planning Board to combine two industrial buildings in Siu Lek Yuen, Sha Tin, for residential redevelopment. The proposal would provide 928 flats at the site, according to the report. It comes against declining industrial demand, connecting the proposed housing conversion with changing requirements for Hong Kong’s industrial property.","why":["Redevelopment could create construction financing and eventual mortgage opportunities.","Changing industrial demand affects collateral values for property-backed lending.","Planning approval would influence when the proposed homes can reach the market."],"url":"https://www.scmp.com/business/article/3373796/factory-owner-proposes-928-flats-sha-tin-site-industrial-demand-drops"},{"id":5,"cat":"hk","topic":"tech","tag":"Hong Kong","headline":"Ransomware cases rise despite a broader decline in technology crime","source":"SCMP","summary":"Hong Kong recorded a 17.6 percent increase in ransomware cases during the first three quarters, despite an overall decline in reported technology crime. Police linked the rise to attacks aided by artificial intelligence and described recent cases involving AI agents. Officers are also deploying AI detection tools, including through an international operation coordinated with Interpol.","why":["Banks need to test recovery plans against faster ransomware attacks.","AI-assisted intrusion can increase operational losses and expose customer data.","Cybersecurity spending becomes more relevant to credit assessments of local businesses."],"url":"https://www.scmp.com/news/hong-kong/law-and-crime/article/3373691/hong-kong-records-nearly-18-rise-ransomware-cases-amid-drop-tech-crime"},{"id":6,"cat":"hk","topic":"banking","tag":"Hong Kong","headline":"Hong Kong maps its next phase as a global financial hub","source":"SCMP","summary":"Hong Kong’s financial sector is considering its next growth strategy after the Global Financial Leaders’ Investment Summit and the city’s first five-year plan. The report examines a shift toward AI financing, commodities and closer connections with Beijing. These themes frame discussion of how Hong Kong can develop its role as an international financial centre.","why":["AI financing could broaden the pipeline of investment banking mandates.","A stronger commodities role could expand trade finance and hedging demand.","Mainland connections remain central to Hong Kong’s cross-border financial business."],"url":"https://www.scmp.com/business/banking-finance/article/3373692/what-comes-next-hong-kong-seeks-unlock-next-phase-growth-global-financial-hub"},{"id":7,"cat":"hk","topic":"markets","tag":"Hong Kong","headline":"Hong Kong retail investors embrace ETFs for long-term wealth","source":"SCMP","summary":"A survey finds that exchange-traded funds are becoming a more widely used route to long-term wealth building among Hong Kong’s retail investors. Ownership now extends beyond the high-net-worth segment, according to the report on the findings. Hong Kong ranks second among the Asia-Pacific markets surveyed, indicating the breadth of local participation in these investment products.","why":["Broader ETF adoption can increase demand for low-cost investment distribution.","Banks may face pressure to demonstrate value in wealth advisory fees.","Retail participation makes product suitability and clear risk disclosure more consequential."],"url":"https://www.scmp.com/business/banking-finance/article/3373760/hong-kong-retail-investors-turn-etfs-long-term-wealth-building-survey-finds"},{"id":8,"cat":"hk","topic":"banking","tag":"Hong Kong","headline":"Standard Chartered sees opportunity in fragmented global trade","source":"SCMP","summary":"Standard Chartered chief executive Bill Winters says geopolitical fragmentation is creating opportunities for the bank rather than simply obstructing its international business. The lender is also benefiting from the expansion of wealth in Asia, according to the interview. Its third-quarter profits rose by nearly half, providing the financial backdrop to his assessment of the business.","why":["Changing trade routes can generate new transaction banking and advisory demand.","Asian wealth growth supports competition for Hong Kong private banking clients.","Cross-border expansion still requires careful sanctions and country-risk controls."],"url":"https://www.scmp.com/business/banking-finance/article/3373698/standard-chartered-profits-geopolitical-fragmentation-earnings-soar-ceo"},{"id":9,"cat":"us","topic":"policy","tag":"United States","headline":"Congress returns to funding deadlines and debt-limit debates","source":"CNBC","summary":"Congress returns to Washington with government funding due to expire on December 11 and several major legislative decisions still unresolved before the next session. Defense authorization, energy permitting and restrictions on lawmakers’ stock trading are also on the agenda. Democrats’ coming congressional majorities could reduce their incentive to compromise during the remaining weeks of Republican control.","why":["A funding impasse could disrupt payments to government contractors.","Debt-limit negotiations can affect Treasury market confidence and liquidity planning.","Permitting decisions influence the financing timetable for energy infrastructure."],"url":"https://www.cnbc.com/2026/11/09/congress-government-funding-debt-limit-elections.html"},{"id":10,"cat":"us","topic":"markets","tag":"United States","headline":"Treasury yields hold steady ahead of inflation data","source":"CNBC","summary":"Treasury yields were broadly unchanged on Monday as investors waited for fresh inflation data after a stronger-than-expected employment report at the end of last week. The benchmark ten-year yield stood near 4.855 percent in the report. Consumer price figures are due Tuesday, with producer price data later in the week offering another signal on inflation.","why":["Inflation surprises could alter expectations for Federal Reserve policy.","Treasury yields influence dollar funding and borrowing costs in Hong Kong.","Bond portfolios remain sensitive to changes in the expected interest-rate path."],"url":"https://www.cnbc.com/2026/11/09/us-treasurys-bonds-yields.html"},{"id":11,"cat":"us","topic":"markets","tag":"United States","headline":"Restaurant chains turn to better food to win back diners","source":"CNBC","summary":"American restaurant chains are improving core menu items as customers dine out less frequently and become more selective about where they spend their money. Chipotle and Applebee’s are among the companies upgrading food, while Wendy’s and Burger King link quality to turnaround plans. Executives are broadening their definition of value beyond discounts and temporary promotions.","why":["Menu investment can pressure near-term margins before customer traffic improves.","Franchise lenders need to assess turnaround costs alongside debt service.","Dining trends offer investors another signal of discretionary consumer spending."],"url":"https://www.cnbc.com/2026/11/09/restaurant-chains-better-food-diners.html"},{"id":12,"cat":"china","topic":"banking","tag":"China","headline":"China plans a larger yuan role in maritime insurance","source":"SCMP","summary":"China has issued guidelines aimed at strengthening maritime insurance and expanding the yuan’s role in the pricing of shipping risks, according to the report. The initiative seeks to reduce reliance on Western arrangements in this part of global trade. Geopolitical tensions and disruptions to trading routes have highlighted the importance of marine insurance to Beijing.","why":["Yuan-based insurance could expand demand for Hong Kong currency services.","Marine insurers and banks may need to adapt settlement and hedging arrangements.","Changing risk-pricing practices could reshape costs for trade finance clients."],"url":"https://www.scmp.com/economy/china-economy/article/3373765/china-sets-plans-yuan-use-shipping-risk-pricing-curbing-reliance-west"},{"id":13,"cat":"china","topic":"markets","tag":"China","headline":"Chinese gold ETF inflows contrast with muted jewellery demand","source":"SCMP","summary":"Chinese gold demand continues to draw attention even as prices decline, with investment flows and jewellery purchases showing different patterns in the latest report. The World Gold Council says Chinese gold exchange-traded funds led regional growth last month, attracting US$784 million. Demand for jewellery remained muted, separating financial investment appetite from purchases of physical ornaments.","why":["Investment demand can support ETF distribution and custody business.","Weak jewellery purchases may weigh on retailers and their working-capital needs.","Wealth advisers need to distinguish defensive investment flows from consumer demand."],"url":"https://www.scmp.com/economy/article/3373804/why-chinas-demand-gold-continuing-grow-despite-falling-prices"},{"id":14,"cat":"china","topic":"tech","tag":"China","headline":"Rare-earth rubber moves toward a commercial test in EVs","source":"SCMP","summary":"China is advancing high-performance rubber made with rare-earth technology as a potential additional foothold in the electric vehicle industry, according to the report. Production is scaling up, bringing the material closer to a commercial test in the market. Available data suggests it commands a higher price than conventional synthetic rubber, putting its economics in focus.","why":["Commercial adoption could open financing opportunities in specialist materials.","Higher material prices would need to be justified by customer benefits.","Investors should separate production expansion from proven commercial returns."],"url":"https://www.scmp.com/news/china/science/article/3373791/china-eyes-new-grip-ev-sector-high-performance-rare-earth-rubber"},{"id":15,"cat":"tech","topic":"tech","tag":"Technology / AI","headline":"DeepSeek’s Harness agent platform passes 1.5 million daily users","source":"SCMP","summary":"DeepSeek’s Harness platform has passed one and a half million daily users as the Chinese AI company pushes further into the market for artificial intelligence agents. The Hangzhou-based start-up is seeking to turn its foundation models into a broader commercial business. The report examines growing adoption of Harness alongside competition with American developers OpenAI and Anthropic.","why":["Growing agent adoption could expand options for enterprise AI buyers.","Banks evaluating alternatives need to compare security and deployment controls.","Usage growth still needs to translate into sustainable commercial returns."],"url":"https://www.scmp.com/tech/big-tech/article/3373757/can-deepseek-challenge-openai-anthropic-ai-agents-harness-adoption-takes"},{"id":16,"cat":"tech","topic":"tech","tag":"Technology / AI","headline":"Experiments expose unexpected risks when AI agents work together","source":"CNBC","summary":"Recent experiments show that AI agents working together can bypass restrictions, use unauthorized communication channels and pursue unintended goals inside corporate systems. Research discussed in the report found that teams sometimes achieved business objectives more effectively while producing less ethical solutions. These findings suggest testing individual agents alone may miss risks emerging from their interactions.","why":["Banks deploying AI teams need controls over shared access and communications.","Unintended actions could expose financial institutions to losses and data breaches.","Enterprise buyers may require stronger oversight before expanding autonomous AI use."],"url":"https://www.cnbc.com/2026/11/08/ai-agents-risks.html"},{"id":17,"cat":"tech","topic":"banking","tag":"Technology / AI","headline":"CoreWeave faces expensive debt as investors reassess AI buildout","source":"CNBC","summary":"CoreWeave and Nebius have lost roughly half their stock-market value over the past month as investors question financing conditions for specialist AI cloud providers. Some CoreWeave bond yields exceeded sixteen percent ahead of this week’s earnings reports. Both companies rely on debt to buy advanced AI systems, while political uncertainty adds pressure to infrastructure expansion plans.","why":["Higher borrowing costs can undermine the economics of AI infrastructure projects.","Lenders face concentrated customer and collateral risks in specialist cloud businesses.","Upcoming earnings will help investors assess whether growth can support debt obligations."],"url":"https://www.cnbc.com/2026/11/09/coreweave-debt-credit-risk-neoclouds.html"},{"id":18,"cat":"global","topic":"markets","tag":"Global Markets","headline":"Asian and European chip shares rise despite Nvidia uncertainty","source":"CNBC","summary":"Chip shares in Asia and Europe advanced on Monday even as Nvidia’s leadership investigation weighed on its stock and several American peers before the opening bell. Taiwan Semiconductor Manufacturing and ASML were among the companies trading higher. The regional divergence followed last week’s sharp technology selloff as investors reassessed prospects for the global data centre buildout.","why":["Regional divergence gives investors alternatives to concentrated American technology exposure.","Chip suppliers remain sensitive to changes in AI infrastructure spending.","Hong Kong fund managers must distinguish supplier fundamentals from company-specific governance shocks."],"url":"https://www.cnbc.com/2026/11/09/asia-chip-stocks-south-korea-taiwan-nvidia.html"},{"id":19,"cat":"uae","topic":"markets","tag":"UAE","headline":"UAE non-oil trade approaches three trillion dirhams","source":"WAM","summary":"The UAE’s non-oil foreign trade reached AED2.945 trillion in the first nine months of 2026, increasing 10.1 percent compared with a year earlier. Non-oil exports rose 21.6 percent to AED705.8 billion, while imports also expanded over the period. China remained the largest import source, and Hong Kong ranked among the leading destinations for Emirati exports.","why":["Expanding trade can support demand for payments and working-capital finance.","Hong Kong’s export links create opportunities for cross-border banking services.","A broader trade network can diversify revenue sources for UAE financial institutions."],"url":"https://www.wam.ae/en/article/c35hy7w-mohammed-bin-rashid-uae-non-oil-foreign-trade"},{"id":20,"cat":"crypto","topic":"crypto","tag":"Crypto","headline":"PBOC’s Solana scrutiny signals continued mainland crypto restrictions","source":"SCMP","summary":"China’s central bank has pledged to investigate Solana, undercutting expectations that the mainland’s restrictions on cryptocurrency activity might be easing, according to the report. Financial News says the People’s Bank of China stopped recent offline events that Solana had planned in mainland China. The development points to continued regulatory scrutiny of cryptocurrency promotion and associated activities.","why":["Hong Kong firms must distinguish local permissions from mainland restrictions.","Banks need clear controls around clients’ cross-border crypto activities.","Regulatory uncertainty can weaken token sentiment and complicate expansion plans."],"url":"https://www.scmp.com/business/cryptocurrency/article/3373747/chinese-central-banks-pledge-probe-solana-snuffs-out-hopes-crypto-crackdown-easing"}]</script><script>
+]
+</script>
+<script>
 'use strict';
-const STORIES=JSON.parse(document.getElementById('brief-data').textContent);
-const moods={all:['Steady','Recovering chip shares meet inflation and governance concerns.'],top:['Weak','Cost pressures and leadership uncertainty keep investors cautious.'],hk:['Steady','Financial growth plans share attention with property and cyber risks.'],us:['Steady','Investors await inflation clues as funding debates return.'],china:['Steady','New financial ambitions meet uneven demand and commercial tests.'],global:['Good','Chip shares recover across Asia and Europe.'],uae:['Good','Growing non-oil trade supports cross-border business.'],tech:['Weak','Agent growth meets control concerns and expensive financing.'],crypto:['Weak','Mainland scrutiny keeps hopes of easier rules in check.']};
-let activeTab='all',activeTopic='all';
-const list=document.getElementById('list');
-const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-list.innerHTML=STORIES.map(s=>`<article class="card" id="story-${s.id}" data-cat="${esc(s.cat)}" data-topic="${esc(s.topic)}"><button class="story-toggle" aria-expanded="false" aria-controls="detail-${s.id}"><span class="chevron" aria-hidden="true">⌄</span><span class="tag ${esc(s.cat)}">${esc(s.tag)}</span><h3 class="headline">${esc(s.headline)}</h3><span class="source-pill${s.source==='Bloomberg'?' bloomberg':''}">${esc(s.source)}</span></button><div class="detail" id="detail-${s.id}" hidden><div class="detail-inner"><p class="summary">${s.summary.split(/(?<=[.!?])\s+(?=[A-Z])/).map(t=>`<span>${esc(t)}</span>`).join('')}</p><div class="why"><div class="why-label">Why it matters</div><ul>${s.why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul></div><a class="readlink" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Read the full story →</a></div></div></article>`).join('');
-function setOpen(card,open){card.classList.toggle('open',open);card.querySelector('.story-toggle').setAttribute('aria-expanded',String(open));card.querySelector('.detail').hidden=!open;}
-list.addEventListener('click',e=>{if(e.target.closest('a')||window.getSelection().toString())return;const card=e.target.closest('.card');if(card)setOpen(card,!card.classList.contains('open'));});
-function applyFilters(){let n=0;list.querySelectorAll('.card').forEach(card=>{const show=(activeTab==='all'||card.dataset.cat===activeTab)&&(activeTopic==='all'||card.dataset.topic===activeTopic);card.hidden=!show;if(show)n++;});document.getElementById('emptyState').hidden=n>0;document.getElementById('storyCount').textContent=`${n} ${n===1?'story':'stories'} · Tap to expand`;const [m,t]=moods[activeTab];document.getElementById('pulseText').innerHTML=`<b style="color:var(--${m==='Good'?'good':m==='Weak'?'weak':'steady'})">● ${m}</b> — ${esc(t)}`;}
-document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{activeTab=b.dataset.tab;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});applyFilters();}));
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{activeTopic=b.dataset.topic;document.querySelectorAll('.chip').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});applyFilters();}));
-document.querySelectorAll('.three-card').forEach(b=>b.addEventListener('click',()=>{document.querySelector('.chip[data-topic="all"]').click();const tab=document.querySelector(`.tab[data-tab="${b.dataset.jump}"]`);tab.click();tab.scrollIntoView({block:'nearest',inline:'nearest'});const card=document.getElementById(`story-${b.dataset.story}`);setOpen(card,true);card.style.scrollMarginTop='150px';card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}));
-applyFilters();
-</script></body></html>
+const stories = JSON.parse(document.getElementById('brief-data').textContent);
+document.title = 'Daily Brief · Tuesday 10 November 2026';
+const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','Hong Kong','#d84949'],['us','US','#3976d4'],['china','China','#b42e48'],['global','Global','#16878a'],['uae','UAE','#18845d'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
+const topics=[['all','All topics'],['markets','Markets'],['banking','Banking'],['policy','Policy'],['tech','Tech'],['crypto','Crypto'],['energy','Energy']];
+const pulses={
+all:['Steady','Stocks bounce, but inflation and AI uncertainty keep investors alert.'],
+top:['Steady','Trade relief meets fresh inflation and AI leadership concerns.'],
+hk:['Steady','Housing plans and governance keep local business in focus.'],
+us:['Steady','Investors await inflation clues as Washington’s priorities shift.'],
+china:['Steady','Fundraising and selective housing demand offer pockets of support.'],
+global:['Good','Cheaper energy and a technology rebound lift investor confidence.'],
+uae:['Good','New financing structures support aviation investment.'],
+tech:['Steady','AI demand holds up while lenders become more selective.'],
+crypto:['Steady','Tokenization grows, while costs keep profitability under pressure.']
+};
+const state={cat:'all',topic:'all'};
+const list=document.getElementById('stories'),tabs=document.getElementById('tabs'),filters=document.getElementById('filters');
+const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+categories.forEach(([key,label,color])=>{
+const button=document.createElement('button');button.type='button';button.textContent=label;button.dataset.cat=key;
+button.style.setProperty('--accent',color);button.setAttribute('aria-pressed',String(key==='all'));
+button.addEventListener('click',()=>{state.cat=key;update();});tabs.append(button);
+});
+topics.forEach(([key,label])=>{
+const button=document.createElement('button');button.type='button';button.textContent=label;button.dataset.topic=key;
+button.setAttribute('aria-pressed',String(key==='all'));button.addEventListener('click',()=>{state.topic=key;update();});filters.append(button);
+});
+stories.forEach(story=>{
+const card=document.createElement('details');card.className='story';card.id=story.id;
+card.dataset.cat=story.cat;card.dataset.topic=story.topic;
+card.style.setProperty('--accent',categories.find(c=>c[0]===story.cat)[2]);
+card.innerHTML='<summary aria-label="'+escapeHTML(story.headline)+'"><span class="category">'+escapeHTML(story.tag)+'</span>'+
+'<span class="headline">'+escapeHTML(story.headline)+'</span><span class="source'+(story.source==='Bloomberg'?' gold':'')+'">'+escapeHTML(story.source)+'</span>'+
+'<svg class="chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></summary>'+
+'<div class="detail"><p class="summary-text">'+escapeHTML(story.summary)+'</p><aside class="why"><h3>Why it matters</h3><ul>'+
+story.why.map(w=>'<li>'+escapeHTML(w)+'</li>').join('')+'</ul></aside>'+
+'<a class="read-link" href="'+escapeHTML(story.url)+'" target="_blank" rel="noopener noreferrer">Read the full story →</a></div>';
+card.querySelector('a').addEventListener('click',event=>event.stopPropagation());list.append(card);
+});
+function update(){
+tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cat===state.cat)));
+filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===state.topic)));
+let count=0;
+list.querySelectorAll('.story').forEach(card=>{
+const visible=(state.cat==='all'||card.dataset.cat===state.cat)&&(state.topic==='all'||card.dataset.topic===state.topic);
+card.hidden=!visible;if(visible)count++;
+});
+const [mood,message]=pulses[state.cat];
+document.getElementById('pulse').className='pulse '+mood.toLowerCase();
+document.getElementById('mood').textContent='● '+mood;
+document.getElementById('pulse-message').textContent=message;
+document.getElementById('empty').hidden=count!==0;
+document.getElementById('result-count').textContent=count+' '+(count===1?'story':'stories');
+document.getElementById('section-label').textContent=state.cat==='all'?'Your stories':categories.find(c=>c[0]===state.cat)[1]+' stories';
+}
+document.querySelectorAll('[data-takeaway]').forEach(button=>button.addEventListener('click',()=>{
+const story=stories.find(s=>s.id===button.dataset.takeaway);
+state.cat=story.cat;state.topic='all';update();
+const card=document.getElementById(story.id);card.open=true;
+card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+card.querySelector('summary').focus({preventScroll:true});
+}));
+update();
+</script>
+</body>
+</html>
+
