@@ -510,7 +510,7 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 'use strict';
 const stories = JSON.parse(document.getElementById('brief-data').textContent);
 document.title = 'Daily Brief · Wednesday 11 November 2026';
-const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','Hong Kong','#d84949'],['us','US','#3976d4'],['china','China','#b42e48'],['global','Global','#16878a'],['sg','Singapore','#18845d'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
+const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','HK','#d84949'],['us','US','#3976d4'],['sg','SG','#18845d'],['china','CN','#b42e48'],['global','Global','#16878a'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
 const topics=[['all','All topics'],['markets','Markets'],['banking','Banking'],['policy','Policy'],['tech','Tech'],['crypto','Crypto'],['energy','Energy']];
 const pulses={"all": ["Weak", "Hot inflation and chip-sector uncertainty weigh on confidence."], "top": ["Weak", "Rate worries and a leadership review overshadow AI fundraising."], "hk": ["Steady", "Finance firms support activity while investors remain selective."], "us": ["Steady", "Cheaper fuel offers relief as debt and trade pressures persist."], "china": ["Good", "Export demand and business engagement offer pockets of support."], "global": ["Weak", "Bond selling pushes borrowing costs higher."], "sg": ["Good", "Tech shares rebound and local banks join the rally."], "tech": ["Steady", "Computing demand and new listings meet a cautious market."], "crypto": ["Steady", "Digital securities gain uses while market risks remain."]};
 const state={cat:'all',topic:'all'};
