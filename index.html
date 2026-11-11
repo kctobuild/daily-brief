@@ -159,11 +159,11 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 <div class="tile"><span class="tile-label">Hang Seng</span><span class="tile-value">24,557.04</span><span class="tile-move up">↑ 0.44%</span></div>
 <div class="tile"><span class="tile-label">USD/CNY</span><span class="tile-value">6.6703</span><span class="tile-move down">↓ 0.036%</span></div>
 <div class="tile"><span class="tile-label">Bitcoin</span><span class="tile-value">$73,722.24</span><span class="tile-move down">↓ 1.36%</span></div>
-<div class="tile"><span class="tile-label">Dubai DFM</span><span class="tile-value">6,170.20</span><span class="tile-move up">↑ 1.36%</span></div>
+<div class="tile"><span class="tile-label">Straits Times</span><span class="tile-value">5,258.59</span><span class="tile-move up">↑ 1.50%</span></div>
 <div class="tile"><span class="tile-label">US 10-year</span><span class="tile-value">5.00%</span><span class="tile-move up">↑ 13.8 bp</span></div>
 </div>
-<p class="snapshot-note">Equities and Dubai: Tuesday session. FX and Treasury: latest Tuesday readings. Bitcoin trades continuously; latest quote at 07:44 HKT. Data: CNBC. Hang Seng change measured against Monday’s close.</p>
-<!-- Snapshot references: https://www.cnbc.com/quotes/.SPX https://www.cnbc.com/quotes/.IXIC https://www.cnbc.com/quotes/.DJI https://www.cnbc.com/quotes/.HSI https://www.cnbc.com/quotes/CNY= https://www.cnbc.com/quotes/BTC.CM= https://www.cnbc.com/quotes/.DFMGI https://www.cnbc.com/quotes/US10Y -->
+<p class="snapshot-note">Equities: Tuesday session. FX and Treasury: latest Tuesday readings. Bitcoin trades continuously; latest quote at 07:44 HKT. Data: CNBC and The Business Times. Hang Seng change measured against Monday’s close.</p>
+<!-- Snapshot references: https://www.cnbc.com/quotes/.SPX https://www.cnbc.com/quotes/.IXIC https://www.cnbc.com/quotes/.DJI https://www.cnbc.com/quotes/.HSI https://www.cnbc.com/quotes/CNY= https://www.cnbc.com/quotes/BTC.CM= https://www.businesstimes.com.sg/companies-markets/singapore-shares-rise-tech-stocks-gain-ground-sti-1-5 https://www.cnbc.com/quotes/US10Y -->
 </section>
 <nav class="sticky-nav" aria-label="Browse the brief">
 <div class="tabs" id="tabs" role="group" aria-label="Categories"></div>
@@ -178,9 +178,9 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 </main>
 <footer>
 <p class="footer-brand">Your Daily Brief</p>
-<p>Sources: CNBC · SCMP · HKMA · WAM</p>
+<p>Sources: CNBC · SCMP · HKMA · The Business Times</p>
 <p>Impact statements are editorial analysis. Stories fall within the last 24–48 hours; the window allows for the US Veterans Day public holiday.</p>
-<p>Last updated: Wednesday 11 November 2026, 07:46 Hong Kong time.</p>
+<p>Last updated: Wednesday 11 November 2026, 10:32 Hong Kong time.</p>
 </footer>
 <script type="application/json" id="brief-data">
 [
@@ -473,20 +473,20 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
     "published": "2026-11-10T10:25:50Z"
   },
   {
-    "id": "uae-1",
-    "cat": "uae",
+    "id": "sg-1",
+    "cat": "sg",
     "topic": "markets",
-    "tag": "UAE",
-    "headline": "Ras Al Khaimah Chamber and AIM Global sign investment partnership",
-    "source": "WAM",
-    "summary": "Ras Al Khaimah Chamber and AIM Global Foundation signed a partnership covering exhibitions, conferences and specialised summits in the emirate. Their agreement includes meetings between companies, investors and financial institutions, alongside exchanges of market intelligence and investment promotion expertise. The organisations also plan to coordinate international delegation visits and site tours as part of their cooperation.",
+    "tag": "Singapore",
+    "headline": "Singapore shares rebound as tech stocks recover",
+    "source": "The Business Times",
+    "summary": "Singapore’s Straits Times Index rose 1.5% to 5,258.59 on Tuesday as technology shares recovered some of last week’s losses. DBS, OCBC and UOB all gained, with OCBC up 3.1%. About 1.3 billion securities worth S$2.8 billion traded, and rising stocks outnumbered falling stocks by 390 to 212.",
     "why": [
-      "Investor meetings could help connect UAE projects with banks and funding partners.",
-      "Shared market intelligence may support cross-border investment assessment.",
-      "Hong Kong firms exploring Gulf expansion could gain additional business networking channels."
+      "Gains across all three local banks helped broaden the rally beyond technology.",
+      "The rebound gives investors a fresh read on demand for chip-related shares after last week’s sell-off.",
+      "Singapore’s advance alongside gains in Hong Kong and Japan points to stronger equity sentiment across several Asian markets."
     ],
-    "url": "https://www.wam.ae/en/article/c36osps-ras-khaimah-chamber-aim-global-forge-strategic",
-    "published": "2026-11-10T12:19:56+04:00"
+    "url": "https://www.businesstimes.com.sg/companies-markets/singapore-shares-rise-tech-stocks-gain-ground-sti-1-5",
+    "published": "2026-11-10T18:33:00+08:00"
   },
   {
     "id": "crypto-1",
@@ -510,9 +510,9 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 'use strict';
 const stories = JSON.parse(document.getElementById('brief-data').textContent);
 document.title = 'Daily Brief · Wednesday 11 November 2026';
-const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','Hong Kong','#d84949'],['us','US','#3976d4'],['china','China','#b42e48'],['global','Global','#16878a'],['uae','UAE','#18845d'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
+const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','Hong Kong','#d84949'],['us','US','#3976d4'],['china','China','#b42e48'],['global','Global','#16878a'],['sg','Singapore','#18845d'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
 const topics=[['all','All topics'],['markets','Markets'],['banking','Banking'],['policy','Policy'],['tech','Tech'],['crypto','Crypto'],['energy','Energy']];
-const pulses={"all": ["Weak", "Hot inflation and chip-sector uncertainty weigh on confidence."], "top": ["Weak", "Rate worries and a leadership review overshadow AI fundraising."], "hk": ["Steady", "Finance firms support activity while investors remain selective."], "us": ["Steady", "Cheaper fuel offers relief as debt and trade pressures persist."], "china": ["Good", "Export demand and business engagement offer pockets of support."], "global": ["Weak", "Bond selling pushes borrowing costs higher."], "uae": ["Good", "Investment cooperation supports new business connections."], "tech": ["Steady", "Computing demand and new listings meet a cautious market."], "crypto": ["Steady", "Digital securities gain uses while market risks remain."]};
+const pulses={"all": ["Weak", "Hot inflation and chip-sector uncertainty weigh on confidence."], "top": ["Weak", "Rate worries and a leadership review overshadow AI fundraising."], "hk": ["Steady", "Finance firms support activity while investors remain selective."], "us": ["Steady", "Cheaper fuel offers relief as debt and trade pressures persist."], "china": ["Good", "Export demand and business engagement offer pockets of support."], "global": ["Weak", "Bond selling pushes borrowing costs higher."], "sg": ["Good", "Tech shares rebound and local banks join the rally."], "tech": ["Steady", "Computing demand and new listings meet a cautious market."], "crypto": ["Steady", "Digital securities gain uses while market risks remain."]};
 const state={cat:'all',topic:'all'};
 const list=document.getElementById('stories'),tabs=document.getElementById('tabs'),filters=document.getElementById('filters');
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
