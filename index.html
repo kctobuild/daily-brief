@@ -8,8 +8,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="apple-touch-icon.png">
 <meta name="theme-color" content="#f5f7fb">
-<meta name="description" content="Your interactive daily brief for Wednesday 11 November 2026 — twenty fresh stories on banking, markets and AI.">
-<meta name="date" content="2026-11-11">
+<meta name="description" content="Your interactive daily brief for Thursday 12 November 2026 — twenty fresh stories on banking, markets and AI.">
+<meta name="date" content="2026-11-12">
 <title>Daily Brief</title>
 <style>
 :root{--bg:#f5f7fb;--ink:#141a26;--sub:#687386;--border:#e3e8ef;--card:#fff;--green:#16845c;--red:#cf414b;--amber:#aa7718;--shadow:0 3px 16px rgba(26,42,70,.045)}
@@ -132,6 +132,14 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
   .story .why ul { font-size: 13px; line-height: 1.5; }
   .read-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
 }
+
+.switch a,.takeaway,.tabs button,.filters button,.read-link{min-height:44px}
+.switch a{display:flex;align-items:center;justify-content:center}
+.read-link{display:inline-flex;align-items:center}
+.sticky-nav{top:env(safe-area-inset-top)}
+.tile-label,.tile-value,.tile-move{white-space:normal;overflow-wrap:anywhere}
+.story{scroll-margin-top:calc(var(--controls-height,114px) + env(safe-area-inset-top) + 8px)}
+@media(max-width:599px){.tile-value{font-size:14px}.switch{margin:0 0 14px}}
 </style>
 </head>
 <body>
@@ -139,37 +147,37 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 <header>
 <p class="kicker">Good morning ☕️</p>
 <h1>Your Daily Brief</h1>
-<p class="date"><time datetime="2026-11-11">Wednesday 11 November 2026</time></p>
-<span class="read-time">≈ 8-min read · 20 stories · fresh (last 24–48h)</span>
+<p class="date"><time datetime="2026-11-12">Thursday 12 November 2026</time></p>
+<span class="read-time">≈ 8-min read · 20 stories · fresh (last 24h)</span>
 </header>
 <section aria-labelledby="takeaway-heading">
 <h2 class="section-heading" id="takeaway-heading">3 things to know today</h2>
 <div class="takeaways">
-<button type="button" class="takeaway" data-takeaway="top-1"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3" fill="#eab64b"/><path d="M9 9h6v6H9zM8 2v3m4-3v3m4-3v3M8 19v3m4-3v3m4-3v3M2 8h3m-3 4h3m-3 4h3m14-8h3m-3 4h3m-3 4h3" fill="none" stroke="#a87517" stroke-width="1.5"/></svg></span><span class="takeaway-text">Hot US inflation raises the stakes for rates.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
-<button type="button" class="takeaway" data-takeaway="top-2"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l6 3V7l6 3V4h4v16z" fill="#df7584"/><path d="M7 16h2m3 0h2m3 0h1" stroke="#fff" stroke-width="2"/></svg></span><span class="takeaway-text">Anthropic sets the range for its landmark IPO.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
-<button type="button" class="takeaway" data-takeaway="top-3"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#79a4e0"/><path d="M7 10h10l-3-3m3 7H7l3 3" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="takeaway-text">Nvidia hires lawyers for an independent review.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+<button type="button" class="takeaway" data-takeaway="top-1"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3" fill="#eab64b"/><path d="M9 9h6v6H9zM8 2v3m4-3v3m4-3v3M8 19v3m4-3v3m4-3v3M2 8h3m-3 4h3m-3 4h3m14-8h3m-3 4h3m-3 4h3" fill="none" stroke="#a87517" stroke-width="1.5"/></svg></span><span class="takeaway-text">China shifts its focus to delivering existing support.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+<button type="button" class="takeaway" data-takeaway="top-2"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l6 3V7l6 3V4h4v16z" fill="#df7584"/><path d="M7 16h2m3 0h2m3 0h1" stroke="#fff" stroke-width="2"/></svg></span><span class="takeaway-text">Congress presses Nvidia on leadership and chip exports.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
+<button type="button" class="takeaway" data-takeaway="top-3"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#79a4e0"/><path d="M7 10h10l-3-3m3 7H7l3 3" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="takeaway-text">AI borrowing reshapes the corporate bond market.</span><span class="takeaway-arrow" aria-hidden="true">›</span></button>
 </div>
 </section>
 <section class="snapshot" aria-labelledby="snapshot-heading">
 <div class="snapshot-title"><h2 id="snapshot-heading">Market snapshot</h2><span>Snapshot at last close</span></div>
 <div class="tiles">
-<div class="tile"><span class="tile-label">S&amp;P 500</span><span class="tile-value">7,520.93</span><span class="tile-move down">↓ 0.38%</span></div>
-<div class="tile"><span class="tile-label">Nasdaq</span><span class="tile-value">25,065.87</span><span class="tile-move down">↓ 0.74%</span></div>
-<div class="tile"><span class="tile-label">Dow</span><span class="tile-value">52,231.89</span><span class="tile-move down">↓ 0.30%</span></div>
-<div class="tile"><span class="tile-label">Hang Seng</span><span class="tile-value">24,557.04</span><span class="tile-move up">↑ 0.44%</span></div>
-<div class="tile"><span class="tile-label">USD/CNY</span><span class="tile-value">6.6703</span><span class="tile-move down">↓ 0.036%</span></div>
-<div class="tile"><span class="tile-label">Bitcoin</span><span class="tile-value">$73,722.24</span><span class="tile-move down">↓ 1.36%</span></div>
-<div class="tile"><span class="tile-label">Straits Times</span><span class="tile-value">5,258.59</span><span class="tile-move up">↑ 1.50%</span></div>
-<div class="tile"><span class="tile-label">US 10-year</span><span class="tile-value">5.00%</span><span class="tile-move up">↑ 13.8 bp</span></div>
+<div class="tile"><span class="tile-label">S&amp;P 500</span><span class="tile-value">7,619.38</span><span class="tile-move up">↑ 1.31%</span></div>
+<div class="tile"><span class="tile-label">Nasdaq</span><span class="tile-value">25,466.19</span><span class="tile-move up">↑ 1.60%</span></div>
+<div class="tile"><span class="tile-label">Dow</span><span class="tile-value">52,486.49</span><span class="tile-move up">↑ 0.49%</span></div>
+<div class="tile"><span class="tile-label">Hang Seng</span><span class="tile-value">24,008.55</span><span class="tile-move down">↓ 1.26%</span></div>
+<div class="tile"><span class="tile-label">USD/CNY</span><span class="tile-value">6.6688</span><span class="tile-move down">↓ 0.023%</span></div>
+<div class="tile"><span class="tile-label">Bitcoin</span><span class="tile-value">$73,479.10</span><span class="tile-move down">↓ 1.38%</span></div>
+<div class="tile"><span class="tile-label">Straits Times</span><span class="tile-value">5,289.66</span><span class="tile-move up">↑ 0.59%</span></div>
+<div class="tile"><span class="tile-label">US 10-year</span><span class="tile-value">4.990%</span><span class="tile-move up">↑ 0.1 bp</span></div>
 </div>
-<p class="snapshot-note">Equities: Tuesday session. FX and Treasury: latest Tuesday readings. Bitcoin trades continuously; latest quote at 07:44 HKT. Data: CNBC and The Business Times. Hang Seng change measured against Monday’s close.</p>
+<p class="snapshot-note">US equities and Straits Times use Wednesday’s completed session. Hang Seng uses Thursday’s close. FX, Bitcoin and Treasury use latest quotes at 16:52 HKT. Data from CNBC, with the Straits Times move calculated against Tuesday’s close reported by The Business Times.</p>
 <!-- Snapshot references: https://www.cnbc.com/quotes/.SPX https://www.cnbc.com/quotes/.IXIC https://www.cnbc.com/quotes/.DJI https://www.cnbc.com/quotes/.HSI https://www.cnbc.com/quotes/CNY= https://www.cnbc.com/quotes/BTC.CM= https://www.businesstimes.com.sg/companies-markets/singapore-shares-rise-tech-stocks-gain-ground-sti-1-5 https://www.cnbc.com/quotes/US10Y -->
 </section>
 <nav class="sticky-nav" aria-label="Browse the brief">
 <div class="tabs" id="tabs" role="group" aria-label="Categories"></div>
 <div class="filters" id="filters" role="group" aria-label="Topics"></div>
 </nav>
-<div class="pulse weak" id="pulse" aria-live="polite"><span id="mood">● Weak</span><span id="pulse-message">Hot inflation and chip-sector uncertainty weigh on confidence.</span></div>
+<div class="pulse steady" id="pulse" aria-live="polite"><span id="mood">● Steady</span><span id="pulse-message">Markets balance AI demand against higher borrowing costs.</span></div>
 <main>
 <div class="story-list-heading"><h2 id="section-label">Your stories</h2><span id="result-count" role="status">20 stories</span></div>
 <div id="stories" aria-labelledby="section-label"></div>
@@ -178,9 +186,9 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
 </main>
 <footer>
 <p class="footer-brand">Your Daily Brief</p>
-<p>Sources: CNBC · SCMP · HKMA · The Business Times</p>
-<p>Impact statements are editorial analysis. Stories fall within the last 24–48 hours; the window allows for the US Veterans Day public holiday.</p>
-<p>Last updated: Wednesday 11 November 2026, 10:32 Hong Kong time.</p>
+<p>Sources: CNBC · SCMP · The Standard · HKMA · CNA · Reuters via The Standard. Snapshot also uses The Business Times.</p>
+<p>Impact statements are editorial analysis. Stories were published within the last 24 hours. Bitcoin coverage is a CNBC interview presenting an industry executive’s outlook.</p>
+<p>Last updated: Thursday 12 November 2026, 16:56 Hong Kong time.</p>
 </footer>
 <script type="application/json" id="brief-data">
 [
@@ -189,330 +197,330 @@ footer{padding:22px 5px 6px;text-align:center;color:#8a94a5;font-size:10px;line-
     "cat": "top",
     "topic": "policy",
     "tag": "Top Stories",
-    "headline": "US inflation beats forecasts, raising the stakes for December rates",
-    "source": "CNBC",
-    "summary": "American consumer prices rose 0.4% in October, exceeding economists’ expectations for a 0.3% increase. Core prices also surprised on the upside, rising 0.3% rather than the forecast 0.2%, according to the latest official release. Federal Reserve governor Christopher Waller said a hot reading could put a half-point December rate increase on the table.",
+    "headline": "PBOC drops fresh-stimulus language from its policy report",
+    "source": "SCMP",
+    "summary": "China’s central bank removed a reference to introducing additional support measures from its third-quarter monetary policy report released Wednesday. It retained its moderately loose policy stance and pledged to adjust its tools as economic conditions evolve. Analysts see the change as a focus on delivering existing support, with December’s policy meeting the next stimulus window.",
     "why": [
-      "Higher US rates could lift dollar funding costs for banks.",
-      "Hong Kong borrowers remain exposed to tighter financial conditions through the currency peg.",
-      "Higher discount rates could pressure valuations across AI and growth portfolios."
+      "Banks may focus on transmitting existing support into lending.",
+      "Reduced expectations of immediate stimulus could temper equity-market enthusiasm.",
+      "Hong Kong portfolios remain sensitive to the timing of mainland policy support."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html",
-    "published": "2026-11-10T13:31:08Z"
+    "url": "https://www.scmp.com/economy/china-economy/article/3374160/china-signals-focus-shift-policy-delivery-pboc-drops-stimulus-language",
+    "published": "2026-11-12T13:04:00+08:00"
   },
   {
     "id": "top-2",
     "cat": "top",
     "topic": "tech",
     "tag": "Top Stories",
-    "headline": "Anthropic sets IPO range, targeting a landmark AI listing",
+    "headline": "US lawmakers press Nvidia on leadership and China chip exports",
     "source": "CNBC",
-    "summary": "Anthropic plans to offer 825 million shares at between US$70 and US$78 each, according to an updated filing. At the top of that range, the offering could raise US$64.35 billion and value the company at US$1.405 trillion. People familiar with the plans said pricing is expected on November 18, with trading starting the following day.",
+    "summary": "Members of Congress called for Nvidia chief executive Jensen Huang to resign and raised the possibility of compelling his testimony. Lawmakers are examining national-security concerns following reports linking his former partner to Chinese intelligence. The scrutiny is also strengthening congressional efforts to tighten controls on advanced artificial-intelligence chip exports to China.",
     "why": [
-      "A major AI listing could absorb substantial global equity capital.",
-      "Banks could gain underwriting and wealth-distribution opportunities around the offering.",
-      "Public investors would gain another direct route into large AI model development."
+      "Tighter chip controls could restrict Chinese AI developers’ computing access.",
+      "Governance uncertainty could increase volatility in semiconductor portfolios.",
+      "Banks financing AI projects face greater export-policy and counterparty uncertainty."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
-    "published": "2026-11-10T11:40:11Z"
+    "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-congress-resign-ai-chips.html",
+    "published": "2026-11-11T21:59:34Z"
   },
   {
     "id": "top-3",
     "cat": "top",
-    "topic": "tech",
+    "topic": "markets",
     "tag": "Top Stories",
-    "headline": "Nvidia hires independent lawyers to investigate Huang affair",
+    "headline": "AI borrowing dominates long-dated US corporate debt issuance",
     "source": "CNBC",
-    "summary": "Nvidia’s independent directors retained Wachtell Lipton to investigate chief executive Jensen Huang following his admission of an affair. The review will examine whether company secrets or national security were compromised, after reports connected the woman to Chinese intelligence. Nvidia shares fell again on Tuesday as investors assessed the potential consequences for the company and its leadership.",
+    "summary": "AI-related borrowers account for almost half of this year’s long-dated, non-financial US investment-grade debt issuance, according to PIMCO. The asset manager points to mortgage-backed securities and emerging-market debt as possible diversifiers for credit portfolios. Its analysis highlights growing concentration as technology companies borrow heavily to finance computing infrastructure and data centres.",
     "why": [
-      "Leadership uncertainty could increase volatility across AI investment portfolios.",
-      "Lenders to the chip ecosystem may scrutinise governance and concentration risks.",
-      "Hong Kong technology funds could face spillovers from weaker semiconductor sentiment."
+      "Bond portfolios may carry more shared AI exposure than investors expect.",
+      "Banks underwriting infrastructure debt face growing sector-concentration risks.",
+      "Mortgage and emerging-market securities offer different credit drivers, with their own risks."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/nvidia-wachtell-lipton-huang-affair.html",
-    "published": "2026-11-10T19:19:28Z"
+    "url": "https://www.cnbc.com/2026/11/12/ai-credit-debt-bond-markets-pimco.html",
+    "published": "2026-11-12T06:59:59Z"
   },
   {
     "id": "hk-1",
     "cat": "hk",
-    "topic": "banking",
+    "topic": "markets",
     "tag": "Hong Kong",
-    "headline": "HKMA proposes lower capital costs for Northern Metropolis financing",
-    "source": "HKMA",
-    "summary": "The Northern Metropolis Financial Advisory Taskforce discussed university-town financing with government representatives and participating banks at its third meeting. The HKMA proposes designating eleven post-secondary institutions and three park companies as domestic public sector entities to lower banks’ capital costs. It plans to submit amendments in early 2027, targeting implementation in the second quarter.",
+    "headline": "Hang Seng closes lower as technology shares retreat",
+    "source": "The Standard",
+    "summary": "Hong Kong’s Hang Seng Index fell 1.26% on Thursday as losses in major technology shares weighed on the market. Alibaba, Kuaishou and Tencent declined, while Link REIT led blue-chip gains after reporting interim results. Mainland equities also weakened, with both Shanghai and Shenzhen benchmarks finishing lower during the same trading session.",
     "why": [
-      "Lower capital charges could make qualifying project loans more attractive to banks.",
-      "University and industry-park borrowers could gain access to cheaper financing.",
-      "Hong Kong infrastructure investment would still depend on viable projects and credit assessment."
+      "Technology-heavy Hong Kong portfolios face renewed valuation pressure.",
+      "Different sector performances make broad index gains harder to sustain.",
+      "Banks’ brokerage and wealth businesses remain exposed to shifting risk appetite."
     ],
-    "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261110-3/",
-    "published": "2026-11-10"
+    "url": "https://www.thestandard.com.hk/finance/article/348316/Hang-Seng-falls-126-as-tech-stocks-slide-Link-REIT-leads-gains-on-interim-results",
+    "published": "2026-11-12T16:28:36+08:00"
   },
   {
     "id": "hk-2",
     "cat": "hk",
-    "topic": "banking",
+    "topic": "markets",
     "tag": "Hong Kong",
-    "headline": "FWD sells a record US$318 million life insurance policy",
-    "source": "SCMP",
-    "summary": "Richard Li’s FWD has sold a life insurance policy worth US$318 million, setting a world record for the product. The sale surpassed the previous record held by Manulife Singapore, according to the report. Broker Charles Monat said the transaction highlights Hong Kong’s global position in wealth management and the market for exceptionally large life policies.",
+    "headline": "Hong Kong ETF turnover reaches a record as assets expand",
+    "source": "The Standard",
+    "summary": "Hong Kong’s exchange-traded funds and leveraged and inverse products held HK$616.5 billion in assets at the end of October. Average daily turnover rose 23% year on year to a record HK$46.5 billion, figures presented at Thursday’s HKEX ETF Summit showed. HKEX is also preparing an offshore renminbi bond index to support further product development.",
     "why": [
-      "Large insurance policies can deepen relationships with wealthy banking clients.",
-      "Hong Kong insurers and advisers could benefit from demand for wealth planning.",
-      "Very large policies require careful underwriting and concentration management."
+      "Higher ETF activity expands trading and market-making opportunities for banks.",
+      "A renminbi bond benchmark could support more fixed-income investment products.",
+      "Growing Stock Connect participation deepens Hong Kong’s cross-border investment role."
     ],
-    "url": "https://www.scmp.com/business/banking-finance/article/3373928/richard-lis-fwd-sets-world-record-sale-us318m-life-insurance-policy",
-    "published": "2026-11-10T18:48:00+08:00"
+    "url": "https://www.thestandard.com.hk/finance/article/348308/ETF-market-sees-record-performance-HKEX-ETF-Summit",
+    "published": "2026-11-12T15:58:44+08:00"
   },
   {
     "id": "hk-3",
     "cat": "hk",
-    "topic": "markets",
+    "topic": "banking",
     "tag": "Hong Kong",
-    "headline": "Taiwanese bank joins finance-led demand for Hong Kong offices",
-    "source": "SCMP",
-    "summary": "E.Sun Commercial Bank has signed for about 55,000 square feet in IGC, according to people cited in the report. The Taiwanese lender’s move adds to a wave of Hong Kong office leasing by financial firms. The transaction reflects the market’s flight to quality, with West Kowloon attracting another financial tenant seeking office space.",
+    "headline": "HKMA and SFC advance commercial uses for tokenised deposits",
+    "source": "HKMA",
+    "summary": "The HKMA and SFC convened approximately 200 industry practitioners at a seminar on Project Ensemble and tokenised investment products. Thursday’s release follows the introduction of round-the-clock interbank settlement for tokenised deposits and approval of continuous secondary trading for tokenised money-market funds. The regulators aim to broaden commercial applications connecting digital money with investment products.",
     "why": [
-      "Financial tenants can support rental income at higher-quality Hong Kong buildings.",
-      "Leasing demand gives property lenders another signal for assessing commercial collateral.",
-      "Demand for selected offices may diverge from conditions across the wider property market."
+      "Continuous settlement could reduce banks’ reliance on traditional processing hours.",
+      "Connecting tokenised funds and deposits could improve treasury cash management.",
+      "Hong Kong’s digital-finance infrastructure gains a clearer route to commercial use."
     ],
-    "url": "https://www.scmp.com/business/article/3373858/taiwanese-lender-moves-west-kowloon-financial-firms-lead-hong-kong-office-leasing",
-    "published": "2026-11-10T11:00:00+08:00"
+    "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261112-3/",
+    "published": "2026-11-12"
   },
   {
     "id": "hk-4",
     "cat": "hk",
-    "topic": "markets",
+    "topic": "policy",
     "tag": "Hong Kong",
-    "headline": "Hong Kong chip IPOs deliver sharply different market debuts",
-    "source": "SCMP",
-    "summary": "Two mainland Chinese chip suppliers had contrasting market debuts during a busy week for Hong Kong listings. One newly listed company rose while another stumbled, showing that semiconductor exposure alone did not guarantee a positive reception. The mixed performances underline investor selectivity even as listing activity picks up in the city’s equity capital market.",
+    "headline": "Hong Kong targets captive insurers and risk-transfer markets",
+    "source": "The Standard",
+    "summary": "Hong Kong will attract more captive insurers, expand insurance-linked securities and develop industry talent, financial services secretary Christopher Hui said Thursday. He highlighted the extension of the pilot grant scheme supporting catastrophe bonds and related structures. Hui also urged insurers to maintain human oversight of AI and understand systems used in decisions affecting their customers.",
     "why": [
-      "Banks arranging IPOs may need more selective pricing and investor targeting.",
-      "Hong Kong investors face substantial differences between individual semiconductor offerings.",
-      "A busy listing pipeline does not guarantee strong aftermarket liquidity or returns."
+      "Captive insurers could bring more corporate risk-management business to Hong Kong.",
+      "Insurance-linked securities can broaden institutional investors’ sources of risk exposure.",
+      "Human oversight increases governance demands for insurers deploying AI in customer decisions."
     ],
-    "url": "https://www.scmp.com/business/companies/article/3373886/1-mainland-chinese-chip-ipo-soars-another-stumbles-busy-hong-kong-week",
-    "published": "2026-11-10T16:48:00+08:00"
+    "url": "https://www.thestandard.com.hk/finance/article/348310/HK-to-bolster-risk-hub-status-with-talent-and-captive-insurers-Christopher-Hui",
+    "published": "2026-11-12T16:12:42+08:00"
   },
   {
     "id": "hk-5",
     "cat": "hk",
-    "topic": "policy",
+    "topic": "markets",
     "tag": "Hong Kong",
-    "headline": "John Lee highlights Northern Metropolis opportunities for UK partners",
-    "source": "SCMP",
-    "summary": "Hong Kong chief executive John Lee described Britain as a much-valued business partner at the British Chamber of Commerce’s annual summit. He pointed to opportunities for British companies and universities in the Northern Metropolis. The remarks put business cooperation and the city’s major development area at the centre of his message to the chamber.",
+    "headline": "Ho Man Tin luxury purchases set a development price record",
+    "source": "The Standard",
+    "summary": "The family of businessman Shek Kam-fai spent nearly HK$77 million on three luxury flats in Ho Man Tin, Thursday’s report said. A top-floor Kadoorie Hill Garden apartment fetched about HK$29.3 million, setting development records for total price and price per square foot. The family bought fifteen homes during the first ten months of this year.",
     "why": [
-      "Cross-border projects could create advisory and financing opportunities for Hong Kong banks.",
-      "British firms may find new demand around university and infrastructure development.",
-      "Turning diplomatic support into investment will require commercially workable projects."
+      "Luxury transactions provide fresh comparable prices for Hong Kong property valuations.",
+      "Concentrated purchases can support individual developments without establishing a citywide trend.",
+      "Mortgage lenders can use completed transactions when assessing collateral values."
     ],
-    "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3373946/uk-remains-much-valued-business-partner-hong-kong-john-lee-says",
-    "published": "2026-11-10T20:32:00+08:00"
+    "url": "https://www.thestandard.com.hk/property/article/348289/Mahjong-kings-family-snaps-up-three-Ho-Man-Tin-luxury-units",
+    "published": "2026-11-12T14:49:53+08:00"
   },
   {
     "id": "us-1",
     "cat": "us",
-    "topic": "banking",
+    "topic": "markets",
     "tag": "United States",
-    "headline": "US credit card balances reach a record US$1.29 trillion",
+    "headline": "Treasury yields rise as bond trading resumes after Veterans Day",
     "source": "CNBC",
-    "summary": "American credit card balances increased by US$22 billion in the third quarter to a record US$1.29 trillion, the New York Fed reported. Total household debt also reached a new high, climbing to US$19.1 trillion across mortgages, auto loans, student loans and other borrowing. Researchers said the figures reflect financial hardship among households facing persistent price pressures.",
+    "summary": "US Treasury yields edged higher Thursday as bond markets reopened following the Veterans Day holiday and investors awaited economic data. The benchmark ten-year yield reached 5.01% in early trading, while the two-year yield also increased. Traders are watching existing-home sales and Friday’s producer-price report for clues about inflation and the Federal Reserve’s next decision.",
     "why": [
-      "Banks may need to watch consumer repayment capacity and credit provisions.",
-      "Higher revolving balances can support interest income while increasing default exposure.",
-      "Household debt pressure could weaken spending and affect corporate borrowers."
+      "Higher Treasury yields can increase banks’ wholesale funding and hedging costs.",
+      "US borrowing costs feed into Hong Kong’s dollar-linked financial conditions.",
+      "Higher discount rates can weigh on valuations of long-duration AI investments."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html",
-    "published": "2026-11-10T17:16:18Z"
+    "url": "https://www.cnbc.com/2026/11/12/us-treasurys-bonds-yields.html",
+    "published": "2026-11-12T07:38:45Z"
   },
   {
     "id": "us-2",
     "cat": "us",
     "topic": "policy",
     "tag": "United States",
-    "headline": "White House vows to maintain tariffs despite price backlash",
+    "headline": "CFTC examines Kalshi’s event-contract filing procedures",
     "source": "CNBC",
-    "summary": "The White House signalled it would continue its tariff programme despite voter anger over rising prices in the midterm elections. Speaking at the B20 summit in Washington, an administration official defended tariffs as supporting manufacturing, supply chains and national security. Former economic adviser Gary Cohn offered a contrasting assessment, saying Americans were bearing the costs.",
+    "summary": "The Commodity Futures Trading Commission is investigating whether Kalshi properly notified it about proposed event contracts, the platform confirmed Wednesday. Kalshi described a procedural filing problem involving a handful of contracts and said it was addressing the issue. The inquiry concerns weather-related contracts and adds to wider regulatory scrutiny of the growing prediction-market industry.",
     "why": [
-      "Persistent tariffs could complicate inflation forecasts and interest-rate expectations.",
-      "Trade-finance clients may need to adjust supply chains and working capital.",
-      "Hong Kong intermediaries remain exposed to changing US import costs."
+      "Event-contract platforms face additional compliance and product-launch uncertainty.",
+      "Financial partners may review controls around exchange listings and regulatory filings.",
+      "Greater scrutiny could affect investor confidence in prediction-market business models."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
-    "published": "2026-11-10T20:28:02Z"
+    "url": "https://www.cnbc.com/2026/11/11/cftc-investigates-if-kalshi-improperly-self-certified-event-contracts.html",
+    "published": "2026-11-11T14:43:39Z"
   },
   {
     "id": "us-3",
     "cat": "us",
-    "topic": "energy",
+    "topic": "policy",
     "tag": "United States",
-    "headline": "US gasoline falls below US$4 for the first time since July",
+    "headline": "US election setback could accelerate an India trade agreement",
     "source": "CNBC",
-    "summary": "The average American regular gasoline price fell below US$4 a gallon on Tuesday for the first time since July. AAA put the national average at US$3.9788, down roughly seventeen cents over the week and thirty-nine cents over the month. Lower oil prices helped, while analysts also pointed to the usual seasonal decline in pump prices.",
+    "summary": "Trade specialists told CNBC that President Donald Trump’s midterm election setback could increase his incentive to complete a deal with India. They said negotiations were advanced and a December leaders’ meeting offered a possible signing opportunity. The agreement still awaits final approval, leaving businesses exposed to uncertainty over tariffs and market access between the two economies.",
     "why": [
-      "Lower fuel bills could ease pressure on household cash flow.",
-      "Transport-intensive businesses may see relief in operating costs and financing needs.",
-      "Seasonal price declines alone do not establish a lasting improvement in inflation."
+      "A completed deal could improve visibility for banks financing bilateral trade.",
+      "Tariff uncertainty complicates working-capital planning for importers and exporters.",
+      "Changes in trade flows could affect Asian supply chains and financing demand."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/us-gas-prices-below-four-dollars.html",
-    "published": "2026-11-10T16:20:21Z"
+    "url": "https://www.cnbc.com/2026/11/12/us-india-trade-tariffs-trump-modi.html",
+    "published": "2026-11-12"
+  },
+  {
+    "id": "sg-1",
+    "cat": "sg",
+    "topic": "banking",
+    "tag": "Singapore",
+    "headline": "DBS PayLah! expands QR payments across mainland China",
+    "source": "CNA",
+    "summary": "More than three million DBS PayLah! users can now pay at over 100 million Alipay and Weixin Pay partner merchants in China. Customers can scan merchant codes or present their own, with no additional transaction fees, DBS said Thursday. The app displays the yuan amount, exchange rate and Singapore-dollar cost before users confirm a payment.",
+    "why": [
+      "DBS strengthens its role in cross-border consumer payments and currency conversion.",
+      "Travellers gain wider payment acceptance through their existing Singapore banking app.",
+      "Interoperable payment networks increase competitive pressure on banks’ overseas payment services."
+    ],
+    "url": "https://www.channelnewsasia.com/singapore/dbs-paylah-china-100-million-merchants-payment-6545051",
+    "published": "2026-11-12T13:48:18+08:00"
   },
   {
     "id": "china-1",
     "cat": "china",
     "topic": "banking",
     "tag": "China",
-    "headline": "Citi chief strikes an upbeat tone on China expansion",
-    "source": "SCMP",
-    "summary": "Citigroup chief executive Jane Fraser struck a positive tone on expanding the bank’s business in China following brokerage approval. Citi became the seventh foreign institution to receive a licence for a fully foreign-owned mainland brokerage last month. Her comments place the bank’s expansion ambitions in focus after that regulatory milestone in China’s securities market.",
+    "headline": "Citi targets overseas Chinese businesses and growing yuan use",
+    "source": "Reuters · The Standard",
+    "summary": "Citi is targeting Chinese companies’ international expansion and wider yuan use to grow its foreign-exchange and cross-border businesses, executives said Thursday. The bank helps clients manage currency risks and invoice overseas customers in renminbi. Its China-related business has delivered double-digit growth for several years, with demand spanning electric vehicles, electronics and energy-transition supply chains.",
     "why": [
-      "Foreign brokerage expansion could intensify competition for Chinese institutional clients.",
-      "Global banks may gain additional routes to serve cross-border investment flows.",
-      "Hong Kong teams could support mainland securities businesses through regional client relationships."
+      "Chinese companies expanding overseas create demand for hedging and transaction banking.",
+      "Broader yuan invoicing could strengthen Hong Kong’s offshore renminbi services.",
+      "International banks can provide currency access in markets beyond Chinese lenders’ networks."
     ],
-    "url": "https://www.scmp.com/business/banking-finance/article/3373914/citigroup-ceo-jane-fraser-strikes-bullish-tone-china-expansion-after-brokerage-approval",
-    "published": "2026-11-10T18:00:00+08:00"
+    "url": "https://www.thestandard.com.hk/finance/article/348311/Citi-turns-to-China-Incs-global-expansion-yuan-to-grow-cross-border-business",
+    "published": "2026-11-12T16:18:08+08:00"
   },
   {
     "id": "china-2",
     "cat": "china",
-    "topic": "markets",
+    "topic": "policy",
     "tag": "China",
-    "headline": "China’s EV exports surge as expensive petrol boosts overseas demand",
-    "source": "SCMP",
-    "summary": "China’s electric vehicle exports rose 145% and reached a record high in October, according to the report. High petrol prices linked to the Iran war have encouraged more drivers around the world to consider electric alternatives. The increase puts overseas demand for Chinese electric vehicles in focus as manufacturers expand sales beyond their home market.",
+    "headline": "China reports offshore-trust tax declarations above 160 billion yuan",
+    "source": "Reuters · The Standard",
+    "summary": "Chinese taxpayers have declared more than 160 billion yuan in taxes on offshore trust income, according to a Wednesday report. The figure was reported by the official Xinhua news agency as authorities tightened scrutiny of capital outflows. It places offshore trust income within the country’s broader effort to enforce tax rules and monitor overseas capital.",
     "why": [
-      "Export growth could increase demand for trade finance and currency hedging.",
-      "Banks financing carmakers must assess overseas sales alongside margins and market access.",
-      "Hong Kong investors gain another indicator of demand across the EV supply chain."
+      "Private banks face closer scrutiny of offshore wealth structures and tax compliance.",
+      "Hong Kong trustees may encounter more client demand for tax-reporting support.",
+      "Stronger enforcement could influence how wealthy clients organise cross-border assets."
     ],
-    "url": "https://www.scmp.com/business/china-evs/article/3373912/chinas-ev-exports-surge-145-iran-war-drives-overseas-demand",
-    "published": "2026-11-10T16:00:00+08:00"
+    "url": "https://www.thestandard.com.hk/finance/article/348201/China-says-offshore-trust-tax-declarations-top-160-billion-yuan",
+    "published": "2026-11-11T18:00:53+08:00"
   },
   {
     "id": "china-3",
     "cat": "china",
-    "topic": "policy",
+    "topic": "tech",
     "tag": "China",
-    "headline": "Beijing and Ottawa pursue closer trade ties ahead of Apec",
-    "source": "SCMP",
-    "summary": "Beijing and Ottawa are stepping up trade ties as business leaders plan to travel to China for Apec. The report describes the relationship as moving onto the right track, with the planned chief executive visits forming part of that engagement. The developments put commercial links between China and Canada in focus ahead of the gathering.",
+    "headline": "Volkswagen’s China EV venture faces a reported gap in new models",
+    "source": "Reuters · The Standard",
+    "summary": "Volkswagen’s Anhui electric-vehicle venture has no new models planned for the next two years, people familiar with its strategy said Wednesday. Sales of its existing range have fallen short in China’s intensely competitive market. Volkswagen said it was expanding the dealer network and described an ongoing product offensive, while declining to discuss specific product-strategy questions.",
     "why": [
-      "Closer commercial ties could create new trade-finance opportunities for banks.",
-      "Companies may gain additional channels for diversifying international business relationships.",
-      "Hong Kong advisers could benefit if renewed engagement produces cross-border investment."
+      "Weak factory utilisation can pressure automotive borrowers’ cash flow and financing needs.",
+      "Rapid Chinese EV competition raises execution risks for foreign manufacturers.",
+      "Banks financing suppliers face exposure to changing model volumes and investment plans."
     ],
-    "url": "https://www.scmp.com/economy/policy/article/3373917/right-track-beijing-ottawa-ramp-trade-ties-ceos-plan-china-trip-apec",
-    "published": "2026-11-10T20:30:00+08:00"
-  },
-  {
-    "id": "tech-1",
-    "cat": "tech",
-    "topic": "tech",
-    "tag": "Technology / AI",
-    "headline": "CoreWeave lifts guidance after beating quarterly revenue forecasts",
-    "source": "CNBC",
-    "summary": "CoreWeave reported better-than-expected quarterly revenue and raised its outlook for the year, sending shares higher after hours. Revenue increased 168% from a year earlier, while its net loss widened to US$709 million. The AI infrastructure provider now expects annual revenue of US$13 billion to US$13.3 billion, offering a fresh signal of demand for computing capacity.",
-    "why": [
-      "Strong cloud demand could support investment in AI infrastructure.",
-      "Lenders must balance revenue growth against losses and financing requirements.",
-      "AI portfolios may distinguish operating demand from broader market volatility."
-    ],
-    "url": "https://www.cnbc.com/2026/11/10/coreweave-crwv-q3-earnings-report-2026.html",
-    "published": "2026-11-10T21:19:29Z"
-  },
-  {
-    "id": "tech-2",
-    "cat": "tech",
-    "topic": "tech",
-    "tag": "Technology / AI",
-    "headline": "Ring unveils an indoor drone and a business patrol robot",
-    "source": "CNBC",
-    "summary": "Amazon’s Ring unveiled an indoor security drone and an autonomous robot designed to patrol businesses as it expands surveillance products. The US$250 Drone Cam can fly between rooms, travel upstairs and capture footage during the day or night. Users can deploy it themselves, or sensors can trigger a preset flight to investigate suspicious activity.",
-    "why": [
-      "Autonomous monitoring could create new spending on robotics and connected security.",
-      "Business users will need to weigh automation benefits against privacy and operating risks.",
-      "AI investment opportunities increasingly extend into physical devices and services."
-    ],
-    "url": "https://www.cnbc.com/2026/11/10/amazons-ring-unveils-flying-drone-robot-to-patrol-homes-businesses.html",
-    "published": "2026-11-10T13:30:01Z"
-  },
-  {
-    "id": "tech-3",
-    "cat": "tech",
-    "topic": "tech",
-    "tag": "Technology / AI",
-    "headline": "Alibaba chip unit T-Head files for a Hong Kong listing",
-    "source": "SCMP",
-    "summary": "Alibaba’s chip unit T-Head has filed plans for a Hong Kong initial public offering amid China’s push for AI self-sufficiency. The proposed spin-off would give the semiconductor business a separate route to the equity market. An exchange filing said the spin-off and listing proposal would allow more efficient deployment of Alibaba’s financial resources.",
-    "why": [
-      "Hong Kong could gain another substantial AI-related equity offering.",
-      "Dedicated chip exposure may attract investors with different risk preferences from Alibaba shareholders.",
-      "Banks could see underwriting and institutional distribution opportunities around semiconductor listings."
-    ],
-    "url": "https://www.scmp.com/business/companies/article/3373974/alibaba-chip-unit-t-head-files-hong-kong-ipo-plan-amid-chinas-ai-self-sufficiency-drive",
-    "published": "2026-11-10T22:37:00+08:00"
+    "url": "https://www.thestandard.com.hk/finance/article/348219/Volkswagens-China-EV-venture-has-no-new-models-planned-for-next-two-years-sources-say",
+    "published": "2026-11-11T21:40:39+08:00"
   },
   {
     "id": "global-1",
     "cat": "global",
     "topic": "markets",
     "tag": "Global Markets",
-    "headline": "Treasury yields jump as inflation and a weak auction unsettle bonds",
+    "headline": "UK economy expands as services and AI-related activity strengthen",
     "source": "CNBC",
-    "summary": "US Treasury yields rose sharply after October inflation exceeded expectations, while a mediocre auction added pressure to government bonds. The benchmark ten-year yield moved above 5% before paring its gains, and shorter-dated yields also climbed. Traders weighed stronger price pressures alongside Federal Reserve governor Christopher Waller’s comments about the possibility of a larger December rate increase.",
+    "summary": "Britain’s economy expanded 0.7% in the third quarter, matching expectations and improving on growth in the previous three months. Services output rose while construction contracted, with information and communication a significant contributor. Official statisticians pointed to AI and cloud-related businesses among firms reporting strong turnover growth, while cautioning that their precise contribution was difficult to quantify.",
     "why": [
-      "Higher benchmark yields can raise borrowing costs across global credit markets.",
-      "Banks holding longer-duration bonds could face valuation pressure.",
-      "Hong Kong financing conditions remain sensitive to US rate expectations and dollar liquidity."
+      "Stronger activity can support credit demand and corporate revenues for UK banks.",
+      "AI and cloud investment is becoming more visible in broader economic output.",
+      "Hong Kong investors with UK exposures gain a fresh signal on business conditions."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html",
-    "published": "2026-11-10T10:25:50Z"
+    "url": "https://www.cnbc.com/2026/11/12/uk-gdp-third-quarter-2026.html",
+    "published": "2026-11-12T07:11:23Z"
   },
   {
-    "id": "sg-1",
-    "cat": "sg",
-    "topic": "markets",
-    "tag": "Singapore",
-    "headline": "Singapore shares rebound as tech stocks recover",
-    "source": "The Business Times",
-    "summary": "Singapore’s Straits Times Index rose 1.5% to 5,258.59 on Tuesday as technology shares recovered some of last week’s losses. DBS, OCBC and UOB all gained, with OCBC up 3.1%. About 1.3 billion securities worth S$2.8 billion traded, and rising stocks outnumbered falling stocks by 390 to 212.",
+    "id": "tech-1",
+    "cat": "tech",
+    "topic": "tech",
+    "tag": "Technology / AI",
+    "headline": "CoreWeave jumps after strong earnings and a higher outlook",
+    "source": "CNBC",
+    "summary": "CoreWeave shares surged 24.71% Wednesday after the AI infrastructure provider beat quarterly expectations and raised its annual outlook for the business. Revenue increased 168% to US$3.7 billion, while management described strong demand for future computing capacity. The company also highlighted contract-backed financing and customer prepayments as investors assessed funding risks around its data-centre expansion.",
     "why": [
-      "Gains across all three local banks helped broaden the rally beyond technology.",
-      "The rebound gives investors a fresh read on demand for chip-related shares after last week’s sell-off.",
-      "Singapore’s advance alongside gains in Hong Kong and Japan points to stronger equity sentiment across several Asian markets."
+      "Contract-backed financing changes how lenders assess AI infrastructure credit risk.",
+      "Strong computing demand supports the investment case for specialised cloud providers.",
+      "Heavy funding needs keep borrowing costs central to AI project economics."
     ],
-    "url": "https://www.businesstimes.com.sg/companies-markets/singapore-shares-rise-tech-stocks-gain-ground-sti-1-5",
-    "published": "2026-11-10T18:33:00+08:00"
+    "url": "https://www.cnbc.com/2026/11/11/coreweave-crwv-outlook-earnings-ai.html",
+    "published": "2026-11-11T09:03:56Z"
+  },
+  {
+    "id": "tech-2",
+    "cat": "tech",
+    "topic": "tech",
+    "tag": "Technology / AI",
+    "headline": "Anthropic’s profitability faces a test from computing commitments",
+    "source": "CNBC",
+    "summary": "Anthropic recorded positive adjusted operating income in the second and third quarters ahead of its planned stock-market listing, CNBC reported Wednesday. Its prospectus also shows substantial future commitments for computing infrastructure, with about US$70 billion expected over the next year. Jim Cramer said sustained rapid revenue growth would be essential to cover those rising costs.",
+    "why": [
+      "IPO investors must assess cash commitments alongside adjusted earnings measures.",
+      "Computing providers depend on AI customers sustaining growth and funding access.",
+      "Banks underwriting AI listings face close scrutiny of profitability and financing assumptions."
+    ],
+    "url": "https://www.cnbc.com/2026/11/11/anthropic-ipo-profit-computing-commitments.html",
+    "published": "2026-11-11T23:30:48Z"
+  },
+  {
+    "id": "tech-3",
+    "cat": "tech",
+    "topic": "tech",
+    "tag": "Technology / AI",
+    "headline": "Meta names former AWS executive to lead infrastructure transition",
+    "source": "CNBC",
+    "summary": "Meta’s infrastructure chief Santosh Janardhan will leave in the new year, according to an internal memo obtained by CNBC on Wednesday. Former Amazon Web Services executive David Brown will take over, with transition support through the first quarter. The leadership change comes as Meta expands AI computing capacity and investors scrutinise its substantial capital spending.",
+    "why": [
+      "Leadership continuity matters for delivery of large AI infrastructure projects.",
+      "Data-centre spending keeps pressure on Meta’s cash flow and credit outlook.",
+      "Suppliers and lenders depend on execution of the company’s computing expansion."
+    ],
+    "url": "https://www.cnbc.com/2026/11/11/meta-infrastructure-departure-aws-cloud.html",
+    "published": "2026-11-11T18:05:23Z"
   },
   {
     "id": "crypto-1",
     "cat": "crypto",
     "topic": "crypto",
     "tag": "Crypto",
-    "headline": "Tokenized securities connect blockchain access with traditional markets",
+    "headline": "Blockstream chief argues Bitcoin’s bullish case still lies ahead",
     "source": "CNBC",
-    "summary": "Tokenization is changing how investors can access, transfer and use securities while retaining links to traditional market infrastructure. A new analysis describes digital representations of stocks and bonds interacting with blockchain applications, including collateral and lending arrangements. It also highlights limits, including evolving rules, fragmented liquidity and the fact that tokenizing an asset does not automatically make it liquid.",
+    "summary": "Blockstream co-founder and chief executive Adam Back argued that Bitcoin’s bullish case still lies ahead in a Wednesday television interview. He appeared on Closing Bell Overtime to discuss prospects for the cryptocurrency industry following several volatile weeks in the market. The discussion presents the crypto executive’s outlook on what comes next for digital assets.",
     "why": [
-      "Banks could improve collateral mobility while retaining custody and compliance responsibilities.",
-      "Global investors may gain additional routes to securities during local market hours.",
-      "Tokenized products still require due diligence on legal rights and underlying asset liquidity."
+      "Industry optimism can influence sentiment without removing cryptocurrency price risk.",
+      "Wealth advisers must distinguish executives’ forecasts from verified investment outcomes.",
+      "Banks serving digital-asset clients remain exposed to swings in trading demand."
     ],
-    "url": "https://www.cnbc.com/2026/11/10/tokenization-market-evolution.html",
-    "published": "2026-11-10T18:28:16Z"
+    "url": "https://www.cnbc.com/video/2026/11/11/bitcoins-bull-case-is-still-ahead-says-blockstream-ceo.html",
+    "published": "2026-11-11T22:32:59Z"
   }
 ]
 </script>
 <script>
 'use strict';
 const stories = JSON.parse(document.getElementById('brief-data').textContent);
-document.title = 'Daily Brief · Wednesday 11 November 2026';
+document.title = 'Daily Brief · Thursday 12 November 2026';
 const categories=[['all','All','#141a26'],['top','★ Top','#b77908'],['hk','HK','#d84949'],['us','US','#3976d4'],['sg','SG','#18845d'],['china','CN','#b42e48'],['global','Global','#16878a'],['tech','Tech/AI','#8653bd'],['crypto','Crypto','#cf7023']];
 const topics=[['all','All topics'],['markets','Markets'],['banking','Banking'],['policy','Policy'],['tech','Tech'],['crypto','Crypto'],['energy','Energy']];
-const pulses={"all": ["Weak", "Hot inflation and chip-sector uncertainty weigh on confidence."], "top": ["Weak", "Rate worries and a leadership review overshadow AI fundraising."], "hk": ["Steady", "Finance firms support activity while investors remain selective."], "us": ["Steady", "Cheaper fuel offers relief as debt and trade pressures persist."], "china": ["Good", "Export demand and business engagement offer pockets of support."], "global": ["Weak", "Bond selling pushes borrowing costs higher."], "sg": ["Good", "Tech shares rebound and local banks join the rally."], "tech": ["Steady", "Computing demand and new listings meet a cautious market."], "crypto": ["Steady", "Digital securities gain uses while market risks remain."]};
+const pulses={"all": ["Steady", "Markets balance AI demand against higher borrowing costs."], "top": ["Steady", "Policy signals and AI scrutiny keep investors selective."], "hk": ["Weak", "Technology shares drag on an active financial market."], "us": ["Steady", "Higher yields and regulatory scrutiny temper risk appetite."], "sg": ["Good", "Wider payment access strengthens cross-border banking services."], "china": ["Steady", "Overseas business opportunities meet tighter scrutiny and competition."], "global": ["Good", "Services activity gives the British economy a lift."], "tech": ["Steady", "Strong computing demand meets heavy spending commitments."], "crypto": ["Steady", "Industry optimism meets a volatile trading backdrop."]};
 const state={cat:'all',topic:'all'};
 const list=document.getElementById('stories'),tabs=document.getElementById('tabs'),filters=document.getElementById('filters');
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -561,6 +569,10 @@ card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').mat
 card.querySelector('summary').focus({preventScroll:true});
 }));
 update();
+const controls=document.querySelector('.sticky-nav');
+function measureControls(){document.documentElement.style.setProperty('--controls-height',controls.getBoundingClientRect().height+'px');}
+measureControls();
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(measureControls).observe(controls);
 </script>
 </body>
 </html>
