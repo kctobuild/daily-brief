@@ -7,184 +7,341 @@
 <meta name="apple-mobile-web-app-title" content="Market Insight">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="apple-touch-icon.png">
-<title>Market Insight | Friday 27 November 2026</title>
+<title>Market Insight · Saturday 28 November 2026</title>
 <style>
-:root{
-  --bg:#f5f7fb; --ink:#141a26; --sub:#6b7280; --card:#ffffff;
-  --border:#e8ebf1; --shadow:0 1px 2px rgba(20,26,38,.04), 0 4px 14px rgba(20,26,38,.06);
-  --blue-bg:#eff6ff; --blue-border:#2563eb; --blue-text:#1e40af;
-  --green:#16a34a; --red:#dc2626; --amber:#d97706;
-}
-*{box-sizing:border-box}
-body{margin:0 auto;max-width:960px;padding:calc(14px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
-.switch{display:flex;gap:6px;margin:0 0 14px}
-.switch a{flex:1;text-align:center;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-weight:600;font-size:13px;text-decoration:none;color:var(--sub)}
-.switch a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-header{padding:10px 4px 14px}
-.kicker{color:var(--blue-text);font-size:13px;font-weight:700}
-h1{margin:3px 0 5px;font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;letter-spacing:-.035em}
-p{margin:0}
-.date{font-weight:600}
-.sessions{color:var(--sub);font-size:13px;margin-top:3px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);margin-bottom:12px;padding:14px}
-h2{font-size:18px;line-height:1.2;margin:0 0 12px}
-h3{font-size:14px;margin:0 0 7px}
-.group+.group{margin-top:16px}
-.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.tile,.stance,.panel{border:1px solid var(--border);border-radius:12px;background:var(--bg);padding:10px;min-width:0}
-.label{font-size:14px;font-weight:650}
-.stance p{font-size:14px;line-height:1.4;margin-top:5px}
-.tag{display:inline-block;border-radius:8px;padding:3px 7px;font-size:13px;font-weight:700;background:var(--blue-bg);color:var(--blue-text)}
-.stance .tag{margin-top:4px}
-.attractive{color:#166534;background:#dcfce7;border-left:2px solid var(--green)}
-.neutral{color:#92400e;background:#fef3c7;border-left:2px solid var(--amber)}
-.cautious{color:#991b1b;background:#fee2e2;border-left:2px solid var(--red)}
-.value{font-size:clamp(1rem,4.5vw,1.25rem);font-weight:750;letter-spacing:-.025em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-.meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 6px;font-size:13px;font-variant-numeric:tabular-nums}
-.up{color:#166534}.down{color:#b91c1c}.muted,.meta time{color:var(--sub)}
-.source{display:block;width:fit-content;margin-top:6px;color:var(--sub);font-size:12px;text-decoration:underline;text-underline-offset:2px}
-.chart-grid{display:grid;gap:12px}
-.chart{width:100%;height:auto;display:block}
-.chart text{fill:var(--sub);font:13px system-ui,sans-serif}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
-.key{display:inline-block;width:14px;height:3px;margin:0 4px 3px 0;border-radius:2px;background:var(--blue-border)}
-.key.ten{background:#0f766e}
-.curve-levels{font-size:13px;margin-top:7px}
-.vol{font-size:26px}
-details.card{padding:0}
-summary{padding:14px;cursor:pointer;font-weight:700;font-size:17px;line-height:1.3}
-.detail-body{padding:0 14px 14px;line-height:1.55}
-.detail-body h3{font-size:16px}
-.detail-body .tag{margin-top:8px}
-.refs{margin-top:7px;font-size:12px;color:var(--sub)}
-.refs a{color:var(--blue-text)}
-footer{padding:2px 4px 0;color:var(--sub);font-size:12px}
-footer p+p{margin-top:4px}
-@media(min-width:620px){
-  .card{padding:16px}
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .chart-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
-  summary{padding:16px}
-  .detail-body{padding:0 16px 16px}
-}
+  :root {
+    --bg:#f5f7fb; --ink:#141a26; --sub:#6b7280; --card:#ffffff;
+    --border:#e8ebf1; --shadow:0 1px 2px rgba(20,26,38,.04), 0 4px 14px rgba(20,26,38,.06);
+    --blue-bg:#eff6ff; --blue-border:#2563eb; --blue-text:#1e40af;
+    --green:#16a34a; --red:#dc2626; --amber:#d97706;
+  }
+  * { box-sizing:border-box; }
+  body {
+    max-width:920px; margin:0 auto;
+    padding:calc(14px + env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    background:var(--bg); color:var(--ink);
+    font:16px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  .switch { display:flex; gap:6px; margin:0 0 14px; }
+  .switch a { flex:1; text-align:center; padding:9px 10px; border-radius:10px; border:1px solid var(--border); background:var(--card); font-weight:600; font-size:13px; text-decoration:none; color:var(--sub); }
+  .switch .on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  header { padding:10px 4px 14px; }
+  .kicker { margin:0; color:var(--blue-text); font-size:12px; font-weight:750; text-transform:uppercase; letter-spacing:.09em; }
+  h1 { margin:3px 0 5px; font-size:clamp(28px, 6vw, 38px); line-height:1.12; letter-spacing:-.035em; }
+  .date { margin:0; font-size:14px; font-weight:650; }
+  .reference { margin:3px 0 0; color:var(--sub); font-size:13px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); margin:0 0 12px; padding:14px; }
+  h2 { font-size:18px; line-height:1.25; margin:0 0 12px; }
+  h3 { font-size:14px; margin:0; }
+  .stance-grid,.tile-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .stance,.tile,.vol { border:1px solid var(--border); border-radius:12px; padding:10px; min-width:0; }
+  .stance p { font-size:13px; margin:5px 0 0; }
+  .tag { display:inline-block; border-radius:8px; padding:3px 7px; font-size:12px; line-height:1.35; font-weight:750; margin-top:4px; }
+  .green { color:#166534; background:#dcfce7; }
+  .amber { color:#92400e; background:#fef3c7; }
+  .red { color:#991b1b; background:#fee2e2; }
+  .market-group + .market-group { margin-top:16px; }
+  .market-group h3 { margin-bottom:7px; }
+  .tile-grid { list-style:none; margin:0; padding:0; }
+  .tile-name { font-weight:650; font-size:13px; }
+  .level { font-size:20px; font-weight:750; letter-spacing:-.025em; }
+  .level,.change { font-variant-numeric:tabular-nums; }
+  .change { display:flex; flex-wrap:wrap; gap:2px 8px; font-size:12px; }
+  .change time,.muted,.unavailable,.source,footer { color:var(--sub); }
+  .change span { font-weight:650; }
+  .up { color:#166534; }
+  .down { color:#b91c1c; }
+  .flat { color:var(--sub); }
+  .unavailable { font-size:15px; margin:3px 0; }
+  .source { font-size:12px; margin-top:6px; }
+  a { color:var(--blue-text); text-underline-offset:2px; }
+  .source a { color:inherit; }
+  .chart-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; align-items:start; }
+  figure { margin:0; min-width:0; }
+  .chart { display:block; width:100%; max-width:500px; height:auto; }
+  .chart text { fill:var(--sub); font:11px system-ui,sans-serif; }
+  .chart .gridline { stroke:var(--border); }
+  .line-2y { color:var(--blue-border); }
+  .line-10y { color:#7e22ce; }
+  .curve-line { stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:13px; font-weight:650; }
+  .legend span::before { content:""; display:inline-block; width:12px; margin-right:5px; border-top:2px solid; vertical-align:middle; }
+  figcaption,.curve-values { margin-top:5px; font-size:12px; color:var(--sub); }
+  details.card { padding:0; }
+  summary { display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer; list-style:none; padding:14px; font-size:18px; line-height:1.25; font-weight:750; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:""; width:8px; height:8px; flex:none; margin-right:3px; border-right:2px solid var(--sub); border-bottom:2px solid var(--sub); transform:rotate(45deg); }
+  details[open] summary::after { transform:rotate(225deg); }
+  .prose { padding:0 14px 14px; line-height:1.55; }
+  .prose p { margin:0; }
+  .prose h3 { font-size:16px; margin:0 0 6px; }
+  .product-tag { margin-top:10px; background:var(--blue-bg); border-left:3px solid var(--blue-border); color:var(--blue-text); font-size:13px; }
+  footer { padding:0 4px; font-size:12px; }
+  footer p { margin:3px 0; }
+  @media (min-width:620px) {
+    .card { padding:16px; }
+    .stance-grid,.tile-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .chart-grid { grid-template-columns:minmax(0,2fr) minmax(0,1fr); }
+    summary { padding:16px; }
+    .prose { padding:0 16px 16px; }
+  }
 </style>
 </head>
 <body>
-<nav class="switch" aria-label="Daily modules">
+<nav class="switch" aria-label="Modules">
   <a href="index.html">Daily Brief</a>
   <a href="market-insight.html" class="on" aria-current="page">Market Insight</a>
 </nav>
 <header>
   <p class="kicker">Market Insight</p>
   <h1>Market Overview</h1>
-  <p class="date"><time datetime="2026-11-27">Friday 27 November 2026</time></p>
-  <p class="sessions">US: Wed 25 Nov close · Europe &amp; Asia: Thu 26 Nov close</p>
+  <p class="date"><time datetime="2026-11-28">Saturday 28 November 2026</time></p>
+  <p class="reference">US &amp; Europe: Fri 27 Nov close · Asia: Fri 27 Nov close</p>
 </header>
 <main>
-<section class="card" aria-labelledby="house">
-  <h2 id="house">Today’s house view</h2>
-  <ul class="grid">
-    <li class="stance"><div class="label">Equities</div><span class="tag cautious">Cautious</span><p>Hong Kong rebounded while US tech fell at its last close. Keep equity exposure diversified.</p></li>
-    <li class="stance"><div class="label">Rates/Credit</div><span class="tag attractive">Attractive</span><p>Treasuries rallied and US credit spreads widened on the latest marks. Favor intermediate USD IG.</p></li>
-    <li class="stance"><div class="label">FX</div><span class="tag neutral">Neutral</span><p>DXY rose and CNH firmed against USD. Hedge known cash needs.</p></li>
-    <li class="stance"><div class="label">Alternatives</div><span class="tag neutral">Neutral</span><p>Brent rose again. Keep energy exposure sized for a reversal.</p></li>
-  </ul>
-  <p class="refs"><a href="https://apnews.com/article/94fdb0ecb060ec65c0b02879ce0d2d09">AP US close</a> · <a href="https://apnews.com/article/320cd8c9c286a7773797bf2f478ef314">AP Asia session</a> · <a href="https://think.ing.com/downloads/pdf/article/the-commodities-feed-gold-slumps-below-3500-oz">ING commodities desk</a></p>
-</section>
-<section class="card" aria-labelledby="snapshot">
-  <h2 id="snapshot">Levels at last close</h2>
-  <div class="group"><h3>Equity</h3><ul class="grid">
-    <li class="tile"><div class="label">S&amp;P 500</div><div class="value">7,182.78</div><div class="meta"><span class="down">↓ −0.25%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://ashares.etnet.com.hk/www/eng/futures/futures_news_detail.php?newsid=ETE361126071">ET Net</a></li>
-    <li class="tile"><div class="label">Nasdaq 100</div><div class="value">26,046.90</div><div class="meta"><span class="down">↓ −0.64%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://www.investing.com/indices/nq-100-historical-data">Investing.com</a></li>
-    <li class="tile"><div class="label">Hang Seng</div><div class="value">22,226.88</div><div class="meta"><span class="up">↑ +1.19%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://ashares.etnet.com.hk/www/eng/futures/futures_news_detail.php?newsid=ETE361126071">ET Net</a></li>
-    <li class="tile"><div class="label">HSCEI</div><div class="value">7,493.34</div><div class="meta"><span class="up">↑ +1.47%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://ashares.etnet.com.hk/www/eng/futures/futures_news_detail.php?newsid=ETE361126071">ET Net</a></li>
-    <li class="tile"><div class="label">CSI 300</div><div class="value">3,900.55</div><div class="meta"><span class="up">↑ +0.06%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://ashares.etnet.com.hk/www/eng/futures/futures_news_detail.php?newsid=ETE361126071">ET Net</a></li>
-    <li class="tile"><div class="label">Euro Stoxx 50</div><div class="value">6,001.35</div><div class="meta"><span class="up">↑ +1.88%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://de.investing.com/indices/eu-stoxx50-historical-data">Investing.com</a></li>
-    <li class="tile"><div class="label">Nikkei 225</div><div class="value">57,499.16</div><div class="meta"><span class="up">↑ +0.86%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://ashares.etnet.com.hk/www/eng/futures/futures_news_detail.php?newsid=ETE361126071">ET Net</a></li>
-  </ul></div>
-  <div class="group"><h3>Rates</h3><ul class="grid">
-    <li class="tile"><div class="label">US 10Y yield</div><div class="value">4.85%</div><div class="meta"><span class="down">↓ −1.22%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611">US Treasury</a></li>
-    <li class="tile"><div class="label">US 2Y yield</div><div class="value">4.61%</div><div class="meta"><span class="down">↓ −0.43%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611">US Treasury</a></li>
-    <li class="tile"><div class="label">2s10s spread</div><div class="value">+24 bp</div><div class="meta"><span class="down">↓ −14.29%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611">US Treasury · calculated</a></li>
-    <li class="tile"><div class="label">China 10Y yield</div><div class="value">1.593%</div><div class="meta"><span class="down">↓ −2.63%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://www.investing.com/rates-bonds/china-10-year-bond-yield-historical-data">Investing.com</a></li>
-  </ul></div>
-  <div class="group"><h3>Credit</h3><ul class="grid">
-    <li class="tile"><div class="label">US IG spread</div><div class="value">98 bp</div><div class="meta"><span class="up">↑ +1.03%</span><time datetime="2026-11-24">Tue 24 Nov</time></div><a class="source" href="https://fred.stlouisfed.org/series/BAMLC0A0CM">FRED</a></li>
-    <li class="tile"><div class="label">US HY spread</div><div class="value">372 bp</div><div class="meta"><span class="up">↑ +2.48%</span><time datetime="2026-11-24">Tue 24 Nov</time></div><a class="source" href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2">FRED</a></li>
-    <li class="tile"><div class="label">Asia credit spread</div><div class="value">117 bp</div><div class="meta"><span class="up">↑ +0.86%</span><time datetime="2026-11-24">Tue 24 Nov</time></div><a class="source" href="https://fred.stlouisfed.org/series/BAMLEMRACRPIASIAOAS">FRED</a></li>
-  </ul></div>
-  <div class="group"><h3>Volatility</h3><ul class="grid">
-    <li class="tile"><div class="label">VIX</div><div class="value">28.29</div><div class="meta"><span class="up">↑ +7.32%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://ycharts.com/indicators/vix_volatility_index">YCharts</a></li>
-    <li class="tile"><div class="label">MOVE index</div><div class="value">97.54</div><div class="meta"><span class="down">↓ −1.32%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://ca.investing.com/indices/ice-bofaml-move-historical-data">Investing.com</a></li>
-  </ul></div>
-  <div class="group"><h3>FX</h3><ul class="grid">
-    <li class="tile"><div class="label">DXY</div><div class="value">103.79</div><div class="meta"><span class="up">↑ +0.11%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://portfolio-terminal.com/markets/us-dollar-index">Portfolio Terminal</a></li>
-    <li class="tile"><div class="label">USD/HKD</div><div class="value">7.8368</div><div class="meta"><span class="down">↓ −0.04%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://www.investing.com/currencies/usd-hkd-historical-data">Investing.com</a></li>
-    <li class="tile"><div class="label">USD/CNH</div><div class="value">6.66033</div><div class="meta"><span class="down">↓ −0.09%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://www.myfxbook.com/forex-market/currencies/USDCNH-historical-data">Myfxbook</a></li>
-    <li class="tile"><div class="label">EUR/USD</div><div class="value">1.09697</div><div class="meta"><span class="down">↓ −0.01%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://www.myfxbook.com/forex-market/currencies/EURUSD-historical-data">Myfxbook</a></li>
-  </ul></div>
-  <div class="group"><h3>Commodities</h3><ul class="grid">
-    <li class="tile"><div class="label">Brent</div><div class="value">$96.57/bbl</div><div class="meta"><span class="up">↑ +2.07%</span><time datetime="2026-11-26">Thu 26 Nov</time></div><a class="source" href="https://beta.financialjuice.com/news/2aC0mL/brent-crude-futures-settle-at-96-57-bbl-up-1-96-2-07">FinancialJuice</a></li>
-    <li class="tile"><div class="label">WTI</div><div class="value">$83.68/bbl</div><div class="meta"><span class="up">↑ +1.99%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://cappnotes.substack.com/p/closing-look-wednesday-november-25">Closing Look</a></li>
-    <li class="tile"><div class="label">Gold</div><div class="value">$3,535.80/oz</div><div class="meta"><span class="down">↓ −0.73%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://velocityfinancialbrokers.com/research/daily/2026-11-26-daily-market-report.pdf">Velocity Financial Brokers</a></li>
-    <li class="tile"><div class="label">Copper</div><div class="value">$5.3365/lb</div><div class="meta"><span class="down">↓ −0.48%</span><time datetime="2026-11-25">Wed 25 Nov</time></div><a class="source" href="https://www.fxempire.com/commodities/hg/history">FXEmpire</a></li>
-  </ul></div>
-</section>
-<section class="card" aria-labelledby="curve-vol">
-  <h2 id="curve-vol">Yield curve &amp; volatility</h2>
-  <div class="chart-grid">
-    <div class="panel">
-      <h3>US Treasury yields · 30 days</h3>
-      <svg class="chart" viewBox="0 0 410 128" role="img" aria-labelledby="chart-title">
-        <title id="chart-title">Daily US Treasury 2-year and 10-year yields, 27 October to 25 November 2026</title>
-        <path d="M54 12H398 M54 98H398" fill="none" stroke="var(--border)"/>
-        <text x="0" y="17">5.15%</text>
-        <text x="0" y="103">4.46%</text>
-        <polyline points="54.0,68.1 65.9,71.8 77.7,79.3 89.6,85.5 125.2,81.8 137.0,79.3 148.9,83.0 160.8,98.0 172.6,91.8 208.2,85.5 220.1,64.3 243.8,48.1 255.7,45.7 291.2,51.9 303.1,55.6 315.0,55.6 326.8,60.6 338.7,76.8 374.3,76.8 386.1,76.8 398.0,79.3" fill="none" stroke="var(--blue-border)" stroke-width="2.5" stroke-linejoin="round"/>
-        <polyline points="54.0,31.9 65.9,24.5 77.7,33.2 89.6,38.2 125.2,41.9 137.0,36.9 148.9,43.2 160.8,50.6 172.6,48.1 208.2,45.7 220.1,33.2 243.8,18.2 255.7,12.0 291.2,15.7 303.1,18.2 315.0,22.0 326.8,25.7 338.7,40.7 374.3,40.7 386.1,41.9 398.0,49.4" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round"/>
-        <text x="54" y="119">27 Oct</text>
-        <text x="398" y="119" text-anchor="end">25 Nov</text>
-      </svg>
-      <div class="legend"><span><i class="key"></i>US 2Y</span><span><i class="key ten"></i>US 10Y</span></div>
-      <p class="curve-levels"><time datetime="2026-11-25">Wed 25 Nov</time> · 2Y 4.61% · 10Y 4.85% · 2s10s +24 bp</p>
-      <p class="refs"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2,DGS10">FRED history</a> · <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611">US Treasury</a></p>
+  <section class="card" aria-labelledby="house-view">
+    <h2 id="house-view">Today’s house view</h2>
+    <div class="stance-grid">
+      <div class="stance"><h3>Equities</h3><span class="tag amber">Neutral</span><p>Friday’s rebound favours staged entry after a volatile week.</p></div>
+      <div class="stance"><h3>Rates/Credit</h3><span class="tag green">Attractive</span><p>Prefer front-end IG. Wednesday’s 24 bp curve offered limited pickup for extending duration.</p></div>
+      <div class="stance"><h3>FX</h3><span class="tag amber">Neutral</span><p>The dollar index rose while CNH firmed. Hedge against the client’s spending currency.</p></div>
+      <div class="stance"><h3>Alternatives</h3><span class="tag amber">Neutral</span><p>Gold rallied as crude fell. Keep strategic gold exposure and rebalance into strength.</p></div>
     </div>
-    <div class="panel">
-      <h3>VIX regime</h3>
-      <div class="value vol">28.29</div>
-      <span class="tag cautious">Elevated</span>
-      <p class="curve-levels"><time datetime="2026-11-25">Wed 25 Nov</time> · <span class="up">↑ +7.32%</span></p>
-      <a class="source" href="https://ycharts.com/indicators/vix_volatility_index">YCharts</a>
+  </section>
+
+  <section class="card" aria-labelledby="levels">
+    <h2 id="levels">Levels at last close</h2>
+    <div class="market-group">
+      <h3>Equity</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">S&amp;P 500</div>
+          <div class="level">7,297.49</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +1.60%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://apnews.com/article/04dab6079cf7f3dfe7285a3cc1f240a2">AP</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Nasdaq 100</div>
+          <div class="level">26,726.39</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +2.61%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://ng.investing.com/indices/nq-100-historical-data">Investing.com</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Hang Seng</div>
+          <div class="level">22,694.77</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +2.11%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.hkex.com.hk/?cache=1522199125000pc&amp;sc_lang=en">HKEX</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">HSCEI</div>
+          <div class="level">7,644.18</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +2.01%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.hkex.com.hk/?cache=1546065360000zunjia&amp;sc_lang=en">HKEX</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">CSI 300</div>
+          <div class="level">4,063.06</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +4.17%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.hkex.com.hk/?cache=1546065360000zunjia&amp;sc_lang=en">HKEX</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Euro Stoxx 50</div>
+          <div class="level">6,089.20</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +1.24%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.theclosereport.com/">TheCloseReport</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Nikkei 225</div>
+          <div class="level">58,711.11</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +2.11%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://indexes.nikkei.co.jp/en/nkave/archives/summary?dt=11272026&amp;idx=nk225">Nikkei Indexes</a></div>
+        </li>
+      </ul>
     </div>
-  </div>
-</section>
-<details class="card" open>
-  <summary>Structured product read-through</summary>
-  <div class="detail-body">
-    <p>US cash markets closed for Thanksgiving after the 2s10s narrowed to 24 bp and VIX rose to 28.29. At the reopen, use richer underlying implied vol where available to price deeper barriers on short-tenor index autocalls. With USD/HKD near the weak side of the band and one-month HIBOR higher, compare HKD and USD tranches after forward points before locking a coupon.</p>
-    <span class="tag">Mixed — selective issuance</span>
-    <p class="refs"><a href="https://www.nyse.com/trade/hours-calendars">NYSE holiday schedule</a> · <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611">US Treasury</a> · <a href="https://www.hkab.hk/en/rates/hibor">HKAB HIBOR</a></p>
-  </div>
-</details>
-<details class="card">
-  <summary>Regional outlook — Asia / Hong Kong</summary>
-  <div class="detail-body">
-    <p>Thursday’s Hang Seng gained 1.19% and HSCEI rose 1.47% despite reported net southbound selling led by broad ETFs. With US cash markets closed for Thanksgiving, look for local follow-through next week before adding China beta. The HK dollar firmed but stayed near the weak side of the peg, while one-month HIBOR rose to 2.94%. Keep developer exposure selective as higher local funding costs weigh on borrowers. The PBOC’s offshore RMB bill issue is a liquidity operation. For property exposure, watch home sales and refinancing.</p>
-    <p class="refs"><a href="https://apnews.com/article/320cd8c9c286a7773797bf2f478ef314">AP Asia session</a> · <a href="https://www.kgi.com.hk/en/market-news-and-analysis/market-news/market-news-feed?id=6098073&amp;iid=bed02497bc854ce5924a8777305e86a8&amp;type=scnews">ET Net News Agency via KGI</a> · <a href="https://www.hkma.gov.hk/eng/key-functions/money/linked-exchange-rate-system/how-does-the-lers-work">HKMA peg framework</a> · <a href="https://www.hkab.hk/en/rates/hibor">HKAB HIBOR</a> · <a href="https://www.hkma.gov.hk/media/eng/doc/key-information/press-release/2026/20261120e3a2.pdf">HKMA PBOC tender notice</a></p>
-  </div>
-</details>
-<details class="card">
-  <summary>Top client question of the day</summary>
-  <div class="detail-body">
-    <h3>Should we roll the tech autocall while VIX is elevated?</h3>
-    <p>Take the coupon and park most of the proceeds in short-dated USD IG. US cash markets were closed on Thanksgiving, and Wednesday’s tech selloff exposed the risk of rolling into the same names. Reprice next week in normal trading hours. Roll a smaller amount into a diversified index autocall only if the deeper barrier still pays a meaningful premium over liquid IG after hedge costs.</p>
-    <p class="refs"><a href="https://apnews.com/article/94fdb0ecb060ec65c0b02879ce0d2d09">AP US close</a> · <a href="https://www.nyse.com/trade/hours-calendars">NYSE holiday schedule</a></p>
-  </div>
-</details>
+    <div class="market-group">
+      <h3>Rates</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">US 10Y yield</div>
+          <div class="level">4.85%</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −1.22%</span><time datetime="2026-11-25">Wed 25 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/series/DGS10">FRED</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">US 2Y yield</div>
+          <div class="level">4.61%</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −0.43%</span><time datetime="2026-11-25">Wed 25 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/series/DGS2">FRED</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">2s10s spread</div>
+          <div class="level">+24 bp</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −14.29%</span><time datetime="2026-11-25">Wed 25 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/graph/?id=DGS10,DGS2">FRED · calculated</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">China 10Y yield</div>
+          <div class="level">1.5972%</div>
+          <div class="change"><span class="muted">n/a</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/more?locale=en_US">ChinaBond</a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="market-group">
+      <h3>Credit</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">US IG spread</div>
+          <div class="level">99 bp</div>
+          <div class="change"><span class="flat"><span aria-hidden="true">→</span> 0.00%</span><time datetime="2026-11-26">Thu 26 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/series/BAMLC0A0CM">FRED</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">US HY spread</div>
+          <div class="level">377 bp</div>
+          <div class="change"><span class="flat"><span aria-hidden="true">→</span> 0.00%</span><time datetime="2026-11-26">Thu 26 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2">FRED</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Asia credit spread</div>
+          <div class="level">120 bp</div>
+          <div class="change"><span class="flat"><span aria-hidden="true">→</span> 0.00%</span><time datetime="2026-11-26">Thu 26 Nov</time></div>
+          <div class="source"><a href="https://fred.stlouisfed.org/series/BAMLEMRACRPIASIAOAS">FRED</a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="market-group">
+      <h3>Volatility</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">VIX</div>
+          <div class="level">23.81</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −11.16%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">MOVE index</div>
+          <div class="unavailable">data unavailable</div>
+          <div class="change"><span class="muted">n/a</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+        </li>
+      </ul>
+    </div>
+    <div class="market-group">
+      <h3>FX</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">DXY</div>
+          <div class="level">104.04</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +0.36%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">USD/HKD</div>
+          <div class="level">7.8340</div>
+          <div class="change"><span class="muted">n/a</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.poundsterlinglive.com/history/USD-HKD-2026/">Pound Sterling Live</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">USD/CNH</div>
+          <div class="level">6.6548</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −0.10%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://ph.investing.com/currencies/usd-cnh-historical-data">Investing.com</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">EUR/USD</div>
+          <div class="level">1.0966</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −0.03%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://www.myfxbook.com/forex-market/currencies/eurusd-historical-data">Myfxbook</a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="market-group">
+      <h3>Commodities</h3>
+      <ul class="tile-grid">
+        <li class="tile">
+          <div class="tile-name">Brent</div>
+          <div class="level">$90.84</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −3.98%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">WTI</div>
+          <div class="level">$83.08</div>
+          <div class="change"><span class="down"><span aria-hidden="true">↓</span> −0.72%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Gold</div>
+          <div class="level">$3,668.50</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +3.75%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+        <li class="tile">
+          <div class="tile-name">Copper</div>
+          <div class="level">$5.60</div>
+          <div class="change"><span class="up"><span aria-hidden="true">↑</span> +5.03%</span><time datetime="2026-11-27">Fri 27 Nov</time></div>
+          <div class="source"><a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="curve-vol">
+    <h2 id="curve-vol">Yield curve &amp; volatility</h2>
+    <div class="chart-grid">
+      <figure>
+        <h3>US Treasury yields · 30 days</h3>
+        <svg class="chart" viewBox="0 0 330 126" role="img" aria-labelledby="yield-title yield-desc">
+          <title id="yield-title">US 2-year and 10-year Treasury yields</title>
+          <desc id="yield-desc">FRED daily observations in the 30-day window ending 27 November. The latest observations are 4.61% for the two-year and 4.85% for the ten-year on 25 November.</desc>
+          <line class="gridline" x1="40" x2="318" y1="18" y2="18"/>
+          <line class="gridline" x1="40" x2="318" y1="100" y2="100"/>
+          <text x="35" y="21" text-anchor="end">5.15%</text>
+          <text x="35" y="103" text-anchor="end">4.46%</text>
+          <text x="40" y="119">28 Oct</text>
+          <text x="318" y="119" text-anchor="end">27 Nov</text>
+          <polyline class="curve-line line-2y" points="40.0,75.0 49.3,82.2 58.5,88.1 86.3,84.6 95.6,82.2 104.9,85.7 114.1,100.0 123.4,94.1 151.2,88.1 160.5,67.9 179.0,52.5 188.3,50.1 216.1,56.0 225.3,59.6 234.6,59.6 243.9,64.3 253.1,79.8 280.9,79.8 290.2,79.8 299.5,82.2"/>
+          <polyline class="curve-line line-10y" points="40.0,29.9 49.3,38.2 58.5,43.0 86.3,46.5 95.6,41.8 104.9,47.7 114.1,54.8 123.4,52.5 151.2,50.1 160.5,38.2 179.0,23.9 188.3,18.0 216.1,21.6 225.3,23.9 234.6,27.5 243.9,31.1 253.1,45.3 280.9,45.3 290.2,46.5 299.5,53.7"/>
+        </svg>
+        <div class="legend"><span class="line-2y">US 2Y</span><span class="line-10y">US 10Y</span></div>
+        <div class="curve-values">US 2Y 4.61% · US 10Y 4.85% · 2s10s +24 bp</div>
+        <figcaption>Latest observation Wed 25 Nov · <a href="https://fred.stlouisfed.org/graph/?id=DGS2,DGS10">FRED</a></figcaption>
+      </figure>
+      <div class="vol">
+        <h3>VIX</h3>
+        <div class="level">23.81</div>
+        <span class="tag amber">Elevated</span>
+        <div class="source"><time datetime="2026-11-27">Fri 27 Nov</time> · <a href="https://spxset.com/folio/us-market-close-report-2026-11-27">Folio</a></div>
+      </div>
+    </div>
+  </section>
+
+  <details class="card" open>
+    <summary>Structured product read-through</summary>
+    <div class="prose">
+      <p>Markets are closed for the weekend. VIX eased on Friday and stayed above 20, so use the remaining premium to seek deeper barriers on broad-index autocallables, then reprice at Monday’s open. The latest published Treasury curve offered just 24 bp of pickup from 2Y to 10Y, so keep tenors short and match the settlement currency to the client’s liabilities.</p>
+      <span class="tag product-tag">Mixed — selective issuance</span>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>Regional outlook — Asia / Hong Kong</summary>
+    <div class="prose">
+      <p>Markets are closed for the weekend. Friday’s 2.11% Hang Seng gain and 2.01% HSCEI rise give clients room to trim concentrated positions. Check whether southbound buying broadens beyond names such as Alibaba when Stock Connect reopens. USD/HKD finished inside the HKMA’s peg band. Use Monday’s one-month HIBOR fixing to price HKD leverage. Keep mainland developer exposure light until Beijing’s property support shows up in sales and refinancing. For new China exposure, favour diversified index risk and stagger entries. <a href="https://www.hkma.gov.hk/eng/key-functions/money/linked-exchange-rate-system/">HKMA</a> · <a href="https://www.kgi.com.hk/en/market-news-and-analysis/market-news/market-news-feed?id=6098370&amp;iid=bed02497bc854ce5924a8777305e86a8&amp;type=scnews">ET Net via KGI</a></p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>Top client question of the day</summary>
+    <div class="prose">
+      <h3>Should we roll the autocall after Friday’s rebound?</h3>
+      <p>Take the coupon and keep the proceeds liquid over the weekend while markets are closed. Friday’s US rally capped a volatile holiday-shortened week. At Monday’s open, roll a portion only if a broad-index structure offers a deeper barrier at a coupon the client can accept. Avoid adding to the same tech exposure through another worst-of basket, and retain enough cash to meet the next scheduled withdrawal. <a href="https://apnews.com/article/04dab6079cf7f3dfe7285a3cc1f240a2">AP</a></p>
+    </div>
+  </details>
 </main>
 <footer>
-  <p>Last updated: Friday 27 November 2026, 08:21 Hong Kong time.</p>
-  <p>Data gaps today: none.</p>
+  <p>Last updated: Saturday 28 November 2026, 09:05 Hong Kong time.</p>
+  <p>Data gaps today: MOVE index.</p>
 </footer>
 </body>
 </html>
